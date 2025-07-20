@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.Scaffold
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import ghazimoradi.soheil.digikala.navigation.BottomNavigationBar
 import ghazimoradi.soheil.digikala.navigation.SetupNavGraph
 import ghazimoradi.soheil.digikala.ui.theme.DigikalaTheme
 
@@ -19,9 +20,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             DigikalaTheme {
                 navController = rememberNavController()
-                Scaffold(bottomBar = {}) {
+                Scaffold(
+                    bottomBar = {
+                        BottomNavigationBar(
+                            navController = navController,
+                            onItemClick = { bottomNavItem ->
+                                navController.navigate(bottomNavItem.route)
+                            },
+                        )
+                    },
+                ) { padding ->
                     SetupNavGraph(navController)
-                    Log.i("padding", it.toString())
+                    Log.i("padding", padding.toString())
                 }
             }
         }
