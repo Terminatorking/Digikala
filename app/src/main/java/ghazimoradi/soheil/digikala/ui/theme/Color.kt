@@ -9,12 +9,13 @@ val Imperial_Red = Color(0xFFed1b34)
 val Brick_Red = Color(0xFFCE3C4D)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
+val White = Color(0xFFFFFFFF)
 
 val Colors.splashBg: Color
     @Composable
     get() = Color(0xFFed1b34)
 
-val Colors.CursorColor : Color
+val Colors.CursorColor: Color
     @Composable
     get() = Color(0xFF018577)
 
@@ -30,7 +31,7 @@ val Colors.bottomBar: Color
     @Composable
     get() = if (isLight) Color(0xFFFFFFFF) else Color(0xFF303235)
 
-val Colors.Gold : Color
+val Colors.Gold: Color
     @Composable
     get() = Color(0xFFf9bc01)
 
@@ -48,25 +49,25 @@ val Colors.darkText: Color
 
 val Colors.amber: Color
     @Composable
-    get() =  Color(0xffFFBF00)
+    get() = Color(0xffFFBF00)
 
 val Colors.grayCategory: Color
     @Composable
     get() = Color(0xFFF1F0EE)
 
-val Colors.DigikalaLightRed: Color
+val Colors.DigiKalaLightRed: Color
     @Composable
     get() = if (isLight) Color(0xffef4056) else Color(0xFF8D2633)
 
-val Colors.DigikalaLightRedText: Color
+val Colors.DigiKalaLightRedText: Color
     @Composable
     get() = if (isLight) Color(0xffef4056) else Color(0xFFFFFFFF)
 
-val Colors.DigikalaDarkRed: Color
+val Colors.DigiKalaDarkRed: Color
     @Composable
     get() = Color(0xFFe6123d)
 
-val Colors.digikalaRed: Color
+val Colors.DigiKalaRed: Color
     @Composable
     get() = Color(0xFFed1b34)
 
@@ -94,6 +95,6 @@ val Colors.DigikalaLightGreen: Color
     @Composable
     get() = if (isLight) Color(0xff86bf3c) else Color(0xFF3A531A)
 
-val Colors.Green : Color
+val Colors.Green: Color
     @Composable
     get() = Color(0xFF00A049)

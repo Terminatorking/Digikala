@@ -15,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import ghazimoradi.soheil.digikala.navigation.BottomNavigationBar
 import ghazimoradi.soheil.digikala.navigation.SetupNavGraph
 import ghazimoradi.soheil.digikala.ui.components.AppConfig
+import ghazimoradi.soheil.digikala.ui.components.ChangeStatusBarColor
 import ghazimoradi.soheil.digikala.ui.theme.DigikalaTheme
 import ghazimoradi.soheil.digikala.util.LocaleUtils
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
@@ -31,6 +32,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DigikalaTheme {
                 navController = rememberNavController()
+                ChangeStatusBarColor(navController = navController)
                 AppConfig()
                 LocaleUtils.setLocale(LocalContext.current, USER_LANGUAGE)
 
