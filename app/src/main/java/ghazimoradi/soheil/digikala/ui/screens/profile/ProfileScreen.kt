@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens
+package ghazimoradi.soheil.digikala.ui.screens.profile
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -31,7 +31,7 @@ fun ProfileScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        val activity = App.currentActitvity
+        val activity = App.currentActivity
         Text("ProfileScreen")
         Button(
             onClick = {

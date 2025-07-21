@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens
+package ghazimoradi.soheil.digikala.ui.screens.basket
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background

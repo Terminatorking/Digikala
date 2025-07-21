@@ -4,7 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import ghazimoradi.soheil.digikala.ui.screens.*
+import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
+import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
+import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
+import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
+import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {

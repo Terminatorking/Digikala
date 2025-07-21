@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens
+package ghazimoradi.soheil.digikala.ui.screens.category
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,14 +12,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 
 @Composable
-fun HomeScreen(navController: NavHostController){
+fun CategoryScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Cyan),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-    ){
-        Text("HomeScreen")
+    ) {
+        Text("CategoryScreen")
     }
 }
