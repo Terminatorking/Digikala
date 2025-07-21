@@ -8,6 +8,7 @@ import ghazimoradi.soheil.digikala.util.Constants.BASE_URL
 import ghazimoradi.soheil.digikala.util.Constants.PURCHASE_URL
 import ghazimoradi.soheil.digikala.util.Constants.TIMEOUT_IN_SECOND
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.util.Constants.API_KEY
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -39,7 +40,7 @@ object NetworkModule {
 
             if (chain.request().url.toString().startsWith(BASE_URL)) {
                 request
-                    .addHeader("x-api-key", "API_KEY")
+                    .addHeader("x-api-key", API_KEY)
                     .addHeader("lang", USER_LANGUAGE)
             }
             chain.proceed(request.build())
@@ -55,7 +56,6 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-
 
     @Provides
     @Singleton

@@ -1,5 +1,7 @@
 package ghazimoradi.soheil.digikala.util
 
+import ghazimoradi.soheil.digikala.BuildConfig
+
 object Constants {
     const val ENGLISH_LANG = "en"
     const val PERSIAN_LANG = "fa"
@@ -9,9 +11,9 @@ object Constants {
     const val ZARINPAL_PAYMENT_URL = "https://www.zarinpal.com/pg/StartPay/"
     const val TIMEOUT_IN_SECOND: Long = 60
 
-    // const val API_KEY = BuildConfig.X_API_KEY
-    // const val KEY = BuildConfig.KEY
-    // const val IV = BuildConfig.IV
+     const val API_KEY = BuildConfig.X_API_KEY
+     const val KEY = BuildConfig.KEY
+     const val IV = BuildConfig.IV
 
     const val SHOPPING_CART_TABLE = "shopping_cart"
     const val FAVORITE_LIST_TABLE = "favorite_list_table"
@@ -39,7 +41,6 @@ object Constants {
         "https://www.digikala.com/landing/gift-card-landing/?promo_name=gift_landing&promo_position=circle_badge"
     const val DIGIPLUS_URL = "https://www.digikala.com/plus/landing/"
     const val MORE_URL = "https://www.digikala.com/mehr/"
-
 
     const val DIGI_FAQ = "https://www.digikala.com/faq/"
     const val DIGI_PRIVACY = "https://www.digikala.com/page/privacy/"

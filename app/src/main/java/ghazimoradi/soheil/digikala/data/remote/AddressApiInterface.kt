@@ -16,10 +16,8 @@ interface AddressApiInterface {
         @Query("token") token: String
     ): Response<ResponseResult<List<UserAddress>>>
 
-
     @POST("v1/saveUserAddress")
     suspend fun saveUserAddress(
         @Body address: AddAddressRequest
     ): Response<ResponseResult<String>>
-
 }
