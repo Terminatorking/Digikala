@@ -12,6 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.RoundedIconBox
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import ghazimoradi.soheil.digikala.ui.theme.amber
@@ -126,6 +127,6 @@ fun ShowcaseSection(navController: NavController) {
 @Composable
 fun onBoxClick(navController: NavController, url: String): () -> Unit {
     return {
-       // navController.navigate(route = Screen.WebView.route + "?url=${url}")
+        navController.navigate(route = Screen.WebView.route + "?url=${url}")
     }
 }

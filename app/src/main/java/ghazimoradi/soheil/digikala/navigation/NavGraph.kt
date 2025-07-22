@@ -3,10 +3,13 @@ package ghazimoradi.soheil.digikala.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
 import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
+import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
 
@@ -30,6 +33,20 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Profile.route) {
             ProfileScreen(navController = navController)
+        }
+        composable(
+            route = Screen.WebView.route + "?url={url}",
+            arguments = listOf(
+                navArgument("url") {
+                    type = NavType.StringType
+                    defaultValue = ""
+                    nullable = true
+                }
+            )
+        ) { navBackStackEntry ->
+            navBackStackEntry.arguments?.getString("url")?.let {
+                WebPageScreen(navController = navController, url = it)
+            }
         }
     }
 }
