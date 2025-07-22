@@ -1,8 +1,8 @@
 package ghazimoradi.soheil.digikala.data.model.purchase
 
 data class PaymentRequest(
-    val merchant_id: String,
+    val merchantId: String,
     val amount: String,
-    val callback_url: String,
+    val callbackUrl: String,
     val description: String
 )

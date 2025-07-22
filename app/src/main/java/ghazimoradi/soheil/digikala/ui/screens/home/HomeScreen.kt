@@ -1,6 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
@@ -8,6 +9,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -30,10 +32,10 @@ fun Home(
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
     LocaleUtils.setLocale(LocalContext.current, USER_LANGUAGE)
+
     LaunchedEffect(true) {
         refreshDataFromServer(viewModel = homeViewModel)
     }
-
     SwipeRefreshSection(viewModel = homeViewModel, navController = navController)
 }
 
@@ -50,7 +52,10 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
             }
         }
     ) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize().padding(bottom = 60.dp)
+        ) {
             item {
                 SearchBarSection()
 
@@ -60,6 +65,9 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
             }
             item {
                 ShowcaseSection(navController = navController)
+            }
+            item {
+                AmazingOfferSection(navController = navController)
             }
         }
     }

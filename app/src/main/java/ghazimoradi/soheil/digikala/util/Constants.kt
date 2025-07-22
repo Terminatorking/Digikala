@@ -11,9 +11,9 @@ object Constants {
     const val ZARINPAL_PAYMENT_URL = "https://www.zarinpal.com/pg/StartPay/"
     const val TIMEOUT_IN_SECOND: Long = 60
 
-     const val API_KEY = BuildConfig.X_API_KEY
-     const val KEY = BuildConfig.KEY
-     const val IV = BuildConfig.IV
+    const val API_KEY = BuildConfig.X_API_KEY
+    const val KEY = BuildConfig.KEY
+    const val IV = BuildConfig.IV
 
     const val SHOPPING_CART_TABLE = "shopping_cart"
     const val FAVORITE_LIST_TABLE = "favorite_list_table"

@@ -4,7 +4,7 @@ import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 
 data class OrderFullDetail(
     val token: String,
-    val _id: String,
+    val id: String,
     val userId: String,
     val orderAddress: String,
     val orderTotalDiscount: Long,

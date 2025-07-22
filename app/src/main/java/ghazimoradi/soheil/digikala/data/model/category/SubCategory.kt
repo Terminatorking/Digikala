@@ -15,7 +15,7 @@ data class SubCategory(
 )
 
 data class Sub(
-    val _id: String,
+    val id: String,
     val count: Int,
     val image: String,
     val name: String
