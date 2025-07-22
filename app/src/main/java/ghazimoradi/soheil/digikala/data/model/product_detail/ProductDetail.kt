@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.data.model.product_detail
 import com.google.gson.JsonObject
 
 data class ProductDetail(
-    val id: String? = null,
+    val _id: String? = null,
     val name: String? = null,
     val seller: String? = null,
     val category: String? = null,
@@ -26,13 +26,13 @@ data class ProductDetail(
 )
 
 data class SliderImage(
-    val id: String,
+    val _id: String,
     val image: String,
     val productId: String
 )
 
 data class ProductColor(
-    val id: String,
+    val _id: String,
     val color: String,
     val code: String
 )
@@ -43,7 +43,7 @@ data class Price(
 )
 
 data class Comment(
-    val id: String,
+    val _id: String,
     val title: String,
     val description: String,
     val star: Int,
@@ -52,5 +52,5 @@ data class Comment(
     val userName: String,
     val updatedAt: String,
     val createdAt: String,
-    val v: Int
+    val __v: Int
 )

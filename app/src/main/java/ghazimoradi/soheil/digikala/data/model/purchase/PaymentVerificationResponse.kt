@@ -9,11 +9,11 @@ data class PaymentVerificationData(
     val wages: List<Any>,
     val code: Int,
     val message: String,
-    val cardHash: String,
-    val cardPan: String,
-    val refId: Long,
-    val feeType: String,
+    val card_hash: String,
+    val card_pan: String,
+    val ref_id: Long,
+    val fee_type: String,
     val fee: Int,
-    val shaparakFee: String,
-    val orderId: String
+    val shaparak_fee: String,
+    val order_id: String
 )

@@ -1,7 +1,7 @@
 package ghazimoradi.soheil.digikala.data.model.home
 
 data class StoreProduct(
-    val id: String,
+    val _id: String,
     val name: String,
     val seller: String,
     val price: Long,

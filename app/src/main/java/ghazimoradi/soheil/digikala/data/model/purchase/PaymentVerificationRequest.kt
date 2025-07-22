@@ -1,7 +1,7 @@
 package ghazimoradi.soheil.digikala.data.model.purchase
 
 data class PaymentVerificationRequest(
-    val merchantId: String,
+    val merchant_id: String,
     val authority: String,
     val amount: String
 )

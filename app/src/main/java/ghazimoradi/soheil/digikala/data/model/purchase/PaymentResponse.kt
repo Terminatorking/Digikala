@@ -8,7 +8,7 @@ data class PaymentResponse(
 data class Data(
     val authority: String,
     val fee: Int,
-    val feeType: String,
+    val fee_type: String,
     val code: Int,
     val message: String
 )
