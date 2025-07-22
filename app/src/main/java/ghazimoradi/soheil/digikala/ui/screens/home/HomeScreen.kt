@@ -78,6 +78,21 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
             item {
                 CategoryListSection()
             }
+            item {
+                CenterBannerSection(1)
+            }
+            item {
+                CenterBannerSection(2)
+            }
+            item {
+                CenterBannerSection(3)
+            }
+            item {
+                CenterBannerSection(4)
+            }
+            item {
+                CenterBannerSection(5)
+            }
         }
     }
 }
