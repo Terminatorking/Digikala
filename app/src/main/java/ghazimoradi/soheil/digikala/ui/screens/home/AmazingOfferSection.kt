@@ -16,13 +16,14 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
 
 @Composable
 fun AmazingOfferSection(
     navController: NavController,
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
+    isSuperMarketAmazing: Boolean = false
 ) {
-
     var amazingItemList by remember {
         mutableStateOf<List<AmazingItem>>(emptyList())
     }
@@ -41,22 +42,51 @@ fun AmazingOfferSection(
         is NetworkResult.Loading -> {}
     }
 
+    var superMarketItemList by remember {
+        mutableStateOf<List<AmazingItem>>(emptyList())
+    }
+
+    val superMarketItemResult by viewModel.superMarketItems.collectAsState()
+
+    when (superMarketItemResult) {
+        is NetworkResult.Success -> {
+            superMarketItemList = superMarketItemResult.data ?: emptyList()
+        }
+
+        is NetworkResult.Error -> {
+            Log.e("3636", "superMarketOfferSection error : ${superMarketItemResult.message}")
+        }
+
+        is NetworkResult.Loading -> {}
+    }
+
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(MaterialTheme.colors.DigiKalaLightRed)
+        modifier = Modifier.fillMaxWidth()
     ) {
 
         LazyRow(
-            modifier = Modifier.background(MaterialTheme.colors.DigiKalaLightRed)
+            modifier = if (isSuperMarketAmazing)
+                Modifier.background(MaterialTheme.colors.DigikalaLightGreen)
+            else Modifier.background(MaterialTheme.colors.DigiKalaLightRed)
         ) {
-
-            item {
-                AmazingOfferCard(R.drawable.box)
+            if (isSuperMarketAmazing) {
+                item {
+                    AmazingOfferCard(R.drawable.fresh, isSuperMarketAmazing = true)
+                }
+            } else {
+                item {
+                    AmazingOfferCard(R.drawable.box)
+                }
             }
 
-            items(amazingItemList) { item ->
-                AmazingItem(item = item, navController = navController)
+            if (isSuperMarketAmazing) {
+                items(superMarketItemList) { item ->
+                    AmazingItem(item = item, navController = navController)
+                }
+            } else {
+                items(amazingItemList) { item ->
+                    AmazingItem(item = item, navController = navController)
+                }
             }
 
             item {

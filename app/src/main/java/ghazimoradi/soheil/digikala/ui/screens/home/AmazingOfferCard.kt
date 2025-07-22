@@ -30,7 +30,10 @@ import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 
 @Composable
-fun AmazingOfferCard(bottomImageResId: Int) {
+fun AmazingOfferCard(
+    bottomImageResId: Int,
+    isSuperMarketAmazing: Boolean = false
+) {
 
     Column(
         modifier = Modifier
@@ -46,7 +49,7 @@ fun AmazingOfferCard(bottomImageResId: Int) {
         Spacer(modifier = Modifier.height(60.dp))
 
         Image(
-            painter = amazingLogoChangeByLanguage(),
+            painter = amazingLogoChangeByLanguage(isSuperMarketAmazing),
             contentDescription = "",
             modifier = Modifier
                 .fillMaxWidth()
@@ -83,10 +86,14 @@ fun AmazingOfferCard(bottomImageResId: Int) {
 }
 
 @Composable
-private fun amazingLogoChangeByLanguage(): Painter {
+private fun amazingLogoChangeByLanguage(isSuperMarketAmazing: Boolean): Painter {
     return if (USER_LANGUAGE == ENGLISH_LANG) {
         painterResource(id = R.drawable.amazing_en)
     } else {
-        painterResource(id = R.drawable.amazings)
+        if (isSuperMarketAmazing) {
+            painterResource(id = R.drawable.supermarketamazings)
+        } else {
+            painterResource(id = R.drawable.amazings)
+        }
     }
 }
