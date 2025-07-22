@@ -53,6 +53,7 @@ fun Home(
             LaunchedEffect(true) {
                 homeViewModel.getAllDataFromServer()
             }
+            SearchBarSection()
             TopSliderSection()
         }
     }
