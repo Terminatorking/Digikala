@@ -17,7 +17,6 @@ import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ProposalCardSection(
     viewModel: HomeViewModel = hiltViewModel()
@@ -41,7 +40,6 @@ fun ProposalCardSection(
         maxItemsInEachRow = 2,
         modifier = Modifier
             .fillMaxWidth()
-            .height(290.dp)
             .padding(MaterialTheme.spacing.small)
     ) {
         for (item in bannersList) {
