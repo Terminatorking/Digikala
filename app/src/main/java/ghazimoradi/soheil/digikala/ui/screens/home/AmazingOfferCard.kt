@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
+import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
@@ -76,7 +77,7 @@ fun AmazingOfferCard(
             Text(
                 text = stringResource(id = R.string.see_all),
                 style = MaterialTheme.typography.h6,
-                color = Color.White,
+                color = White,
                 fontWeight = FontWeight.SemiBold
             )
 

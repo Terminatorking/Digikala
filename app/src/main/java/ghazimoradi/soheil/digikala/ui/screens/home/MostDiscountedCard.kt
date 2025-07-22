@@ -55,6 +55,7 @@ fun MostDiscountedCard(item: StoreProduct) {
         modifier = Modifier.
         fillMaxWidth(0.5f)
             .padding(horizontal = 10.dp, vertical = 5.dp),
+        elevation = CardDefaults.cardElevation(1.dp),
     ) {
 
         Column(
@@ -149,7 +150,7 @@ fun MostDiscountedCard(item: StoreProduct) {
                     ) {
                         Text(
                             text = "${digitByLocateAndSeparator(item.discountPercent.toString())}%",
-                            color = Color.White,
+                            color = White,
                             style = MaterialTheme.typography.h6,
                             fontWeight = FontWeight.Bold,
                         )

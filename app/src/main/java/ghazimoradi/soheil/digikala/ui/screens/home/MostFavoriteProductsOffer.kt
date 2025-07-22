@@ -137,7 +137,7 @@ fun MostFavoriteProductsOffer(
                         ) {
                             Text(
                                 text = "${digitByLocateAndSeparator(item.discountPercent.toString())}%",
-                                color = Color.White,
+                                color = White,
                                 style = MaterialTheme.typography.h6,
                                 fontWeight = FontWeight.Bold,
                             )
