@@ -58,7 +58,6 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
         ) {
             item {
                 SearchBarSection()
-
             }
             item {
                 TopSliderSection()
@@ -82,13 +81,17 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                 CenterBannerSection(1)
             }
             item {
-                BestSellerOfferSection()
+                ProductOfferSection()
             }
             item {
                 CenterBannerSection(2)
             }
+
             item {
                 CenterBannerSection(3)
+            }
+            item {
+                ProductOfferSection(isMostVisited = true)
             }
             item {
                 CenterBannerSection(4)
