@@ -27,6 +27,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
@@ -45,18 +46,26 @@ fun ProductOfferSection(
         mutableStateOf<List<StoreProduct>>(emptyList())
     }
 
+    var loading by remember {
+        mutableStateOf(false)
+    }
+
     val bestSellerOfferResult by viewModel.bestSellerItems.collectAsState()
 
     when (bestSellerOfferResult) {
         is NetworkResult.Success -> {
             bestSellerOfferList = bestSellerOfferResult.data ?: emptyList()
+            loading = false
         }
 
         is NetworkResult.Error -> {
             Log.e("3636", "BestSellerOfferSection error : ${bestSellerOfferResult.message}")
+            loading = false
         }
 
-        is NetworkResult.Loading -> {}
+        is NetworkResult.Loading -> {
+            loading = true
+        }
     }
 
     var mostVisitedList by remember {
@@ -77,47 +86,51 @@ fun ProductOfferSection(
         is NetworkResult.Loading -> {}
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(MaterialTheme.spacing.small)
-    ) {
-
-        Text(
-            text = if (isMostVisited)
-                stringResource(R.string.most_visited_products)
-            else stringResource(R.string.best_selling_products),
-
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Start,
-            style = MaterialTheme.typography.h3,
-            fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
-        )
-
-        LazyHorizontalGrid(
-            rows = GridCells.Fixed(3),
+    if (loading) {
+        OurLoading()
+    } else {
+        Column(
             modifier = Modifier
-                .padding(top = MaterialTheme.spacing.medium)
-                .height(250.dp),
-            horizontalArrangement = Arrangement.spacedBy(4.dp),
-            verticalArrangement = Arrangement.spacedBy(4.dp)
+                .fillMaxSize()
+                .padding(MaterialTheme.spacing.small)
         ) {
-            if (isMostVisited) {
-                itemsIndexed(mostVisitedList){index, item ->
-                    ProductHorizontalCard(
-                        name = item.name,
-                        id = digitByLocate((index+1).toString()),
-                        imageUrl = item.image
-                    )
-                }
-            } else {
-                itemsIndexed(bestSellerOfferList) { index, item ->
-                    ProductHorizontalCard(
-                        name = item.name,
-                        id = digitByLocate((index + 1).toString()),
-                        imageUrl = item.image
-                    )
+
+            Text(
+                text = if (isMostVisited)
+                    stringResource(R.string.most_visited_products)
+                else stringResource(R.string.best_selling_products),
+
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.Start,
+                style = MaterialTheme.typography.h3,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colors.darkText,
+            )
+
+            LazyHorizontalGrid(
+                rows = GridCells.Fixed(3),
+                modifier = Modifier
+                    .padding(top = MaterialTheme.spacing.medium)
+                    .height(250.dp),
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                if (isMostVisited) {
+                    itemsIndexed(mostVisitedList) { index, item ->
+                        ProductHorizontalCard(
+                            name = item.name,
+                            id = digitByLocate((index + 1).toString()),
+                            imageUrl = item.image
+                        )
+                    }
+                } else {
+                    itemsIndexed(bestSellerOfferList) { index, item ->
+                        ProductHorizontalCard(
+                            name = item.name,
+                            id = digitByLocate((index + 1).toString()),
+                            imageUrl = item.image
+                        )
+                    }
                 }
             }
         }

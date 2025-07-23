@@ -119,6 +119,9 @@ fun MostDiscountedCard(item: StoreProduct) {
                             .padding(2.dp),
                         tint = MaterialTheme.colors.DarkCyan
                     )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
                     Text(
                         text = item.seller,
                         style = MaterialTheme.typography.extraSmall,

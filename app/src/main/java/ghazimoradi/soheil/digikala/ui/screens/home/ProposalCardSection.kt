@@ -13,6 +13,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.data.model.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
@@ -26,24 +27,40 @@ fun ProposalCardSection(
         mutableStateOf<List<Slider>>(emptyList())
     }
 
+    var loading by remember {
+        mutableStateOf(false)
+    }
+
     val bannersResult by viewModel.banners.collectAsState()
 
     when (bannersResult) {
-        is NetworkResult.Success -> { bannersList = bannersResult.data ?: emptyList() }
+        is NetworkResult.Success -> {
+            bannersList = bannersResult.data ?: emptyList()
+            loading = false
+        }
+
         is NetworkResult.Error -> {
             Log.e("3636", "Banners Section error : ${bannersResult.message}")
+            loading = false
         }
-        is NetworkResult.Loading -> {}
+
+        is NetworkResult.Loading -> {
+            loading = true
+        }
     }
 
-    FlowRow(
-        maxItemsInEachRow = 2,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(MaterialTheme.spacing.small)
-    ) {
-        for (item in bannersList) {
-            ProposalCardItem(item.image)
+    if (loading) {
+        OurLoading()
+    } else {
+        FlowRow(
+            maxItemsInEachRow = 2,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(MaterialTheme.spacing.small)
+        ) {
+            for (item in bannersList) {
+                ProposalCardItem(item.image)
+            }
         }
     }
 }

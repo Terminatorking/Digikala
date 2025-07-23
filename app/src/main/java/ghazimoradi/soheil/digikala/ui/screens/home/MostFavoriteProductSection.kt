@@ -12,14 +12,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
@@ -32,55 +33,70 @@ fun MostFavoriteProductSection(
         mutableStateOf<List<StoreProduct>>(emptyList())
     }
 
+    var loading by remember {
+        mutableStateOf(false)
+    }
+
     val mostFavoriteResult by viewModel.mostFavoriteItems.collectAsState()
 
     when (mostFavoriteResult) {
         is NetworkResult.Success -> {
             mostFavoriteList = mostFavoriteResult.data ?: emptyList()
+            loading = false
         }
+
         is NetworkResult.Error -> {
             Log.e("3636", "MostFavoriteProductSection error : ${mostFavoriteResult.message}")
+            loading = false
         }
-        is NetworkResult.Loading -> {}
+
+        is NetworkResult.Loading -> {
+            loading = true
+        }
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(MaterialTheme.spacing.small)
-    ) {
+    if (loading) {
+        OurLoading()
+    } else {
 
-        Row(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = MaterialTheme.spacing.extraSmall),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+                .fillMaxSize()
+                .padding(MaterialTheme.spacing.small)
         ) {
 
-            Text(
-                text = stringResource(id = R.string.favorite_product),
-                textAlign = TextAlign.Start,
-                style = MaterialTheme.typography.h3,
-                fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
-            )
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = MaterialTheme.spacing.extraSmall),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
-            Text(
-                text = stringResource(id = R.string.see_all),
-                textAlign = TextAlign.End,
-                style = MaterialTheme.typography.h6,
-                fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.DarkCyan,
-            )
-        }
+                Text(
+                    text = stringResource(id = R.string.favorite_product),
+                    textAlign = TextAlign.Start,
+                    style = MaterialTheme.typography.h3,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colors.darkText,
+                )
 
-        LazyRow {
-            items(mostFavoriteList) { item ->
-                MostFavoriteProductsOffer(navController , item)
+                Text(
+                    text = stringResource(id = R.string.see_all),
+                    textAlign = TextAlign.End,
+                    style = MaterialTheme.typography.h6,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colors.DarkCyan,
+                )
             }
-            item{
-                MostFavoriteProductsShowMore()
+
+            LazyRow {
+                items(mostFavoriteList) { item ->
+                    MostFavoriteProductsOffer(navController, item)
+                }
+                item {
+                    MostFavoriteProductsShowMore()
+                }
             }
         }
     }

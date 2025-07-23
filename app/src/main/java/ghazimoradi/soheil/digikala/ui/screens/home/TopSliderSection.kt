@@ -24,7 +24,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
@@ -72,7 +71,7 @@ fun TopSliderSection(viewModel: HomeViewModel = hiltViewModel()) {
     }
 
     if (loading) {
-        OurLoading(LocalWindowInfo.current.containerSize.height.dp, true)
+        OurLoading()
     } else {
 
         Column(

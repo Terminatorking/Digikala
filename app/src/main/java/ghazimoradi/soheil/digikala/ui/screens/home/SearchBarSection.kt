@@ -26,10 +26,7 @@ fun SearchBarSection() {
 
     Card(
         colors = CardDefaults.cardColors(Color.Transparent),
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(65.dp),
-
+        modifier = Modifier.fillMaxWidth().height(65.dp),
         ) {
         Box(
             modifier = Modifier
@@ -46,9 +43,7 @@ fun SearchBarSection() {
 @Composable
 private fun SearchContent() {
     Row(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(start = 20.dp),
+        modifier = Modifier.fillMaxSize().padding(start = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Start
     ) {

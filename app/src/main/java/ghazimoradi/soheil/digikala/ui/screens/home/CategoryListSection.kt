@@ -1,4 +1,5 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
+
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -19,6 +20,7 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -30,49 +32,63 @@ fun CategoryListSection(
         mutableStateOf<List<MainCategory>>(emptyList())
     }
 
+    var loading by remember {
+        mutableStateOf(false)
+    }
+
     val categoryResult by viewModel.categories.collectAsState()
 
     when (categoryResult) {
         is NetworkResult.Success -> {
             categoryList = categoryResult.data ?: emptyList()
+            loading = false
         }
+
         is NetworkResult.Error -> {
             Log.e("3636", "CategoryListSection error : ${categoryResult.message}")
+            loading = false
         }
-        is NetworkResult.Loading -> {}
+
+        is NetworkResult.Loading -> {
+            loading = true
+        }
     }
-    
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(MaterialTheme.spacing.small),
-    ) {
-        Text(
+
+    if (loading) {
+        OurLoading()
+    } else {
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = MaterialTheme.spacing.medium),
-            text = stringResource(id = R.string.category_title),
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.h2,
-            fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
-        )
-        FlowRow(
-            horizontalArrangement = Arrangement.SpaceAround,
-            maxItemsInEachRow = 3,
-            modifier = Modifier.fillMaxWidth()
+                .padding(MaterialTheme.spacing.small),
         ) {
-            for (item in categoryList) {
-                CircularCategoryItem(item)
+            Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = MaterialTheme.spacing.medium),
+                text = stringResource(id = R.string.category_title),
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.h2,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colors.darkText,
+            )
+            FlowRow(
+                horizontalArrangement = Arrangement.SpaceAround,
+                maxItemsInEachRow = 3,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                for (item in categoryList) {
+                    CircularCategoryItem(item)
+                }
             }
         }
     }
 }
 
 @Composable
-fun CircularCategoryItem(item:MainCategory){
+fun CircularCategoryItem(item: MainCategory) {
     Column(
-        modifier = Modifier.size(100.dp , 160.dp),
+        modifier = Modifier.size(100.dp, 160.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {

@@ -5,7 +5,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,13 +23,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
+import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
+import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
 @Composable
 fun MostFavoriteProductsOffer(
@@ -106,6 +109,9 @@ fun MostFavoriteProductsOffer(
                                 .padding(2.dp),
                             tint = MaterialTheme.colors.DarkCyan
                         )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
                         Text(
                             text = item.seller,
                             style = MaterialTheme.typography.extraSmall,
@@ -175,14 +181,14 @@ fun MostFavoriteProductsOffer(
                 }
             }
 
-            Divider(
-                Modifier
-                    .padding(start = MaterialTheme.spacing.semiMedium)
+            HorizontalDivider(
+                modifier = Modifier
                     .width(1.dp)
                     .height(320.dp)
+                    .background(Color.LightGray)
+                    .padding(start = MaterialTheme.spacing.semiMedium)
                     .alpha(0.4f),
-                color = Color.LightGray
-            )
+                )
         }
     }
 }

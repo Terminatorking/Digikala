@@ -28,6 +28,7 @@ fun CenterBannerSection(
         }
         is NetworkResult.Loading -> {}
     }
+
     if (centerBannerList.isNotEmpty()) {
         CenterBannerItem(imageUrl = centerBannerList[bannerNumber - 1].image)
     }
