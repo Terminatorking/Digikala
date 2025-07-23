@@ -1,6 +1,5 @@
 package ghazimoradi.soheil.digikala.viewmodel
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ghazimoradi.soheil.digikala.data.model.home.AmazingItem
@@ -16,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     val repository: HomeRepository
-) : ViewModel() {
+) : RemoteViewModel() {
 
     val slider = MutableStateFlow<NetworkResult<List<Slider>>>(NetworkResult.Loading())
     val amazingItems = MutableStateFlow<NetworkResult<List<AmazingItem>>>(NetworkResult.Loading())
@@ -34,7 +33,7 @@ class HomeViewModel @Inject constructor(
     val mostDiscountedItems =
         MutableStateFlow<NetworkResult<List<StoreProduct>>>(NetworkResult.Loading())
 
-    fun getAllDataFromServer() {
+    override fun getAllDataFromServer() {
         viewModelScope.launch {
 
             launch {

@@ -1,25 +1,73 @@
 package ghazimoradi.soheil.digikala.ui.screens.category
 
+import android.util.Log
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
+import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
+import ghazimoradi.soheil.digikala.viewmodel.CategoryViewModel
+import kotlinx.coroutines.launch
 
 @Composable
 fun CategoryScreen(navController: NavHostController) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Cyan),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
+    Category(navController = navController)
+}
+
+@Composable
+fun Category(
+    navController: NavHostController,
+    viewModel: CategoryViewModel = hiltViewModel()
+) {
+    LaunchedEffect(true) {
+        refreshDataFromServer(viewModel)
+    }
+
+    SwipeRefreshSection(viewModel, navController)
+}
+
+@Composable
+@Suppress("Deprecation")
+private fun SwipeRefreshSection(
+    viewModel: CategoryViewModel,
+    navController: NavHostController
+) {
+    val refreshScope = rememberCoroutineScope()
+    val swipeRefreshState = rememberSwipeRefreshState(isRefreshing = false)
+
+    SwipeRefresh(
+        state = swipeRefreshState,
+        onRefresh = {
+            refreshScope.launch {
+                refreshDataFromServer(viewModel)
+                Log.e("3636", "swipeRefresh")
+            }
+        },
     ) {
-        Text("CategoryScreen")
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colors.mainBg)
+                .padding(bottom = 60.dp)
+        ) {
+            item {
+                SearchBarSection()
+            }
+            item {
+                SubCategorySection(navController)
+            }
+        }
     }
 }

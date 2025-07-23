@@ -17,7 +17,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
-import ghazimoradi.soheil.digikala.ui.theme.Black
+import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.util.LocaleUtils
@@ -111,8 +112,4 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
             }
         }
     }
-}
-
-private fun refreshDataFromServer(viewModel: HomeViewModel) {
-    viewModel.getAllDataFromServer()
 }

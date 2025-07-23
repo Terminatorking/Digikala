@@ -46,6 +46,7 @@ import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
@@ -59,7 +60,7 @@ fun AmazingItem(
     navController: NavController
 ) {
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.mainBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
             .width(170.dp)

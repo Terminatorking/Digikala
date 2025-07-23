@@ -1,6 +1,5 @@
 package ghazimoradi.soheil.digikala.viewmodel
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -10,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import ghazimoradi.soheil.digikala.data.model.category.SubCategory
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.data.source.ProductByCategoryDataSource
+import ghazimoradi.soheil.digikala.data.paging_source.ProductByCategoryDataSource
 import ghazimoradi.soheil.digikala.repository.CategoryRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,14 +20,14 @@ import javax.inject.Inject
 @HiltViewModel
 class CategoryViewModel @Inject constructor(
     private val repository: CategoryRepository
-) : ViewModel() {
+) : RemoteViewModel() {
 
     val subCategory = MutableStateFlow<NetworkResult<SubCategory>>(NetworkResult.Loading())
 
     var productByCategoryList: Flow<PagingData<StoreProduct>> =
         flow { emit(PagingData.Companion.empty()) }
 
-    fun getAllDataFromServer() {
+    override fun getAllDataFromServer() {
         viewModelScope.launch {
 
             launch {
