@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +28,7 @@ import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
+import ghazimoradi.soheil.digikala.util.Constants.PERSIAN_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 
 @Composable
@@ -80,7 +82,11 @@ fun AmazingOfferCard(
                 fontWeight = FontWeight.SemiBold
             )
 
-            IconWithRotate(Icons.AutoMirrored.Filled.KeyboardArrowRight)
+            IconWithRotate(
+                if (USER_LANGUAGE == PERSIAN_LANG)
+                    Icons.AutoMirrored.Filled.KeyboardArrowRight
+                else Icons.AutoMirrored.Filled.KeyboardArrowLeft
+            )
         }
     }
 }

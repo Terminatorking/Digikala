@@ -40,14 +40,12 @@ import ghazimoradi.soheil.digikala.data.model.home.AmazingItem
 import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
-import ghazimoradi.soheil.digikala.ui.theme.LightGray
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
-import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
@@ -146,10 +144,12 @@ fun AmazingItem(
                     )
                     Spacer(modifier = Modifier.width(5.dp))
                     Text(
+                        maxLines = 1,
                         text = item.seller,
                         style = MaterialTheme.typography.extraSmall,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colors.semiDarkText,
+                        overflow = TextOverflow.Ellipsis
                     )
                 }
 

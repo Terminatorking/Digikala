@@ -1,7 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 
 @Composable
 fun MostFavoriteProductsShowMore() {
@@ -28,11 +28,9 @@ fun MostFavoriteProductsShowMore() {
         verticalArrangement = Arrangement.Center,
     ) {
 
-        Icon(
+        IconWithRotate(
             painter = painterResource(id = R.drawable.show_more),
-            contentDescription = "",
             tint = MaterialTheme.colors.DarkCyan,
-            modifier = Modifier.size(40.dp, 40.dp)
         )
 
         Spacer(modifier = Modifier.height(20.dp))

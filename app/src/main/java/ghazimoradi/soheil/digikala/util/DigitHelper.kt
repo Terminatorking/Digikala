@@ -26,7 +26,7 @@ object DigitHelper {
         return result
     }
 
-    fun digitBySeparator(price: String): String {
+    private fun digitBySeparator(price: String): String {
         return DecimalFormat("###,###").format(Integer.valueOf(price))
     }
 

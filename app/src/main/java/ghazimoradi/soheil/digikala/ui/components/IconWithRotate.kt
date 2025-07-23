@@ -21,10 +21,7 @@ fun IconWithRotate(imageVector: ImageVector) {
             imageVector = imageVector,
             contentDescription = "",
             tint = White,
-            modifier = Modifier
-                .graphicsLayer(
-                    rotationZ = 180f
-                )
+            modifier = Modifier.graphicsLayer(rotationZ = 180f)
         )
     } else {
         Icon(
@@ -43,11 +40,7 @@ fun IconWithRotate(painter: Painter, tint: Color) {
             painter = painter,
             contentDescription = "",
             tint = tint,
-            modifier = Modifier
-                .graphicsLayer(
-                    rotationZ = 180f
-                )
-                .size(40.dp, 40.dp)
+            modifier = Modifier.graphicsLayer(rotationZ = 180f).size(40.dp, 40.dp)
         )
     } else {
         Icon(

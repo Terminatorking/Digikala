@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -32,7 +33,7 @@ fun AmazingShowMoreItem() {
         colors = CardDefaults.cardColors(MaterialTheme.colors.mainBg),
         elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
-            .size(170.dp, height = 365.dp)
+            .size(170.dp, height = 363.dp)
             .padding(
                 end = MaterialTheme.spacing.medium,
                 start = MaterialTheme.spacing.semiSmall,

@@ -67,7 +67,7 @@ fun MostFavoriteProductSection(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = MaterialTheme.spacing.extraSmall),
+                    .padding(bottom = MaterialTheme.spacing.extraSmall, end = MaterialTheme.spacing.small, start = MaterialTheme.spacing.small),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
