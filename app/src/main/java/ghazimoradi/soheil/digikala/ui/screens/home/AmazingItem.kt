@@ -3,7 +3,19 @@ package ghazimoradi.soheil.digikala.ui.screens.home
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Card
@@ -13,7 +25,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -26,7 +37,19 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.AmazingItem
-import ghazimoradi.soheil.digikala.ui.theme.*
+import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
+import ghazimoradi.soheil.digikala.ui.theme.LightGray
+import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.extraSmall
+import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
+import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
+import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
+import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
@@ -38,7 +61,7 @@ fun AmazingItem(
     navController: NavController
 ) {
     Card(
-        colors = CardDefaults.cardColors(White),
+        colors = CardDefaults.cardColors(MaterialTheme.colors.mainBg),
         elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
             .width(170.dp)
@@ -163,6 +186,7 @@ fun AmazingItem(
 
                         Row {
                             Text(
+                                color = MaterialTheme.colors.darkText,
                                 text = digitByLocateAndSeparator(
                                     applyDiscount(
                                         item.price,
@@ -174,6 +198,7 @@ fun AmazingItem(
                             )
 
                             Icon(
+                                tint = MaterialTheme.colors.icon,
                                 painter = currencyLogoChangeByLanguage(),
                                 contentDescription = "",
                                 modifier = Modifier
@@ -184,7 +209,7 @@ fun AmazingItem(
 
                         Text(
                             text = digitByLocateAndSeparator(item.price.toString()),
-                            color = Color.LightGray,
+                            color = MaterialTheme.colors.darkText,
                             style = MaterialTheme.typography.body2,
                             textDecoration = TextDecoration.LineThrough
                         )

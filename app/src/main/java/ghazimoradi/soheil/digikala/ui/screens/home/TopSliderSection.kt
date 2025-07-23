@@ -21,7 +21,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -35,8 +34,7 @@ import com.google.accompanist.pager.rememberPagerState
 import ghazimoradi.soheil.digikala.data.model.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.OurLoading
-import ghazimoradi.soheil.digikala.ui.theme.LocalShape
-import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
+import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import kotlinx.coroutines.delay
 
@@ -131,8 +129,8 @@ fun TopSliderSection(viewModel: HomeViewModel = hiltViewModel()) {
                         modifier = Modifier
                             .align(Alignment.BottomEnd)
                             .padding(LocalSpacing.current.semiLarge),
-                        activeColor = Color.Black,
-                        inactiveColor = Color.LightGray,
+                        activeColor = Black,
+                        inactiveColor = LightGray,
                         indicatorWidth = LocalSpacing.current.small,
                         indicatorHeight = LocalSpacing.current.small,
                         indicatorShape = CircleShape

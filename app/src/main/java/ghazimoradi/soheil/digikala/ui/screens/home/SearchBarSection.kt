@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -25,9 +24,11 @@ import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 fun SearchBarSection() {
 
     Card(
-        colors = CardDefaults.cardColors(Color.Transparent),
-        modifier = Modifier.fillMaxWidth().height(65.dp),
-        ) {
+        colors = CardDefaults.cardColors(Transparent),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(65.dp),
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -43,12 +44,15 @@ fun SearchBarSection() {
 @Composable
 private fun SearchContent() {
     Row(
-        modifier = Modifier.fillMaxSize().padding(start = 20.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(start = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Start
     ) {
 
         Icon(
+            tint = MaterialTheme.colors.icon,
             modifier = Modifier
                 .height(24.dp),
             painter = painterResource(id = R.drawable.search),
@@ -59,7 +63,7 @@ private fun SearchContent() {
             modifier = Modifier
                 .padding(start = 20.dp),
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.unSelectedBottomBar,
+            color = MaterialTheme.colors.darkText,
             style = MaterialTheme.typography.h2,
             fontWeight = FontWeight.Normal,
             text = stringResource(id = R.string.search_in)

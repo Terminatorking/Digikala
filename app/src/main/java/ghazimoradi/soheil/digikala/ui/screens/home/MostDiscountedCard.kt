@@ -24,7 +24,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -40,6 +39,9 @@ import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
+import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
@@ -51,9 +53,9 @@ import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 fun MostDiscountedCard(item: StoreProduct) {
 
     Card(
-        colors = CardDefaults.cardColors(White),
-        modifier = Modifier.
-        fillMaxWidth(0.5f)
+        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+        modifier = Modifier
+            .fillMaxWidth(0.5f)
             .padding(horizontal = 10.dp, vertical = 5.dp),
         elevation = CardDefaults.cardElevation(1.dp),
     ) {
@@ -163,6 +165,7 @@ fun MostDiscountedCard(item: StoreProduct) {
 
                         Row {
                             Text(
+                                color = MaterialTheme.colors.darkText,
                                 text = digitByLocateAndSeparator(
                                     applyDiscount(
                                         item.price,
@@ -174,6 +177,7 @@ fun MostDiscountedCard(item: StoreProduct) {
                             )
 
                             Icon(
+                                tint = MaterialTheme.colors.icon,
                                 painter = currencyLogoChangeByLanguage(),
                                 contentDescription = "",
                                 modifier = Modifier
@@ -184,7 +188,7 @@ fun MostDiscountedCard(item: StoreProduct) {
 
                         Text(
                             text = digitByLocateAndSeparator(item.price.toString()),
-                            color = Color.LightGray,
+                            color = MaterialTheme.colors.darkText,
                             style = MaterialTheme.typography.body2,
                             textDecoration = TextDecoration.LineThrough
                         )

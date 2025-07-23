@@ -1,6 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,6 +19,7 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

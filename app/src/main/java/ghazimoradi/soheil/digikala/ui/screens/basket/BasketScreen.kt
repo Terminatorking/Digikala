@@ -11,10 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
+import ghazimoradi.soheil.digikala.ui.theme.*
 
 @Composable
 fun BasketScreen(navController: NavHostController) {
@@ -30,7 +29,7 @@ fun BasketLight() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.LightGray),
+            .background(LightGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
@@ -43,7 +42,7 @@ fun BasketDark() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.DarkGray),
+            .background(DarkGray),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {

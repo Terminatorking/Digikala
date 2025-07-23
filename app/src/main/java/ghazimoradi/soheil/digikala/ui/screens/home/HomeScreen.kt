@@ -1,9 +1,11 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
@@ -15,6 +17,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
+import ghazimoradi.soheil.digikala.ui.theme.Black
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.util.LocaleUtils
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
@@ -53,7 +57,9 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
         }
     ) {
         LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(bottom = 60.dp)
+            modifier = Modifier.fillMaxSize()
+                .background(MaterialTheme.colors.mainBg)
+                .padding(bottom = 60.dp)
         ) {
             item {
                 SearchBarSection()

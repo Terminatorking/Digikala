@@ -21,15 +21,15 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
-import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
 fun AmazingShowMoreItem() {
     Card(
-        colors = CardDefaults.cardColors(White),
+        colors = CardDefaults.cardColors(MaterialTheme.colors.mainBg),
         elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
             .size(170.dp, height = 365.dp)

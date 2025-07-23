@@ -18,13 +18,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.LocalShape
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
 @Composable
 fun RoundedIconBox(
     title: String,
     image: Painter,
-    bgColor: Color = Color.Transparent,
+    bgColor: Color = Transparent,
     onClick: () -> Unit
 ) {
 

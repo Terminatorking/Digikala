@@ -153,6 +153,7 @@ fun MostFavoriteProductsOffer(
 
                             Row {
                                 Text(
+                                    color = MaterialTheme.colors.darkText,
                                     text = digitByLocateAndSeparator(
                                         applyDiscount(item.price, item.discountPercent)
                                             .toString()
@@ -162,6 +163,7 @@ fun MostFavoriteProductsOffer(
                                 )
 
                                 Icon(
+                                    tint = MaterialTheme.colors.icon,
                                     painter = currencyLogoChangeByLanguage(),
                                     contentDescription = "",
                                     modifier = Modifier
@@ -172,7 +174,7 @@ fun MostFavoriteProductsOffer(
 
                             Text(
                                 text = digitByLocateAndSeparator(item.price.toString()),
-                                color = Color.LightGray,
+                                color = MaterialTheme.colors.darkText,
                                 style = MaterialTheme.typography.body2,
                                 textDecoration = TextDecoration.LineThrough
                             )
@@ -180,15 +182,14 @@ fun MostFavoriteProductsOffer(
                     }
                 }
             }
-
+            Spacer(modifier = Modifier.width(12.dp))
             HorizontalDivider(
                 modifier = Modifier
                     .width(1.dp)
                     .height(320.dp)
-                    .background(Color.LightGray)
-                    .padding(start = MaterialTheme.spacing.semiMedium)
+                    .background(MaterialTheme.colors.divider)
                     .alpha(0.4f),
-                )
+            )
         }
     }
 }

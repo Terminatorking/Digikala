@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -21,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.bottomBar
 import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
 import ghazimoradi.soheil.digikala.ui.theme.unSelectedBottomBar
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
@@ -66,7 +66,7 @@ fun BottomNavigationBar(
     if (showBottomBar) {
         BottomNavigation(
             modifier = Modifier,
-            backgroundColor = Color.White,
+            backgroundColor = MaterialTheme.colors.bottomBar,
             elevation = 5.dp
         ) {
             items.forEachIndexed { index, bottomNavItem ->
@@ -74,30 +74,39 @@ fun BottomNavigationBar(
                 BottomNavigationItem(
                     selected = selected,
                     onClick = { onItemClick.invoke(bottomNavItem) },
-                    selectedContentColor = MaterialTheme.colors.selectedBottomBar,
-                    unselectedContentColor = MaterialTheme.colors.unSelectedBottomBar,
                     icon = {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             if (selected) {
                                 Icon(
+                                    tint = MaterialTheme.colors.selectedBottomBar,
                                     modifier = Modifier.height(24.dp),
                                     painter = bottomNavItem.selectedIcon,
                                     contentDescription = bottomNavItem.name
                                 )
+                                Text(
+                                    color = MaterialTheme.colors.selectedBottomBar,
+                                    modifier = Modifier.padding(top = 5.dp),
+                                    text = bottomNavItem.name,
+                                    textAlign = TextAlign.Center,
+                                    style = MaterialTheme.typography.h6,
+                                    fontWeight = FontWeight.Bold,
+                                )
                             } else {
                                 Icon(
+                                    tint = MaterialTheme.colors.unSelectedBottomBar,
                                     modifier = Modifier.height(24.dp),
                                     painter = bottomNavItem.deSelectedIcon,
                                     contentDescription = bottomNavItem.name
                                 )
+                                Text(
+                                    color = MaterialTheme.colors.selectedBottomBar,
+                                    modifier = Modifier.padding(top = 5.dp),
+                                    text = bottomNavItem.name,
+                                    textAlign = TextAlign.Center,
+                                    style = MaterialTheme.typography.h6,
+                                    fontWeight = FontWeight.Bold,
+                                )
                             }
-                            Text(
-                                modifier = Modifier.padding(top = 5.dp),
-                                text = bottomNavItem.name,
-                                textAlign = TextAlign.Center,
-                                style = MaterialTheme.typography.h6,
-                                fontWeight = FontWeight.Bold,
-                            )
                         }
                     }
                 )
