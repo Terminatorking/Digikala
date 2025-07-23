@@ -25,5 +25,4 @@ interface CheckoutApiInterface {
     suspend fun confirmPurchase(
         @Body confirmPurchase: ConfirmPurchase
     ): Response<ResponseResult<String>>
-
 }

@@ -18,17 +18,13 @@ interface ProfileApiInterface {
         @Body login : LoginRequest
     ) : Response<ResponseResult<LoginResponse>>
 
-
     @POST("v1/setUserName")
     suspend fun setUserName(
         @Body setUserName : SetUserNameRequest
     ) : Response<ResponseResult<String>>
 
-
-
     @GET("v1/getUserOrders")
     suspend fun getUserOrders(
         @Query("token") token: String
     ): Response<ResponseResult<List<OrderFullDetail>>>
-
 }

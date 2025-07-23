@@ -18,5 +18,4 @@ interface ProductDetailApiInterface {
     suspend fun getSimilarProducts(
         @Query("categoryId") categoryId: String
     ): Response<ResponseResult<List<StoreProduct>>>
-
 }

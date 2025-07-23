@@ -29,5 +29,4 @@ interface CommentApiInterface {
         @Query("pageSize") pageSize: String,
         @Query("pageNumber") pageNumber: String,
     ): Response<ResponseResult<List<Comment>>>
-
 }

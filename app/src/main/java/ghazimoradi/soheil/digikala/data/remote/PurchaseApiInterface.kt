@@ -15,10 +15,8 @@ interface PurchaseApiInterface {
         @Body paymentRequest: PaymentRequest
     ) : Response<PaymentResponse>
 
-
     @POST("verify.json")
     suspend fun verifyPurchase(
         @Body paymentVerificationRequest: PaymentVerificationRequest
     ) : Response<PaymentVerificationResponse>
-
 }
