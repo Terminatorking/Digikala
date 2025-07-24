@@ -14,6 +14,8 @@ val Black = Color.Black
 val LightGray = Color.LightGray
 val DarkGray = Color.DarkGray
 val Transparent = Color.Transparent
+val Red = Color.Red
+val Gray = Color.Gray
 
 val Colors.divider: Color
     @Composable
@@ -85,7 +87,7 @@ val Colors.DigiKalaDarkRed: Color
 
 val Colors.DigiKalaRed: Color
     @Composable
-    get() = Color(0xFFed1b34)
+    get() = Imperial_Red
 
 val Colors.semiDarkText: Color
     @Composable

@@ -1,63 +1,92 @@
 package ghazimoradi.soheil.digikala.ui.screens.basket
 
-import android.content.res.Configuration
 import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.ui.theme.*
+import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.Gray
+import ghazimoradi.soheil.digikala.ui.theme.Red
+import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 
 @Composable
 fun BasketScreen(navController: NavHostController) {
-    if (isSystemInDarkTheme()) {
-        BasketDark()
-    } else {
-        BasketLight()
+    Basket(navController = navController)
+}
+
+@Composable
+fun Basket(
+    navController: NavHostController,
+    viewModel: BasketViewModel = hiltViewModel()
+) {
+
+    var selectedTabIndex by remember {
+        mutableIntStateOf(0)
     }
-}
 
-@Composable
-fun BasketLight() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(LightGray),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-    ) {
-        Text("BasketScreen", color = MaterialTheme.colors.selectedBottomBar)
+    val tabTitles = listOf(
+        stringResource(id = R.string.cart),
+        stringResource(id = R.string.next_cart_list)
+    )
+
+    Column {
+        TabRow(
+            indicator = { line ->
+                Box(
+                    modifier = Modifier
+                        .tabIndicatorOffset(line[selectedTabIndex])
+                        .height(3.dp)
+                        .background(Red)
+                )
+            },
+            contentColor = MaterialTheme.colors.DigiKalaRed,
+            selectedTabIndex = selectedTabIndex,
+            modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium),
+        ) {
+            tabTitles.forEachIndexed { index, title ->
+                Tab(
+                    selected = selectedTabIndex == index,
+                    onClick = {
+                        selectedTabIndex = index
+                    },
+                    selectedContentColor = MaterialTheme.colors.DigiKalaRed,
+                    unselectedContentColor = Gray,
+                    text = {
+                        Row {
+                            Text(
+                                text = title,
+                                style = MaterialTheme.typography.h6,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                        }
+                    }
+                )
+            }
+        }
+
+        when (selectedTabIndex) {
+            0 -> ShoppingCart(navController)
+            1 -> NextShoppingList(navController)
+        }
     }
-}
-
-@Composable
-fun BasketDark() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(DarkGray),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-    ) {
-        Text("BasketScreen", color = MaterialTheme.colors.selectedBottomBar)
-    }
-}
-
-@Composable
-@Preview
-fun BasketLightPreview() {
-    BasketLight()
-}
-
-@Composable
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-fun BasketDarkPreview() {
-    BasketDark()
 }
