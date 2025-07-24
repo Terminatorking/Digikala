@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.White
@@ -181,7 +182,10 @@ fun MostDiscountedCard(item: StoreProduct) {
 
                             Icon(
                                 tint = MaterialTheme.colors.icon,
-                                painter = currencyLogoChangeByLanguage(),
+                                painter = logoChangeByLanguage(
+                                    enLogo = R.drawable.dollar,
+                                    faLogo = R.drawable.toman
+                                ),
                                 contentDescription = "",
                                 modifier = Modifier
                                     .size(MaterialTheme.spacing.semiLarge)
@@ -199,14 +203,5 @@ fun MostDiscountedCard(item: StoreProduct) {
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun currencyLogoChangeByLanguage(): Painter {
-    return if (USER_LANGUAGE == ENGLISH_LANG) {
-        painterResource(id = R.drawable.dollar)
-    } else {
-        painterResource(id = R.drawable.toman)
     }
 }

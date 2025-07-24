@@ -184,8 +184,8 @@ fun HorizontalProductCard(
                             )
                         }
                         Text(
-                            text = DigitHelper.digitBySeparator(
-                                DigitHelper.digitByLocate(
+                            text = digitBySeparator(
+                                digitByLocate(
                                     item.price.toString()
                                 )
                             ),

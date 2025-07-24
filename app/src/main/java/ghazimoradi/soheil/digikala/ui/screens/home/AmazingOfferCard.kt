@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
@@ -51,7 +52,12 @@ fun AmazingOfferCard(
         Spacer(modifier = Modifier.height(60.dp))
 
         Image(
-            painter = amazingLogoChangeByLanguage(isSuperMarketAmazing),
+            painter = logoChangeByLanguage(
+                enLogo = R.drawable.amazing_en,
+                faLogo = if (isSuperMarketAmazing)
+                    R.drawable.supermarketamazings
+                else R.drawable.amazings
+            ),
             contentDescription = "",
             modifier = Modifier
                 .fillMaxWidth()
@@ -87,19 +93,6 @@ fun AmazingOfferCard(
                     Icons.AutoMirrored.Filled.KeyboardArrowRight
                 else Icons.AutoMirrored.Filled.KeyboardArrowLeft
             )
-        }
-    }
-}
-
-@Composable
-private fun amazingLogoChangeByLanguage(isSuperMarketAmazing: Boolean): Painter {
-    return if (USER_LANGUAGE == ENGLISH_LANG) {
-        painterResource(id = R.drawable.amazing_en)
-    } else {
-        if (isSuperMarketAmazing) {
-            painterResource(id = R.drawable.supermarketamazings)
-        } else {
-            painterResource(id = R.drawable.amazings)
         }
     }
 }

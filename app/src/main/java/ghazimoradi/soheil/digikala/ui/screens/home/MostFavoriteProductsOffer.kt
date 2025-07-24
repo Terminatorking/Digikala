@@ -24,6 +24,7 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
@@ -163,7 +164,10 @@ fun MostFavoriteProductsOffer(
 
                                 Icon(
                                     tint = MaterialTheme.colors.icon,
-                                    painter = currencyLogoChangeByLanguage(),
+                                    painter = logoChangeByLanguage(
+                                        enLogo = R.drawable.dollar,
+                                        faLogo = R.drawable.toman
+                                    ),
                                     contentDescription = "",
                                     modifier = Modifier
                                         .size(MaterialTheme.spacing.semiLarge)
@@ -190,14 +194,5 @@ fun MostFavoriteProductsOffer(
                     .alpha(0.4f),
             )
         }
-    }
-}
-
-@Composable
-private fun currencyLogoChangeByLanguage(): Painter {
-    return if (USER_LANGUAGE == ENGLISH_LANG) {
-        painterResource(id = R.drawable.dollar)
-    } else {
-        painterResource(id = R.drawable.toman)
     }
 }

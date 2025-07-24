@@ -37,6 +37,7 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.AmazingItem
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
@@ -200,7 +201,10 @@ fun AmazingItem(
 
                             Icon(
                                 tint = MaterialTheme.colors.icon,
-                                painter = currencyLogoChangeByLanguage(),
+                                painter = logoChangeByLanguage(
+                                    enLogo = R.drawable.dollar,
+                                    faLogo = R.drawable.toman
+                                ),
                                 contentDescription = "",
                                 modifier = Modifier
                                     .size(MaterialTheme.spacing.semiLarge)
@@ -218,14 +222,5 @@ fun AmazingItem(
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun currencyLogoChangeByLanguage(): Painter {
-    return if (USER_LANGUAGE == ENGLISH_LANG) {
-        painterResource(id = R.drawable.dollar)
-    } else {
-        painterResource(id = R.drawable.toman)
     }
 }

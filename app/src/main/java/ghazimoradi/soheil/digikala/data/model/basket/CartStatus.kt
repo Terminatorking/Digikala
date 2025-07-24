@@ -1,6 +1,3 @@
 package ghazimoradi.soheil.digikala.data.model.basket
 
-enum class CartStatus {
-    CURRENT_CART,
-    NEXT_CART
-}
+enum class CartStatus { CURRENT_CART, NEXT_CART }

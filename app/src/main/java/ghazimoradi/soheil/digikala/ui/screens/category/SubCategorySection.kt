@@ -64,18 +64,18 @@ fun SubCategorySection(
     when (subCategoryResult) {
         is NetworkResult.Success -> {
 
-            subCategoryResult.data?.let {
-                toolList = it.tool
-                digitalList = it.digital
-                mobileList = it.mobile
-                supermarketList = it.supermarket
-                fashionList = it.fashion
-                nativeList = it.native
-                toyList = it.toy
-                beautyList = it.beauty
-                homeList = it.home
-                bookList = it.book
-                sportList = it.sport
+            subCategoryResult.data?.let { subCategory ->
+                toolList = subCategory.tool
+                digitalList = subCategory.digital
+                mobileList = subCategory.mobile
+                supermarketList = subCategory.supermarket
+                fashionList = subCategory.fashion
+                nativeList = subCategory.native
+                toyList = subCategory.toy
+                beautyList = subCategory.beauty
+                homeList = subCategory.home
+                bookList = subCategory.book
+                sportList = subCategory.sport
             }
             loading = false
         }
