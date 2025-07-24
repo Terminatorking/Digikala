@@ -88,7 +88,7 @@ fun SuggestListSection(
         ) {
 
             for (item in suggestedList) {
-                SuggestionItemCard(item, navController) { storeProduct->
+                SuggestionItemCard(item, navController) { storeProduct ->
                     viewModel.insertCartItem(
                         CartItem(
                             storeProduct._id,
