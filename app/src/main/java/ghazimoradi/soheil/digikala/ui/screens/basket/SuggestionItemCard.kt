@@ -1,29 +1,24 @@
-package ghazimoradi.soheil.digikala.ui.screens.home
+package ghazimoradi.soheil.digikala.ui.screens.basket
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -31,27 +26,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
-import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
-import ghazimoradi.soheil.digikala.ui.theme.White
-import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.ui.theme.extraSmall
-import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.mainBg
-import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
-import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
-import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
+import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
-import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
+import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
+import ghazimoradi.soheil.digikala.util.DigitHelper
+import ghazimoradi.soheil.digikala.R
 
 @Composable
-fun MostDiscountedCard(item: StoreProduct) {
-
+fun SuggestionItemCard(
+    item: StoreProduct,
+    navController: NavController,
+    onAddClick: (StoreProduct) -> Unit
+) {
     Card(
         colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         modifier = Modifier
@@ -59,7 +48,8 @@ fun MostDiscountedCard(item: StoreProduct) {
             .padding(
                 horizontal = MaterialTheme.spacing.biggerSmall,
                 vertical = MaterialTheme.spacing.semiSmall
-            ),
+            )
+            .clickable {},
         elevation = CardDefaults.cardElevation(1.dp),
     ) {
 
@@ -75,14 +65,44 @@ fun MostDiscountedCard(item: StoreProduct) {
                     .padding(vertical = MaterialTheme.spacing.extraSmall)
             ) {
 
-                Image(
-                    painter = rememberAsyncImagePainter(item.image),
-                    contentDescription = "",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(130.dp),
-                    contentScale = ContentScale.Fit
-                )
+                Box {
+                    Image(
+                        painter = rememberAsyncImagePainter(item.image),
+                        contentDescription = "",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(130.dp),
+                        contentScale = ContentScale.Fit
+                    )
+
+                    Column(
+                        modifier = Modifier
+                            .align(Alignment.BottomStart)
+                            .fillMaxWidth()
+                            .padding(MaterialTheme.spacing.small),
+
+                        horizontalAlignment = Alignment.Start,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+
+                        Surface(
+                            modifier = Modifier
+                                .padding(MaterialTheme.spacing.extraSmall)
+                                .size(26.dp)
+                                .clip(CircleShape)
+                                .border(1.dp, MaterialTheme.colors.DigiKalaRed, CircleShape)
+                                .clickable {
+                                    onAddClick(item)
+                                }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Add,
+                                contentDescription = "",
+                                tint = MaterialTheme.colors.DigiKalaRed
+                            )
+                        }
+                    }
+                }
             }
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -124,9 +144,7 @@ fun MostDiscountedCard(item: StoreProduct) {
                             .padding(2.dp),
                         tint = MaterialTheme.colors.DarkCyan
                     )
-
                     Spacer(modifier = Modifier.width(5.dp))
-
                     Text(
                         text = item.seller,
                         style = MaterialTheme.typography.extraSmall,
@@ -157,8 +175,8 @@ fun MostDiscountedCard(item: StoreProduct) {
                             .wrapContentHeight(Alignment.CenterVertically)
                     ) {
                         Text(
-                            text = "${digitByLocateAndSeparator(item.discountPercent.toString())}%",
-                            color = White,
+                            text = "${DigitHelper.digitByLocateAndSeparator(item.discountPercent.toString())}%",
+                            color = MaterialTheme.colors.darkText,
                             style = MaterialTheme.typography.h6,
                             fontWeight = FontWeight.Bold,
                         )
@@ -169,11 +187,9 @@ fun MostDiscountedCard(item: StoreProduct) {
                         Row {
                             Text(
                                 color = MaterialTheme.colors.darkText,
-                                text = digitByLocateAndSeparator(
-                                    applyDiscount(
-                                        item.price,
-                                        item.discountPercent
-                                    ).toString()
+                                text = DigitHelper.digitByLocateAndSeparator(
+                                    DigitHelper.applyDiscount(item.price, item.discountPercent)
+                                        .toString()
                                 ),
                                 style = MaterialTheme.typography.body2,
                                 fontWeight = FontWeight.SemiBold,
@@ -190,7 +206,7 @@ fun MostDiscountedCard(item: StoreProduct) {
                         }
 
                         Text(
-                            text = digitByLocateAndSeparator(item.price.toString()),
+                            text = DigitHelper.digitByLocateAndSeparator(item.price.toString()),
                             color = MaterialTheme.colors.darkText,
                             style = MaterialTheme.typography.body2,
                             textDecoration = TextDecoration.LineThrough

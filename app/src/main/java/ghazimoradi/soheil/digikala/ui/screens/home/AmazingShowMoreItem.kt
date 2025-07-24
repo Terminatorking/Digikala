@@ -25,12 +25,13 @@ import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
 fun AmazingShowMoreItem() {
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.mainBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
             .size(170.dp, height = 363.dp)

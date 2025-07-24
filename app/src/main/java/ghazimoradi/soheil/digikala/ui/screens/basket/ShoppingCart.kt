@@ -34,6 +34,9 @@ fun ShoppingCart(
             item {
                 EmptyBasketShopping()
             }
+            item {
+                SuggestListSection(navController = navController)
+            }
         }
     }
 }
