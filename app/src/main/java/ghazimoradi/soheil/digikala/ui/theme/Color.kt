@@ -15,9 +15,8 @@ val LightGray = Color.LightGray
 val DarkGray = Color.DarkGray
 val Transparent = Color.Transparent
 val Red = Color.Red
-val Gray = Color.Gray
 
-val Colors.divider: Color
+val Colors.gray: Color
     @Composable
     get() = if (isLight) DarkGray else LightGray
 

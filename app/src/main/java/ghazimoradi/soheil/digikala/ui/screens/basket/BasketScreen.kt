@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -24,8 +25,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
-import ghazimoradi.soheil.digikala.ui.theme.Gray
 import ghazimoradi.soheil.digikala.ui.theme.Red
+import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 
@@ -49,7 +52,11 @@ fun Basket(
         stringResource(id = R.string.next_cart_list)
     )
 
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.mainBg)
+    ) {
         TabRow(
             indicator = { line ->
                 Box(
@@ -59,18 +66,18 @@ fun Basket(
                         .background(Red)
                 )
             },
-            contentColor = MaterialTheme.colors.DigiKalaRed,
             selectedTabIndex = selectedTabIndex,
             modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium),
         ) {
             tabTitles.forEachIndexed { index, title ->
                 Tab(
+                    modifier = Modifier.background(MaterialTheme.colors.searchBarBg),
                     selected = selectedTabIndex == index,
                     onClick = {
                         selectedTabIndex = index
                     },
                     selectedContentColor = MaterialTheme.colors.DigiKalaRed,
-                    unselectedContentColor = Gray,
+                    unselectedContentColor =  MaterialTheme.colors.gray,
                     text = {
                         Row {
                             Text(

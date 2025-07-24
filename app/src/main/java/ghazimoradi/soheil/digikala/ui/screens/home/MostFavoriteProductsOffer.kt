@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -187,7 +186,7 @@ fun MostFavoriteProductsOffer(
                 modifier = Modifier
                     .width(1.dp)
                     .height(320.dp)
-                    .background(MaterialTheme.colors.divider)
+                    .background(MaterialTheme.colors.gray)
                     .alpha(0.4f),
             )
         }
