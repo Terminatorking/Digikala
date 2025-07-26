@@ -16,7 +16,6 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
 
 @Composable
@@ -29,26 +28,18 @@ fun AmazingOfferSection(
         mutableStateOf<List<AmazingItem>>(emptyList())
     }
 
-    var loading by remember {
-        mutableStateOf(false)
-    }
-
     val amazingItemResult by viewModel.amazingItems.collectAsState()
 
     when (amazingItemResult) {
         is NetworkResult.Success -> {
             amazingItemList = amazingItemResult.data ?: emptyList()
-            loading = false
         }
 
         is NetworkResult.Error -> {
             Log.e("3636", "AmazingOfferSection error : ${amazingItemResult.message}")
-            loading = false
         }
 
-        is NetworkResult.Loading -> {
-            loading = true
-        }
+        is NetworkResult.Loading -> {}
     }
 
     var superMarketItemList by remember {
@@ -69,45 +60,41 @@ fun AmazingOfferSection(
         is NetworkResult.Loading -> {}
     }
 
-    if (loading) {
-        OurLoading()
-    } else {
-        Column(
-            modifier = Modifier.fillMaxWidth()
-        ) {
+    Column(
+        modifier = Modifier.fillMaxWidth()
+    ) {
 
-            LazyRow(
-                modifier = if (isSuperMarketAmazing)
-                    Modifier
-                        .background(MaterialTheme.colors.DigikalaLightGreen)
-                        .fillMaxWidth()
-                else Modifier
-                    .background(MaterialTheme.colors.DigiKalaLightRed)
+        LazyRow(
+            modifier = if (isSuperMarketAmazing)
+                Modifier
+                    .background(MaterialTheme.colors.DigikalaLightGreen)
                     .fillMaxWidth()
-            ) {
-                if (isSuperMarketAmazing) {
-                    item {
-                        AmazingOfferCard(R.drawable.fresh, isSuperMarketAmazing = true)
-                    }
-                } else {
-                    item {
-                        AmazingOfferCard(R.drawable.box)
-                    }
-                }
-
-                if (isSuperMarketAmazing) {
-                    items(superMarketItemList) { item ->
-                        AmazingItem(item = item, navController = navController)
-                    }
-                } else {
-                    items(amazingItemList) { item ->
-                        AmazingItem(item = item, navController = navController)
-                    }
-                }
-
+            else Modifier
+                .background(MaterialTheme.colors.DigiKalaLightRed)
+                .fillMaxWidth()
+        ) {
+            if (isSuperMarketAmazing) {
                 item {
-                    AmazingShowMoreItem()
+                    AmazingOfferCard(R.drawable.fresh, isSuperMarketAmazing = true)
                 }
+            } else {
+                item {
+                    AmazingOfferCard(R.drawable.box)
+                }
+            }
+
+            if (isSuperMarketAmazing) {
+                items(superMarketItemList) { item ->
+                    AmazingItem(item = item, navController = navController)
+                }
+            } else {
+                items(amazingItemList) { item ->
+                    AmazingItem(item = item, navController = navController)
+                }
+            }
+
+            item {
+                AmazingShowMoreItem()
             }
         }
     }

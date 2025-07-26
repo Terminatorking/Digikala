@@ -20,7 +20,6 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -31,55 +30,42 @@ fun CategoryListSection(
     var categoryList by remember {
         mutableStateOf<List<MainCategory>>(emptyList())
     }
-
-    var loading by remember {
-        mutableStateOf(false)
-    }
-
     val categoryResult by viewModel.categories.collectAsState()
 
     when (categoryResult) {
         is NetworkResult.Success -> {
             categoryList = categoryResult.data ?: emptyList()
-            loading = false
         }
 
         is NetworkResult.Error -> {
             Log.e("3636", "CategoryListSection error : ${categoryResult.message}")
-            loading = false
         }
 
-        is NetworkResult.Loading -> {
-            loading = true
-        }
+        is NetworkResult.Loading -> {}
     }
 
-    if (loading) {
-        OurLoading()
-    } else {
-        Column(
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(MaterialTheme.spacing.small),
+    ) {
+        Text(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(MaterialTheme.spacing.small),
+                .padding(vertical = MaterialTheme.spacing.medium),
+            text = stringResource(id = R.string.category_title),
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.h2,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colors.darkText,
+        )
+        FlowRow(
+            horizontalArrangement = Arrangement.SpaceAround,
+            maxItemsInEachRow = 3,
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = MaterialTheme.spacing.medium),
-                text = stringResource(id = R.string.category_title),
-                textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.h2,
-                fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
-            )
-            FlowRow(
-                horizontalArrangement = Arrangement.SpaceAround,
-                maxItemsInEachRow = 3,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                for (item in categoryList) {
-                    CircularCategoryItem(item)
-                }
+            for (item in categoryList) {
+                CircularCategoryItem(item)
             }
         }
     }

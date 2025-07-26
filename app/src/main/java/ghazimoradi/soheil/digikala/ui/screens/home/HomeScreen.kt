@@ -1,5 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -8,7 +9,12 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -17,13 +23,16 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
+import ghazimoradi.soheil.digikala.data.model.home.Slider
+import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.util.LocaleUtils
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
-import kotlinx.coroutines.launch
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -34,14 +43,15 @@ fun HomeScreen(navController: NavHostController) {
 @Composable
 fun Home(
     navController: NavHostController,
-    homeViewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel()
 ) {
     LocaleUtils.setLocale(LocalContext.current, USER_LANGUAGE)
 
     LaunchedEffect(true) {
-        refreshDataFromServer(viewModel = homeViewModel)
+        viewModel.refreshDataFromServer()
     }
-    SwipeRefreshSection(viewModel = homeViewModel, navController = navController)
+
+    SwipeRefreshSection(viewModel = viewModel, navController = navController)
 }
 
 @Composable
@@ -49,66 +59,97 @@ fun Home(
 fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) {
     val refreshScope = rememberCoroutineScope()
     val swipeRefreshState = rememberSwipeRefreshState(isRefreshing = false)
+
+    var sliderList by remember {
+        mutableStateOf<List<Slider>>(emptyList())
+    }
+
+    val sliderResult by viewModel.slider.collectAsState()
+
+    var loading by remember {
+        mutableStateOf(false)
+    }
+
+    when (sliderResult) {
+        is NetworkResult.Success -> {
+            sliderList = sliderResult.data ?: emptyList()
+            loading = false
+        }
+
+        is NetworkResult.Error -> {
+            loading = false
+            Log.e("SliderError", "Top Slider error : ${sliderResult.message}")
+        }
+
+        is NetworkResult.Loading -> {
+            loading = true
+        }
+    }
+
     SwipeRefresh(
         swipeRefreshState,
         onRefresh = {
-            refreshScope.launch {
-                refreshDataFromServer(viewModel = viewModel)
-            }
+
+            viewModel.refreshDataFromServer()
         }
     ) {
-        LazyColumn(
-            modifier = Modifier.fillMaxSize()
-                .background(MaterialTheme.colors.mainBg)
-                .padding(bottom = 60.dp)
-        ) {
-            item {
-                SearchBarSection()
-            }
-            item {
-                TopSliderSection()
-            }
-            item {
-                ShowcaseSection(navController = navController)
-            }
-            item {
-                AmazingOfferSection(navController = navController)
-            }
-            item{
-                ProposalCardSection()
-            }
-            item {
-                AmazingOfferSection(navController = navController, isSuperMarketAmazing = true)
-            }
-            item {
-                CategoryListSection()
-            }
-            item {
-                CenterBannerSection(1)
-            }
-            item {
-                ProductOfferSection()
-            }
-            item {
-                CenterBannerSection(2)
-            }
-            item {
-                MostFavoriteProductSection(navController=navController)
-            }
-            item {
-                CenterBannerSection(3)
-            }
-            item {
-                ProductOfferSection(isMostVisited = true)
-            }
-            item {
-                CenterBannerSection(4)
-            }
-            item {
-                CenterBannerSection(5)
-            }
-            item {
-                MostDiscountedSection()
+        if (loading) {
+            OurLoading(getScreenHeight())
+        } else {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colors.mainBg)
+                    .padding(bottom = 60.dp)
+            ) {
+                item {
+                    SearchBarSection()
+                }
+                item {
+                    TopSliderSection(sliderList)
+                }
+                item {
+                    ShowcaseSection(navController = navController)
+                }
+                item {
+                    AmazingOfferSection(navController = navController)
+                }
+                item {
+                    ProposalCardSection()
+                }
+                item {
+                    AmazingOfferSection(navController = navController, isSuperMarketAmazing = true)
+                }
+                item {
+                    CategoryListSection()
+                }
+                item {
+                    CenterBannerSection(1)
+                }
+                item {
+                    ProductOfferSection()
+                }
+                item {
+                    CenterBannerSection(2)
+                }
+                item {
+                    MostFavoriteProductSection(navController = navController)
+                }
+                item {
+                    CenterBannerSection(3)
+                }
+                item {
+                    ProductOfferSection(isMostVisited = true)
+                }
+                item {
+                    CenterBannerSection(4)
+                }
+                item {
+                    CenterBannerSection(5)
+                }
+                item {
+                    MostDiscountedSection()
+                }
             }
         }
     }

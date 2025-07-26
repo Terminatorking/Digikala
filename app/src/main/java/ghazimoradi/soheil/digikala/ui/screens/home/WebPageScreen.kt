@@ -11,11 +11,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
@@ -54,6 +54,6 @@ fun WebPageScreen(
     )
 
     if (isLoading) {
-        OurLoading(LocalWindowInfo.current.containerSize.height.dp, true)
+        OurLoading(getScreenHeight(), true)
     }
 }

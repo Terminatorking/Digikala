@@ -19,7 +19,6 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
@@ -32,70 +31,61 @@ fun MostFavoriteProductSection(
         mutableStateOf<List<StoreProduct>>(emptyList())
     }
 
-    var loading by remember {
-        mutableStateOf(false)
-    }
-
     val mostFavoriteResult by viewModel.mostFavoriteItems.collectAsState()
 
     when (mostFavoriteResult) {
         is NetworkResult.Success -> {
             mostFavoriteList = mostFavoriteResult.data ?: emptyList()
-            loading = false
         }
 
         is NetworkResult.Error -> {
             Log.e("3636", "MostFavoriteProductSection error : ${mostFavoriteResult.message}")
-            loading = false
         }
 
-        is NetworkResult.Loading -> {
-            loading = true
-        }
+        is NetworkResult.Loading -> {}
     }
 
-    if (loading) {
-        OurLoading()
-    } else {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(MaterialTheme.spacing.small)
+    ) {
 
-        Column(
+        Row(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(MaterialTheme.spacing.small)
+                .fillMaxWidth()
+                .padding(
+                    bottom = MaterialTheme.spacing.extraSmall,
+                    end = MaterialTheme.spacing.small,
+                    start = MaterialTheme.spacing.small
+                ),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = MaterialTheme.spacing.extraSmall, end = MaterialTheme.spacing.small, start = MaterialTheme.spacing.small),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+            Text(
+                text = stringResource(id = R.string.favorite_product),
+                textAlign = TextAlign.Start,
+                style = MaterialTheme.typography.h3,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colors.darkText,
+            )
 
-                Text(
-                    text = stringResource(id = R.string.favorite_product),
-                    textAlign = TextAlign.Start,
-                    style = MaterialTheme.typography.h3,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colors.darkText,
-                )
+            Text(
+                text = stringResource(id = R.string.see_all),
+                textAlign = TextAlign.End,
+                style = MaterialTheme.typography.h6,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colors.DarkCyan,
+            )
+        }
 
-                Text(
-                    text = stringResource(id = R.string.see_all),
-                    textAlign = TextAlign.End,
-                    style = MaterialTheme.typography.h6,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colors.DarkCyan,
-                )
+        LazyRow {
+            items(mostFavoriteList) { item ->
+                MostFavoriteProductsOffer(navController, item)
             }
-
-            LazyRow {
-                items(mostFavoriteList) { item ->
-                    MostFavoriteProductsOffer(navController, item)
-                }
-                item {
-                    MostFavoriteProductsShowMore()
-                }
+            item {
+                MostFavoriteProductsShowMore()
             }
         }
     }
