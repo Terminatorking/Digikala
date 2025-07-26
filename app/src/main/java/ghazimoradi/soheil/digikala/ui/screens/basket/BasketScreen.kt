@@ -4,15 +4,18 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -42,6 +45,9 @@ fun Basket(
     navController: NavHostController,
     viewModel: BasketViewModel = hiltViewModel()
 ) {
+
+    val currentCartItemsCount by viewModel.currentCartItemsCount.collectAsState(0)
+    val nextCartItemsCount by viewModel.nextCartItemsCount.collectAsState(0)
 
     var selectedTabIndex by remember {
         mutableIntStateOf(0)
@@ -77,7 +83,7 @@ fun Basket(
                         selectedTabIndex = index
                     },
                     selectedContentColor = MaterialTheme.colors.DigiKalaRed,
-                    unselectedContentColor =  MaterialTheme.colors.gray,
+                    unselectedContentColor = MaterialTheme.colors.gray,
                     text = {
                         Row {
                             Text(
@@ -85,6 +91,17 @@ fun Basket(
                                 style = MaterialTheme.typography.h6,
                                 fontWeight = FontWeight.SemiBold,
                             )
+
+                            val cartCounter = if (index == 0) currentCartItemsCount else nextCartItemsCount
+
+                            if (cartCounter > 0) {
+                                Spacer(modifier = Modifier.width(10.dp))
+                                SetBadgeToTab(
+                                    selectedTabIndex = selectedTabIndex,
+                                    index = index,
+                                    cartCounter = cartCounter
+                                )
+                            }
                         }
                     }
                 )

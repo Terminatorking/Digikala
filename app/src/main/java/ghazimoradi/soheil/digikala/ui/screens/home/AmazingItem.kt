@@ -25,7 +25,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -38,20 +37,17 @@ import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.AmazingItem
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
@@ -142,7 +138,7 @@ fun AmazingItem(
                         modifier = Modifier
                             .size(22.dp)
                             .padding(2.dp),
-                        tint = MaterialTheme.colors.DarkCyan
+                        tint = MaterialTheme.colors.cyan
                     )
                     Spacer(modifier = Modifier.width(5.dp))
                     Text(

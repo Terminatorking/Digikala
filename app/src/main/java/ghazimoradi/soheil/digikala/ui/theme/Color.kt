@@ -16,6 +16,10 @@ val DarkGray = Color.DarkGray
 val Transparent = Color.Transparent
 val Red = Color.Red
 
+val Colors.cyan: Color
+    @Composable
+    get() = if (isLight) Color(0xFF0fabc6) else Color(0xFF17BFD3)
+
 val Colors.gray: Color
     @Composable
     get() = if (isLight) DarkGray else LightGray
@@ -95,14 +99,6 @@ val Colors.semiDarkText: Color
 val Colors.settingArrow: Color
     @Composable
     get() = if (isLight) Color(0xFF9E9FB1) else Color(0xFFD8D8D8)
-
-val Colors.DarkCyan: Color
-    @Composable
-    get() = Color(0xFF0fabc6)
-
-val Colors.LightCyan: Color
-    @Composable
-    get() = Color(0xFF17BFD3)
 
 val Colors.Oranges: Color
     @Composable

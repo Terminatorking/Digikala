@@ -30,7 +30,7 @@ fun MostFavoriteProductsShowMore() {
 
         IconWithRotate(
             painter = painterResource(id = R.drawable.show_more),
-            tint = MaterialTheme.colors.DarkCyan,
+            tint = MaterialTheme.colors.cyan,
         )
 
         Spacer(modifier = Modifier.height(20.dp))

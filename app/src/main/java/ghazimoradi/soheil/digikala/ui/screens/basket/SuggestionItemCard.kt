@@ -41,9 +41,9 @@ import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.icon
@@ -159,7 +159,7 @@ fun SuggestionItemCard(
                         modifier = Modifier
                             .size(22.dp)
                             .padding(2.dp),
-                        tint = MaterialTheme.colors.DarkCyan
+                        tint = MaterialTheme.colors.cyan
                     )
                     Spacer(modifier = Modifier.width(5.dp))
                     Text(

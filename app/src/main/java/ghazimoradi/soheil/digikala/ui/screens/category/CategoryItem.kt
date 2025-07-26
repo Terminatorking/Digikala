@@ -18,7 +18,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.model.category.Sub
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.LightCyan
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
 @Composable
@@ -49,7 +49,7 @@ fun CategoryItem(
                 },
             text = stringResource(id = R.string.see_all),
             style = MaterialTheme.typography.h5,
-            color = MaterialTheme.colors.LightCyan
+            color = MaterialTheme.colors.cyan
         )
     }
 

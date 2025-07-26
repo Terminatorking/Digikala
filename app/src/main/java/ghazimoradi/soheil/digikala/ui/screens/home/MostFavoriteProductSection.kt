@@ -19,7 +19,7 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
 @Composable
@@ -76,7 +76,7 @@ fun MostFavoriteProductSection(
                 textAlign = TextAlign.End,
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.DarkCyan,
+                color = MaterialTheme.colors.cyan,
             )
         }
 

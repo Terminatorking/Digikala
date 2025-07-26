@@ -12,7 +12,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraBoldNumber
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -44,7 +44,7 @@ fun ProductHorizontalCard(
             style = MaterialTheme.typography.extraBoldNumber,
             fontWeight = FontWeight.Black,
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.DarkCyan,
+            color = MaterialTheme.colors.cyan,
             modifier = Modifier
                 .weight(.1f)
                 .padding(horizontal = MaterialTheme.spacing.small)

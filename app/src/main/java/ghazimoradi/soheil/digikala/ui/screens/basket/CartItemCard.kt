@@ -45,10 +45,9 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Green
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
@@ -168,7 +167,7 @@ fun CartItemCard(
                                 painter = painterResource(id = R.drawable.in_stock),
                                 contentDescription = "",
                                 modifier = Modifier.size(16.dp),
-                                tint = MaterialTheme.colors.DarkCyan
+                                tint = MaterialTheme.colors.cyan
                             )
 
                             VerticalDivider(
@@ -185,7 +184,7 @@ fun CartItemCard(
                                 modifier = Modifier
                                     .size(10.dp)
                                     .padding(1.dp),
-                                tint = MaterialTheme.colors.DarkCyan,
+                                tint = MaterialTheme.colors.cyan,
                             )
 
                             VerticalDivider(
@@ -202,7 +201,7 @@ fun CartItemCard(
                                 modifier = Modifier
                                     .size(10.dp)
                                     .padding(1.dp),
-                                tint = MaterialTheme.colors.DarkCyan,
+                                tint = MaterialTheme.colors.cyan,
                             )
                         }
 
@@ -372,13 +371,13 @@ fun CartItemCard(
                         text = stringResource(R.string.save_to_next_list),
                         fontWeight = FontWeight.Light,
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.DarkCyan
+                        color = MaterialTheme.colors.cyan
                     )
 
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "",
-                        tint = MaterialTheme.colors.DarkCyan
+                        tint = MaterialTheme.colors.cyan
                     )
                 }
             } else {
@@ -395,13 +394,13 @@ fun CartItemCard(
                         text = stringResource(R.string.delete_from_list),
                         fontWeight = FontWeight.Light,
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.DigiKalaLightRed
+                        color = MaterialTheme.colors.DigiKalaRed
                     )
 
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "",
-                        tint = MaterialTheme.colors.DigiKalaLightRed
+                        tint = MaterialTheme.colors.DigiKalaRed
                     )
                 }
             }

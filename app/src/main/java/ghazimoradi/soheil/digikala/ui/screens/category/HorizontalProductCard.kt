@@ -33,9 +33,9 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
-import ghazimoradi.soheil.digikala.ui.theme.DarkCyan
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.amber
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -105,7 +105,7 @@ fun HorizontalProductCard(
                             modifier = Modifier
                                 .size(22.dp)
                                 .padding(2.dp),
-                            tint = MaterialTheme.colors.DarkCyan
+                            tint = MaterialTheme.colors.cyan
                         )
                         Text(
                             text = item.seller,
