@@ -21,7 +21,10 @@ class BasketViewModel @Inject constructor(
 ) : RemoteViewModel() {
 
     val suggestedList = MutableStateFlow<NetworkResult<List<StoreProduct>>>(NetworkResult.Loading())
-    val cartDetail = MutableStateFlow(CartDetails(0, 0, 0, 0))
+
+    val cartDetail = MutableStateFlow(
+        CartDetails(0, 0, 0, 0)
+    )
 
     private val _currentCartItems: MutableStateFlow<BasketScreenState<List<CartItem>>> =
         MutableStateFlow(BasketScreenState.Loading)
@@ -36,6 +39,7 @@ class BasketViewModel @Inject constructor(
     val nextCartItems: StateFlow<BasketScreenState<List<CartItem>>> = _nextCartItems
 
     val currentCartItemsCount = repository.currentCartItemsCount
+
     val nextCartItemsCount = repository.nextCartItemsCount
 
     init {
@@ -46,12 +50,13 @@ class BasketViewModel @Inject constructor(
                     ourCartItems.emit(cartItems)
                 }
             }
+
             launch {
                 repository.currentCartItems.collectLatest { cartItems ->
                     calculateCartDetails(cartItems)
-
                 }
             }
+
             launch {
                 repository.nextCartItems.collectLatest { nextCartItems ->
                     _nextCartItems.emit(BasketScreenState.Success(nextCartItems))
@@ -63,14 +68,13 @@ class BasketViewModel @Inject constructor(
     private fun calculateCartDetails(items: List<CartItem>) {
         var totalCount = 0
         var totalPrice = 0L
-        var totalDiscount: Long
         var payablePrice = 0L
         items.forEach { item ->
             totalPrice += item.price * item.count
             payablePrice += applyDiscount(item.price, item.discountPercent) * item.count
             totalCount += item.count
         }
-        totalDiscount = totalPrice - payablePrice
+        val totalDiscount = totalPrice - payablePrice
         cartDetail.value = CartDetails(totalCount, totalPrice, totalDiscount, payablePrice)
     }
 
@@ -110,13 +114,9 @@ class BasketViewModel @Inject constructor(
         }
     }
 
-    fun getItemsCountInBasket(itemId: String): Flow<Int> =
-        repository.getItemsCountInBasket(itemId)
+    fun getItemsCountInBasket(itemId: String): Flow<Int> = repository.getItemsCountInBasket(itemId)
 
-    fun isItemExistInBasket(itemId: String): Flow<Boolean> =
-        repository.isItemExistInBasket(itemId)
+    fun isItemExistInBasket(itemId: String): Flow<Boolean> = repository.isItemExistInBasket(itemId)
 
-    override fun getAllDataFromServer() {
-        getSuggestedItems()
-    }
+    override fun getAllDataFromServer() = getSuggestedItems()
 }

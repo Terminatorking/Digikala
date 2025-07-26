@@ -1,20 +1,37 @@
 package ghazimoradi.soheil.digikala.ui.screens.basket
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import  ghazimoradi.soheil.digikala.R
-import  ghazimoradi.soheil.digikala.ui.theme.*
-import  ghazimoradi.soheil.digikala.util.DigitHelper
+import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.elevation
+import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
+import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
 @Composable
 fun BuyProcessContinue(
@@ -24,14 +41,16 @@ fun BuyProcessContinue(
 ) {
 
     var title = stringResource(id = R.string.goods_total_price)
+
     if (shippingCost > 0) {
         title = stringResource(id = R.string.final_price)
     }
 
     Card(
+        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         shape = MaterialTheme.roundedShape.extraSmall,
-        elevation = MaterialTheme.elevation.extraSmall,
-        border = BorderStroke(width = 1.dp, color = Color.LightGray.copy(0.2f))
+        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.extraSmall),
+        border = BorderStroke(width = 1.dp, color = MaterialTheme.colors.gray.copy(0.2f))
     ) {
         Row(
             modifier = Modifier
@@ -45,12 +64,12 @@ fun BuyProcessContinue(
         ) {
             Button(
                 onClick = onClick,
-                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.DigiKalaRed),
+                colors = ButtonDefaults.buttonColors(MaterialTheme.colors.DigiKalaRed),
                 shape = MaterialTheme.roundedShape.small
             ) {
                 Text(
                     text = stringResource(R.string.purchase_process),
-                    color = Color.White,
+                    color = White,
                     style = MaterialTheme.typography.h5,
                     modifier = Modifier
                         .padding(
@@ -66,19 +85,24 @@ fun BuyProcessContinue(
             ) {
                 Text(
                     text = title,
-                    color = MaterialTheme.colors.semiDarkText,
+                    color = MaterialTheme.colors.darkText,
                     style = MaterialTheme.typography.h6,
                 )
 
                 Row {
                     Text(
-                        text = DigitHelper.digitByLocateAndSeparator((price + shippingCost).toString()),
+                        color = MaterialTheme.colors.darkText,
+                        text = digitByLocateAndSeparator((price + shippingCost).toString()),
                         style = MaterialTheme.typography.body2,
                         fontWeight = FontWeight.SemiBold
                     )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.toman),
+                    Icon(
+                        tint = MaterialTheme.colors.icon,
+                        painter = logoChangeByLanguage(
+                            enLogo = R.drawable.dollar,
+                            faLogo = R.drawable.toman
+                        ),
                         contentDescription = "",
                         modifier = Modifier
                             .size(MaterialTheme.spacing.semiLarge)

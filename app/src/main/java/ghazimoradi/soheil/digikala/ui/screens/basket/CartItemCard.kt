@@ -343,7 +343,10 @@ fun CartItemCard(
 
                         Icon(
                             tint = MaterialTheme.colors.icon,
-                            painter = logoChangeByLanguage(enLogo = R.drawable.dollar, faLogo = R.drawable.toman),
+                            painter = logoChangeByLanguage(
+                                enLogo = R.drawable.dollar,
+                                faLogo = R.drawable.toman
+                            ),
                             contentDescription = "",
                             modifier = Modifier
                                 .size(24.dp)

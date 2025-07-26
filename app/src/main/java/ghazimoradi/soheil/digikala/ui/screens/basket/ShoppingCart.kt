@@ -22,7 +22,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -31,6 +30,7 @@ import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
+import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
@@ -62,6 +62,12 @@ fun ShoppingCart(
                 .padding(bottom = 60.dp),
         ) {
 
+//            item {
+//                if (Constants.USER_TOKEN == "null") {
+//                    LoginOrRegisterSection(navController)
+//                }
+//            }
+
             when (currentCartItemsState) {
                 is BasketScreenState.Success -> {
                     if ((currentCartItemsState as BasketScreenState.Success<List<CartItem>>).data.isEmpty()) {
@@ -73,13 +79,13 @@ fun ShoppingCart(
                         item {
                             SuggestListSection(navController)
                         }
+
                     } else {
                         isCartEmpty = false
 
                         items((currentCartItemsState as BasketScreenState.Success<List<CartItem>>).data) { item ->
                             CartItemCard(item, CartStatus.CURRENT_CART, navController)
                         }
-
                         item {
                             CartPriceDetailSection(cartDetail)
                         }
@@ -90,7 +96,7 @@ fun ShoppingCart(
                     item {
                         Column(
                             modifier = Modifier
-                                .height(LocalWindowInfo.current.containerSize.height.dp - 60.dp)
+                                .height(getScreenHeight() - 60.dp)
                                 .fillMaxWidth()
                                 .padding(vertical = MaterialTheme.spacing.small),
                             horizontalAlignment = Alignment.CenterHorizontally,
@@ -117,7 +123,11 @@ fun ShoppingCart(
                 Modifier
                     .fillMaxWidth()
                     .align(Alignment.BottomCenter)
-                    .padding(bottom = 60.dp)
+                    .padding(
+                        start = MaterialTheme.spacing.biggerSmall,
+                        end = MaterialTheme.spacing.biggerSmall,
+                        bottom = MaterialTheme.spacing.extraLarge
+                    )
             ) {
                 BuyProcessContinue(cartDetail.payablePrice) {
 //                    if (Constants.USER_TOKEN == "null") {

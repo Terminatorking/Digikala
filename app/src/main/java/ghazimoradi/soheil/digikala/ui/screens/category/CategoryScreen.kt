@@ -32,7 +32,7 @@ fun Category(
     viewModel: CategoryViewModel = hiltViewModel()
 ) {
     LaunchedEffect(true) {
-        refreshDataFromServer(viewModel)
+        viewModel.refreshDataFromServer()
     }
 
     SwipeRefreshSection(viewModel, navController)
@@ -51,7 +51,7 @@ private fun SwipeRefreshSection(
         state = swipeRefreshState,
         onRefresh = {
             refreshScope.launch {
-                refreshDataFromServer(viewModel)
+                viewModel. refreshDataFromServer()
                 Log.e("3636", "swipeRefresh")
             }
         },

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -14,6 +13,7 @@ import ghazimoradi.soheil.digikala.data.model.category.Sub
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.viewmodel.CategoryViewModel
 
 @Composable
@@ -91,7 +91,7 @@ fun SubCategorySection(
     }
 
     if (loading) {
-        OurLoading(LocalWindowInfo.current.containerSize.height.dp)
+        OurLoading(getScreenHeight())
     } else {
         Column(
             modifier = Modifier

@@ -129,14 +129,14 @@ fun CartPriceDetailSection(
                 .alpha(0.6f),
             color = MaterialTheme.colors.gray
         )
+
         DigiClubScore(item.payablePrice)
     }
 }
 
 @Composable
-fun FirstDotTextRow(
-    text: String
-) {
+fun FirstDotTextRow(text: String) {
+
     Row(
         modifier = Modifier
             .fillMaxWidth(),
@@ -159,11 +159,9 @@ fun FirstDotTextRow(
     }
 }
 
-
 @Composable
-private fun DigiClubScore(
-    payedPrice: Long
-) {
+private fun DigiClubScore(payedPrice: Long) {
+
     val score = payedPrice / 100_000
 
     Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
@@ -202,6 +200,7 @@ private fun DigiClubScore(
     }
 
     Spacer(modifier = Modifier.height(MaterialTheme.spacing.biggerSmall))
+
     Text(
         text = stringResource(R.string.digiclub_description),
         style = MaterialTheme.typography.h6,
