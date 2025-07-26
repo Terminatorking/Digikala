@@ -9,6 +9,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -17,19 +19,23 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.IconWithBadge
 import ghazimoradi.soheil.digikala.ui.theme.bottomBar
 import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
 import ghazimoradi.soheil.digikala.ui.theme.unSelectedBottomBar
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.util.LocaleUtils
+import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 
 @Composable
 fun BottomNavigationBar(
     navController: NavController,
     onItemClick: (BottomNavItem) -> Unit,
+    viewModel: BasketViewModel = hiltViewModel()
 ) {
     LocaleUtils.setLocale(LocalContext.current, USER_LANGUAGE)
 
@@ -59,16 +65,18 @@ fun BottomNavigationBar(
             deSelectedIcon = painterResource(R.drawable.user_outline),
         )
     )
+
     val backStackEntry = navController.currentBackStackEntryAsState()
     val route = backStackEntry.value?.destination?.route
     val showBottomBar = route in items.map { bottomNavItem -> bottomNavItem.route }
 
     if (showBottomBar) {
         BottomNavigation(
-            modifier = Modifier,
+            modifier = Modifier.height(60.dp),
             backgroundColor = MaterialTheme.colors.bottomBar,
             elevation = 5.dp
         ) {
+            val cartCounter by viewModel.currentCartItemsCount.collectAsState(0)
             items.forEachIndexed { index, bottomNavItem ->
                 val selected = bottomNavItem.route == route
                 BottomNavigationItem(
@@ -77,34 +85,51 @@ fun BottomNavigationBar(
                     icon = {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             if (selected) {
-                                Icon(
-                                    tint = MaterialTheme.colors.selectedBottomBar,
-                                    modifier = Modifier.height(24.dp),
-                                    painter = bottomNavItem.selectedIcon,
-                                    contentDescription = bottomNavItem.name
-                                )
+                                if (index == 2 && cartCounter > 0) {
+                                    IconWithBadge(
+                                        tint = MaterialTheme.colors.selectedBottomBar,
+                                        cartCounter = cartCounter,
+                                        icon = bottomNavItem.selectedIcon
+                                    )
+                                } else {
+                                    Icon(
+                                        tint = MaterialTheme.colors.selectedBottomBar,
+                                        modifier = Modifier.height(24.dp),
+                                        painter = bottomNavItem.selectedIcon,
+                                        contentDescription = bottomNavItem.name
+                                    )
+                                }
                                 Text(
                                     color = MaterialTheme.colors.selectedBottomBar,
-                                    modifier = Modifier.padding(top = 5.dp),
                                     text = bottomNavItem.name,
                                     textAlign = TextAlign.Center,
                                     style = MaterialTheme.typography.h6,
                                     fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(top = 5.dp)
                                 )
                             } else {
-                                Icon(
-                                    tint = MaterialTheme.colors.unSelectedBottomBar,
-                                    modifier = Modifier.height(24.dp),
-                                    painter = bottomNavItem.deSelectedIcon,
-                                    contentDescription = bottomNavItem.name
-                                )
+                                if (index == 2 && cartCounter > 0) {
+                                    IconWithBadge(
+                                        tint = MaterialTheme.colors.unSelectedBottomBar,
+                                        cartCounter = cartCounter,
+                                        icon = bottomNavItem.deSelectedIcon
+                                    )
+                                } else {
+                                    Icon(
+                                        tint = MaterialTheme.colors.unSelectedBottomBar,
+                                        modifier = Modifier.height(24.dp),
+                                        painter = bottomNavItem.deSelectedIcon,
+                                        contentDescription = bottomNavItem.name
+                                    )
+                                }
+
                                 Text(
-                                    color = MaterialTheme.colors.selectedBottomBar,
-                                    modifier = Modifier.padding(top = 5.dp),
+                                    color = MaterialTheme.colors.unSelectedBottomBar,
                                     text = bottomNavItem.name,
                                     textAlign = TextAlign.Center,
                                     style = MaterialTheme.typography.h6,
                                     fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(top = 5.dp)
                                 )
                             }
                         }
