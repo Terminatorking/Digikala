@@ -89,7 +89,6 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
     SwipeRefresh(
         swipeRefreshState,
         onRefresh = {
-
             viewModel.refreshDataFromServer()
         }
     ) {

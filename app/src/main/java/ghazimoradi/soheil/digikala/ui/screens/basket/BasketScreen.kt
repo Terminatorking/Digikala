@@ -25,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
@@ -36,13 +37,11 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 
 @Composable
-fun BasketScreen(navController: NavHostController) {
-    Basket(navController = navController)
-}
+fun BasketScreen(navController: NavHostController) = Basket(navController = navController)
 
 @Composable
 fun Basket(
-    navController: NavHostController,
+    navController: NavController,
     viewModel: BasketViewModel = hiltViewModel()
 ) {
 
