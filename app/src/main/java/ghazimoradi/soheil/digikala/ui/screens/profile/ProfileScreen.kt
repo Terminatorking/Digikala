@@ -94,5 +94,11 @@ fun Profile(
         item {
             ProfileMenuSection(navController)
         }
+        item {
+            CenterBannerItem(
+                painter = painterResource( R.drawable.digiclub2),
+                navController
+            )
+        }
     }
 }
