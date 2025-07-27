@@ -32,6 +32,8 @@ fun Profile(navController: NavHostController) {
         item {
             ProfileTopBarSection(navController)
         }
-
+        item {
+            ProfileHeaderSection(navController)
+        }
     }
 }
