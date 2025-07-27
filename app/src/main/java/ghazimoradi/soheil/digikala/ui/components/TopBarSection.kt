@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.profile
+package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -20,7 +20,7 @@ import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun ProfileTopBarSection(navController: NavHostController) {
+fun TopBarSection(navController: NavHostController) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
