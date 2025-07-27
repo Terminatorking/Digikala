@@ -2,23 +2,35 @@ package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.*
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.ui.theme.LocalShape
+import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 
 @Composable
 fun SearchBarSection() {
@@ -73,17 +85,11 @@ private fun SearchContent() {
             modifier = Modifier
                 .width(80.dp)
                 .padding(start = 5.dp),
-            painter = digikalaLogoChangeByLanguage(),
+            painter = logoChangeByLanguage(
+                enLogo = R.drawable.digi_red_english,
+                faLogo = R.drawable.digi_red_persian
+            ),
             contentDescription = ""
         )
-    }
-}
-
-@Composable
-private fun digikalaLogoChangeByLanguage(): Painter {
-    return if (USER_LANGUAGE == ENGLISH_LANG) {
-        painterResource(id = R.drawable.digi_red_english)
-    } else {
-        painterResource(id = R.drawable.digi_red_persian)
     }
 }
