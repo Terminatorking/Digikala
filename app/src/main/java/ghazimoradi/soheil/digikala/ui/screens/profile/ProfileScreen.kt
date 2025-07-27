@@ -7,9 +7,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.CenterBannerItem
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewmodel.DataStoreViewModel
 
@@ -38,6 +41,14 @@ fun Profile(navController: NavHostController) {
         item {
             ProfileMiddleSection(navController)
         }
-
+        item {
+            CenterBannerItem(
+                painter = painterResource(R.drawable.digiclub1),
+                navController
+            )
+        }
+        item {
+            ProfileMenuSection(navController)
+        }
     }
 }
