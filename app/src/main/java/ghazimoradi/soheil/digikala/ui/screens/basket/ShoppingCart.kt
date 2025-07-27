@@ -33,6 +33,7 @@ import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 
 @Composable
@@ -62,11 +63,11 @@ fun ShoppingCart(
                 .padding(bottom = 60.dp),
         ) {
 
-//            item {
-//                if (Constants.USER_TOKEN == "null") {
-//                    LoginOrRegisterSection(navController)
-//                }
-//            }
+            item {
+                if (USER_TOKEN == "null") {
+                    LoginOrRegisterSection(navController)
+                }
+            }
 
             when (currentCartItemsState) {
                 is BasketScreenState.Success -> {
@@ -130,7 +131,7 @@ fun ShoppingCart(
                     )
             ) {
                 BuyProcessContinue(cartDetail.payablePrice) {
-//                    if (Constants.USER_TOKEN == "null") {
+//                    if (USER_TOKEN == "null") {
 //                        navController.navigate(Screen.Profile.route)
 //                    } else {
 //                        navController.navigate(Screen.Checkout.route)
