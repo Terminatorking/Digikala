@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.profile
+package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun ProfileMenuItem(
+fun MenuItem(
     icon: @Composable () -> Unit,
     text: String,
     haveDivider: Boolean,
@@ -35,7 +35,6 @@ fun ProfileMenuItem(
     addCompose: @Composable (() -> Unit)? = null,
     action: () -> Unit = {}
 ) {
-
     Row(
         modifier = Modifier
             .fillMaxWidth()
