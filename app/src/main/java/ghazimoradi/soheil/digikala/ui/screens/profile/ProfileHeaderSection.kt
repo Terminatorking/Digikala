@@ -11,28 +11,27 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.USER_NAME
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.cyan
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
+import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_WALLET
+import ghazimoradi.soheil.digikala.util.Constants.USER_NAME
 import ghazimoradi.soheil.digikala.util.Constants.USER_PHONE
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
 
@@ -121,12 +120,11 @@ fun ProfileHeaderSection(navController: NavController) {
             }
         }
 
-        Divider(
+        VerticalDivider(
             modifier = Modifier
                 .width(2.dp)
-                .height(60.dp)
-                .alpha(0.2f),
-            color = Color.LightGray,
+                .height(60.dp),
+            color = MaterialTheme.colors.gray.copy(0.2f),
         )
 
         Column(
