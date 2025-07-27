@@ -27,7 +27,7 @@ import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun MenuRowItem(
+fun ProfileMenuItem(
     icon: @Composable () -> Unit,
     text: String,
     haveDivider: Boolean,

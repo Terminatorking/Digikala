@@ -19,7 +19,7 @@ import ghazimoradi.soheil.digikala.util.Constants.DIGIPLUS_URL
 @Composable
 fun ProfileMenuSection(navController: NavHostController) {
 
-    MenuRowItem(
+    ProfileMenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -38,7 +38,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         )
     }
 
-    MenuRowItem(
+    ProfileMenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -55,7 +55,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         //  navController.navigate(Screen.FavoriteList.route)
     }
 
-    MenuRowItem(
+    ProfileMenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -78,7 +78,7 @@ fun ProfileMenuSection(navController: NavHostController) {
 //        )
     }
 
-    MenuRowItem(
+    ProfileMenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -95,7 +95,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         // navController.navigate(Screen.ShowAddressScreen.withArgs(-1))
     }
 
-    MenuRowItem(
+    ProfileMenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
