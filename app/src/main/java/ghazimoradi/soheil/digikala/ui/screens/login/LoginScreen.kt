@@ -28,6 +28,8 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterButton
+import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterEditText
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -97,7 +99,7 @@ fun LoginScreen(
         }
 
         item {
-            LoginButton(text = stringResource(id = R.string.digikala_entry)) {
+            LoginAndRegisterButton(text = stringResource(id = R.string.digikala_entry)) {
                 if (isValidEmail(profileViewModel.inputPhoneState)
                     || isValidPhoneNumber(profileViewModel.inputPhoneState)
                 ) {

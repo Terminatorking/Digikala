@@ -18,7 +18,10 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 fun LoadingButton() {
     Button(
         onClick = { },
-        colors = ButtonDefaults.buttonColors( MaterialTheme.colors.DigiKalaRed),
+        colors = ButtonDefaults
+            .buttonColors(
+                MaterialTheme.colors.DigiKalaRed
+            ),
         modifier = Modifier
             .fillMaxWidth()
             .height(65.dp)

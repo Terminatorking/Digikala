@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.login
+package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -16,7 +16,7 @@ import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun LoginButton(
+fun LoginAndRegisterButton(
     text: String,
     onClick: () -> Unit,
 ) {
