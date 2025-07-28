@@ -11,6 +11,7 @@ import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
+import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
 
 @Composable
@@ -33,6 +34,9 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Profile.route) {
             ProfileScreen(navController = navController)
+        }
+        composable(route = Screen.Settings.route) {
+            SettingsScreen(navController = navController)
         }
         composable(
             route = Screen.WebView.route + "?url={url}",

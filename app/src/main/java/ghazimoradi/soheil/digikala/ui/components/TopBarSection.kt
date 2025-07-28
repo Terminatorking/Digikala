@@ -27,7 +27,7 @@ fun TopBarSection(navController: NavController) {
     ) {
         IconButton(
             onClick = {
-                //  navController.navigate(Screen.Setting.route)
+               navController.navigate(Screen.Settings.route)
             },
         ) {
             Icon(
