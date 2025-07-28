@@ -15,6 +15,7 @@ import ghazimoradi.soheil.digikala.ui.theme.CursorColor
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.cyan
+import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
@@ -43,6 +44,8 @@ fun LoginAndRegisterEditText(
             ),
         shape = MaterialTheme.roundedShape.small,
         colors = TextFieldDefaults.colors(
+            unfocusedTextColor = MaterialTheme.colors.darkText,
+            focusedTextColor = MaterialTheme.colors.darkText,
             errorIndicatorColor = MaterialTheme.colors.DigiKalaRed,
             focusedIndicatorColor = MaterialTheme.colors.cyan,
             unfocusedIndicatorColor = Transparent,
