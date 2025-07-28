@@ -23,7 +23,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.screens.login.LoginButton
-import ghazimoradi.soheil.digikala.ui.screens.login.LoginEditText
+import ghazimoradi.soheil.digikala.ui.screens.login.LoginAndRegisterEditText
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
@@ -103,13 +103,13 @@ fun RegisterScreen(
             fontWeight = FontWeight.Bold
         )
 
-        LoginEditText(
+        LoginAndRegisterEditText(
             value = profileViewModel.inputPhoneState,
             placeholder = stringResource(id = R.string.phone_and_email),
             onValueChange = {},
         )
 
-        LoginEditText(
+        LoginAndRegisterEditText(
             value = profileViewModel.inputPasswordState,
             placeholder = stringResource(id = R.string.set_password),
             onValueChange = {

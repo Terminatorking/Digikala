@@ -12,22 +12,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun LoginEditText(
+fun LoginAndRegisterEditText(
     value: String,
     placeholder: String,
-    onValueChange: (it: String) -> Unit
+    onValueChange: (textFieldText: String) -> Unit
 ) {
 
     TextField(
         value = value,
-        onValueChange = { onValueChange(it) },
+        onValueChange = { textFieldText ->
+            onValueChange(textFieldText)
+        },
         modifier = Modifier
             .fillMaxWidth()
             .height(92.dp)
@@ -39,8 +43,8 @@ fun LoginEditText(
             ),
         shape = MaterialTheme.roundedShape.small,
         colors = TextFieldDefaults.colors(
-            errorIndicatorColor = Transparent,
-            focusedIndicatorColor = Transparent,
+            errorIndicatorColor = MaterialTheme.colors.DigiKalaRed,
+            focusedIndicatorColor = MaterialTheme.colors.cyan,
             unfocusedIndicatorColor = Transparent,
             disabledIndicatorColor = Transparent,
             focusedContainerColor = MaterialTheme.colors.searchBarBg,

@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -38,6 +39,7 @@ import ghazimoradi.soheil.digikala.util.InputValidation.isValidEmail
 import ghazimoradi.soheil.digikala.util.InputValidation.isValidPhoneNumber
 import ghazimoradi.soheil.digikala.viewmodel.ProfileViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     navController: NavController,
@@ -85,7 +87,7 @@ fun LoginScreen(
         }
 
         item {
-            LoginEditText(
+            LoginAndRegisterEditText(
                 value = profileViewModel.inputPhoneState,
                 placeholder = stringResource(id = R.string.phone_and_email),
                 onValueChange = {
