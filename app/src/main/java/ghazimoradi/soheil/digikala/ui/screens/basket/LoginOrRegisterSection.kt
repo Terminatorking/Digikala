@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
@@ -40,14 +43,9 @@ fun LoginOrRegisterSection(navController: NavController) {
             verticalAlignment = Alignment.Top
         ) {
 
-            Icon(
+            IconWithRotate(
                 painter = painterResource(id = R.drawable.import_96_orenge),
-                contentDescription = "",
                 tint = MaterialTheme.colors.amber,
-                modifier = Modifier
-                    .size(30.dp)
-                    .weight(0.1f)
-                    .align(Alignment.Top)
             )
 
             Spacer(modifier = Modifier.weight(0.05f))
@@ -82,11 +80,11 @@ fun LoginOrRegisterSection(navController: NavController) {
             Spacer(modifier = Modifier.weight(0.05f))
 
             Icon(
-                painter = painterResource(id = R.drawable.arrow_back),
+                imageVector = Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 tint = MaterialTheme.colors.icon,
                 modifier = Modifier
-                    .size(22.dp)
+                    .size(25.dp)
                     .weight(0.1f)
                     .align(Alignment.Top)
                     .padding(top = MaterialTheme.spacing.small)

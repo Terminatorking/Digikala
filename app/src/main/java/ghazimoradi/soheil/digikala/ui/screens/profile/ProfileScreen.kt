@@ -34,6 +34,29 @@ fun ProfileScreen(
     dataStore: DataStoreViewModel = hiltViewModel(),
     profileViewModel: ProfileViewModel = hiltViewModel()
 ) {
+
+    val userToken = dataStore.getUserToken()
+    if (!userToken.isNullOrBlank() && userToken != "null") {
+        Profile(navController, getUserOrders(profileViewModel = profileViewModel))
+    } else {
+        when (profileViewModel.screenState) {
+            ProfileScreenState.LOGIN_STATE -> {
+                LoginScreen(navController = navController)
+            }
+
+            ProfileScreenState.PROFILE_STATE -> {
+                Profile(navController, getUserOrders(profileViewModel = profileViewModel))
+            }
+
+            ProfileScreenState.REGISTER_STATE -> {
+                RegisterScreen(navController = navController)
+            }
+        }
+    }
+}
+
+@Composable
+private fun getUserOrders(profileViewModel: ProfileViewModel): List<OrderFullDetail> {
     profileViewModel.getAllDataFromServer()
 
     var orderItemsList by remember {
@@ -53,25 +76,7 @@ fun ProfileScreen(
 
         is NetworkResult.Loading -> {}
     }
-
-    val userToken = dataStore.getUserToken()
-    if (!userToken.isNullOrBlank() && userToken != "null") {
-        Profile(navController, orderItemsList)
-    } else {
-        when (profileViewModel.screenState) {
-            ProfileScreenState.LOGIN_STATE -> {
-                LoginScreen(navController = navController)
-            }
-
-            ProfileScreenState.PROFILE_STATE -> {
-                Profile(navController, orderItemsList)
-            }
-
-            ProfileScreenState.REGISTER_STATE -> {
-                RegisterScreen(navController = navController)
-            }
-        }
-    }
+    return orderItemsList
 }
 
 @Composable

@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
+import ghazimoradi.soheil.digikala.ui.components.MenuItem
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.DIGIPLUS_URL
@@ -19,7 +20,7 @@ import ghazimoradi.soheil.digikala.util.Constants.DIGIPLUS_URL
 @Composable
 fun ProfileMenuSection(navController: NavHostController) {
 
-    ProfileMenuItem(
+    MenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -38,7 +39,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         )
     }
 
-    ProfileMenuItem(
+    MenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -55,7 +56,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         //  navController.navigate(Screen.FavoriteList.route)
     }
 
-    ProfileMenuItem(
+    MenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -78,7 +79,7 @@ fun ProfileMenuSection(navController: NavHostController) {
 //        )
     }
 
-    ProfileMenuItem(
+    MenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,
@@ -95,7 +96,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         // navController.navigate(Screen.ShowAddressScreen.withArgs(-1))
     }
 
-    ProfileMenuItem(
+    MenuItem(
         icon = {
             Icon(
                 tint = MaterialTheme.colors.icon,

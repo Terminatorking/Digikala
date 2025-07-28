@@ -85,7 +85,7 @@ fun LoginScreen(
         }
 
         item {
-            MyEditText(
+            LoginEditText(
                 value = profileViewModel.inputPhoneState,
                 placeholder = stringResource(id = R.string.phone_and_email),
                 onValueChange = {
@@ -95,7 +95,7 @@ fun LoginScreen(
         }
 
         item {
-            MyButton(text = stringResource(id = R.string.digikala_entry)) {
+            LoginButton(text = stringResource(id = R.string.digikala_entry)) {
                 if (isValidEmail(profileViewModel.inputPhoneState)
                     || isValidPhoneNumber(profileViewModel.inputPhoneState)
                 ) {

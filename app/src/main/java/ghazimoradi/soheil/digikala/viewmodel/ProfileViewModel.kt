@@ -1,4 +1,5 @@
 package ghazimoradi.soheil.digikala.viewmodel
+
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -42,20 +43,20 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
-    fun refreshToken(phone: String, password: String){
+    fun refreshToken(phone: String, password: String) {
         viewModelScope.launch {
-            val loginRequest = LoginRequest(phone , password)
+            val loginRequest = LoginRequest(phone, password)
             loginResponse.emit(repository.login(loginRequest))
         }
     }
 
-    fun setUserName (newUserName: SetUserNameRequest){
+    fun setUserName(newUserName: SetUserNameRequest) {
         viewModelScope.launch {
             setUserNameResponse.emit(repository.setUserName(newUserName))
         }
     }
 
-    fun getUserOrders() {
+    private fun getUserOrders() {
         viewModelScope.launch {
             orderItems.emit(repository.getUserOrders(USER_TOKEN))
         }

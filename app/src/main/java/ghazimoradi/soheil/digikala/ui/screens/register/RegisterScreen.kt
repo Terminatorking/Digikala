@@ -22,8 +22,8 @@ import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
-import ghazimoradi.soheil.digikala.ui.screens.login.MyButton
-import ghazimoradi.soheil.digikala.ui.screens.login.MyEditText
+import ghazimoradi.soheil.digikala.ui.screens.login.LoginButton
+import ghazimoradi.soheil.digikala.ui.screens.login.LoginEditText
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
@@ -103,13 +103,13 @@ fun RegisterScreen(
             fontWeight = FontWeight.Bold
         )
 
-        MyEditText(
+        LoginEditText(
             value = profileViewModel.inputPhoneState,
             placeholder = stringResource(id = R.string.phone_and_email),
             onValueChange = {},
         )
 
-        MyEditText(
+        LoginEditText(
             value = profileViewModel.inputPasswordState,
             placeholder = stringResource(id = R.string.set_password),
             onValueChange = {
@@ -122,11 +122,9 @@ fun RegisterScreen(
         if (profileViewModel.loadingState) {
             LoadingButton()
         } else {
-            MyButton(text = stringResource(id = R.string.digikala_login)) {
+            LoginButton(text = stringResource(id = R.string.digikala_login)) {
                 if (isValidPassword(profileViewModel.inputPasswordState)) {
-
                     profileViewModel.login()
-
                 } else {
                     Toast.makeText(
                         context,

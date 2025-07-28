@@ -12,14 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
-import ghazimoradi.soheil.digikala.ui.theme.cyan
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun MyEditText(
+fun LoginEditText(
     value: String,
     placeholder: String,
     onValueChange: (it: String) -> Unit
@@ -39,10 +39,12 @@ fun MyEditText(
             ),
         shape = MaterialTheme.roundedShape.small,
         colors = TextFieldDefaults.colors(
+            errorIndicatorColor = Transparent,
+            focusedIndicatorColor = Transparent,
+            unfocusedIndicatorColor = Transparent,
+            disabledIndicatorColor = Transparent,
             focusedContainerColor = MaterialTheme.colors.searchBarBg,
             unfocusedContainerColor = MaterialTheme.colors.searchBarBg,
-            focusedIndicatorColor = MaterialTheme.colors.cyan,
-            unfocusedIndicatorColor = MaterialTheme.colors.searchBarBg,
             cursorColor = MaterialTheme.colors.CursorColor,
         ),
         placeholder = {
