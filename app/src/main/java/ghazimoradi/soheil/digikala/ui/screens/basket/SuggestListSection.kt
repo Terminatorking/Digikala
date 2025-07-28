@@ -2,26 +2,40 @@ package ghazimoradi.soheil.digikala.ui.screens.basket
 
 import android.util.Log
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.data.model.basket.CartItem
+import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
-import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
-import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -40,20 +54,23 @@ fun SuggestListSection(
         mutableStateOf(false)
     }
 
-    val suggestedItemResult by viewModel.suggestedList.collectAsState()
-    when (suggestedItemResult) {
-        is NetworkResult.Success -> {
-            suggestedList = suggestedItemResult.data ?: emptyList()
-            loading = false
-        }
+    LaunchedEffect(Dispatchers.Main) {
+        viewModel.suggestedList.collectLatest { response ->
+            when (response) {
+                is NetworkResult.Success -> {
+                    suggestedList = response.data ?: emptyList()
+                    loading = false
+                }
 
-        is NetworkResult.Error -> {
-            Log.e("3636", "SuggestListSection error : ${suggestedItemResult.message}")
-            loading = false
-        }
+                is NetworkResult.Error -> {
+                    Log.e("3636", "SuggestListSection error : ${response.message}")
+                    loading = false
+                }
 
-        is NetworkResult.Loading -> {
-            loading = true
+                is NetworkResult.Loading -> {
+                    loading = true
+                }
+            }
         }
     }
 
