@@ -1,20 +1,63 @@
 package ghazimoradi.soheil.digikala.ui.components
 
+import android.util.Log
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
+import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.util.Constants.USER_ID
 import ghazimoradi.soheil.digikala.viewmodel.DataStoreViewModel
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.util.Constants.USER_NAME
+import ghazimoradi.soheil.digikala.util.Constants.USER_PASSWORD
+import ghazimoradi.soheil.digikala.util.Constants.USER_PHONE
+import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.viewmodel.ProfileViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun AppConfig(
-    dataStoreViewModel: DataStoreViewModel = hiltViewModel(),
+    profileViewModel: ProfileViewModel = hiltViewModel(),
+    dataStore: DataStoreViewModel = hiltViewModel()
 ) {
-    getDataStoreVariables(dataStoreViewModel)
+
+    getDataStoreVariables(dataStore)
+
+    profileViewModel.refreshToken(USER_PHONE, USER_PASSWORD)
+
+    LaunchedEffect(Dispatchers.Main) {
+        profileViewModel.loginResponse.collectLatest { loginResponse->
+            when (loginResponse) {
+                is NetworkResult.Success -> {
+                    loginResponse.data?.let { user ->
+                        if (user.token.isNotEmpty()) {
+                            dataStore.saveUserToken(user.token)
+                            dataStore.saveUserId(user.id)
+                            dataStore.saveUserPhoneNumber(user.phone)
+                            dataStore.saveUserPassword(USER_PASSWORD)
+
+                            dataStore.saveUserName(user.name ?: "null")
+
+                            getDataStoreVariables(dataStore)
+
+                            Log.e("3636" , "refresh token")
+                        }
+                    }
+                }
+                else -> {}
+            }
+        }
+    }
 }
 
-private fun getDataStoreVariables(
-    dataStoreViewModel: DataStoreViewModel
-) {
-    USER_LANGUAGE = dataStoreViewModel.getUserLanguage()
-    dataStoreViewModel.saveUserLanguage(USER_LANGUAGE)
+private fun getDataStoreVariables(dataStore: DataStoreViewModel) {
+    USER_LANGUAGE = dataStore.getUserLanguage()
+    dataStore.saveUserLanguage(USER_LANGUAGE)
+
+    USER_PHONE = dataStore.getUserPhoneNumber().toString()
+    USER_PASSWORD = dataStore.getUserPassword().toString()
+    USER_TOKEN = dataStore.getUserToken().toString()
+    USER_ID = dataStore.getUserId().toString()
+    USER_NAME = dataStore.getUserName().toString()
 }
