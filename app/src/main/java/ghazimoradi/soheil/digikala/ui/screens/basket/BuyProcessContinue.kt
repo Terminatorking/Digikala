@@ -70,7 +70,7 @@ fun BuyProcessContinue(
                 Text(
                     text = stringResource(R.string.purchase_process),
                     color = White,
-                    style = MaterialTheme.typography.h5,
+                    style = MaterialTheme.typography.h6,
                     modifier = Modifier
                         .padding(
                             horizontal = MaterialTheme.spacing.biggerMedium,

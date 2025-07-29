@@ -24,10 +24,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.basket.CartDetails
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
@@ -251,9 +253,12 @@ private fun PriceRow(
             )
 
             Icon(
-                painter = painterResource(id = R.drawable.toman),
+                painter = logoChangeByLanguage(
+                    enLogo = R.drawable.dollar,
+                    faLogo = R.drawable.toman
+                ),
                 contentDescription = "",
-                tint = color,
+                tint = MaterialTheme.colors.icon,
                 modifier = Modifier
                     .size(24.dp)
                     .padding(MaterialTheme.spacing.extraSmall)
