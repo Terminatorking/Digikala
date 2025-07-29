@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
 import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
+import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
@@ -37,6 +38,9 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Settings.route) {
             SettingsScreen(navController = navController)
+        }
+        composable(route = Screen.Checkout.route) {
+            CheckoutScreen(navController = navController)
         }
         composable(
             route = Screen.WebView.route + "?url={url}",
