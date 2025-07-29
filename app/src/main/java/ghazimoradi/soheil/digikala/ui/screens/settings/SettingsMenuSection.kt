@@ -15,6 +15,7 @@ import androidx.compose.material.icons.outlined.PrivacyTip
 import androidx.compose.material.icons.outlined.StarRate
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,20 +33,22 @@ import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.MenuItem
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
+import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_BUG
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_FAQ
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_PRIVACY
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_SCORE
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_TERMS
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_TURLEARN
+import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 import ghazimoradi.soheil.digikala.viewmodel.DataStoreViewModel
 import ghazimoradi.soheil.digikala.viewmodel.ProfileViewModel
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
 
 @Composable
 fun SettingsMenuSection(
@@ -168,7 +171,7 @@ fun SettingsMenuSection(
         addCompose = { ChangeLanguage() },
         haveDivider = true
     )
-    if (USER_TOKEN != "null"){
+    if (USER_TOKEN != "null") {
         MenuItem(
             icon = {
                 Icon(
@@ -202,7 +205,7 @@ fun logOut(
         saveUserName("null")
         saveUserAddressIndex("0")
     }
-    Constants.USER_TOKEN = "null"
+    USER_TOKEN = "null"
     profileViewModel.screenState = ProfileScreenState.LOGIN_STATE
     navController.navigate(Screen.Profile.route)
 }
@@ -220,6 +223,14 @@ fun ChangeLanguage(dataStore: DataStoreViewModel = hiltViewModel()) {
             text = stringResource(id = R.string.english)
         )
         Switch(
+            colors = SwitchDefaults.colors(
+                checkedBorderColor = Transparent,
+                uncheckedBorderColor = Transparent,
+                uncheckedThumbColor = MaterialTheme.colors.cyan,
+                checkedThumbColor = MaterialTheme.colors.cyan,
+                uncheckedTrackColor = MaterialTheme.colors.gray,
+                checkedTrackColor = MaterialTheme.colors.DigiKalaRed
+            ),
             modifier = Modifier.padding(
                 start = MaterialTheme.spacing.small,
                 end = MaterialTheme.spacing.small

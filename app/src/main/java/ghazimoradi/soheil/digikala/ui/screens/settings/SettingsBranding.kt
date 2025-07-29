@@ -36,6 +36,9 @@ fun SettingsBranding() {
             painter = painterResource(id = R.drawable.digi_red_english),
             contentDescription = ""
         )
+
+        Spacer(modifier = Modifier.height(10.dp))
+
         Text(
             text = stringResource(id = R.string.version_app, BuildConfig.VERSION_NAME),
             style = MaterialTheme.typography.h6,

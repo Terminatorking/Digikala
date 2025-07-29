@@ -19,7 +19,6 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
@@ -35,7 +34,7 @@ fun SettingsHeader(navController: NavHostController) {
             color = MaterialTheme.colors.darkText,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold,
-            text = stringResource(id = R.string.setting)
+            text = stringResource(id = R.string.settings)
         )
 
         IconButton(onClick = { navController.popBackStack() }) {
