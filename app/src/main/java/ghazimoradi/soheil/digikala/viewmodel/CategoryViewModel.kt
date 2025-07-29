@@ -27,7 +27,7 @@ class CategoryViewModel @Inject constructor(
     var productByCategoryList: Flow<PagingData<StoreProduct>> =
         flow { emit(PagingData.Companion.empty()) }
 
-    override fun getAllDataFromServer() {
+    override fun getAllDataFromServer(address: String) {
         viewModelScope.launch {
 
             launch {

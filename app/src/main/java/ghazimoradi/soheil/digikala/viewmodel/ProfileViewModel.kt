@@ -62,7 +62,7 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
-    override fun getAllDataFromServer() {
+    override fun getAllDataFromServer(address: String) {
         getUserOrders()
     }
 }

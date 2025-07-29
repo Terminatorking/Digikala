@@ -118,5 +118,5 @@ class BasketViewModel @Inject constructor(
 
     fun isItemExistInBasket(itemId: String): Flow<Boolean> = repository.isItemExistInBasket(itemId)
 
-    override fun getAllDataFromServer() = getSuggestedItems()
+    override fun getAllDataFromServer(address: String) = getSuggestedItems()
 }

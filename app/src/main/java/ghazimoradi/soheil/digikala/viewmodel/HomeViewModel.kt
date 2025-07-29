@@ -33,7 +33,7 @@ class HomeViewModel @Inject constructor(
     val mostDiscountedItems =
         MutableStateFlow<NetworkResult<List<StoreProduct>>>(NetworkResult.Loading())
 
-    override fun getAllDataFromServer() {
+    override fun getAllDataFromServer(address: String) {
         viewModelScope.launch {
 
             launch {
