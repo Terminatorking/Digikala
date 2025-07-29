@@ -30,6 +30,7 @@ import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -131,11 +132,11 @@ fun ShoppingCart(
                     )
             ) {
                 BuyProcessContinue(cartDetail.payablePrice) {
-//                    if (USER_TOKEN == "null") {
-//                        navController.navigate(Screen.Profile.route)
-//                    } else {
-//                        navController.navigate(Screen.Checkout.route)
-//                    }
+                    if (USER_TOKEN == "null") {
+                        navController.navigate(Screen.Profile.route)
+                    } else {
+                        navController.navigate(Screen.Checkout.route)
+                    }
                 }
             }
         }
