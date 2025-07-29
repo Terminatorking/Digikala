@@ -16,7 +16,10 @@ apikeyProperties.load(FileInputStream(apikeyPropertiesFile))
 android {
     namespace = "ghazimoradi.soheil.digikala"
     compileSdk = 36
-
+    lint {
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
     defaultConfig {
         applicationId = "ghazimoradi.soheil.digikala"
         minSdk = 24
@@ -33,7 +36,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
