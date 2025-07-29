@@ -13,6 +13,7 @@ import ghazimoradi.soheil.digikala.ui.theme.Imperial_Red
 import ghazimoradi.soheil.digikala.ui.theme.White
 
 @Composable
+@Suppress("Deprecation")
 fun ChangeStatusBarColor(navController: NavHostController) {
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
