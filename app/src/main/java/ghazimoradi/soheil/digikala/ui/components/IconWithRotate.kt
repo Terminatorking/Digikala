@@ -26,11 +26,11 @@ fun IconWithRotate(imageVector: ImageVector, onClick: () -> Unit = {}) {
             tint = MaterialTheme.colors.icon,
             modifier = Modifier
                 .graphicsLayer(rotationZ = 180f)
-                .clickable { onClick.invoke() }
+                .clickable { onClick }
         )
     } else {
         Icon(
-            modifier = Modifier.clickable { onClick.invoke() },
+            modifier = Modifier.clickable { onClick },
             imageVector = imageVector,
             contentDescription = "",
             tint = MaterialTheme.colors.icon
@@ -43,7 +43,8 @@ fun IconWithRotate(
     painter: Painter,
     tint: Color,
     width: Dp = 40.dp,
-    height: Dp = 40.dp
+    height: Dp = 40.dp,
+    onClick: () -> Unit = {}
 ) {
 
     if (USER_LANGUAGE == ENGLISH_LANG) {
@@ -54,13 +55,16 @@ fun IconWithRotate(
             modifier = Modifier
                 .graphicsLayer(rotationZ = 180f)
                 .size(width, height)
+                .clickable { onClick }
         )
     } else {
         Icon(
             painter = painter,
             contentDescription = "",
             tint = tint,
-            modifier = Modifier.size(width, height)
+            modifier = Modifier
+                .size(width, height)
+                .clickable { onClick }
         )
     }
 }
