@@ -49,7 +49,9 @@ fun CheckoutScreen(
                     CheckoutTopBarSection(navController)
                 }
                 item {
-                    CartAddressSection(navController)
+                    CartAddressSection(navController) { addressList ->
+
+                    }
                 }
                 item {
                     CartItemReviewSection()
