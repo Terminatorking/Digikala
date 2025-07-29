@@ -48,6 +48,9 @@ fun CheckoutScreen(
                 item {
                     CheckoutTopBarSection(navController)
                 }
+                item {
+                    CartAddressSection(navController)
+                }
             }
         }
     }

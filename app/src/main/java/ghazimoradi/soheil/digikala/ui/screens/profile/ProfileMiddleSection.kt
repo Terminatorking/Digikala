@@ -34,8 +34,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
     HorizontalDivider(
         modifier = Modifier
             .fillMaxWidth()
-            .height(MaterialTheme.spacing.small)
-            .shadow(2.dp),
+            .height(MaterialTheme.spacing.small),
         color = MaterialTheme.colors.gray.copy(0.4f),
     )
 
@@ -117,8 +116,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
     HorizontalDivider(
         modifier = Modifier
             .fillMaxWidth()
-            .height(MaterialTheme.spacing.small)
-            .shadow(2.dp),
+            .height(MaterialTheme.spacing.small),
         color = MaterialTheme.colors.gray.copy(0.4f),
     )
 }
