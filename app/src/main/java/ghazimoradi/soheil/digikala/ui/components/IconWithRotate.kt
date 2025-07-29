@@ -26,11 +26,11 @@ fun IconWithRotate(imageVector: ImageVector, onClick: () -> Unit = {}) {
             tint = MaterialTheme.colors.icon,
             modifier = Modifier
                 .graphicsLayer(rotationZ = 180f)
-                .clickable { onClick }
+                .clickable { onClick() }
         )
     } else {
         Icon(
-            modifier = Modifier.clickable { onClick },
+            modifier = Modifier.clickable { onClick() },
             imageVector = imageVector,
             contentDescription = "",
             tint = MaterialTheme.colors.icon
@@ -55,7 +55,7 @@ fun IconWithRotate(
             modifier = Modifier
                 .graphicsLayer(rotationZ = 180f)
                 .size(width, height)
-                .clickable { onClick }
+                .clickable { onClick() }
         )
     } else {
         Icon(
@@ -64,7 +64,7 @@ fun IconWithRotate(
             tint = tint,
             modifier = Modifier
                 .size(width, height)
-                .clickable { onClick }
+                .clickable { onClick() }
         )
     }
 }
