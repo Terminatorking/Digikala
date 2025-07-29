@@ -25,6 +25,8 @@ fun CheckoutScreen(
     basketViewModel: BasketViewModel = hiltViewModel(),
     checkoutViewModel: CheckoutViewModel = hiltViewModel()
 ) {
+    val cartDetail by basketViewModel.cartDetail.collectAsState()
+    val currentCartItems by basketViewModel.ourCartItems.collectAsState()
 
     val modalSheetState = rememberModalBottomSheetState(
         initialValue = ModalBottomSheetValue.Hidden,
@@ -54,7 +56,9 @@ fun CheckoutScreen(
                     }
                 }
                 item {
-                    CartItemReviewSection()
+                    CartItemReviewSection(cartDetail, currentCartItems) {
+
+                    }
                 }
                 item {
                     CartInfoSection()

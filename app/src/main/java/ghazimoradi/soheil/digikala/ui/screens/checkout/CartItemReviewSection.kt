@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -23,6 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.data.model.basket.CartDetails
+import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -34,7 +38,11 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
 
 @Composable
-fun CartItemReviewSection() {
+fun CartItemReviewSection(
+    cartDetail: CartDetails,
+    currentCartItems: List<CartItem>,
+    onDeliveryTimeClick: () -> Unit
+) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
             color = MaterialTheme.colors.darkText,
@@ -60,7 +68,6 @@ fun CartItemReviewSection() {
                     .fillMaxWidth()
                     .padding(horizontal = MaterialTheme.spacing.semiMedium)
             ) {
-
                 Text(
                     color = MaterialTheme.colors.darkText,
                     text = digitByLocate(stringResource(id = R.string.delivery_1)),
@@ -95,22 +102,22 @@ fun CartItemReviewSection() {
                     Spacer(modifier = Modifier.width(MaterialTheme.spacing.medium))
 
                     Text(
-                        text = digitByLocate("10000 ${stringResource(id = R.string.goods)} "),
+                        text = digitByLocate("${cartDetail.totalCount} ${stringResource(id = R.string.goods)} "),
                         Modifier.padding(MaterialTheme.spacing.small),
                         style = MaterialTheme.typography.extraSmall,
                         color = MaterialTheme.colors.darkText,
                     )
                 }
-//
-//                LazyRow(
-//                    modifier = Modifier.fillMaxWidth(),
-//                    horizontalArrangement = Arrangement.Start,
-//                    verticalAlignment = Alignment.CenterVertically
-//                ) {
-//                    items(currentCartItems) { item ->
-//                        CheckoutProductCard(item)
-//                    }
-//                }
+
+                LazyRow(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Start,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    items(currentCartItems) { item ->
+                        CheckoutProductCard(item)
+                    }
+                }
 
                 Row {
                     Text(
@@ -139,7 +146,7 @@ fun CartItemReviewSection() {
                         .fillMaxWidth()
                         .padding(bottom = MaterialTheme.spacing.medium)
                         .clickable {
-
+                            onDeliveryTimeClick()
                         },
                     horizontalArrangement = Arrangement.Start,
                     verticalAlignment = Alignment.CenterVertically
