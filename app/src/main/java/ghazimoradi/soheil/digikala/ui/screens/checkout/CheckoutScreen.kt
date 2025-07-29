@@ -54,6 +54,9 @@ fun CheckoutScreen(
                 item {
                     CartItemReviewSection()
                 }
+                item {
+                    CartInfoSection()
+                }
             }
         }
     }
