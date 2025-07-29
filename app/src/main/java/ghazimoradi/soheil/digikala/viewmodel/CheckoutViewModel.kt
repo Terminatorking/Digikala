@@ -1,6 +1,5 @@
 package ghazimoradi.soheil.digikala.viewmodel
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ghazimoradi.soheil.digikala.data.model.checkout.ConfirmPurchase
@@ -13,8 +12,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CheckoutViewModel @Inject constructor(private val repository: CheckoutRepository) :
-    RemoteViewModel() {
+class CheckoutViewModel @Inject constructor(
+    private val repository: CheckoutRepository
+) : RemoteViewModel() {
 
     val shippingCost = MutableStateFlow<NetworkResult<Int>>(NetworkResult.Loading())
 
@@ -42,9 +42,5 @@ class CheckoutViewModel @Inject constructor(private val repository: CheckoutRepo
                 purchaseResponse.emit(repository.confirmPurchase(confirmPurchase))
             }
         }
-    }
-
-    override fun getAllDataFromServer(address: String) {
-       getShippingCost(address)
     }
 }
