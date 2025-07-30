@@ -63,10 +63,10 @@ fun Basket(
             .background(MaterialTheme.colors.mainBg)
     ) {
         TabRow(
-            indicator = { line ->
+            indicator = { tabPositions ->
                 Box(
                     modifier = Modifier
-                        .tabIndicatorOffset(line[selectedTabIndex])
+                        .tabIndicatorOffset(tabPositions[selectedTabIndex])
                         .height(3.dp)
                         .background(Red)
                 )

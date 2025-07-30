@@ -1,25 +1,23 @@
 package ghazimoradi.soheil.digikala.ui.screens.checkout
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.ui.theme.grayCategory
-import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.grayCategory
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
 fun CartInfoSection() {
@@ -51,7 +49,7 @@ fun CartInfoSection() {
                     painter = painterResource(id = R.drawable.info),
                     contentDescription = "",
                     modifier = Modifier.size(26.dp),
-                    tint = Color.DarkGray
+                    tint = MaterialTheme.colors.gray
                 )
             }
 
@@ -64,7 +62,7 @@ fun CartInfoSection() {
                     modifier = Modifier.padding(MaterialTheme.spacing.small),
                     text = stringResource(id = R.string.factor_info),
                     textAlign = TextAlign.Start,
-                    color = Color.DarkGray,
+                    color = MaterialTheme.colors.gray,
                     style = MaterialTheme.typography.h6,
                 )
             }

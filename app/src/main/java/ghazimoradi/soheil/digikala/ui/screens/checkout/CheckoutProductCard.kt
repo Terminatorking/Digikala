@@ -1,7 +1,9 @@
 package ghazimoradi.soheil.digikala.ui.screens.checkout
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -12,52 +14,41 @@ import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.data.model.basket.CartItem
+import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
-import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper
 
 @Composable
-fun CheckoutProductCard(
-    item: CartItem
-) {
-    Box(
+fun CheckoutProductCard(item: CartItem) {
+    Row(
         modifier = Modifier
             .padding(MaterialTheme.spacing.small)
-            .size(75.dp)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.Bottom,
     ) {
-        Box(
-            modifier = Modifier
-                .size(75.dp)
-        ) {
-            Image(
-                painter = rememberAsyncImagePainter(item.image),
-                contentDescription = "",
-                contentScale = ContentScale.FillBounds
-            )
-        }
 
-        Box(
-            modifier = Modifier
-                .size(75.dp)
-                .clip(MaterialTheme.roundedShape.extraSmall),
-            contentAlignment = Alignment.BottomEnd
-        ){
-            Text(
-                text = DigitHelper.digitByLocate(item.count.toString()),
-                style = MaterialTheme.typography.extraSmall
-            )
-        }
+        Image(
+            modifier = Modifier.size(75.dp),
+            painter = rememberAsyncImagePainter(item.image),
+            contentDescription = "",
+            contentScale = ContentScale.FillBounds
+        )
+        Spacer(modifier = Modifier.width(5.dp))
+        Text(
+            color = MaterialTheme.colors.darkText,
+            text = DigitHelper.digitByLocate(item.count.toString()),
+            style = MaterialTheme.typography.extraSmall
+        )
     }
 
     VerticalDivider(
-        color = MaterialTheme  .colors.gray.copy(0.4f),
+        color = MaterialTheme.colors.gray.copy(0.4f),
         modifier = Modifier
             .height(70.dp)
             .width(1.dp)
