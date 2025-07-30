@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 import ghazimoradi.soheil.digikala.viewmodel.CheckoutViewModel
@@ -62,6 +63,9 @@ fun CheckoutScreen(
                 }
                 item {
                     CartInfoSection()
+                }
+                item {
+                    CartPriceDetailSection(cartDetail)
                 }
             }
         }
