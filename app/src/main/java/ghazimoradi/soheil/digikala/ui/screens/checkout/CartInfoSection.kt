@@ -14,16 +14,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.gray
-import ghazimoradi.soheil.digikala.ui.theme.grayCategory
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
 fun CartInfoSection() {
     Spacer(modifier = Modifier.height(MaterialTheme.spacing.semiLarge))
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.grayCategory),
+        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         shape = MaterialTheme.roundedShape.small,
         modifier = Modifier
             .fillMaxWidth()
@@ -49,7 +50,7 @@ fun CartInfoSection() {
                     painter = painterResource(id = R.drawable.info),
                     contentDescription = "",
                     modifier = Modifier.size(26.dp),
-                    tint = MaterialTheme.colors.gray
+                    tint = MaterialTheme.colors.icon
                 )
             }
 
@@ -62,7 +63,7 @@ fun CartInfoSection() {
                     modifier = Modifier.padding(MaterialTheme.spacing.small),
                     text = stringResource(id = R.string.factor_info),
                     textAlign = TextAlign.Start,
-                    color = MaterialTheme.colors.gray,
+                    color = MaterialTheme.colors.darkText,
                     style = MaterialTheme.typography.h6,
                 )
             }
