@@ -81,7 +81,9 @@ fun CheckoutScreen(
 
     ModalBottomSheetLayout(
         sheetState = modalSheetState,
-        sheetContent = {}
+        sheetContent = {
+            DeliveryTimeBottomSheet()
+        }
     ) {
         Box(
             modifier = Modifier
