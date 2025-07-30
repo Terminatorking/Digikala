@@ -16,7 +16,6 @@ class CheckoutRepository @Inject constructor(
            api.getShippingCost(address)
         }
 
-
     suspend fun setNewOrder(cartOrderDetail: OrderDetail): NetworkResult<String> =
         safeApiCall {
             api.setNewOrder(cartOrderDetail)
