@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
 import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
+import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
@@ -24,24 +25,56 @@ fun SetupNavGraph(navController: NavHostController) {
         composable(route = Screen.Splash.route) {
             SplashScreen(navController = navController)
         }
+
         composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
         }
+
         composable(route = Screen.Category.route) {
             CategoryScreen(navController = navController)
         }
+
         composable(route = Screen.Basket.route) {
             BasketScreen(navController = navController)
         }
+
         composable(route = Screen.Profile.route) {
             ProfileScreen(navController = navController)
         }
+
         composable(route = Screen.Settings.route) {
             SettingsScreen(navController = navController)
         }
+
         composable(route = Screen.Checkout.route) {
             CheckoutScreen(navController = navController)
         }
+
+        composable(route = Screen.ConfirmPurchase.route + "/{orderId}/{orderPrice}",
+            arguments = listOf(
+                navArgument("orderId") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                },
+                navArgument("orderPrice") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("orderId")?.let { orderId ->
+                it.arguments!!.getString("orderPrice")?.let { orderPrice ->
+                    ConfirmPurchaseScreen(
+                        navController = navController,
+                        orderId = orderId,
+                        orderPrice = orderPrice
+                    )
+                }
+            }
+        }
+
         composable(
             route = Screen.WebView.route + "?url={url}",
             arguments = listOf(
