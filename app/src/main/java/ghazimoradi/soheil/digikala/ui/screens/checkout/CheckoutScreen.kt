@@ -2,7 +2,9 @@ package ghazimoradi.soheil.digikala.ui.screens.checkout
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
@@ -15,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
+import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 import ghazimoradi.soheil.digikala.viewmodel.CheckoutViewModel
@@ -66,6 +69,16 @@ fun CheckoutScreen(
                 }
                 item {
                     CartPriceDetailSection(cartDetail)
+                }
+            }
+
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.BottomCenter)
+            ) {
+                BuyProcessContinue(cartDetail.payablePrice) {
+
                 }
             }
         }
