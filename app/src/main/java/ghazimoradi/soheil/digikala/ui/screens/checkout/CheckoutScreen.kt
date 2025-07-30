@@ -29,6 +29,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.model.checkout.OrderDetail
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.components.OurLoading
@@ -37,6 +38,8 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 import ghazimoradi.soheil.digikala.viewmodel.CheckoutViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -79,6 +82,32 @@ fun CheckoutScreen(
             loading = true
         }
     }
+
+    var orderId by remember { mutableStateOf("") }
+
+    LaunchedEffect(Dispatchers.Main) {
+        checkoutViewModel.orderResponse.collectLatest { orderResult ->
+            when (orderResult) {
+                is NetworkResult.Success -> {
+                    orderId = orderResult.data ?: ""
+                    navController.navigate(
+                        Screen.ConfirmPurchase.withArgs(
+                            orderId,
+                            cartDetail.payablePrice + shippingCost
+                        )
+                    )
+                    Log.e("3636", orderId)
+                }
+
+                is NetworkResult.Error -> {
+                    Log.e("3636", "CheckoutScreen error : ${shippingCostResult.message}")
+                }
+
+                is NetworkResult.Loading -> {}
+            }
+        }
+    }
+
 
     val coroutineScope = rememberCoroutineScope()
     val modalSheetState = rememberModalBottomSheetState(
