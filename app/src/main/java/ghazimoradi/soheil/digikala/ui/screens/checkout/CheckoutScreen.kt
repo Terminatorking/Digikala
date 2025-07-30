@@ -13,18 +13,28 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.rememberModalBottomSheetState
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import ghazimoradi.soheil.digikala.data.model.checkout.OrderDetail
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.components.OurLoading
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 import ghazimoradi.soheil.digikala.viewmodel.CheckoutViewModel
 import kotlinx.coroutines.launch
@@ -136,7 +146,17 @@ fun CheckoutScreen(
                         )
                 ) {
                     BuyProcessContinue(cartDetail.payablePrice, shippingCost) {
-
+                        checkoutViewModel.addNewOrder(
+                            OrderDetail(
+                                orderAddress = address,
+                                orderProducts = currentCartItems,
+                                orderTotalDiscount = cartDetail.totalDiscount,
+                                orderTotalPrice = cartDetail.payablePrice + shippingCost,
+                                orderUserPhone = addressPhone,
+                                orderUserName = addressName,
+                                token = USER_TOKEN
+                            )
+                        )
                     }
                 }
             }
