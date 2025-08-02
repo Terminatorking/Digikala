@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.category
+package ghazimoradi.soheil.digikala.ui.screens.subCategoryScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,13 +33,13 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.amber
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper
 import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitBySeparator
@@ -55,8 +55,8 @@ fun HorizontalProductCard(
             .fillMaxWidth()
             .padding(10.dp)
             .clickable {
-                // navController.navigate(Screen.ProductDetail.withArgs(item._id))
-            }
+                navController.navigate(Screen.ProductDetail.withArgs(item._id))
+            },
     ) {
 
         Row(
@@ -119,7 +119,7 @@ fun HorizontalProductCard(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = DigitHelper.digitByLocate(item.star.toString()),
+                            text = digitByLocate(item.star.toString()),
                             fontWeight = FontWeight.SemiBold,
                             style = MaterialTheme.typography.h6,
                             color = MaterialTheme.colors.semiDarkText,

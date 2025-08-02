@@ -2,9 +2,7 @@ package ghazimoradi.soheil.digikala.viewmodel
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ghazimoradi.soheil.digikala.data.model.purchase.PaymentRequest
@@ -16,11 +14,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import androidx.core.net.toUri
 
 @HiltViewModel
 class PurchaseViewModel @Inject constructor(
     private val repository: PurchaseRepository
-) : ViewModel() {
+) : RemoteViewModel() {
 
     private val _purchaseResult = MutableStateFlow<PaymentResponse?>(null)
     val purchaseResult: StateFlow<PaymentResponse?> = _purchaseResult
@@ -51,7 +50,7 @@ class PurchaseViewModel @Inject constructor(
     }
 
     fun openBrowser(context: Context, url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        val intent = Intent(Intent.ACTION_VIEW, url.toUri())
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(intent)
     }

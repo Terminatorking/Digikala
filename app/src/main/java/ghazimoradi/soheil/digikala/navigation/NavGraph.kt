@@ -8,10 +8,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
 import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
+import ghazimoradi.soheil.digikala.ui.screens.subCategoryScreen.SubCategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
+import ghazimoradi.soheil.digikala.ui.screens.product_detail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
@@ -72,6 +74,40 @@ fun SetupNavGraph(navController: NavHostController) {
                         orderPrice = orderPrice
                     )
                 }
+            }
+        }
+
+        composable(route = Screen.ProductDetail.route + "/{productId}",
+            arguments = listOf(
+                navArgument("productId") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("productId")?.let { productId ->
+                ProductDetailScreen(
+                    navController = navController,
+                    productId = productId
+                )
+            }
+        }
+
+        composable(route = Screen.SubCategoryScreen.route + "/{categoryId}",
+            arguments = listOf(
+                navArgument("categoryId") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("categoryId")?.let { categoryId ->
+                SubCategoryScreen(
+                    navController = navController,
+                    categoryId = categoryId
+                )
             }
         }
 

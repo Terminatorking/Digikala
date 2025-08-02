@@ -24,6 +24,7 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.category.Sub
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
@@ -43,7 +44,7 @@ fun SubCategoryItem(
                 horizontal = MaterialTheme.spacing.extraSmall
             )
             .clickable {
-                // navController.navigate(Screen.SubCategoryScreen.withArgs(item._id))
+                 navController.navigate(Screen.SubCategoryScreen.withArgs(item._id))
             },
         shape = MaterialTheme.roundedShape.small
     ) {
