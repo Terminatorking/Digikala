@@ -18,6 +18,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.model.category.Sub
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 
@@ -45,7 +46,7 @@ fun CategoryItem(
             modifier = Modifier
                 .padding(horizontal = MaterialTheme.spacing.small)
                 .clickable {
-                    //  navController.navigate(Screen.SubCategoryScreen.withArgs(categoryId))
+                      navController.navigate(Screen.SubCategoryScreen.withArgs(categoryId))
                 },
             text = stringResource(id = R.string.see_all),
             style = MaterialTheme.typography.h5,
