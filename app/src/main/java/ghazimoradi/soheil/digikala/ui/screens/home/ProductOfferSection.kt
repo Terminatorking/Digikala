@@ -1,6 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
 import android.util.Log
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
@@ -38,6 +40,7 @@ import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
  */
 @Composable
 fun ProductOfferSection(
+    navController: NavController,
     viewModel: HomeViewModel = hiltViewModel(),
     isMostVisited: Boolean = false
 ) {
@@ -106,17 +109,17 @@ fun ProductOfferSection(
             if (isMostVisited) {
                 itemsIndexed(mostVisitedList) { index, item ->
                     ProductHorizontalCard(
-                        name = item.name,
+                        navController = navController,
+                        item = item,
                         id = digitByLocate((index + 1).toString()),
-                        imageUrl = item.image
                     )
                 }
             } else {
                 itemsIndexed(bestSellerOfferList) { index, item ->
                     ProductHorizontalCard(
-                        name = item.name,
+                        navController = navController,
+                        item = item,
                         id = digitByLocate((index + 1).toString()),
-                        imageUrl = item.image
                     )
                 }
             }

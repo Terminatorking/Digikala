@@ -10,6 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -20,7 +21,8 @@ import ghazimoradi.soheil.digikala.R
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun MostDiscountedSection(
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
+    navController: NavController
 ) {
     var mostDiscountedList by remember {
         mutableStateOf<List<StoreProduct>>(emptyList())
@@ -61,7 +63,7 @@ fun MostDiscountedSection(
             horizontalArrangement = Arrangement.Start
         ) {
             for (item in mostDiscountedList) {
-                MostDiscountedCard(item)
+                MostDiscountedCard(item,navController)
             }
         }
     }

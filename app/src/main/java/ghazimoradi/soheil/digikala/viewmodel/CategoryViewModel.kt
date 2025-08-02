@@ -25,11 +25,14 @@ class CategoryViewModel @Inject constructor(
     val subCategory = MutableStateFlow<NetworkResult<SubCategory>>(NetworkResult.Loading())
 
     var productByCategoryList: Flow<PagingData<StoreProduct>> =
-        flow { emit(PagingData.Companion.empty()) }
+        flow {
+            emit(
+                PagingData.Companion.empty()
+            )
+        }
 
     override fun getAllDataFromServer() {
         viewModelScope.launch {
-
             launch {
                 subCategory.emit(repository.getSubCategories())
             }

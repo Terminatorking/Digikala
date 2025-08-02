@@ -11,7 +11,10 @@ class CategoryRepository @Inject constructor(
     private val api: CategoryApiInterface
 ) : BaseApiResponse() {
 
-    suspend fun getSubCategories(): NetworkResult<SubCategory> = safeApiCall { api.getSubCategories() }
+    suspend fun getSubCategories(): NetworkResult<SubCategory> =
+        safeApiCall {
+            api.getSubCategories()
+        }
 
     suspend fun getProductByCategory(
         categoryName: String,

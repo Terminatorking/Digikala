@@ -42,8 +42,7 @@ fun HomeScreen(navController: NavHostController) {
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Home(
-    navController: NavHostController,
-    viewModel: HomeViewModel = hiltViewModel()
+    navController: NavHostController, viewModel: HomeViewModel = hiltViewModel()
 ) {
     LocaleUtils.setLocale(LocalContext.current, USER_LANGUAGE)
 
@@ -87,11 +86,9 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
     }
 
     SwipeRefresh(
-        swipeRefreshState,
-        onRefresh = {
+        swipeRefreshState, onRefresh = {
             viewModel.refreshDataFromServer()
-        }
-    ) {
+        }) {
         if (loading) {
             OurLoading(getScreenHeight())
         } else {
@@ -126,7 +123,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     CenterBannerSection(1)
                 }
                 item {
-                    ProductOfferSection()
+                    ProductOfferSection(navController = navController)
                 }
                 item {
                     CenterBannerSection(2)
@@ -138,7 +135,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     CenterBannerSection(3)
                 }
                 item {
-                    ProductOfferSection(isMostVisited = true)
+                    ProductOfferSection(navController = navController, isMostVisited = true)
                 }
                 item {
                     CenterBannerSection(4)
@@ -147,7 +144,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     CenterBannerSection(5)
                 }
                 item {
-                    MostDiscountedSection()
+                    MostDiscountedSection(navController = navController)
                 }
             }
         }

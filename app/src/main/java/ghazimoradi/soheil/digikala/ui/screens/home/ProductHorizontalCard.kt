@@ -1,6 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Text
@@ -11,7 +12,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
+import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraBoldNumber
@@ -19,12 +23,15 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
 fun ProductHorizontalCard(
-    name: String,
+    navController: NavController,
+    item: StoreProduct,
     id: String,
-    imageUrl: String
 ) {
     Row(
         modifier = Modifier
+            .clickable {
+                navController.navigate(Screen.ProductDetail.withArgs(item._id))
+            }
             .width(320.dp)
             .padding(bottom = MaterialTheme.spacing.extraSmall),
         horizontalArrangement = Arrangement.Center,
@@ -32,7 +39,7 @@ fun ProductHorizontalCard(
     ) {
 
         Image(
-            painter = rememberAsyncImagePainter(imageUrl),
+            painter = rememberAsyncImagePainter(item.image),
             contentDescription = "",
             modifier = Modifier
                 .weight(.3f)
@@ -57,7 +64,7 @@ fun ProductHorizontalCard(
                 .padding(vertical = MaterialTheme.spacing.small),
         ) {
             Text(
-                text = name,
+                text = item.name,
                 style = MaterialTheme.typography.body2,
                 fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colors.darkText,

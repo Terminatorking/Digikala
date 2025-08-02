@@ -2,6 +2,7 @@ package ghazimoradi.soheil.digikala.ui.screens.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,9 +31,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.White
@@ -47,11 +50,17 @@ import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
 @Composable
-fun MostDiscountedCard(item: StoreProduct) {
+fun MostDiscountedCard(
+    item: StoreProduct,
+    navController: NavController,
+) {
 
     Card(
         colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         modifier = Modifier
+            .clickable {
+                navController.navigate(Screen.ProductDetail.withArgs(item._id))
+            }
             .fillMaxWidth(0.5f)
             .padding(
                 horizontal = MaterialTheme.spacing.biggerSmall,
