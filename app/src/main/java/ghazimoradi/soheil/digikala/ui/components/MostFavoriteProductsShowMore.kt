@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.home
+package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -12,7 +12,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 
 @Composable
 fun MostFavoriteProductsShowMore() {

@@ -31,8 +31,8 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.screens.home.MostFavoriteProductsOffer
-import ghazimoradi.soheil.digikala.ui.screens.home.MostFavoriteProductsShowMore
+import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsOffer
+import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsShowMore
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.ProductDetailViewModel
