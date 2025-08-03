@@ -24,7 +24,7 @@ import ghazimoradi.soheil.digikala.data.model.product_detail.ProductColor
 import ghazimoradi.soheil.digikala.data.model.product_detail.ProductDetail
 import ghazimoradi.soheil.digikala.data.model.product_detail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewmodel.ProductDetailViewModel
@@ -44,9 +44,11 @@ fun ProductDetailScreen(
     var imageSlider by remember {
         mutableStateOf<List<SliderImage>>(emptyList())
     }
+
     var productColors by remember {
         mutableStateOf<List<ProductColor>>(emptyList())
     }
+
     var productComments by remember {
         mutableStateOf<List<Comment>>(emptyList())
     }
@@ -92,7 +94,7 @@ fun ProductDetailScreen(
     }
 
     if (loading) {
-        OurLoading(getScreenHeight())
+        Loading(getScreenHeight())
     } else {
         Scaffold(
             bottomBar = {

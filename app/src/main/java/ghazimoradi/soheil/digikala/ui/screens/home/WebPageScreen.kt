@@ -13,7 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 
 @SuppressLint("SetJavaScriptEnabled")
@@ -53,6 +53,6 @@ fun WebPageScreen(
     )
 
     if (isLoading) {
-        OurLoading(getScreenHeight(), true)
+        Loading(getScreenHeight(), true)
     }
 }

@@ -32,7 +32,7 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
@@ -163,7 +163,7 @@ fun CheckoutScreen(
             }
 
             if (loading) {
-                OurLoading(height = 65.dp)
+                Loading(height = 65.dp)
             } else {
                 Row(
                     Modifier

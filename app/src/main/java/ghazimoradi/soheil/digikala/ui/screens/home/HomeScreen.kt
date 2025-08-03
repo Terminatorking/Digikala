@@ -25,7 +25,7 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import ghazimoradi.soheil.digikala.data.model.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
@@ -90,7 +90,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
             viewModel.refreshDataFromServer()
         }) {
         if (loading) {
-            OurLoading(getScreenHeight())
+            Loading(getScreenHeight())
         } else {
             LazyColumn(
                 modifier = Modifier

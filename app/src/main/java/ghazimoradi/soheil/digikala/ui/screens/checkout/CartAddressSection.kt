@@ -33,7 +33,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
-import ghazimoradi.soheil.digikala.ui.components.OurLoading
+import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
@@ -96,7 +96,7 @@ fun CartAddressSection(
     }
 
     if (loading) {
-        OurLoading(100.dp)
+        Loading(100.dp)
     } else {
         Row(modifier = Modifier.fillMaxWidth()) {
             Icon(
