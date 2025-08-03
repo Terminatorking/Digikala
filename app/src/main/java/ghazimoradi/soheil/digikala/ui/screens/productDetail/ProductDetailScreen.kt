@@ -26,6 +26,7 @@ import ghazimoradi.soheil.digikala.data.model.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.TopSliderSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewmodel.ProductDetailViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -113,7 +114,7 @@ fun ProductDetailScreen(
                     .background(MaterialTheme.colors.mainBg)
             ) {
                 item {
-                    ProductTopSliderSection(imageSlider)
+                    TopSliderSection(productDetailSliders = imageSlider)
                 }
 
                 item {

@@ -9,7 +9,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.Black
-import ghazimoradi.soheil.digikala.ui.theme.Imperial_Red
+import ghazimoradi.soheil.digikala.ui.theme.ImperialRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 
 @Composable
@@ -24,7 +24,7 @@ fun ChangeStatusBarColor(navController: NavHostController) {
     when (navBackStackEntry?.destination?.route) {
         Screen.Splash.route -> {
             SideEffect {
-                systemUiController.setStatusBarColor(color = Imperial_Red)
+                systemUiController.setStatusBarColor(color = ImperialRed)
             }
         }
 

@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.home
+package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -19,6 +20,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -29,26 +33,39 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 import ghazimoradi.soheil.digikala.data.model.home.Slider
+import ghazimoradi.soheil.digikala.data.model.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.ui.theme.*
 import kotlinx.coroutines.delay
 
 @Composable
 @Suppress("Deprecation")
-fun TopSliderSection(sliders: List<Slider>) {
+fun TopSliderSection(
+    homeSliders: List<Slider> = emptyList(),
+    productDetailSliders: List<SliderImage> = emptyList(),
+) {
+    var isFromProductDetail = false
+
+    if (homeSliders.isEmpty()) {
+        isFromProductDetail = true
+    }
+
+    if (productDetailSliders.isEmpty()) {
+        isFromProductDetail = false
+    }
 
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp)
+            .height(if (isFromProductDetail) 300.dp else 200.dp)
     ) {
         Column(
-            modifier = Modifier
+            modifier = if (!isFromProductDetail) Modifier
                 .fillMaxWidth()
                 .fillMaxHeight()
                 .padding(
                     horizontal = LocalSpacing.current.extraSmall,
                     vertical = LocalSpacing.current.small
-                )
+                ) else Modifier.fillMaxSize()
         ) {
             val pagerState = rememberPagerState()
             var imageUrl by remember {
@@ -57,13 +74,13 @@ fun TopSliderSection(sliders: List<Slider>) {
 
             Box {
                 HorizontalPager(
-                    count = sliders.size,
+                    count = if (isFromProductDetail) productDetailSliders.size else homeSliders.size,
                     state = pagerState,
                     contentPadding = PaddingValues(horizontal = LocalSpacing.current.medium),
-                    modifier = Modifier
-                        .fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth()
                 ) { index ->
-                    imageUrl = sliders[index].image
+                    imageUrl =
+                        if (isFromProductDetail) productDetailSliders[index].image else homeSliders[index].image
                     Box(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.BottomCenter
@@ -78,10 +95,24 @@ fun TopSliderSection(sliders: List<Slider>) {
                                 )
                                 .build()
                         )
+                        val gradientBrush = Brush.verticalGradient(
+                            colors = listOf(
+                                Transparent,
+                                Black.copy(0.6f)
+                            ),
+                            startY = 0f,
+                            endY = Float.POSITIVE_INFINITY // Or a specific endY based on image height
+                        )
                         Image(
-                            painter = painter, contentDescription = "", modifier = Modifier
+                            painter = painter,
+                            contentDescription = "",
+                            modifier = Modifier
                                 .padding(LocalSpacing.current.small)
                                 .clip(LocalShape.current.medium)
+                                .drawWithContent {
+                                    drawContent()
+                                    drawRect(brush = gradientBrush, blendMode = BlendMode.SrcOver)
+                                }
                                 .fillMaxSize(),
                             contentScale = ContentScale.FillBounds
                         )
@@ -91,10 +122,10 @@ fun TopSliderSection(sliders: List<Slider>) {
                 HorizontalPagerIndicator(
                     pagerState = pagerState,
                     modifier = Modifier
-                        .align(Alignment.BottomEnd)
+                        .align(Alignment.BottomCenter)
                         .padding(LocalSpacing.current.semiLarge),
-                    activeColor = Black,
-                    inactiveColor = LightGray,
+                    activeColor = MaterialTheme.colors.DigiKalaRed,
+                    inactiveColor = White,
                     indicatorWidth = LocalSpacing.current.small,
                     indicatorHeight = LocalSpacing.current.small,
                     indicatorShape = CircleShape
@@ -104,8 +135,13 @@ fun TopSliderSection(sliders: List<Slider>) {
             LaunchedEffect(key1 = pagerState.currentPage) {
                 delay(6000)
                 var newPosition = pagerState.currentPage + 1
-                if (newPosition > sliders.size - 1)
-                    newPosition = 0
+                if (isFromProductDetail) {
+                    if (newPosition > productDetailSliders.size - 1)
+                        newPosition = 0
+                } else {
+                    if (newPosition > homeSliders.size - 1)
+                        newPosition = 0
+                }
 
                 pagerState.scrollToPage(newPosition)
             }

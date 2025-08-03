@@ -27,6 +27,7 @@ import ghazimoradi.soheil.digikala.data.model.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.TopSliderSection
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
@@ -104,7 +105,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     SearchBarSection()
                 }
                 item {
-                    TopSliderSection(sliderList)
+                    TopSliderSection(homeSliders = sliderList)
                 }
                 item {
                     ShowcaseSection(navController = navController)

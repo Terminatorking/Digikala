@@ -23,7 +23,7 @@ import ghazimoradi.soheil.digikala.ui.theme.Gold
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
-import ghazimoradi.soheil.digikala.ui.theme.grayAlpha
+import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
@@ -79,7 +79,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
             Icon(
                 painter = painterResource(id = R.drawable.dot),
                 contentDescription = "",
-                tint = MaterialTheme.colors.grayAlpha,
+                tint = MaterialTheme.colors.icon,
                 modifier = Modifier
                     .size(7.dp)
                     .padding(horizontal = 1.dp)
@@ -95,7 +95,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
             Icon(
                 painter = painterResource(id = R.drawable.dot),
                 contentDescription = "",
-                tint = MaterialTheme.colors.grayAlpha,
+                tint = MaterialTheme.colors.icon,
                 modifier = Modifier
                     .size(7.dp)
                     .padding(horizontal = 1.dp)

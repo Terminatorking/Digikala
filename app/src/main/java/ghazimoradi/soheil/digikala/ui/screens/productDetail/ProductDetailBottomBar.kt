@@ -5,8 +5,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.BottomNavigation
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -114,8 +114,7 @@ fun ProductDetailBottomBar(
                         },
                         colors = ButtonDefaults.buttonColors(MaterialTheme.colors.DigiKalaRed),
                         shape = MaterialTheme.roundedShape.small,
-
-                        ) {
+                    ) {
                         Text(
                             text = stringResource(R.string.add_to_basket),
                             color = White,

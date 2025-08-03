@@ -5,8 +5,8 @@ import androidx.compose.material.Colors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val Imperial_Red = Color(0xFFed1b34)
-val Brick_Red = Color(0xFFCE3C4D)
+val ImperialRed = Color(0xFFed1b34)
+val BrickRed = Color(0xFFCE3C4D)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 val White = Color.White
@@ -34,7 +34,7 @@ val Colors.mainBg: Color
 
 val Colors.splashBg: Color
     @Composable
-    get() = Imperial_Red
+    get() = ImperialRed
 
 val Colors.CursorColor: Color
     @Composable
@@ -90,7 +90,7 @@ val Colors.DigiKalaDarkRed: Color
 
 val Colors.DigiKalaRed: Color
     @Composable
-    get() = Imperial_Red
+    get() = ImperialRed
 
 val Colors.semiDarkText: Color
     @Composable
