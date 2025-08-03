@@ -96,7 +96,7 @@ fun ProductDetailScreen(
     } else {
         Scaffold(
             bottomBar = {
-
+                ProductDetailBottomBar(productDetailList, navController)
             },
 
             topBar = {
