@@ -17,7 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -39,9 +39,11 @@ import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
@@ -56,7 +58,7 @@ fun MostDiscountedCard(
 ) {
 
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
         modifier = Modifier
             .clickable {
                 navController.navigate(Screen.ProductDetail.withArgs(item._id))
@@ -107,7 +109,7 @@ fun MostDiscountedCard(
                         .padding(horizontal = MaterialTheme.spacing.small),
                     style = MaterialTheme.typography.h6,
                     fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -128,7 +130,7 @@ fun MostDiscountedCard(
                         modifier = Modifier
                             .size(22.dp)
                             .padding(2.dp),
-                        tint = MaterialTheme.colors.cyan
+                        tint = MaterialTheme.colorScheme.cyan
                     )
 
                     Spacer(modifier = Modifier.width(5.dp))
@@ -137,7 +139,7 @@ fun MostDiscountedCard(
                         text = item.seller,
                         style = MaterialTheme.typography.extraSmall,
                         fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colors.semiDarkText,
+                        color = MaterialTheme.colorScheme.semiDarkText,
                     )
                 }
 
@@ -156,7 +158,7 @@ fun MostDiscountedCard(
                             .width(40.dp)
                             .height(24.dp)
                             .background(
-                                color = MaterialTheme.colors.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
                                 shape = CircleShape
                             )
                             .wrapContentWidth(Alignment.CenterHorizontally)
@@ -174,7 +176,7 @@ fun MostDiscountedCard(
 
                         Row {
                             Text(
-                                color = MaterialTheme.colors.darkText,
+                                color = MaterialTheme.colorScheme.darkText,
                                 text = digitByLocateAndSeparator(
                                     applyDiscount(
                                         item.price,
@@ -186,7 +188,7 @@ fun MostDiscountedCard(
                             )
 
                             Icon(
-                                tint = MaterialTheme.colors.icon,
+                                tint = MaterialTheme.colorScheme.icon,
                                 painter = logoChangeByLanguage(
                                     enLogo = R.drawable.dollar,
                                     faLogo = R.drawable.toman
@@ -200,7 +202,7 @@ fun MostDiscountedCard(
 
                         Text(
                             text = digitByLocateAndSeparator(item.price.toString()),
-                            color = MaterialTheme.colors.darkText,
+                            color = MaterialTheme.colorScheme.darkText,
                             style = MaterialTheme.typography.body2,
                             textDecoration = TextDecoration.LineThrough
                         )

@@ -4,7 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,6 +20,7 @@ import ghazimoradi.soheil.digikala.ui.theme.LocalShape
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 
 @Composable
 fun RoundedIconBox(
@@ -57,7 +58,7 @@ fun RoundedIconBox(
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis
         )

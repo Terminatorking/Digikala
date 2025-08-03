@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.screens.basket
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,10 +20,10 @@ fun SetBadgeToTab(
     index: Int,
     cartCounter: Int
 ) {
-    var color = MaterialTheme.colors.gray
+    var color = MaterialTheme.colorScheme.gray
 
     if (selectedTabIndex == index) {
-        color = MaterialTheme.colors.DigiKalaRed
+        color = MaterialTheme.colorScheme.DigiKalaRed
     }
 
     Card(
@@ -37,7 +37,7 @@ fun SetBadgeToTab(
             style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.mainBg,
+            color = MaterialTheme.colorScheme.mainBg,
             modifier = Modifier
                 // .background(color = color)
                 .padding(horizontal = MaterialTheme.spacing.semiSmall)

@@ -12,22 +12,23 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
-import androidx.compose.material3.Divider
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
-import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
@@ -60,35 +61,35 @@ fun ProfileOrdersItem(
                 Card(
                     Modifier.align(Alignment.BottomEnd),
                     shape = MaterialTheme.roundedShape.extraSmall,
-                    border = BorderStroke(1.dp, Color.White)
+                    border = BorderStroke(1.dp, White)
                 ){
                     Text(
                         text = digitByLocateAndSeparator(count.toString()),
                         modifier = Modifier
-                            .background(color = MaterialTheme.colors.DigiKalaRed)
+                            .background(color = MaterialTheme.colorScheme.DigiKalaRed)
                             .height(20.dp)
                             .padding(horizontal = MaterialTheme.spacing.semiSmall),
                         textAlign = TextAlign.Center,
                         style = MaterialTheme.typography.extraSmall,
                         fontWeight = FontWeight.Bold,
-                        color = Color.White,
+                        color = White,
                     )
                 }
             }
 
             Text(
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.semiDarkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = text
             )
-
         }
-        Divider(
+
+        VerticalDivider(
             modifier = Modifier
                 .width(1.dp)
                 .height(90.dp)
                 .alpha(0.4f),
-            color = Color.LightGray,
+            color = MaterialTheme.colorScheme.darkText,
         )
     }
 }

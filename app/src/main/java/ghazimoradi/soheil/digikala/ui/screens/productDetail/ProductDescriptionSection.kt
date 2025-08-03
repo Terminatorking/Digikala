@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material3.HorizontalDivider
@@ -28,6 +28,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h4
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -49,7 +51,7 @@ fun ProductDescriptionSection(
     }
 
     HorizontalDivider(
-        color = MaterialTheme.colors.gray,
+        color = MaterialTheme.colorScheme.gray,
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
@@ -60,12 +62,12 @@ fun ProductDescriptionSection(
         text = stringResource(id = R.string.product_desc),
         style = MaterialTheme.typography.h4,
         fontWeight = FontWeight.SemiBold,
-        color = MaterialTheme.colors.darkText,
+        color = MaterialTheme.colorScheme.darkText,
     )
 
     if (isTechnicalFeatures) {
         HorizontalDivider(
-            color = MaterialTheme.colors.gray,
+            color = MaterialTheme.colorScheme.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(
                 horizontal = MaterialTheme.spacing.medium,
@@ -90,13 +92,13 @@ fun ProductDescriptionSection(
                 style = MaterialTheme.typography.h5,
                 fontWeight = FontWeight.Bold,
                 text = stringResource(id = R.string.technical_specifications),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
             Icon(
                 Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colors.settingArrow
+                tint = MaterialTheme.colorScheme.settingArrow
             )
         }
     }
@@ -104,7 +106,7 @@ fun ProductDescriptionSection(
     if (isDescription) {
 
         HorizontalDivider(
-            color = MaterialTheme.colors.gray,
+            color = MaterialTheme.colorScheme.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(
                 horizontal = MaterialTheme.spacing.medium,
@@ -126,13 +128,13 @@ fun ProductDescriptionSection(
                 style = MaterialTheme.typography.h5,
                 fontWeight = FontWeight.Bold,
                 text = stringResource(id = R.string.product_introduce),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
             Icon(
                 Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colors.settingArrow
+                tint = MaterialTheme.colorScheme.settingArrow
             )
         }
     }
@@ -147,11 +149,11 @@ fun ProductDescriptionSection(
             modifier = Modifier.padding(horizontal = MaterialTheme.spacing.small),
             text = stringResource(id = R.string.product_desc_feedback),
             style = MaterialTheme.typography.extraSmall,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
 
         Icon(
-            tint = MaterialTheme.colors.icon,
+            tint = MaterialTheme.colorScheme.icon,
             painter = painterResource(id = R.drawable.info),
             modifier = Modifier.size(20.dp), contentDescription = ""
         )

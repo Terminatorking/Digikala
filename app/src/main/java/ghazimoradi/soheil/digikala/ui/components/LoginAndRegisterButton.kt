@@ -5,13 +5,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
@@ -24,7 +25,7 @@ fun LoginAndRegisterButton(
         onClick = onClick,
         colors = ButtonDefaults
             .buttonColors(
-                MaterialTheme.colors.DigiKalaRed
+                MaterialTheme.colorScheme.DigiKalaRed
             ),
         modifier = Modifier
             .fillMaxWidth()

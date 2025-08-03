@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
@@ -31,6 +31,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Red
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -60,7 +61,7 @@ fun Basket(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.mainBg)
+            .background(MaterialTheme.colorScheme.mainBg)
     ) {
         TabRow(
             indicator = { tabPositions ->
@@ -76,13 +77,13 @@ fun Basket(
         ) {
             tabTitles.forEachIndexed { index, title ->
                 Tab(
-                    modifier = Modifier.background(MaterialTheme.colors.searchBarBg),
+                    modifier = Modifier.background(MaterialTheme.colorScheme.searchBarBg),
                     selected = selectedTabIndex == index,
                     onClick = {
                         selectedTabIndex = index
                     },
-                    selectedContentColor = MaterialTheme.colors.DigiKalaRed,
-                    unselectedContentColor = MaterialTheme.colors.gray,
+                    selectedContentColor = MaterialTheme.colorScheme.DigiKalaRed,
+                    unselectedContentColor = MaterialTheme.colorScheme.gray,
                     text = {
                         Row {
                             Text(

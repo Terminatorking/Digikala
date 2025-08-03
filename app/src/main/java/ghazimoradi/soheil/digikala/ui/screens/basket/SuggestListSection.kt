@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -31,6 +31,7 @@ import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
@@ -82,7 +83,7 @@ fun SuggestListSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(MaterialTheme.spacing.small)
-                .background(MaterialTheme.colors.searchBarBg)
+                .background(MaterialTheme.colorScheme.searchBarBg)
         )
 
         Text(
@@ -93,7 +94,7 @@ fun SuggestListSection(
             textAlign = TextAlign.Right,
             style = MaterialTheme.typography.h4,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
 
         FlowRow(

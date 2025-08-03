@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.DropdownMenuItem
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -24,6 +24,7 @@ import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
 import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -36,7 +37,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colors.searchBarBg)
+            .background(MaterialTheme.colorScheme.searchBarBg)
             .height(55.dp)
             .padding(horizontal = MaterialTheme.spacing.small),
         verticalAlignment = Alignment.CenterVertically
@@ -54,7 +55,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                     painter = painterResource(id = R.drawable.exit),
                     contentDescription = "",
                     modifier = Modifier.size(17.dp),
-                    tint = MaterialTheme.colors.icon
+                    tint = MaterialTheme.colorScheme.icon
                 )
             }
         }
@@ -70,7 +71,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                     painter = painterResource(id = R.drawable.basket),
                     contentDescription = "",
                     modifier = Modifier.size(25.dp),
-                    tint = MaterialTheme.colors.icon
+                    tint = MaterialTheme.colorScheme.icon
                 )
             }
 
@@ -97,14 +98,14 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                     painter = painterResource(id = R.drawable.menu_dots),
                     contentDescription = "",
                     modifier = Modifier.size(27.dp),
-                    tint = MaterialTheme.colors.icon
+                    tint = MaterialTheme.colorScheme.icon
                 )
             }
 
             DropdownMenu(
                 expanded = expanded,
                 onDismissRequest = { expanded = false },
-                modifier = Modifier.background(MaterialTheme.colors.surface)
+                modifier = Modifier.background(MaterialTheme.colorScheme.surface)
             ) {
                 DropdownMenuItem(
                     onClick = {
@@ -125,7 +126,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                             contentDescription = "",
                             modifier = Modifier
                                 .size(16.dp),
-                            tint = MaterialTheme.colors.icon
+                            tint = MaterialTheme.colorScheme.icon
                         )
 
                         Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
@@ -134,7 +135,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                             text = stringResource(R.string.price_chart),
                             style = MaterialTheme.typography.h4,
                             fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colors.darkText,
+                            color = MaterialTheme.colorScheme.darkText,
                         )
                     }
                 }
@@ -160,7 +161,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                             contentDescription = "",
                             modifier = Modifier
                                 .size(16.dp),
-                            tint = MaterialTheme.colors.icon
+                            tint = MaterialTheme.colorScheme.icon
                         )
 
                         Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
@@ -169,7 +170,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                             text = stringResource(R.string.share_product),
                             style = MaterialTheme.typography.h4,
                             fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colors.darkText,
+                            color = MaterialTheme.colorScheme.darkText,
                         )
                     }
                 }

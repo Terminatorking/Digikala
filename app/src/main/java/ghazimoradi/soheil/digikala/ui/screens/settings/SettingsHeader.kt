@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
@@ -31,7 +32,7 @@ fun SettingsHeader(navController: NavHostController) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold,
             text = stringResource(id = R.string.settings)
@@ -46,7 +47,7 @@ fun SettingsHeader(navController: NavHostController) {
                         vertical = MaterialTheme.spacing.small,
                         horizontal = MaterialTheme.spacing.small
                     ),
-                tint = MaterialTheme.colors.icon
+                tint = MaterialTheme.colorScheme.icon
             )
         }
     }

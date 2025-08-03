@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material3.HorizontalDivider
@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
@@ -31,7 +32,7 @@ fun MenuItem(
     icon: @Composable () -> Unit,
     text: String,
     haveDivider: Boolean,
-    color: Color = MaterialTheme.colors.darkText,
+    color: Color = MaterialTheme.colorScheme.darkText,
     addCompose: @Composable (() -> Unit)? = null,
     action: () -> Unit = {}
 ) {
@@ -76,7 +77,7 @@ fun MenuItem(
                 Text(
                     style = MaterialTheme.typography.h5,
                     fontWeight = FontWeight.Bold,
-                    text = text ,
+                    text = text,
                     color = color
                 )
 
@@ -85,7 +86,7 @@ fun MenuItem(
                         Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                         contentDescription = "",
                         modifier = Modifier.size(24.dp),
-                        tint = MaterialTheme.colors.settingArrow
+                        tint = MaterialTheme.colorScheme.settingArrow
                     )
                 } else {
                     addCompose()
@@ -97,7 +98,7 @@ fun MenuItem(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(1.dp),
-                    color = MaterialTheme  .colors.gray.copy(0.4f),
+                    color = MaterialTheme.colorScheme.gray.copy(0.4f),
                 )
             }
         }

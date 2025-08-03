@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.Oranges
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
@@ -32,7 +33,7 @@ fun DeliveryTimeBottomSheet() {
         modifier = Modifier
             .fillMaxWidth()
             .height(120.dp)
-            .background(MaterialTheme.colors.searchBarBg)
+            .background(MaterialTheme.colorScheme.searchBarBg)
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),
@@ -45,7 +46,7 @@ fun DeliveryTimeBottomSheet() {
                     onClick = {}
                 )
                 Text(
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     text = stringResource(id = R.string.pishtaz_post),
                     style = MaterialTheme.typography.h6
                 )
@@ -59,7 +60,7 @@ fun DeliveryTimeBottomSheet() {
                 )
                 Text(
                     text = digitByLocate(stringResource(id = R.string.delivery_delay)),
-                    color = MaterialTheme.colors.Oranges,
+                    color = MaterialTheme.colorScheme.Oranges,
                     style = MaterialTheme.typography.h6,
                     modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium),
                 )

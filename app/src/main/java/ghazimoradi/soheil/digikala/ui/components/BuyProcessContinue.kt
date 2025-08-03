@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -21,15 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
-import ghazimoradi.soheil.digikala.ui.theme.White
-import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.ui.theme.elevation
-import ghazimoradi.soheil.digikala.ui.theme.gray
-import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.roundedShape
-import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
-import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
 @Composable
@@ -46,10 +38,10 @@ fun BuyProcessContinue(
     }
 
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
         shape = MaterialTheme.roundedShape.extraSmall,
         elevation = CardDefaults.cardElevation(MaterialTheme.elevation.extraSmall),
-        border = BorderStroke(width = 1.dp, color = MaterialTheme.colors.gray.copy(0.2f))
+        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.gray.copy(0.2f))
     ) {
         Row(
             modifier = Modifier
@@ -63,7 +55,7 @@ fun BuyProcessContinue(
         ) {
             Button(
                 onClick = onClick,
-                colors = ButtonDefaults.buttonColors(MaterialTheme.colors.DigiKalaRed),
+                colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
                 shape = MaterialTheme.roundedShape.small
             ) {
                 Text(
@@ -84,20 +76,20 @@ fun BuyProcessContinue(
             ) {
                 Text(
                     text = title,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     style = MaterialTheme.typography.h6,
                 )
 
                 Row {
                     Text(
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         text = digitByLocateAndSeparator((price + shippingCost).toString()),
                         style = MaterialTheme.typography.body2,
                         fontWeight = FontWeight.SemiBold
                     )
 
                     Icon(
-                        tint = MaterialTheme.colors.icon,
+                        tint = MaterialTheme.colorScheme.icon,
                         painter = logoChangeByLanguage(
                             enLogo = R.drawable.dollar,
                             faLogo = R.drawable.toman

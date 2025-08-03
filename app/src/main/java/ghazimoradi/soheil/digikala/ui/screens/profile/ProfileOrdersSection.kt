@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.screens.profile
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,6 +14,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.checkout.OrderFullDetail
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
@@ -43,7 +44,7 @@ fun ProfileOrdersSection(
     }
 
     Text(
-        color = MaterialTheme.colors.darkText,
+        color = MaterialTheme.colorScheme.darkText,
         modifier = Modifier.padding(MaterialTheme.spacing.medium),
         style = MaterialTheme.typography.h3,
         fontWeight = FontWeight.Bold,

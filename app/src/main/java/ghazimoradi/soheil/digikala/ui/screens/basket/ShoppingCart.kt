@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -35,6 +35,7 @@ import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
@@ -109,7 +110,7 @@ fun ShoppingCart(
                                 text = stringResource(R.string.please_wait),
                                 fontWeight = FontWeight.Bold,
                                 style = MaterialTheme.typography.h5,
-                                color = MaterialTheme.colors.darkText,
+                                color = MaterialTheme.colorScheme.darkText,
                             )
                         }
                     }

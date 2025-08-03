@@ -1,7 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.theme
 
-//noinspection UsingMaterialAndMaterial3Libraries
-import androidx.compose.material.Colors
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -11,103 +11,103 @@ val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 val White = Color.White
 val Black = Color.Black
-val LightGray = Color.LightGray
-val DarkGray = Color.DarkGray
+private val LightGray = Color.LightGray
+private val DarkGray = Color.DarkGray
 val Transparent = Color.Transparent
 val Red = Color.Red
 
-val Colors.cyan: Color
+val ColorScheme.cyan: Color
     @Composable
-    get() = if (isLight) Color(0xFF0fabc6) else Color(0xFF17BFD3)
+    get() = if (!isSystemInDarkTheme()) Color(0xFF0fabc6) else Color(0xFF17BFD3)
 
-val Colors.gray: Color
+val ColorScheme.gray: Color
     @Composable
-    get() = if (isLight) DarkGray else LightGray
+    get() = if (!isSystemInDarkTheme()) DarkGray else LightGray
 
-val Colors.icon: Color
+val ColorScheme.icon: Color
     @Composable
-    get() = if (isLight) Black else White
+    get() = if (!isSystemInDarkTheme()) Black else White
 
-val Colors.mainBg: Color
+val ColorScheme.mainBg: Color
     @Composable
-    get() = if (isLight) White else Black
+    get() = if (!isSystemInDarkTheme()) White else Black
 
-val Colors.splashBg: Color
+val ColorScheme.splashBg: Color
     @Composable
     get() = ImperialRed
 
-val Colors.CursorColor: Color
+val ColorScheme.CursorColor: Color
     @Composable
     get() = Color(0xFF018577)
 
-val Colors.selectedBottomBar: Color
+val ColorScheme.selectedBottomBar: Color
     @Composable
-    get() = if (isLight) Color(0xFF43474C) else Color(0xFFCFD4DA)
+    get() = if (!isSystemInDarkTheme()) Color(0xFF43474C) else Color(0xFFCFD4DA)
 
-val Colors.unSelectedBottomBar: Color
+val ColorScheme.unSelectedBottomBar: Color
     @Composable
-    get() = if (isLight) Color(0xFFA4A1A1) else Color(0xFF575A5E)
+    get() = if (!isSystemInDarkTheme()) Color(0xFFA4A1A1) else Color(0xFF575A5E)
 
-val Colors.bottomBar: Color
+val ColorScheme.bottomBar: Color
     @Composable
-    get() = if (isLight) White else Color(0xFF303235)
+    get() = if (!isSystemInDarkTheme()) White else Color(0xFF303235)
 
-val Colors.Gold: Color
+val ColorScheme.Gold: Color
     @Composable
     get() = Color(0xFFf9bc01)
 
-val Colors.grayAlpha: Color
+val ColorScheme.grayAlpha: Color
     @Composable
     get() = Color(0xFFc1c2c6)
 
-val Colors.searchBarBg: Color
+val ColorScheme.searchBarBg: Color
     @Composable
-    get() = if (isLight) Color(0xFFF1F0EE) else Color(0xFF303235)
+    get() = if (!isSystemInDarkTheme()) Color(0xFFF1F0EE) else Color(0xFF303235)
 
-val Colors.darkText: Color
+val ColorScheme.darkText: Color
     @Composable
-    get() = if (isLight) Color(0xFF414244) else Color(0xFFD8D8D8)
+    get() = if (!isSystemInDarkTheme()) Color(0xFF414244) else Color(0xFFD8D8D8)
 
-val Colors.amber: Color
+val ColorScheme.amber: Color
     @Composable
     get() = Color(0xffFFBF00)
 
-val Colors.grayCategory: Color
+val ColorScheme.grayCategory: Color
     @Composable
     get() = Color(0xFFF1F0EE)
 
-val Colors.DigiKalaLightRed: Color
+val ColorScheme.DigiKalaLightRed: Color
     @Composable
-    get() = if (isLight) Color(0xffef4056) else Color(0xFF8D2633)
+    get() = if (!isSystemInDarkTheme()) Color(0xffef4056) else Color(0xFF8D2633)
 
-val Colors.DigiKalaLightRedText: Color
+val ColorScheme.DigiKalaLightRedText: Color
     @Composable
-    get() = if (isLight) Color(0xffef4056) else White
+    get() = if (!isSystemInDarkTheme()) Color(0xffef4056) else White
 
-val Colors.DigiKalaDarkRed: Color
+val ColorScheme.DigiKalaDarkRed: Color
     @Composable
     get() = Color(0xFFe6123d)
 
-val Colors.DigiKalaRed: Color
+val ColorScheme.DigiKalaRed: Color
     @Composable
     get() = ImperialRed
 
-val Colors.semiDarkText: Color
+val ColorScheme.semiDarkText: Color
     @Composable
-    get() = if (isLight) Color(0xFF5C5E61) else Color(0xFFD8D8D8)
+    get() = if (!isSystemInDarkTheme()) Color(0xFF5C5E61) else Color(0xFFD8D8D8)
 
-val Colors.settingArrow: Color
+val ColorScheme.settingArrow: Color
     @Composable
-    get() = if (isLight) Color(0xFF9E9FB1) else Color(0xFFD8D8D8)
+    get() = if (!isSystemInDarkTheme()) Color(0xFF9E9FB1) else Color(0xFFD8D8D8)
 
-val Colors.Oranges: Color
+val ColorScheme.Oranges: Color
     @Composable
     get() = Color(0xFFFF5722)
 
-val Colors.DigikalaLightGreen: Color
+val ColorScheme.DigikalaLightGreen: Color
     @Composable
-    get() = if (isLight) Color(0xff86bf3c) else Color(0xFF3A531A)
+    get() = if (!isSystemInDarkTheme()) Color(0xff86bf3c) else Color(0xFF3A531A)
 
-val Colors.Green: Color
+val ColorScheme.Green: Color
     @Composable
     get() = Color(0xFF00A049)

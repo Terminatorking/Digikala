@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -24,11 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.basket.CartDetails
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
-import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.ui.theme.gray
-import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
 @Composable
@@ -58,7 +54,7 @@ fun CartPriceDetailSection(
             Text(
                 text = title,
                 style = MaterialTheme.typography.h4,
-                color = MaterialTheme.colors.darkText
+                color = MaterialTheme.colorScheme.darkText
             )
 
             Text(
@@ -68,7 +64,7 @@ fun CartPriceDetailSection(
                     )
                 }",
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.darkText
+                color = MaterialTheme.colorScheme.darkText
             )
         }
 
@@ -102,7 +98,7 @@ fun CartPriceDetailSection(
                         horizontal = MaterialTheme.spacing.small
                     )
                     .alpha(0.6f),
-                color = MaterialTheme.colors.gray
+                color = MaterialTheme.colorScheme.gray
             )
 
             PriceRow(
@@ -128,7 +124,7 @@ fun CartPriceDetailSection(
                     horizontal = MaterialTheme.spacing.small
                 )
                 .alpha(0.6f),
-            color = MaterialTheme.colors.gray
+            color = MaterialTheme.colorScheme.gray
         )
 
         DigiClubScore(item.payablePrice)
@@ -146,7 +142,7 @@ fun FirstDotTextRow(text: String) {
     ) {
         Text(
             text = stringResource(R.string.dot_bullet),
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             style = MaterialTheme.typography.h2,
             modifier = Modifier.padding(MaterialTheme.spacing.extraSmall)
         )
@@ -154,7 +150,7 @@ fun FirstDotTextRow(text: String) {
         Text(
             text = text,
             style = MaterialTheme.typography.h6,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             modifier = Modifier.weight(1f)
         )
     }
@@ -185,7 +181,7 @@ private fun DigiClubScore(payedPrice: Long) {
                 text = stringResource(id = R.string.digiclub_score),
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.Medium,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
         }
 
@@ -196,7 +192,7 @@ private fun DigiClubScore(payedPrice: Long) {
             style = MaterialTheme.typography.body2,
             textAlign = TextAlign.End,
             fontWeight = FontWeight.Medium,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
     }
 
@@ -205,7 +201,7 @@ private fun DigiClubScore(payedPrice: Long) {
     Text(
         text = stringResource(R.string.digiclub_description),
         style = MaterialTheme.typography.h6,
-        color = MaterialTheme.colors.darkText,
+        color = MaterialTheme.colorScheme.darkText,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = MaterialTheme.spacing.biggerSmall)
@@ -218,11 +214,11 @@ private fun PriceRow(
     price: String,
     discount: Int = 0,
 ) {
-    var color = MaterialTheme.colors.darkText
+    var color = MaterialTheme.colorScheme.darkText
     var ourPrice = price
 
     if (discount > 0) {
-        color = MaterialTheme.colors.DigiKalaRed
+        color = MaterialTheme.colorScheme.DigiKalaRed
         ourPrice = "(${digitByLocateAndSeparator(discount.toString())}%) $price"
     }
 
@@ -237,7 +233,7 @@ private fun PriceRow(
         Text(
             text = title,
             style = MaterialTheme.typography.h6,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Start,
         )
@@ -256,7 +252,7 @@ private fun PriceRow(
                     faLogo = R.drawable.toman
                 ),
                 contentDescription = "",
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 modifier = Modifier
                     .size(24.dp)
                     .padding(MaterialTheme.spacing.extraSmall)

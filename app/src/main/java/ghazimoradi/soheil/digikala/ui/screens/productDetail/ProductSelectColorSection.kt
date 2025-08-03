@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -19,6 +19,7 @@ import ghazimoradi.soheil.digikala.data.model.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.h4
 
 val selectedColorItem: MutableState<ProductColor?> = mutableStateOf(null)
 
@@ -40,7 +41,7 @@ fun ProductSelectColorSection(
             text = stringResource(R.string.color) +
                     " ${selectedColorItem.value?.color ?: stringResource(R.string.not_selected)}",
 
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             modifier = Modifier.padding(MaterialTheme.spacing.small),
             style = MaterialTheme.typography.h4,
             fontWeight = FontWeight.Bold

@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +31,7 @@ import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsOffer
 import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsShowMore
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.ProductDetailViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -64,7 +65,7 @@ fun SimilarProductSection(
     }
 
     HorizontalDivider(
-        color = MaterialTheme.colors.gray,
+        color = MaterialTheme.colorScheme.gray,
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
@@ -85,7 +86,7 @@ fun SimilarProductSection(
                 text = stringResource(id = R.string.similar_product),
                 style = MaterialTheme.typography.h3,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
         }
 

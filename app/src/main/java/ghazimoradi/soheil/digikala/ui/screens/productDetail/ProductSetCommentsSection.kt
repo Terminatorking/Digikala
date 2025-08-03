@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material3.HorizontalDivider
@@ -27,6 +27,8 @@ import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h5
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -60,7 +62,7 @@ fun ProductSetCommentsSection(
             horizontalArrangement = Arrangement.Center
         ) {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(
                     id = R.drawable.comment
                 ),
@@ -73,7 +75,7 @@ fun ProductSetCommentsSection(
                 Modifier
                     .weight(1f)
                     .padding(start = 20.dp),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.h5,
@@ -83,19 +85,19 @@ fun ProductSetCommentsSection(
                 Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colors.settingArrow
+                tint = MaterialTheme.colorScheme.settingArrow
             )
         }
 
         Text(
             text = stringResource(R.string.comment_desc),
             Modifier.padding(start = MaterialTheme.spacing.large + MaterialTheme.spacing.small),
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             style = MaterialTheme.typography.h6,
         )
 
         HorizontalDivider(
-            color = MaterialTheme.colors.gray,
+            color = MaterialTheme.colorScheme.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(
                 horizontal = MaterialTheme.spacing.medium,

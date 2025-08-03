@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -60,7 +60,7 @@ fun IconWithBadge(
                 Text(
                     text = digitByLocateAndSeparator(cartCounter.toString()),
                     modifier = Modifier
-                        .background(color = MaterialTheme.colors.DigiKalaRed)
+                        .background(color = MaterialTheme.colorScheme.DigiKalaRed)
                         .height(16.dp)
                         .padding(horizontal = MaterialTheme.spacing.semiSmall),
                     textAlign = TextAlign.Center,

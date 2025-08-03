@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.components
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -17,6 +17,7 @@ import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -44,22 +45,22 @@ fun LoginAndRegisterEditText(
             ),
         shape = MaterialTheme.roundedShape.small,
         colors = TextFieldDefaults.colors(
-            unfocusedTextColor = MaterialTheme.colors.darkText,
-            focusedTextColor = MaterialTheme.colors.darkText,
-            errorIndicatorColor = MaterialTheme.colors.DigiKalaRed,
-            focusedIndicatorColor = MaterialTheme.colors.cyan,
+            unfocusedTextColor = MaterialTheme.colorScheme.darkText,
+            focusedTextColor = MaterialTheme.colorScheme.darkText,
+            errorIndicatorColor = MaterialTheme.colorScheme.DigiKalaRed,
+            focusedIndicatorColor = MaterialTheme.colorScheme.cyan,
             unfocusedIndicatorColor = Transparent,
             disabledIndicatorColor = Transparent,
-            focusedContainerColor = MaterialTheme.colors.searchBarBg,
-            unfocusedContainerColor = MaterialTheme.colors.searchBarBg,
-            cursorColor = MaterialTheme.colors.CursorColor,
+            focusedContainerColor = MaterialTheme.colorScheme.searchBarBg,
+            unfocusedContainerColor = MaterialTheme.colorScheme.searchBarBg,
+            cursorColor = MaterialTheme.colorScheme.CursorColor,
         ),
         placeholder = {
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = placeholder,
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.gray,
+                color = MaterialTheme.colorScheme.gray,
                 fontWeight = FontWeight.Medium,
             )
         }

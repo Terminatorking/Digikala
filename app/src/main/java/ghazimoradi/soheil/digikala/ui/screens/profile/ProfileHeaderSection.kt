@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
@@ -28,6 +28,8 @@ import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h5
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_WALLET
@@ -45,7 +47,7 @@ fun ProfileHeaderSection(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             text = USER_NAME.replace("-", ""),
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             style = MaterialTheme.typography.h5
         )
     } else {
@@ -57,7 +59,7 @@ fun ProfileHeaderSection(navController: NavController) {
                 },
             text = stringResource(id = R.string.completion_of_user_information),
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.cyan,
+            color = MaterialTheme.colorScheme.cyan,
             style = MaterialTheme.typography.h5
         )
     }
@@ -66,7 +68,7 @@ fun ProfileHeaderSection(navController: NavController) {
         modifier = Modifier.fillMaxWidth(),
         textAlign = TextAlign.Center,
         style = MaterialTheme.typography.h6,
-        color = MaterialTheme.colors.darkText,
+        color = MaterialTheme.colorScheme.darkText,
         text = digitByLocate(USER_PHONE)
     )
 
@@ -101,19 +103,19 @@ fun ProfileHeaderSection(navController: NavController) {
                 ) {
                     Text(
                         style = MaterialTheme.typography.h5,
-                        color = MaterialTheme.colors.semiDarkText,
+                        color = MaterialTheme.colorScheme.semiDarkText,
                         text = "${digitByLocate("975")} "
                     )
                     Text(
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.semiDarkText,
+                        color = MaterialTheme.colorScheme.semiDarkText,
                         text = stringResource(R.string.score)
                     )
                 }
 
                 Text(
                     style = MaterialTheme.typography.h6,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     fontWeight = FontWeight.Bold,
                     text = stringResource(id = R.string.digikala_score)
                 )
@@ -124,7 +126,7 @@ fun ProfileHeaderSection(navController: NavController) {
             modifier = Modifier
                 .width(2.dp)
                 .height(60.dp),
-            color = MaterialTheme.colors.gray.copy(0.2f),
+            color = MaterialTheme.colorScheme.gray.copy(0.2f),
         )
 
         Column(
@@ -148,7 +150,7 @@ fun ProfileHeaderSection(navController: NavController) {
                 modifier = Modifier.padding(top = MaterialTheme.spacing.small),
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(id = R.string.digikala_wallet_active)
             )
 

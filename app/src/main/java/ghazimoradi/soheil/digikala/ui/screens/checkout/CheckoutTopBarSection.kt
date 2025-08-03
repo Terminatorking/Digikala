@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
@@ -24,6 +24,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.PERSIAN_LANG
@@ -57,13 +58,13 @@ fun CheckoutTopBarSection(
             textAlign = TextAlign.Start,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
     }
     Spacer(
         modifier = Modifier
             .fillMaxWidth()
             .height(3.dp)
-            .background(MaterialTheme.colors.searchBarBg)
+            .background(MaterialTheme.colorScheme.searchBarBg)
     )
 }

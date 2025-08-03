@@ -1,6 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.theme
 
-import androidx.compose.material.Typography
+import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -19,7 +19,7 @@ val font_standard = FontFamily(
     Font(R.font.iranyekan)
 )
 
-val Typography.extraBoldNumber : TextStyle
+val Typography.extraBoldNumber: TextStyle
     @Composable
     get() = TextStyle(
         fontFamily = font_bold,
@@ -27,7 +27,7 @@ val Typography.extraBoldNumber : TextStyle
         fontSize = 26.sp,
     )
 
-val Typography.extraSmall : TextStyle
+val Typography.extraSmall: TextStyle
     @Composable
     get() = TextStyle(
         fontFamily = font_standard,
@@ -35,62 +35,85 @@ val Typography.extraSmall : TextStyle
         lineHeight = 25.sp
     )
 
-val Typography.veryExtraSmall : TextStyle
+val Typography.veryExtraSmall: TextStyle
     @Composable
     get() = TextStyle(
         fontFamily = font_standard,
         fontSize = 10.sp,
     )
 
-val Typography = Typography(
-
-    body1 = TextStyle(
+val Typography.body1: TextStyle
+    @Composable
+    get() = TextStyle(
         fontFamily = font_medium,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 25.sp
-    ),
-    body2 = TextStyle(
+    )
+
+val Typography.body2: TextStyle
+    @Composable
+    get() = TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Light,
         fontSize = 14.sp,
         lineHeight = 25.sp
-    ),
+    )
 
-    h1 = TextStyle(
+val Typography.h1: TextStyle
+    @Composable
+    get() =TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Medium,
         fontSize = 20.sp,
         lineHeight = 25.sp
-    ),
-    h2 = TextStyle(
+    )
+
+val Typography.h2: TextStyle
+    @Composable
+    get() = TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Medium,
         fontSize = 18.sp,
         lineHeight = 25.sp
-    ),
-    h3 = TextStyle(
+    )
+
+val Typography.h3: TextStyle
+    @Composable
+    get() = TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
         lineHeight = 25.sp
-    ),
-    h4 = TextStyle(
+    )
+
+val Typography.h4: TextStyle
+    @Composable
+    get() = TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Medium,
         fontSize = 15.sp,
         lineHeight = 25.sp
-    ),
-    h5 = TextStyle(
+    )
+
+val Typography.h5: TextStyle
+    @Composable
+    get() =  TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
         lineHeight = 25.sp
-    ),
-    h6 = TextStyle(
+    )
+
+val Typography.h6: TextStyle
+    @Composable
+    get() = TextStyle(
         fontFamily = font_standard,
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp,
         lineHeight = 25.sp
     )
+
+val Typography = Typography(
+
 )

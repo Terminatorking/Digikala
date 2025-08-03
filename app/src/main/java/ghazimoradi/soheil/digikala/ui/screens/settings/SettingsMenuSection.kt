@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.screens.settings
 import android.content.Intent
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.HelpCenter
 import androidx.compose.material.icons.automirrored.outlined.Logout
@@ -61,7 +61,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector = Icons.AutoMirrored.Outlined.HelpCenter,
                 contentDescription = ""
             )
@@ -77,7 +77,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector = Icons.Outlined.PrivacyTip,
                 contentDescription = ""
             )
@@ -93,7 +93,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector =
                     Icons.Outlined.OtherHouses,
                 contentDescription = ""
@@ -110,7 +110,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector =
                     Icons.Outlined.Call,
                 contentDescription = ""
@@ -127,7 +127,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector =
                     Icons.Outlined.PestControl,
                 contentDescription = ""
@@ -144,7 +144,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector =
                     Icons.Outlined.StarRate,
                 contentDescription = ""
@@ -161,7 +161,7 @@ fun SettingsMenuSection(
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 imageVector =
                     Icons.Outlined.Language,
                 contentDescription = ""
@@ -177,11 +177,11 @@ fun SettingsMenuSection(
                 Icon(
                     Icons.AutoMirrored.Outlined.Logout,
                     contentDescription = "",
-                    tint = MaterialTheme.colors.DigiKalaRed
+                    tint = MaterialTheme.colorScheme.DigiKalaRed
                 )
             },
             text = stringResource(id = R.string.sign_out),
-            color = MaterialTheme.colors.DigiKalaRed,
+            color = MaterialTheme.colorScheme.DigiKalaRed,
             addCompose = {},
             haveDivider = false
         ) {
@@ -219,17 +219,17 @@ fun ChangeLanguage(dataStore: DataStoreViewModel = hiltViewModel()) {
         val checkedState by remember { mutableStateOf(lang) }
 
         Text(
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             text = stringResource(id = R.string.english)
         )
         Switch(
             colors = SwitchDefaults.colors(
                 checkedBorderColor = Transparent,
                 uncheckedBorderColor = Transparent,
-                uncheckedThumbColor = MaterialTheme.colors.cyan,
-                checkedThumbColor = MaterialTheme.colors.cyan,
-                uncheckedTrackColor = MaterialTheme.colors.gray,
-                checkedTrackColor = MaterialTheme.colors.DigiKalaRed
+                uncheckedThumbColor = MaterialTheme.colorScheme.cyan,
+                checkedThumbColor = MaterialTheme.colorScheme.cyan,
+                uncheckedTrackColor = MaterialTheme.colorScheme.gray,
+                checkedTrackColor = MaterialTheme.colorScheme.DigiKalaRed
             ),
             modifier = Modifier.padding(
                 start = MaterialTheme.spacing.small,
@@ -245,7 +245,7 @@ fun ChangeLanguage(dataStore: DataStoreViewModel = hiltViewModel()) {
             }
         )
         Text(
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             text = stringResource(id = R.string.farsi)
         )
     }

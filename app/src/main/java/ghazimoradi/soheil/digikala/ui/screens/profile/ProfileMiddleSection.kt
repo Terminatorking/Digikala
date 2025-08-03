@@ -9,13 +9,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -24,6 +23,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_CLUB
 import ghazimoradi.soheil.digikala.util.Constants.TURLEARN_CONTACT_US
@@ -35,7 +35,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
         modifier = Modifier
             .fillMaxWidth()
             .height(MaterialTheme.spacing.small),
-        color = MaterialTheme.colors.gray.copy(0.4f),
+        color = MaterialTheme.colorScheme.gray.copy(0.4f),
     )
 
     Row(
@@ -61,7 +61,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
             )
             Text(
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(R.string.auth)
             )
         }
@@ -84,7 +84,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
             )
             Text(
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(R.string.club)
             )
         }
@@ -107,7 +107,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
             )
             Text(
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(R.string.contact_us)
             )
         }
@@ -117,6 +117,6 @@ fun ProfileMiddleSection(navController: NavHostController) {
         modifier = Modifier
             .fillMaxWidth()
             .height(MaterialTheme.spacing.small),
-        color = MaterialTheme.colors.gray.copy(0.4f),
+        color = MaterialTheme.colorScheme.gray.copy(0.4f),
     )
 }

@@ -6,7 +6,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +18,7 @@ import ghazimoradi.soheil.digikala.data.model.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -33,7 +34,7 @@ fun ColorChipItem(
             if (isSelected)
                 Modifier
                     .padding(MaterialTheme.spacing.extraSmall)
-                    .border(width = 1.dp, MaterialTheme.colors.CursorColor, CircleShape)
+                    .border(width = 1.dp, MaterialTheme.colorScheme.CursorColor, CircleShape)
             else Modifier
                 .padding(MaterialTheme.spacing.extraSmall)
                 .border(width = 1.dp, Transparent, CircleShape),
@@ -42,7 +43,7 @@ fun ColorChipItem(
     ) {
         Row(
             modifier = Modifier
-                .background(MaterialTheme.colors.searchBarBg)
+                .background(MaterialTheme.colorScheme.searchBarBg)
                 .toggleable(
                     value = isSelected,
                     onValueChange = {
@@ -64,7 +65,7 @@ fun ColorChipItem(
             Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
 
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = item.color,
                 style = MaterialTheme.typography.h6
             )

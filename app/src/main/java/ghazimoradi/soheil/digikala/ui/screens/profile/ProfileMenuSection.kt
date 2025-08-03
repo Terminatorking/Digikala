@@ -2,7 +2,7 @@ package ghazimoradi.soheil.digikala.ui.screens.profile
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,7 +23,7 @@ fun ProfileMenuSection(navController: NavHostController) {
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.digi_plus_icon),
                 contentDescription = "",
                 modifier = Modifier
@@ -42,7 +42,7 @@ fun ProfileMenuSection(navController: NavHostController) {
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.digi_fav_icon),
                 contentDescription = "",
                 modifier = Modifier
@@ -59,7 +59,7 @@ fun ProfileMenuSection(navController: NavHostController) {
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.digi_comments_icon),
                 contentDescription = "",
                 modifier = Modifier
@@ -82,7 +82,7 @@ fun ProfileMenuSection(navController: NavHostController) {
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.digi_adresses_icon),
                 contentDescription = "",
                 modifier = Modifier
@@ -99,7 +99,7 @@ fun ProfileMenuSection(navController: NavHostController) {
     MenuItem(
         icon = {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.digi_profile_icon),
                 contentDescription = "",
                 modifier = Modifier

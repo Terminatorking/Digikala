@@ -1,12 +1,11 @@
 package ghazimoradi.soheil.digikala.ui.screens.login
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -28,7 +27,7 @@ fun TermsAndRulesText(
     textAlign: TextAlign
 ) {
     Text(
-        color = MaterialTheme.colors.darkText,
+        color = MaterialTheme.colorScheme.darkText,
         text = buildAnnotatedString {
             append(fullText)
             underlinedText.forEach { text ->

@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,6 +24,8 @@ import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h3
+import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
 
@@ -36,7 +38,7 @@ fun ProductCommentsSection(
 ) {
 
     HorizontalDivider(
-        color = MaterialTheme.colors.gray,
+        color = MaterialTheme.colorScheme.gray,
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
@@ -50,13 +52,13 @@ fun ProductCommentsSection(
         ) {
             Text(
                 text = stringResource(R.string.user_comments),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.h3,
             )
             Text(
                 text = "${digitByLocate(commentCount)} " + stringResource(R.string.comment),
-                color = MaterialTheme.colors.cyan,
+                color = MaterialTheme.colorScheme.cyan,
                 style = MaterialTheme.typography.h4,
                 modifier = Modifier
                     .background(Transparent)

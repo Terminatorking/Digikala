@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
@@ -26,6 +26,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.PERSIAN_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE

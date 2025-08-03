@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -39,6 +39,7 @@ import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -121,7 +122,7 @@ fun ConfirmPurchaseScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.mainBg)
+            .background(MaterialTheme.colorScheme.mainBg)
             .padding(MaterialTheme.spacing.medium),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -132,13 +133,13 @@ fun ConfirmPurchaseScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(id = R.string.final_price),
                 style = MaterialTheme.typography.h5
             )
 
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = DigitHelper.digitByLocateAndSeparator(orderPrice),
                 style = MaterialTheme.typography.h5
             )
@@ -152,13 +153,13 @@ fun ConfirmPurchaseScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(id = R.string.order_status),
                 style = MaterialTheme.typography.h5
             )
 
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = orderState,
                 style = MaterialTheme.typography.h5
             )
@@ -172,13 +173,13 @@ fun ConfirmPurchaseScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = stringResource(id = R.string.order_code),
                 style = MaterialTheme.typography.h5
             )
 
             Text(
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 text = orderId,
                 style = MaterialTheme.typography.h5
             )
@@ -195,14 +196,14 @@ fun ConfirmPurchaseScreen(
                     }
                 }
             },
-            border = BorderStroke(width = 1.dp, color = MaterialTheme.colors.DigiKalaRed),
+            border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.DigiKalaRed),
             shape = MaterialTheme.roundedShape.small,
             colors = ButtonDefaults.buttonColors(White)
         ) {
             Text(
                 modifier = Modifier.padding(MaterialTheme.spacing.small),
                 text = stringResource(id = R.string.return_to_home_page),
-                color = MaterialTheme.colors.DigiKalaRed,
+                color = MaterialTheme.colorScheme.DigiKalaRed,
                 style = MaterialTheme.typography.h5,
                 fontWeight = FontWeight.Bold,
             )

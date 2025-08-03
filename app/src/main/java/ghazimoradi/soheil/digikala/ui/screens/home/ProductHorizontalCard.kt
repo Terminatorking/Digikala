@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.screens.home
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,6 +16,7 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
+import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraBoldNumber
@@ -51,7 +52,7 @@ fun ProductHorizontalCard(
             style = MaterialTheme.typography.extraBoldNumber,
             fontWeight = FontWeight.Black,
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.cyan,
+            color = MaterialTheme.colorScheme.cyan,
             modifier = Modifier
                 .weight(.1f)
                 .padding(horizontal = MaterialTheme.spacing.small)
@@ -67,7 +68,7 @@ fun ProductHorizontalCard(
                 text = item.name,
                 style = MaterialTheme.typography.body2,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(top = MaterialTheme.spacing.small)

@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.screens.home
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -21,6 +21,8 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h2
+import ghazimoradi.soheil.digikala.ui.theme.h6
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -57,7 +59,7 @@ fun CategoryListSection(
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h2,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
         FlowRow(
             horizontalArrangement = Arrangement.SpaceAround,
@@ -95,7 +97,7 @@ fun CircularCategoryItem(item: MainCategory) {
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis
         )

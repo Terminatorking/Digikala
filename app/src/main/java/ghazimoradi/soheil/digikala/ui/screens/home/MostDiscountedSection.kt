@@ -2,7 +2,7 @@ package ghazimoradi.soheil.digikala.ui.screens.home
 
 import android.util.Log
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -17,6 +17,7 @@ import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.h3
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -52,7 +53,7 @@ fun MostDiscountedSection(
             textAlign = TextAlign.Right,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
 
         FlowRow(

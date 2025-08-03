@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -32,6 +32,7 @@ import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -45,7 +46,7 @@ fun CartItemReviewSection(
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             modifier = Modifier
                 .padding(MaterialTheme.spacing.medium)
                 .align(Alignment.Start),
@@ -56,7 +57,7 @@ fun CartItemReviewSection(
         )
 
         Card(
-            colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+            colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = MaterialTheme.spacing.small),
@@ -69,7 +70,7 @@ fun CartItemReviewSection(
                     .padding(horizontal = MaterialTheme.spacing.semiMedium)
             ) {
                 Text(
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     text = digitByLocate(stringResource(id = R.string.delivery_1)),
                     textAlign = TextAlign.Start,
                     style = MaterialTheme.typography.h5,
@@ -85,7 +86,7 @@ fun CartItemReviewSection(
                     Icon(
                         modifier = Modifier
                             .size(16.dp),
-                        tint = MaterialTheme.colors.DigiKalaLightRedText,
+                        tint = MaterialTheme.colorScheme.DigiKalaLightRedText,
                         painter = painterResource(id = R.drawable.k1),
                         contentDescription = ""
                     )
@@ -96,7 +97,7 @@ fun CartItemReviewSection(
                         text = stringResource(id = R.string.fast_send),
                         textAlign = TextAlign.Start,
                         style = MaterialTheme.typography.extraSmall,
-                        color = MaterialTheme.colors.DigiKalaLightRedText,
+                        color = MaterialTheme.colorScheme.DigiKalaLightRedText,
                     )
 
                     Spacer(modifier = Modifier.width(MaterialTheme.spacing.medium))
@@ -105,7 +106,7 @@ fun CartItemReviewSection(
                         text = digitByLocate("${cartDetail.totalCount} ${stringResource(id = R.string.goods)} "),
                         Modifier.padding(MaterialTheme.spacing.small),
                         style = MaterialTheme.typography.extraSmall,
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                     )
                 }
 
@@ -121,7 +122,7 @@ fun CartItemReviewSection(
 
                 Row {
                     Text(
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         text = stringResource(id = R.string.ready_to_send),
                         style = MaterialTheme.typography.extraSmall,
                         modifier = Modifier
@@ -135,7 +136,7 @@ fun CartItemReviewSection(
                             )
                         })",
                         style = MaterialTheme.typography.extraSmall,
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         modifier = Modifier
                             .padding(vertical = MaterialTheme.spacing.medium),
                     )
@@ -155,14 +156,14 @@ fun CartItemReviewSection(
                         text = stringResource(id = R.string.choose_time),
                         style = MaterialTheme.typography.h5,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colors.cyan,
+                        color = MaterialTheme.colorScheme.cyan,
                     )
                     Spacer(modifier = Modifier.width(5.dp))
                     IconWithRotate(
                         width = 15.dp,
                         height = 15.dp,
                         painter = painterResource(id = R.drawable.arrow_back),
-                        tint = MaterialTheme.colors.cyan,
+                        tint = MaterialTheme.colorScheme.cyan,
                     ) {
 
                     }

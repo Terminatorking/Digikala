@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -54,7 +55,7 @@ fun CommentShowMoreItem(
         Icon(
             painter = painterResource(id = R.drawable.show_more),
             contentDescription = "",
-            tint = MaterialTheme.colors.cyan,
+            tint = MaterialTheme.colorScheme.cyan,
             modifier = Modifier.size(40.dp)
         )
         Spacer(modifier = Modifier.height(20.dp))
@@ -65,7 +66,7 @@ fun CommentShowMoreItem(
             text = stringResource(R.string.see_all),
             style = MaterialTheme.typography.body2,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             textAlign = TextAlign.Center,
         )
     }

@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -29,6 +29,7 @@ import ghazimoradi.soheil.digikala.ui.theme.LocalShape
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h2
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 
@@ -46,7 +47,7 @@ fun SearchBarSection() {
                 .fillMaxSize()
                 .padding(LocalSpacing.current.small)
                 .clip(LocalShape.current.biggerSmall)
-                .background(MaterialTheme.colors.searchBarBg)
+                .background(MaterialTheme.colorScheme.searchBarBg)
         ) {
             SearchContent()
         }
@@ -64,7 +65,7 @@ private fun SearchContent() {
     ) {
 
         Icon(
-            tint = MaterialTheme.colors.icon,
+            tint = MaterialTheme.colorScheme.icon,
             modifier = Modifier
                 .height(24.dp),
             painter = painterResource(id = R.drawable.search),
@@ -75,7 +76,7 @@ private fun SearchContent() {
             modifier = Modifier
                 .padding(start = 20.dp),
             textAlign = TextAlign.Center,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             style = MaterialTheme.typography.h2,
             fontWeight = FontWeight.Normal,
             text = stringResource(id = R.string.search_in)

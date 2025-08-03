@@ -4,7 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material3.CardDefaults
@@ -28,7 +28,7 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 fun LoginOrRegisterSection(navController: NavController) {
 
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
         modifier = Modifier
             .padding(MaterialTheme.spacing.medium)
             .clickable { navController.navigate(Screen.Profile.route) },
@@ -45,7 +45,7 @@ fun LoginOrRegisterSection(navController: NavController) {
 
             IconWithRotate(
                 painter = painterResource(id = R.drawable.import_96_orenge),
-                tint = MaterialTheme.colors.amber,
+                tint = MaterialTheme.colorScheme.amber,
             )
 
             Spacer(modifier = Modifier.weight(0.05f))
@@ -62,7 +62,7 @@ fun LoginOrRegisterSection(navController: NavController) {
                     textAlign = TextAlign.Start,
                     style = MaterialTheme.typography.h5,
                     fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                 )
                 Spacer(modifier = Modifier.height(5.dp))
 
@@ -71,7 +71,7 @@ fun LoginOrRegisterSection(navController: NavController) {
                         .fillMaxWidth(),
                     text = stringResource(R.string.login_or_register_msg),
                     textAlign = TextAlign.Start,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     fontWeight = FontWeight.SemiBold,
                     style = MaterialTheme.typography.h6,
                 )
@@ -82,7 +82,7 @@ fun LoginOrRegisterSection(navController: NavController) {
             Icon(
                 imageVector = Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 modifier = Modifier
                     .size(25.dp)
                     .weight(0.1f)

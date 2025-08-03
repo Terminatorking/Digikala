@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
@@ -22,6 +22,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -29,7 +30,7 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 @Composable
 fun AmazingShowMoreItem() {
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
         elevation = CardDefaults.cardElevation(0.dp),
         modifier = Modifier
             .size(170.dp, height = 363.dp)
@@ -49,7 +50,7 @@ fun AmazingShowMoreItem() {
 
             IconWithRotate(
                 painterResource(id = R.drawable.show_more),
-                MaterialTheme.colors.DigiKalaLightRed
+                MaterialTheme.colorScheme.DigiKalaLightRed
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -58,7 +59,7 @@ fun AmazingShowMoreItem() {
                 text = stringResource(id = R.string.see_all),
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
         }
     }

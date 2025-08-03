@@ -17,7 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,8 +36,11 @@ import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.amber
+import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h4
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
@@ -84,7 +87,7 @@ fun HorizontalProductCard(
                     text = item.name,
                     style = MaterialTheme.typography.h4,
                     fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -105,13 +108,13 @@ fun HorizontalProductCard(
                             modifier = Modifier
                                 .size(22.dp)
                                 .padding(2.dp),
-                            tint = MaterialTheme.colors.cyan
+                            tint = MaterialTheme.colorScheme.cyan
                         )
                         Text(
                             text = item.seller,
                             fontWeight = FontWeight.SemiBold,
                             style = MaterialTheme.typography.h6,
-                            color = MaterialTheme.colors.semiDarkText,
+                            color = MaterialTheme.colorScheme.semiDarkText,
                         )
                     }
 
@@ -122,7 +125,7 @@ fun HorizontalProductCard(
                             text = digitByLocate(item.star.toString()),
                             fontWeight = FontWeight.SemiBold,
                             style = MaterialTheme.typography.h6,
-                            color = MaterialTheme.colors.semiDarkText,
+                            color = MaterialTheme.colorScheme.semiDarkText,
                         )
                         Icon(
                             painter = painterResource(id = R.drawable.ic_baseline_star),
@@ -130,7 +133,7 @@ fun HorizontalProductCard(
                             modifier = Modifier
                                 .size(22.dp)
                                 .padding(2.dp),
-                            tint = MaterialTheme.colors.amber
+                            tint = MaterialTheme.colorScheme.amber
                         )
                     }
                 }
@@ -149,7 +152,7 @@ fun HorizontalProductCard(
                             .width(40.dp)
                             .height(24.dp)
                             .background(
-                                color = MaterialTheme.colors.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
                                 shape = CircleShape
                             )
                             .wrapContentWidth(Alignment.CenterHorizontally)

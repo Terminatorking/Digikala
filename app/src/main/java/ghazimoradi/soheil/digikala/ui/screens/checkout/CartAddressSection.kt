@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -34,10 +34,13 @@ import ghazimoradi.soheil.digikala.data.model.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.components.Loading
+import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h4
+import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
@@ -100,7 +103,7 @@ fun CartAddressSection(
     } else {
         Row(modifier = Modifier.fillMaxWidth()) {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.location),
                 contentDescription = "",
                 modifier = Modifier
@@ -120,11 +123,11 @@ fun CartAddressSection(
                     text = stringResource(id = R.string.send_to),
                     textAlign = TextAlign.Start,
                     style = MaterialTheme.typography.body2,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                 )
 
                 Text(
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     text = address,
                     textAlign = TextAlign.Start,
                     style = MaterialTheme.typography.h5,
@@ -133,7 +136,7 @@ fun CartAddressSection(
                 )
 
                 Text(
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     text = addressName,
                     textAlign = TextAlign.Start,
                     style = MaterialTheme.typography.h4,
@@ -161,14 +164,14 @@ fun CartAddressSection(
                 textAlign = TextAlign.End,
                 style = MaterialTheme.typography.extraSmall,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colors.cyan,
+                color = MaterialTheme.colorScheme.cyan,
             )
 
             IconWithRotate(
                 width = 15.dp,
                 height = 15.dp,
                 painter = painterResource(id = R.drawable.arrow_back),
-                tint = MaterialTheme.colors.cyan,
+                tint = MaterialTheme.colorScheme.cyan,
             )
         }
     }
@@ -178,6 +181,6 @@ fun CartAddressSection(
             .padding(vertical = MaterialTheme.spacing.medium)
             .fillMaxWidth()
             .height(MaterialTheme.spacing.small),
-        color = MaterialTheme.colors.gray.copy(0.4f),
+        color = MaterialTheme.colorScheme.gray.copy(0.4f),
     )
 }

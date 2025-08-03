@@ -5,7 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.BottomNavigation
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -79,7 +79,7 @@ fun ProductDetailBottomBar(
     }
 
     BottomNavigation(
-        backgroundColor = MaterialTheme.colors.bottomBar,
+        backgroundColor = MaterialTheme.colorScheme.bottomBar,
         modifier = Modifier.height(70.dp)
     ) {
 
@@ -112,7 +112,7 @@ fun ProductDetailBottomBar(
                                 )
                             )
                         },
-                        colors = ButtonDefaults.buttonColors(MaterialTheme.colors.DigiKalaRed),
+                        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
                         shape = MaterialTheme.roundedShape.small,
                     ) {
                         Text(
@@ -131,7 +131,7 @@ fun ProductDetailBottomBar(
                             modifier = Modifier
                                 .size(40.dp)
                                 .clip(shape = CircleShape)
-                                .background(MaterialTheme.colors.DigiKalaDarkRed),
+                                .background(MaterialTheme.colorScheme.DigiKalaDarkRed),
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
@@ -148,7 +148,7 @@ fun ProductDetailBottomBar(
                         ) {
                             Text(
                                 text = stringResource(R.string.in_your_basket),
-                                color = MaterialTheme.colors.gray,
+                                color = MaterialTheme.colorScheme.gray,
                                 style = MaterialTheme.typography.h5,
                             )
                             Text(
@@ -157,7 +157,7 @@ fun ProductDetailBottomBar(
                                     .clickable {
                                         navController.navigate(Screen.Basket.route)
                                     },
-                                color = MaterialTheme.colors.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
                                 style = MaterialTheme.typography.h5,
                             )
                         }
@@ -170,7 +170,7 @@ fun ProductDetailBottomBar(
                     Box(
                         modifier = Modifier
                             .background(
-                                color = MaterialTheme.colors.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
                                 shape = CircleShape
                             )
                             .wrapContentWidth(Alignment.CenterHorizontally)
@@ -190,7 +190,7 @@ fun ProductDetailBottomBar(
 
                     Text(
                         text = DigitHelper.digitByLocateAndSeparator((price).toString()),
-                        color = MaterialTheme.colors.gray,
+                        color = MaterialTheme.colorScheme.gray,
                         style = MaterialTheme.typography.body2,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -198,7 +198,7 @@ fun ProductDetailBottomBar(
 
                 Row {
                     Text(
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         text = DigitHelper.digitByLocateAndSeparator(
                             applyDiscount(
                                 price,
@@ -210,7 +210,7 @@ fun ProductDetailBottomBar(
                     )
 
                     Icon(
-                        tint = MaterialTheme.colors.icon,
+                        tint = MaterialTheme.colorScheme.icon,
                         painter = logoChangeByLanguage(
                             enLogo = R.drawable.dollar,
                             faLogo = R.drawable.toman

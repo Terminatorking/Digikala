@@ -14,7 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.MoreVert
@@ -46,19 +46,7 @@ import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
-import ghazimoradi.soheil.digikala.ui.theme.Green
-import ghazimoradi.soheil.digikala.ui.theme.cyan
-import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.ui.theme.extraSmall
-import ghazimoradi.soheil.digikala.ui.theme.gray
-import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.roundedShape
-import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
-import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
-import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.ui.theme.splashBg
-import ghazimoradi.soheil.digikala.ui.theme.veryExtraSmall
+import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
 
@@ -75,7 +63,7 @@ fun CartItemCard(
     }
 
     Card(
-        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
         modifier = Modifier
             .fillMaxWidth()
             .padding(MaterialTheme.spacing.biggerSmall)
@@ -99,21 +87,21 @@ fun CartItemCard(
                         text = stringResource(R.string.your_shopping_list),
                         style = MaterialTheme.typography.h4,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colors.darkText
+                        color = MaterialTheme.colorScheme.darkText
                     )
                     Text(
                         text = "${digitByLocateAndSeparator(count.intValue.toString())} " +
                                 stringResource(R.string.goods),
 
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.darkText
+                        color = MaterialTheme.colorScheme.darkText
                     )
                 }
 
                 Icon(
                     imageVector = Icons.Filled.MoreVert,
                     contentDescription = "More Options",
-                    tint = MaterialTheme.colors.icon
+                    tint = MaterialTheme.colorScheme.icon
                 )
             }
 
@@ -137,7 +125,7 @@ fun CartItemCard(
                         text = item.name,
                         style = MaterialTheme.typography.h6,
                         fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         maxLines = 2,
                         modifier = Modifier.padding(vertical = MaterialTheme.spacing.extraSmall)
                     )
@@ -145,14 +133,14 @@ fun CartItemCard(
                     DetailRow(
                         painterResource(id = R.drawable.warranty),
                         stringResource(id = R.string.warranty),
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         fontStyle = MaterialTheme.typography.extraSmall
                     )
 
                     DetailRow(
                         painterResource(id = R.drawable.store),
                         stringResource(id = R.string.digikala),
-                        color = MaterialTheme.colors.darkText,
+                        color = MaterialTheme.colorScheme.darkText,
                         fontStyle = MaterialTheme.typography.extraSmall
                     )
 
@@ -168,7 +156,7 @@ fun CartItemCard(
                                 painter = painterResource(id = R.drawable.in_stock),
                                 contentDescription = "",
                                 modifier = Modifier.size(16.dp),
-                                tint = MaterialTheme.colors.cyan
+                                tint = MaterialTheme.colorScheme.cyan
                             )
 
                             VerticalDivider(
@@ -176,7 +164,7 @@ fun CartItemCard(
                                     .width(2.dp)
                                     .height(16.dp)
                                     .alpha(0.6f),
-                                color = MaterialTheme.colors.gray
+                                color = MaterialTheme.colorScheme.gray
                             )
 
                             Icon(
@@ -185,7 +173,7 @@ fun CartItemCard(
                                 modifier = Modifier
                                     .size(10.dp)
                                     .padding(1.dp),
-                                tint = MaterialTheme.colors.cyan,
+                                tint = MaterialTheme.colorScheme.cyan,
                             )
 
                             VerticalDivider(
@@ -193,7 +181,7 @@ fun CartItemCard(
                                     .width(2.dp)
                                     .height(16.dp)
                                     .alpha(0.6f),
-                                color = MaterialTheme.colors.gray
+                                color = MaterialTheme.colorScheme.gray
                             )
 
                             Icon(
@@ -202,7 +190,7 @@ fun CartItemCard(
                                 modifier = Modifier
                                     .size(10.dp)
                                     .padding(1.dp),
-                                tint = MaterialTheme.colors.cyan,
+                                tint = MaterialTheme.colorScheme.cyan,
                             )
                         }
 
@@ -212,21 +200,21 @@ fun CartItemCard(
                                 text = item.seller,
                                 style = MaterialTheme.typography.extraSmall,
                                 fontWeight = FontWeight.SemiBold,
-                                color = MaterialTheme.colors.semiDarkText,
+                                color = MaterialTheme.colorScheme.semiDarkText,
                                 modifier = Modifier.padding(vertical = MaterialTheme.spacing.extraSmall),
                             )
 
                             DetailRow(
                                 painterResource(id = R.drawable.k1),
                                 stringResource(id = R.string.digikala_send),
-                                color = MaterialTheme.colors.splashBg,
+                                color = MaterialTheme.colorScheme.splashBg,
                                 fontStyle = MaterialTheme.typography.veryExtraSmall
                             )
 
                             DetailRow(
                                 painterResource(id = R.drawable.k2),
                                 stringResource(id = R.string.fast_send),
-                                color = MaterialTheme.colors.Green,
+                                color = MaterialTheme.colorScheme.Green,
                                 fontStyle = MaterialTheme.typography.veryExtraSmall
                             )
                         }
@@ -260,7 +248,7 @@ fun CartItemCard(
                             Icon(
                                 painterResource(id = R.drawable.ic_increase_24),
                                 contentDescription = "increase icon",
-                                tint = MaterialTheme.colors.DigiKalaRed,
+                                tint = MaterialTheme.colorScheme.DigiKalaRed,
                                 modifier = Modifier.clickable {
                                     count.intValue++
                                     viewModel.changeCartItemCount(item.itemId, count.intValue)
@@ -271,7 +259,7 @@ fun CartItemCard(
                                 text = digitByLocateAndSeparator(count.intValue.toString()),
                                 style = MaterialTheme.typography.body2,
                                 fontWeight = FontWeight.SemiBold,
-                                color = MaterialTheme.colors.DigiKalaRed,
+                                color = MaterialTheme.colorScheme.DigiKalaRed,
                                 modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
                             )
 
@@ -279,7 +267,7 @@ fun CartItemCard(
                                 Icon(
                                     painterResource(id = R.drawable.digi_trash),
                                     contentDescription = "increase icon",
-                                    tint = MaterialTheme.colors.DigiKalaRed,
+                                    tint = MaterialTheme.colorScheme.DigiKalaRed,
                                     modifier = Modifier.clickable {
                                         viewModel.removeCartItem(item)
                                     },
@@ -288,7 +276,7 @@ fun CartItemCard(
                                 Icon(
                                     painterResource(id = R.drawable.ic_decrease_24),
                                     contentDescription = "increase icon",
-                                    tint = MaterialTheme.colors.DigiKalaRed,
+                                    tint = MaterialTheme.colorScheme.DigiKalaRed,
                                     modifier = Modifier.clickable {
                                         count.intValue--
                                         viewModel.changeCartItemCount(item.itemId, count.intValue)
@@ -305,7 +293,7 @@ fun CartItemCard(
                             Icon(
                                 painterResource(id = R.drawable.ic_baseline_shopping_cart_checkout),
                                 contentDescription = "increase icon",
-                                tint = MaterialTheme.colors.DigiKalaRed,
+                                tint = MaterialTheme.colorScheme.DigiKalaRed,
                                 modifier = Modifier
                                     .size(28.dp)
                                     .clickable {
@@ -331,18 +319,18 @@ fun CartItemCard(
 
                         style = MaterialTheme.typography.extraSmall,
                         fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colors.DigiKalaRed,
+                        color = MaterialTheme.colorScheme.DigiKalaRed,
                     )
                     Row {
                         Text(
                             text = digitByLocateAndSeparator(item.price.toString()),
                             style = MaterialTheme.typography.h3,
                             fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colors.darkText,
+                            color = MaterialTheme.colorScheme.darkText,
                         )
 
                         Icon(
-                            tint = MaterialTheme.colors.icon,
+                            tint = MaterialTheme.colorScheme.icon,
                             painter = logoChangeByLanguage(
                                 enLogo = R.drawable.dollar,
                                 faLogo = R.drawable.toman
@@ -372,13 +360,13 @@ fun CartItemCard(
                         text = stringResource(R.string.save_to_next_list),
                         fontWeight = FontWeight.Light,
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.cyan
+                        color = MaterialTheme.colorScheme.cyan
                     )
 
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "",
-                        tint = MaterialTheme.colors.cyan
+                        tint = MaterialTheme.colorScheme.cyan
                     )
                 }
             } else {
@@ -395,20 +383,19 @@ fun CartItemCard(
                         text = stringResource(R.string.delete_from_list),
                         fontWeight = FontWeight.Light,
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.DigiKalaRed
+                        color = MaterialTheme.colorScheme.DigiKalaRed
                     )
 
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "",
-                        tint = MaterialTheme.colors.DigiKalaRed
+                        tint = MaterialTheme.colorScheme.DigiKalaRed
                     )
                 }
             }
         }
     }
 }
-
 
 @Composable
 fun DetailRow(
@@ -435,7 +422,7 @@ fun DetailRow(
             text = text,
             style = fontStyle,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.semiDarkText
+            color = MaterialTheme.colorScheme.semiDarkText
         )
     }
 }

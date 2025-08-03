@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -23,6 +23,8 @@ import ghazimoradi.soheil.digikala.ui.theme.Gold
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h3
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -34,14 +36,14 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
     Column {
         Text(
             text = "${stringResource(id = R.string.category)} / ${item.category}",
-            color = MaterialTheme.colors.cyan,
+            color = MaterialTheme.colorScheme.cyan,
             style = MaterialTheme.typography.h6,
             modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
         )
 
         Text(
             text = item.name.toString(),
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(
@@ -61,17 +63,17 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
                 painter = painterResource(id = R.drawable.star),
                 contentDescription = "",
                 modifier = Modifier.size(15.dp),
-                tint = MaterialTheme.colors.Gold
+                tint = MaterialTheme.colorScheme.Gold
             )
             Text(
                 text = digitByLocate(item.star.toString()),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = 2.dp)
             )
             Text(
                 text = digitByLocate("(${item.starCount})"),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(end = MaterialTheme.spacing.small)
             )
@@ -79,7 +81,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
             Icon(
                 painter = painterResource(id = R.drawable.dot),
                 contentDescription = "",
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 modifier = Modifier
                     .size(7.dp)
                     .padding(horizontal = 1.dp)
@@ -87,7 +89,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
 
             Text(
                 text = digitByLocate("${item.commentCount} ${stringResource(R.string.user_comments)}"),
-                color = MaterialTheme.colors.cyan,
+                color = MaterialTheme.colorScheme.cyan,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = MaterialTheme.spacing.small),
             )
@@ -95,14 +97,14 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
             Icon(
                 painter = painterResource(id = R.drawable.dot),
                 contentDescription = "",
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 modifier = Modifier
                     .size(7.dp)
                     .padding(horizontal = 1.dp)
             )
             Text(
                 text = digitByLocate("${item.viewCount} ${stringResource(R.string.view)}"),
-                color = MaterialTheme.colors.cyan,
+                color = MaterialTheme.colorScheme.cyan,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = MaterialTheme.spacing.small),
             )
@@ -122,7 +124,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
                 painter = painterResource(id = R.drawable.like),
                 contentDescription = "",
                 modifier = Modifier.size(20.dp),
-                tint = MaterialTheme.colors.DigikalaLightGreen
+                tint = MaterialTheme.colorScheme.DigikalaLightGreen
             )
 
 
@@ -138,14 +140,14 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
 
             Text(
                 text = digitByLocate(text),
-                color = MaterialTheme.colors.semiDarkText,
+                color = MaterialTheme.colorScheme.semiDarkText,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = MaterialTheme.spacing.small)
             )
         }
 
         HorizontalDivider(
-            color = MaterialTheme.colors.gray,
+            color = MaterialTheme.colorScheme.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
         )

@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
@@ -41,14 +41,14 @@ fun CheckoutProductCard(item: CartItem) {
         )
         Spacer(modifier = Modifier.width(5.dp))
         Text(
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             text = DigitHelper.digitByLocate(item.count.toString()),
             style = MaterialTheme.typography.extraSmall
         )
     }
 
     VerticalDivider(
-        color = MaterialTheme.colors.gray.copy(0.4f),
+        color = MaterialTheme.colorScheme.gray.copy(0.4f),
         modifier = Modifier
             .height(70.dp)
             .width(1.dp)

@@ -1,7 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,7 +29,7 @@ fun MostFavoriteProductsShowMore() {
 
         IconWithRotate(
             painter = painterResource(id = R.drawable.show_more),
-            tint = MaterialTheme.colors.cyan,
+            tint = MaterialTheme.colorScheme.cyan,
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -38,7 +38,7 @@ fun MostFavoriteProductsShowMore() {
             text = stringResource(id = R.string.see_all),
             style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
         )
     }
 }

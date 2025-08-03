@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,6 +21,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h3
+import ghazimoradi.soheil.digikala.ui.theme.h5
 
 @Composable
 fun CategoryItem(
@@ -37,7 +39,7 @@ fun CategoryItem(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             text = title,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold
@@ -50,7 +52,7 @@ fun CategoryItem(
                 },
             text = stringResource(id = R.string.see_all),
             style = MaterialTheme.typography.h5,
-            color = MaterialTheme.colors.cyan
+            color = MaterialTheme.colorScheme.cyan
         )
     }
 

@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -23,6 +23,8 @@ import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsOffer
 import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsShowMore
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h3
+import ghazimoradi.soheil.digikala.ui.theme.h6
 
 @Composable
 fun MostFavoriteProductSection(
@@ -70,7 +72,7 @@ fun MostFavoriteProductSection(
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.h3,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
 
             Text(
@@ -78,7 +80,7 @@ fun MostFavoriteProductSection(
                 textAlign = TextAlign.End,
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.cyan,
+                color = MaterialTheme.colorScheme.cyan,
             )
         }
 

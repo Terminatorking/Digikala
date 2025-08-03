@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material3.Icon
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -25,6 +25,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.IconWithBadge
 import ghazimoradi.soheil.digikala.ui.theme.bottomBar
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
 import ghazimoradi.soheil.digikala.ui.theme.unSelectedBottomBar
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
@@ -73,7 +74,7 @@ fun BottomNavigationBar(
     if (showBottomBar) {
         BottomNavigation(
             modifier = Modifier.height(60.dp),
-            backgroundColor = MaterialTheme.colors.bottomBar,
+            backgroundColor = MaterialTheme.colorScheme.bottomBar,
             elevation = 5.dp
         ) {
             val cartCounter by viewModel.currentCartItemsCount.collectAsState(0)
@@ -87,20 +88,20 @@ fun BottomNavigationBar(
                             if (selected) {
                                 if (index == 2 && cartCounter > 0) {
                                     IconWithBadge(
-                                        tint = MaterialTheme.colors.selectedBottomBar,
+                                        tint = MaterialTheme.colorScheme.selectedBottomBar,
                                         cartCounter = cartCounter,
                                         icon = bottomNavItem.selectedIcon
                                     )
                                 } else {
                                     Icon(
-                                        tint = MaterialTheme.colors.selectedBottomBar,
+                                        tint = MaterialTheme.colorScheme.selectedBottomBar,
                                         modifier = Modifier.height(24.dp),
                                         painter = bottomNavItem.selectedIcon,
                                         contentDescription = bottomNavItem.name
                                     )
                                 }
                                 Text(
-                                    color = MaterialTheme.colors.selectedBottomBar,
+                                    color = MaterialTheme.colorScheme.selectedBottomBar,
                                     text = bottomNavItem.name,
                                     textAlign = TextAlign.Center,
                                     style = MaterialTheme.typography.h6,
@@ -110,13 +111,13 @@ fun BottomNavigationBar(
                             } else {
                                 if (index == 2 && cartCounter > 0) {
                                     IconWithBadge(
-                                        tint = MaterialTheme.colors.unSelectedBottomBar,
+                                        tint = MaterialTheme.colorScheme.unSelectedBottomBar,
                                         cartCounter = cartCounter,
                                         icon = bottomNavItem.deSelectedIcon
                                     )
                                 } else {
                                     Icon(
-                                        tint = MaterialTheme.colors.unSelectedBottomBar,
+                                        tint = MaterialTheme.colorScheme.unSelectedBottomBar,
                                         modifier = Modifier.height(24.dp),
                                         painter = bottomNavItem.deSelectedIcon,
                                         contentDescription = bottomNavItem.name
@@ -124,7 +125,7 @@ fun BottomNavigationBar(
                                 }
 
                                 Text(
-                                    color = MaterialTheme.colors.unSelectedBottomBar,
+                                    color = MaterialTheme.colorScheme.unSelectedBottomBar,
                                     text = bottomNavItem.name,
                                     textAlign = TextAlign.Center,
                                     style = MaterialTheme.typography.h6,

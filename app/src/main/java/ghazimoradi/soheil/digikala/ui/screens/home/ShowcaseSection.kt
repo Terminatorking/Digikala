@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -72,7 +72,7 @@ fun ShowcaseSection(navController: NavController) {
             RoundedIconBox(
                 image = painterResource(id = R.drawable.pindo),
                 title = stringResource(id = R.string.pindo),
-                bgColor = MaterialTheme.colors.amber,
+                bgColor = MaterialTheme.colorScheme.amber,
                 onClick = onBoxClick(
                     navController,
                     url = PINDO_URL
@@ -114,7 +114,7 @@ fun ShowcaseSection(navController: NavController) {
             RoundedIconBox(
                 image = painterResource(id = R.drawable.more),
                 title = stringResource(id = R.string.more),
-                bgColor = MaterialTheme.colors.grayCategory,
+                bgColor = MaterialTheme.colorScheme.grayCategory,
                 onClick = onBoxClick(
                     navController,
                     url = MORE_URL

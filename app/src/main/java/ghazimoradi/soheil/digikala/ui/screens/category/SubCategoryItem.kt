@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +26,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.category.Sub
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -50,7 +51,7 @@ fun SubCategoryItem(
     ) {
         Column(
             modifier = Modifier
-                .background(MaterialTheme.colors.searchBarBg)
+                .background(MaterialTheme.colorScheme.searchBarBg)
                 .fillMaxWidth()
                 .padding(vertical = MaterialTheme.spacing.semiMedium),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -73,7 +74,7 @@ fun SubCategoryItem(
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -84,7 +85,7 @@ fun SubCategoryItem(
                 modifier = Modifier
                     .fillMaxWidth(),
                 textAlign = TextAlign.Center,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 fontWeight = FontWeight.Normal,
                 style = MaterialTheme.typography.h6,
                 text = "+${digitByLocate(item.count.toString())} ${stringResource(id = R.string.commodity)}"

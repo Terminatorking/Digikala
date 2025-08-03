@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -33,6 +33,9 @@ import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h4
+import ghazimoradi.soheil.digikala.ui.theme.h5
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
@@ -42,7 +45,7 @@ import ghazimoradi.soheil.digikala.util.DigitHelper
 @Composable
 fun SellerInfoSection(productPrice: Long) {
     HorizontalDivider(
-        color = MaterialTheme.colors.gray,
+        color = MaterialTheme.colorScheme.gray,
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
@@ -60,7 +63,7 @@ fun SellerInfoSection(productPrice: Long) {
         Text(
             text = stringResource(id = R.string.seller),
             style = MaterialTheme.typography.h4,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(start = MaterialTheme.spacing.small)
         )
@@ -87,7 +90,7 @@ fun SellerInfoSection(productPrice: Long) {
                 Text(
                     text = stringResource(id = R.string.digikala),
                     style = MaterialTheme.typography.h5,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                 )
                 Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -95,11 +98,11 @@ fun SellerInfoSection(productPrice: Long) {
                         text = "${DigitHelper.digitByLocate("99")}%" +
                                 " رضایت خریداران | عملکرد ",
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.semiDarkText,
+                        color = MaterialTheme.colorScheme.semiDarkText,
                     )
                 }
                 HorizontalDivider(
-                    color = MaterialTheme.colors.gray,
+                    color = MaterialTheme.colorScheme.gray,
                     thickness = 1.dp,
                     modifier = Modifier.padding(top = MaterialTheme.spacing.small)
                 )
@@ -115,7 +118,7 @@ fun SellerInfoSection(productPrice: Long) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.guarantee),
                 modifier = Modifier
                     .padding(bottom = MaterialTheme.spacing.small)
@@ -131,10 +134,10 @@ fun SellerInfoSection(productPrice: Long) {
                         .padding(vertical = MaterialTheme.spacing.small),
                     text = stringResource(id = R.string.productWarranty),
                     style = MaterialTheme.typography.h5,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                 )
                 HorizontalDivider(
-                    color = MaterialTheme.colors.gray,
+                    color = MaterialTheme.colorScheme.gray,
                     thickness = 1.dp,
                     modifier = Modifier.padding(top = MaterialTheme.spacing.small)
                 )
@@ -160,14 +163,14 @@ fun SellerInfoSection(productPrice: Long) {
                     contentDescription = "",
                     modifier = Modifier
                         .size(16.dp),
-                    tint = MaterialTheme.colors.cyan
+                    tint = MaterialTheme.colorScheme.cyan
                 )
 
                 VerticalDivider(
                     Modifier
                         .width(2.dp)
                         .height(16.dp),
-                    color = MaterialTheme.colors.gray.copy(0.6f)
+                    color = MaterialTheme.colorScheme.gray.copy(0.6f)
                 )
 
                 Icon(
@@ -176,14 +179,14 @@ fun SellerInfoSection(productPrice: Long) {
                     modifier = Modifier
                         .size(10.dp)
                         .padding(1.dp),
-                    tint = MaterialTheme.colors.cyan,
+                    tint = MaterialTheme.colorScheme.cyan,
                 )
 
                 VerticalDivider(
                     Modifier
                         .width(2.dp)
                         .height(16.dp),
-                    color = MaterialTheme.colors.gray.copy(0.6f)
+                    color = MaterialTheme.colorScheme.gray.copy(0.6f)
                 )
 
                 Icon(
@@ -192,7 +195,7 @@ fun SellerInfoSection(productPrice: Long) {
                     modifier = Modifier
                         .size(10.dp)
                         .padding(1.dp),
-                    tint = MaterialTheme.colors.cyan,
+                    tint = MaterialTheme.colorScheme.cyan,
                 )
             }
 
@@ -201,7 +204,7 @@ fun SellerInfoSection(productPrice: Long) {
                 Text(
                     text = stringResource(id = R.string.in_digi_stock),
                     style = MaterialTheme.typography.h6,
-                    color = MaterialTheme.colors.semiDarkText,
+                    color = MaterialTheme.colorScheme.darkText,
                     modifier = Modifier
                         .padding(vertical = MaterialTheme.spacing.extraSmall),
                 )
@@ -209,20 +212,20 @@ fun SellerInfoSection(productPrice: Long) {
                 DetailRow(
                     painterResource(id = R.drawable.k1),
                     stringResource(id = R.string.digikala_send),
-                    color = MaterialTheme.colors.DigiKalaLightRed,
+                    color = MaterialTheme.colorScheme.DigiKalaLightRed,
                     fontStyle = MaterialTheme.typography.extraSmall
                 )
 
                 DetailRow(
                     painterResource(id = R.drawable.k2),
                     stringResource(id = R.string.fast_send),
-                    color = MaterialTheme.colors.DigikalaLightGreen,
+                    color = MaterialTheme.colorScheme.DigikalaLightGreen,
                     fontStyle = MaterialTheme.typography.extraSmall
                 )
             }
         }
         HorizontalDivider(
-            color = MaterialTheme.colors.gray,
+            color = MaterialTheme.colorScheme.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(top = MaterialTheme.spacing.small)
         )
@@ -248,12 +251,12 @@ fun SellerInfoSection(productPrice: Long) {
                         .padding(vertical = MaterialTheme.spacing.small),
                     text = stringResource(id = R.string.digiclub_get_score),
                     style = MaterialTheme.typography.h5,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                 )
             }
         }
         HorizontalDivider(
-            color = MaterialTheme.colors.gray,
+            color = MaterialTheme.colorScheme.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(top = MaterialTheme.spacing.small)
         )
@@ -267,7 +270,7 @@ fun SellerInfoSection(productPrice: Long) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.info),
                 modifier = Modifier
                     .size(20.dp)
@@ -290,7 +293,7 @@ fun SellerInfoSection(productPrice: Long) {
                         )
                     }",
                     style = MaterialTheme.typography.h5,
-                    color = MaterialTheme.colors.darkText,
+                    color = MaterialTheme.colorScheme.darkText,
                 )
             }
         }
@@ -309,11 +312,11 @@ fun SellerInfoSection(productPrice: Long) {
             Text(
                 text = stringResource(id = R.string.better_price_suggestion),
                 style = MaterialTheme.typography.extraSmall,
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
             )
 
             Icon(
-                tint = MaterialTheme.colors.icon,
+                tint = MaterialTheme.colorScheme.icon,
                 painter = painterResource(id = R.drawable.mark),
                 modifier = Modifier.size(25.dp),
                 contentDescription = ""

@@ -2,7 +2,7 @@ package ghazimoradi.soheil.digikala.ui.screens.basket
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.ui.theme.h6
 
 @Composable
 fun EmptyBasketShopping() {
@@ -36,7 +37,7 @@ fun EmptyBasketShopping() {
             text = stringResource(R.string.cart_is_empty),
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.h6,
-            color = MaterialTheme.colors.semiDarkText,
+            color = MaterialTheme.colorScheme.semiDarkText,
         )
 
         Spacer(

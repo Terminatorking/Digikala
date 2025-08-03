@@ -5,7 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -111,7 +111,7 @@ fun ProductDetailScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(bottom = 70.dp)
-                    .background(MaterialTheme.colors.mainBg)
+                    .background(MaterialTheme.colorScheme.mainBg)
             ) {
                 item {
                     TopSliderSection(productDetailSliders = imageSlider)

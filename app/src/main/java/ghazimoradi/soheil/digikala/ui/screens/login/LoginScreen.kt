@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
@@ -33,6 +33,7 @@ import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterEditText
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
@@ -52,7 +53,7 @@ fun LoginScreen(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.mainBg),
+            .background(MaterialTheme.colorScheme.mainBg),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         item {
@@ -83,7 +84,7 @@ fun LoginScreen(
                 ),
                 style = MaterialTheme.typography.h6,
                 text = stringResource(id = R.string.loginTxt),
-                color = MaterialTheme.colors.darkText,
+                color = MaterialTheme.colorScheme.darkText,
                 fontWeight = FontWeight.Bold
             )
         }
@@ -116,7 +117,7 @@ fun LoginScreen(
 
         item {
             HorizontalDivider(
-                color = MaterialTheme.colors.searchBarBg,
+                color = MaterialTheme.colorScheme.searchBarBg,
                 modifier = Modifier
                     .fillMaxWidth()
                     .width(1.dp)
@@ -131,7 +132,7 @@ fun LoginScreen(
                     stringResource(id = R.string.terms_and_rules),
                     stringResource(id = R.string.privacy_and_rules)
                 ),
-                textColor = MaterialTheme.colors.semiDarkText,
+                textColor = MaterialTheme.colorScheme.semiDarkText,
                 fontSize = 10.sp,
                 textAlign = TextAlign.Center
             )

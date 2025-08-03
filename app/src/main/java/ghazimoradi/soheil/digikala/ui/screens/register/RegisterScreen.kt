@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -26,6 +26,7 @@ import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterButton
 import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterEditText
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants
@@ -86,7 +87,7 @@ fun RegisterScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.mainBg),
+            .background(MaterialTheme.colorScheme.mainBg),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TopBarSection(navController)
@@ -99,7 +100,7 @@ fun RegisterScreen(
                 horizontal = MaterialTheme.spacing.semiLarge
             ),
             style = MaterialTheme.typography.h6,
-            color = MaterialTheme.colors.darkText,
+            color = MaterialTheme.colorScheme.darkText,
             fontWeight = FontWeight.Bold
         )
 
