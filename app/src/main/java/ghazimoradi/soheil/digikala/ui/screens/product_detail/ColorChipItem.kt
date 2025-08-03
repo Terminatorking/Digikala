@@ -1,6 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.screens.product_detail
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.toggleable
@@ -15,7 +16,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.data.model.product_detail.ProductColor
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
+import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
@@ -26,16 +30,19 @@ fun ColorChipItem(
 ) {
     Surface(
         modifier =
-        if (isSelected)
-            Modifier
+            if (isSelected)
+                Modifier
+                    .padding(MaterialTheme.spacing.extraSmall)
+                    .border(width = 1.dp, MaterialTheme.colors.CursorColor, CircleShape)
+            else Modifier
                 .padding(MaterialTheme.spacing.extraSmall)
-                .border(width = 1.dp, MaterialTheme.colors.CursorColor, CircleShape)
-        else Modifier.padding(MaterialTheme.spacing.extraSmall),
+                .border(width = 1.dp, Transparent, CircleShape),
 
         shape = MaterialTheme.roundedShape.biggerMedium,
     ) {
         Row(
             modifier = Modifier
+                .background(MaterialTheme.colors.searchBarBg)
                 .toggleable(
                     value = isSelected,
                     onValueChange = {
@@ -57,6 +64,7 @@ fun ColorChipItem(
             Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
 
             Text(
+                color = MaterialTheme.colors.darkText,
                 text = item.color,
                 style = MaterialTheme.typography.h6
             )

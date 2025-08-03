@@ -45,7 +45,7 @@ fun TextCommentCard(item: Comment) {
 
         in 2..3 -> {
             iconSuggestion = R.drawable.info
-            colorSuggestion = MaterialTheme.colors.semiDarkText
+            colorSuggestion = MaterialTheme.colors.darkText
             textSuggestion = context.getString(R.string.so_so_comment)
             iconRotation = 0f
         }
@@ -59,6 +59,7 @@ fun TextCommentCard(item: Comment) {
     }
 
     Card(
+        colors = CardDefaults.cardColors(MaterialTheme.colors.searchBarBg),
         modifier = Modifier
             .padding(
                 horizontal = MaterialTheme.spacing.small,
@@ -67,7 +68,6 @@ fun TextCommentCard(item: Comment) {
             .width(260.dp)
             .height(210.dp),
         shape = MaterialTheme.roundedShape.small,
-        elevation = CardDefaults.cardElevation(2.dp),
     ) {
         Column(
             modifier = Modifier
@@ -108,8 +108,9 @@ fun TextCommentCard(item: Comment) {
             }
 
             Text(
+                color = MaterialTheme.colors.darkText,
                 text = item.description,
-                Modifier.weight(1f),
+                modifier = Modifier.weight(1f),
                 maxLines = 3,
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.h6,
@@ -122,7 +123,7 @@ fun TextCommentCard(item: Comment) {
             ) {
                 Text(
                     text = digitByLocate(gregorianToJalali(year, month, day)),
-                    color = MaterialTheme.colors.semiDarkText,
+                    color = MaterialTheme.colors.darkText,
                     style = MaterialTheme.typography.h6,
                 )
                 Icon(
@@ -131,11 +132,11 @@ fun TextCommentCard(item: Comment) {
                     Modifier
                         .size(20.dp)
                         .padding(horizontal = MaterialTheme.spacing.small),
-                    tint = MaterialTheme.colors.grayAlpha
+                    tint = MaterialTheme.colors.icon
                 )
                 Text(
                     text = item.userName,
-                    color = MaterialTheme.colors.grayAlpha,
+                    color = MaterialTheme.colors.gray,
                     style = MaterialTheme.typography.h6
                 )
             }

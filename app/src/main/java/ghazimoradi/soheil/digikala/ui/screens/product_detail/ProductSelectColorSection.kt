@@ -13,19 +13,21 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import ghazimoradi.soheil.digikala.data.model.product_detail.ProductColor
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.R
 
 val selectedColorItem: MutableState<ProductColor?> = mutableStateOf(null)
 
 @Composable
 fun ProductSelectColorSection(
     colors: List<ProductColor>,
-    onSelectionChanged: (String) -> Unit = {colorName->
-        colors.forEach{
-            if (it.color == colorName){
+    onSelectionChanged: (String) -> Unit = { colorName ->
+        colors.forEach {
+            if (it.color == colorName) {
                 selectedColorItem.value = it
             }
         }
@@ -35,7 +37,9 @@ fun ProductSelectColorSection(
     Column(modifier = Modifier.padding(MaterialTheme.spacing.small)) {
 
         Text(
-            text = " رنگ: ${selectedColorItem.value?.color ?: "انتخاب نشده"}",
+            text = stringResource(R.string.color) +
+                    " ${selectedColorItem.value?.color ?: stringResource(R.string.not_selected)}",
+
             color = MaterialTheme.colors.darkText,
             modifier = Modifier.padding(MaterialTheme.spacing.small),
             style = MaterialTheme.typography.h4,
@@ -50,9 +54,9 @@ fun ProductSelectColorSection(
         LazyRow {
             items(colorState) { productColor ->
                 ColorChipItem(
-                    productColor ,
+                    productColor,
                     isSelected = selectedColorItem.value?.color == productColor.color
-                ){
+                ) {
                     onSelectionChanged(it)
                 }
             }

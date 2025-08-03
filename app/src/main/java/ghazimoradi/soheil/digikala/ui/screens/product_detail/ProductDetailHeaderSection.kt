@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,8 +22,8 @@ import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
 import ghazimoradi.soheil.digikala.ui.theme.Gold
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.grayAlpha
-import ghazimoradi.soheil.digikala.ui.theme.grayCategory
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
@@ -65,13 +65,13 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
             )
             Text(
                 text = digitByLocate(item.star.toString()),
-                color = MaterialTheme.colors.semiDarkText,
+                color = MaterialTheme.colors.darkText,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = 2.dp)
             )
             Text(
                 text = digitByLocate("(${item.starCount})"),
-                color = MaterialTheme.colors.grayAlpha,
+                color = MaterialTheme.colors.darkText,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(end = MaterialTheme.spacing.small)
             )
@@ -144,8 +144,8 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
             )
         }
 
-        Divider(
-            color = MaterialTheme.colors.grayCategory,
+        HorizontalDivider(
+            color = MaterialTheme.colors.gray,
             thickness = 1.dp,
             modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
         )

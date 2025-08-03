@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Digikala</string>
+    <string name="color">رنگ:</string>
+    <string name="not_selected">انتخاب نشده</string>
     <string name="home">خانه</string>
     <string name="basket">سبد خرید</string>
     <string name="category">دسته‌بندی‌ها</string>

@@ -1,35 +1,50 @@
 package ghazimoradi.soheil.digikala.ui.screens.product_detail
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Divider
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.screens.basket.DetailRow
-import ghazimoradi.soheil.digikala.ui.theme.*
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
+import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
+import ghazimoradi.soheil.digikala.ui.theme.cyan
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.extraSmall
+import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
+import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper
 
 @Composable
 fun SellerInfoSection(productPrice: Long) {
-    Divider(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(MaterialTheme.spacing.small),
-        color = MaterialTheme.colors.gray.copy(0.4f),
+    HorizontalDivider(
+        color = MaterialTheme.colors.gray,
+        thickness = 1.dp,
+        modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
     Column(
         modifier = Modifier
@@ -83,12 +98,10 @@ fun SellerInfoSection(productPrice: Long) {
                         color = MaterialTheme.colors.semiDarkText,
                     )
                 }
-                Spacer(
-                    modifier = Modifier
-                        .padding(top = MaterialTheme.spacing.small)
-                        .fillMaxWidth()
-                        .height(1.dp)
-                        .background(MaterialTheme.colors.grayCategory)
+                HorizontalDivider(
+                    color = MaterialTheme.colors.gray,
+                    thickness = 1.dp,
+                    modifier = Modifier.padding(top = MaterialTheme.spacing.small)
                 )
             }
         }
@@ -101,7 +114,8 @@ fun SellerInfoSection(productPrice: Long) {
             ),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Image(
+            Icon(
+                tint = MaterialTheme.colors.icon,
                 painter = painterResource(id = R.drawable.guarantee),
                 modifier = Modifier
                     .padding(bottom = MaterialTheme.spacing.small)
@@ -119,12 +133,10 @@ fun SellerInfoSection(productPrice: Long) {
                     style = MaterialTheme.typography.h5,
                     color = MaterialTheme.colors.darkText,
                 )
-                Spacer(
-                    modifier = Modifier
-                        .padding(top = MaterialTheme.spacing.small)
-                        .fillMaxWidth()
-                        .height(1.dp)
-                        .background(MaterialTheme.colors.grayCategory)
+                HorizontalDivider(
+                    color = MaterialTheme.colors.gray,
+                    thickness = 1.dp,
+                    modifier = Modifier.padding(top = MaterialTheme.spacing.small)
                 )
             }
         }
@@ -151,11 +163,11 @@ fun SellerInfoSection(productPrice: Long) {
                     tint = MaterialTheme.colors.cyan
                 )
 
-                Divider(
+                VerticalDivider(
                     Modifier
                         .width(2.dp)
                         .height(16.dp),
-                    color = MaterialTheme.colors.gray.copy(0.6f),
+                    color = MaterialTheme.colors.gray.copy(0.6f)
                 )
 
                 Icon(
@@ -167,11 +179,11 @@ fun SellerInfoSection(productPrice: Long) {
                     tint = MaterialTheme.colors.cyan,
                 )
 
-                Divider(
+                VerticalDivider(
                     Modifier
                         .width(2.dp)
                         .height(16.dp),
-                    color =MaterialTheme.colors.gray.copy(0.6f),
+                    color = MaterialTheme.colors.gray.copy(0.6f)
                 )
 
                 Icon(
@@ -209,13 +221,10 @@ fun SellerInfoSection(productPrice: Long) {
                 )
             }
         }
-
-        Spacer(
-            modifier = Modifier
-                .padding(top = MaterialTheme.spacing.small)
-                .fillMaxWidth()
-                .height(1.dp)
-                .background(MaterialTheme.colors.grayCategory)
+        HorizontalDivider(
+            color = MaterialTheme.colors.gray,
+            thickness = 1.dp,
+            modifier = Modifier.padding(top = MaterialTheme.spacing.small)
         )
 
         Row(
@@ -243,13 +252,10 @@ fun SellerInfoSection(productPrice: Long) {
                 )
             }
         }
-
-        Spacer(
-            modifier = Modifier
-                .padding(top = MaterialTheme.spacing.small)
-                .fillMaxWidth()
-                .height(1.dp)
-                .background(MaterialTheme.colors.grayCategory)
+        HorizontalDivider(
+            color = MaterialTheme.colors.gray,
+            thickness = 1.dp,
+            modifier = Modifier.padding(top = MaterialTheme.spacing.small)
         )
 
         Row(
@@ -260,7 +266,8 @@ fun SellerInfoSection(productPrice: Long) {
             ),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Image(
+            Icon(
+                tint = MaterialTheme.colors.icon,
                 painter = painterResource(id = R.drawable.info),
                 modifier = Modifier
                     .size(20.dp)
@@ -283,7 +290,7 @@ fun SellerInfoSection(productPrice: Long) {
                         )
                     }",
                     style = MaterialTheme.typography.h5,
-                    color = MaterialTheme.colors.unSelectedBottomBar,
+                    color = MaterialTheme.colors.darkText,
                 )
             }
         }
@@ -302,13 +309,14 @@ fun SellerInfoSection(productPrice: Long) {
             Text(
                 text = stringResource(id = R.string.better_price_suggestion),
                 style = MaterialTheme.typography.extraSmall,
-                color = MaterialTheme.colors.unSelectedBottomBar,
+                color = MaterialTheme.colors.darkText,
             )
 
-            Image(
+            Icon(
+                tint = MaterialTheme.colors.icon,
                 painter = painterResource(id = R.drawable.mark),
-                modifier = Modifier
-                    .size(25.dp), contentDescription = ""
+                modifier = Modifier.size(25.dp),
+                contentDescription = ""
             )
         }
     }
