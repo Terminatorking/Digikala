@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.model.product_detail.Comment
-import ghazimoradi.soheil.digikala.data.model.product_detail.Price
 import ghazimoradi.soheil.digikala.data.model.product_detail.ProductColor
 import ghazimoradi.soheil.digikala.data.model.product_detail.ProductDetail
 import ghazimoradi.soheil.digikala.data.model.product_detail.SliderImage
@@ -50,9 +49,6 @@ fun ProductDetailScreen(
     var productComments by remember {
         mutableStateOf<List<Comment>>(emptyList())
     }
-    var productPriceList by remember {
-        mutableStateOf<List<Price>>(emptyList())
-    }
 
     var categoryId by remember { mutableStateOf("") }
 
@@ -75,7 +71,6 @@ fun ProductDetailScreen(
                     imageSlider = netWorkProductDetail.data.imageSlider ?: emptyList()
                     productColors = netWorkProductDetail.data.colors ?: emptyList()
                     productComments = netWorkProductDetail.data.comments ?: emptyList()
-                    productPriceList = netWorkProductDetail.data.priceList ?: emptyList()
                     categoryId = netWorkProductDetail.data.categoryId ?: ""
                     description = netWorkProductDetail.data.description ?: ""
                     commentCount = netWorkProductDetail.data.commentCount ?: 0
@@ -109,11 +104,47 @@ fun ProductDetailScreen(
         ) { padding ->
             Log.i("padding", padding.toString())
             LazyColumn(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxSize()
                     .padding(bottom = 70.dp)
                     .background(MaterialTheme.colors.mainBg)
             ) {
+                item {
+                    ProductTopSliderSection(imageSlider)
+                }
 
+                item {
+                    ProductDetailHeaderSection(productDetail)
+                }
+
+                item {
+                    ProductSelectColorSection(productColors)
+                }
+
+                item {
+                    SellerInfoSection(productDetail.price ?: 0)
+                }
+
+                item {
+                    SimilarProductSection(navController, categoryId)
+                }
+
+                item {
+                    ProductDescriptionSection(navController, description, technicalFeatures)
+                }
+
+                item {
+                    ProductCommentsSection(
+                        navController,
+                        productId,
+                        productComments,
+                        commentCount.toString()
+                    )
+                }
+
+                item {
+                    ProductSetCommentsSection(navController, productDetail)
+                }
             }
         }
     }

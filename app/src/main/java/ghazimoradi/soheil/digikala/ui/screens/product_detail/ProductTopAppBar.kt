@@ -25,6 +25,7 @@ import ghazimoradi.soheil.digikala.data.model.product_detail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
 
@@ -35,6 +36,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .background(MaterialTheme.colors.searchBarBg)
             .height(55.dp)
             .padding(horizontal = MaterialTheme.spacing.small),
         verticalAlignment = Alignment.CenterVertically
