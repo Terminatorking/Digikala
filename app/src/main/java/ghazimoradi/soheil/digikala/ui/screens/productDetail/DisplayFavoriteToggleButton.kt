@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.product_detail
+package ghazimoradi.soheil.digikala.ui.screens.productDetail
 
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.updateTransition

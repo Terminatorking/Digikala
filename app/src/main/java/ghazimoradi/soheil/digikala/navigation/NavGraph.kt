@@ -13,7 +13,7 @@ import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
-import ghazimoradi.soheil.digikala.ui.screens.product_detail.ProductDetailScreen
+import ghazimoradi.soheil.digikala.ui.screens.productDetail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen

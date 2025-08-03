@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.product_detail
+package ghazimoradi.soheil.digikala.ui.screens.productDetail
 
 import android.util.Log
 import androidx.compose.foundation.background
