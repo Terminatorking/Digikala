@@ -86,9 +86,11 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
     }
 
     SwipeRefresh(
-        swipeRefreshState, onRefresh = {
+        swipeRefreshState,
+        onRefresh = {
             viewModel.refreshDataFromServer()
-        }) {
+        },
+    ) {
         if (loading) {
             Loading(getScreenHeight())
         } else {

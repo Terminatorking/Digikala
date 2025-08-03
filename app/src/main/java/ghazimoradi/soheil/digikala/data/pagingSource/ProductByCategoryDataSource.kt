@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.data.paging_source
+package ghazimoradi.soheil.digikala.data.pagingSource
 
 import android.util.Log
 import androidx.paging.PagingSource

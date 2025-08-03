@@ -1,8 +1,8 @@
 package ghazimoradi.soheil.digikala.data.remote
 
 import ghazimoradi.soheil.digikala.data.model.ResponseResult
-import ghazimoradi.soheil.digikala.data.model.product_detail.Comment
-import ghazimoradi.soheil.digikala.data.model.product_detail.NewComment
+import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
+import ghazimoradi.soheil.digikala.data.model.productDetail.NewComment
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

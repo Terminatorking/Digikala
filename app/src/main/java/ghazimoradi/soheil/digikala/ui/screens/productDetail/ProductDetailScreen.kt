@@ -19,10 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.data.model.product_detail.Comment
-import ghazimoradi.soheil.digikala.data.model.product_detail.ProductColor
-import ghazimoradi.soheil.digikala.data.model.product_detail.ProductDetail
-import ghazimoradi.soheil.digikala.data.model.product_detail.SliderImage
+import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
+import ghazimoradi.soheil.digikala.data.model.productDetail.ProductColor
+import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
+import ghazimoradi.soheil.digikala.data.model.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight

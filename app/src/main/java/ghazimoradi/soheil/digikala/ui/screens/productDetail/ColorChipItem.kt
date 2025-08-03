@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.data.model.product_detail.ProductColor
+import ghazimoradi.soheil.digikala.data.model.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText

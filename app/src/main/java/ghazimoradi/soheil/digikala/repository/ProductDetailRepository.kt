@@ -1,7 +1,7 @@
 package ghazimoradi.soheil.digikala.repository
 
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
-import ghazimoradi.soheil.digikala.data.model.product_detail.ProductDetail
+import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.data.remote.BaseApiResponse
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.data.remote.ProductDetailApiInterface

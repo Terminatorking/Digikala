@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.data.model.product_detail
+package ghazimoradi.soheil.digikala.data.model.productDetail
 
 import com.google.gson.JsonObject
 

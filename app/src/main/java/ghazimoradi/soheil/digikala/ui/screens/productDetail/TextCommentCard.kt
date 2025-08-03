@@ -15,7 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.data.model.product_detail.Comment
+import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate

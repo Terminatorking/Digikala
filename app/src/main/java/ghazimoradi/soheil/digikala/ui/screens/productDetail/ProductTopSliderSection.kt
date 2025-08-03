@@ -17,7 +17,7 @@ import coil.size.Scale
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
-import ghazimoradi.soheil.digikala.data.model.product_detail.SliderImage
+import ghazimoradi.soheil.digikala.data.model.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.ui.theme.LocalShape
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import kotlinx.coroutines.delay

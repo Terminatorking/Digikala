@@ -2,7 +2,7 @@ package ghazimoradi.soheil.digikala.data.remote
 
 import ghazimoradi.soheil.digikala.data.model.ResponseResult
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
-import ghazimoradi.soheil.digikala.data.model.product_detail.ProductDetail
+import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
