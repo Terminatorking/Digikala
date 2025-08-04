@@ -26,7 +26,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.screens.basket.DetailRow
+import ghazimoradi.soheil.digikala.ui.components.DetailRow
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
 import ghazimoradi.soheil.digikala.ui.theme.cyan

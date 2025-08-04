@@ -6,11 +6,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -31,7 +31,6 @@ import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
@@ -98,7 +97,7 @@ fun ProductDescriptionSection(
                 Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colorScheme.settingArrow
+                tint = MaterialTheme.colorScheme.icon
             )
         }
     }
@@ -134,7 +133,7 @@ fun ProductDescriptionSection(
                 Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colorScheme.settingArrow
+                tint = MaterialTheme.colorScheme.icon
             )
         }
     }

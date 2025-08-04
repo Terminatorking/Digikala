@@ -45,6 +45,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.basket.CartItem
 import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
 import ghazimoradi.soheil.digikala.navigation.Screen
+import ghazimoradi.soheil.digikala.ui.components.DetailRow
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
@@ -394,35 +395,5 @@ fun CartItemCard(
                 }
             }
         }
-    }
-}
-
-@Composable
-fun DetailRow(
-    icon: Painter,
-    text: String,
-    color: Color,
-    fontStyle: TextStyle,
-) {
-    Row(
-        modifier = Modifier.padding(vertical = MaterialTheme.spacing.extraSmall),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-
-        Icon(
-            painter = icon,
-            contentDescription = "",
-            modifier = Modifier.size(16.dp),
-            tint = color,
-        )
-
-        Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
-
-        Text(
-            text = text,
-            style = fontStyle,
-            fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colorScheme.semiDarkText
-        )
     }
 }

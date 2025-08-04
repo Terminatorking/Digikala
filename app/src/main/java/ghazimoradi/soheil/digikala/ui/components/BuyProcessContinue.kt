@@ -40,7 +40,6 @@ fun BuyProcessContinue(
     Card(
         colors = CardDefaults.cardColors(MaterialTheme.colorScheme.searchBarBg),
         shape = MaterialTheme.roundedShape.extraSmall,
-        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.extraSmall),
         border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.gray.copy(0.2f))
     ) {
         Row(
