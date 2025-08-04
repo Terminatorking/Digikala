@@ -35,6 +35,7 @@ fun TextCommentCard(item: Comment) {
     var colorSuggestion = MaterialTheme.colorScheme.Green
     var textSuggestion = context.getString(R.string.good_comment)
     var iconRotation = 0f
+
     when (item.star) {
         in Int.MIN_VALUE..2 -> {
             iconSuggestion = R.drawable.like

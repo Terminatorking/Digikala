@@ -22,10 +22,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
+import ghazimoradi.soheil.digikala.util.Constants.PRODUCT_COMMENTS
 
 @Composable
 fun CommentShowMoreItem(
@@ -42,13 +44,13 @@ fun CommentShowMoreItem(
             .height(240.dp)
             .padding(vertical = MaterialTheme.spacing.medium)
             .clickable {
-//                navController.navigate(
-//                    Screen.AllComment.withArgs(
-//                        productId,
-//                        commentCount,
-//                        PRODUCT_COMMENTS
-//                    )
-//                )
+                navController.navigate(
+                    Screen.AllComment.withArgs(
+                        productId,
+                        commentCount,
+                        PRODUCT_COMMENTS
+                    )
+                )
             }
 
     ) {

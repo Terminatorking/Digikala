@@ -6,14 +6,15 @@ sealed class Screen(val route: String) {
     object Category : Screen("category_screen")
     object Basket : Screen("basket_screen")
     object Profile : Screen("profile_screen")
-    data object WebView : Screen("webView_screen")
-    data object Settings : Screen("setting_screen")
-    data object Checkout : Screen("checkout_screen")
-    data object ConfirmPurchase : Screen("confirm_purchase_screen")
-    data object ProductDetail : Screen("product_detail_screen")
-    data object SubCategoryScreen : Screen("sub_category_screen")
-    data object ProductDescription : Screen("product_description_screen")
-    data object ProductTechnicalFeatures : Screen("product_technical_features_screen")
+    object WebView : Screen("webView_screen")
+    object Settings : Screen("setting_screen")
+    object Checkout : Screen("checkout_screen")
+    object ConfirmPurchase : Screen("confirm_purchase_screen")
+    object ProductDetail : Screen("product_detail_screen")
+    object SubCategoryScreen : Screen("sub_category_screen")
+    object ProductDescription : Screen("product_description_screen")
+    object ProductTechnicalFeatures : Screen("product_technical_features_screen")
+    object AllComment : Screen("all_comment_screen")
 
     fun withArgs(vararg args: Any): String {
         return buildString {

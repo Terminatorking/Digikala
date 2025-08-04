@@ -16,6 +16,7 @@ import ghazimoradi.soheil.digikala.ui.screens.webview.WebView
 import ghazimoradi.soheil.digikala.ui.screens.products.productTechnicalFeatures.ProductTechnicalFeaturesScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.productDescription.ProductDescriptionScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.productDetail.ProductDetailScreen
+import ghazimoradi.soheil.digikala.ui.screens.products.allProductComments.AllProductCommentsScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
@@ -142,6 +143,39 @@ fun SetupNavGraph(navController: NavHostController) {
                     navController = navController,
                     jsonString = jsonString
                 )
+            }
+        }
+
+        composable(route = Screen.AllComment.route + "/{productId}/{commentsCount}/{pageName}",
+            arguments = listOf(
+                navArgument("productId") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                },
+                navArgument("commentsCount") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                },
+                navArgument("pageName") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("productId")?.let { productId ->
+                it.arguments!!.getString("commentsCount")?.let { commentsCount ->
+                    it.arguments!!.getString("pageName")?.let { pageName ->
+                        AllProductCommentsScreen(
+                            navController = navController,
+                            productId = productId,
+                            commentsCount = commentsCount,
+                            pageName = pageName
+                        )
+                    }
+                }
             }
         }
 
