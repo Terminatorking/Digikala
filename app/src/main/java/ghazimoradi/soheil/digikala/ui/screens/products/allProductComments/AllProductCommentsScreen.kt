@@ -130,9 +130,7 @@ fun AllProductCommentsScreen(
                             }
                         }
 
-                        loadState.append is LoadState.Error -> {
-                            //todo error handling
-                        }
+                        loadState.append is LoadState.Error -> {}
                     }
                 }
             }

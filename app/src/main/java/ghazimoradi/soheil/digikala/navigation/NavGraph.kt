@@ -14,6 +14,7 @@ import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScr
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.webview.WebView
 import ghazimoradi.soheil.digikala.ui.screens.products.productTechnicalFeatures.ProductTechnicalFeaturesScreen
+import ghazimoradi.soheil.digikala.ui.screens.products.newComment.NewCommentScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.productDescription.ProductDescriptionScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.productDetail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.allProductComments.AllProductCommentsScreen
@@ -55,7 +56,8 @@ fun SetupNavGraph(navController: NavHostController) {
             CheckoutScreen(navController = navController)
         }
 
-        composable(route = Screen.ConfirmPurchase.route + "/{orderId}/{orderPrice}",
+        composable(
+            route = Screen.ConfirmPurchase.route + "/{orderId}/{orderPrice}",
             arguments = listOf(
                 navArgument("orderId") {
                     type = NavType.StringType
@@ -80,7 +82,8 @@ fun SetupNavGraph(navController: NavHostController) {
             }
         }
 
-        composable(route = Screen.ProductDetail.route + "/{productId}",
+        composable(
+            route = Screen.ProductDetail.route + "/{productId}",
             arguments = listOf(
                 navArgument("productId") {
                     type = NavType.StringType
@@ -97,7 +100,8 @@ fun SetupNavGraph(navController: NavHostController) {
             }
         }
 
-        composable(route = Screen.SubCategoryScreen.route + "/{categoryId}",
+        composable(
+            route = Screen.SubCategoryScreen.route + "/{categoryId}",
             arguments = listOf(
                 navArgument("categoryId") {
                     type = NavType.StringType
@@ -113,7 +117,8 @@ fun SetupNavGraph(navController: NavHostController) {
                 )
             }
         }
-        composable(route = Screen.ProductDescription.route + "/{description}",
+        composable(
+            route = Screen.ProductDescription.route + "/{description}",
             arguments = listOf(
                 navArgument("description") {
                     type = NavType.StringType
@@ -129,7 +134,8 @@ fun SetupNavGraph(navController: NavHostController) {
                 )
             }
         }
-        composable(route = Screen.ProductTechnicalFeatures.route + "/{jsonString}",
+        composable(
+            route = Screen.ProductTechnicalFeatures.route + "/{jsonString}",
             arguments = listOf(
                 navArgument("jsonString") {
                     type = NavType.StringType
@@ -146,7 +152,8 @@ fun SetupNavGraph(navController: NavHostController) {
             }
         }
 
-        composable(route = Screen.AllComment.route + "/{productId}/{commentsCount}/{pageName}",
+        composable(
+            route = Screen.AllComment.route + "/{productId}/{commentsCount}/{pageName}",
             arguments = listOf(
                 navArgument("productId") {
                     type = NavType.StringType
@@ -173,6 +180,41 @@ fun SetupNavGraph(navController: NavHostController) {
                             productId = productId,
                             commentsCount = commentsCount,
                             pageName = pageName
+                        )
+                    }
+                }
+            }
+        }
+
+        composable(
+            route = Screen.NewComment.route +
+                    "?productId={productId}?productName={productName}?imageUrl={imageUrl}",
+            arguments = listOf(
+                navArgument("productId") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                },
+                navArgument("productName") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                },
+                navArgument("imageUrl") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("productId")?.let { productId ->
+                it.arguments!!.getString("productName")?.let { productName ->
+                    it.arguments!!.getString("imageUrl")?.let { imageUrl ->
+                        NewCommentScreen(
+                            navController = navController,
+                            productId = productId,
+                            productName = productName,
+                            imageUrl = imageUrl
                         )
                     }
                 }

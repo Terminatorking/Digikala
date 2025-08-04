@@ -50,7 +50,9 @@ fun ProductSetCommentsSection(
                 if (Constants.USER_TOKEN == "null") {
                     navController.navigate(Screen.Profile.route)
                 } else {
-                    //  navController.navigate(Screen.NewComment.route + "?productId=${item._id}?productName=${item.name}?imageUrl=${item.imageSlider!![0].image}")
+                    navController.navigate(Screen.NewComment.route +
+                            "?productId=${item._id}?productName=${item.name}?imageUrl=${item.imageSlider!![0].image}"
+                    )
                 }
             }
     ) {
