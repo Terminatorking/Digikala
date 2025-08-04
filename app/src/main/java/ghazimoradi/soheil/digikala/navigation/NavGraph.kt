@@ -13,9 +13,9 @@ import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.webview.WebView
-import ghazimoradi.soheil.digikala.ui.screens.productTechnicalFeatures.ProductTechnicalFeaturesScreen
-import ghazimoradi.soheil.digikala.ui.screens.productDescription.ProductDescriptionScreen
-import ghazimoradi.soheil.digikala.ui.screens.productDetail.ProductDetailScreen
+import ghazimoradi.soheil.digikala.ui.screens.products.productTechnicalFeatures.ProductTechnicalFeaturesScreen
+import ghazimoradi.soheil.digikala.ui.screens.products.productDescription.ProductDescriptionScreen
+import ghazimoradi.soheil.digikala.ui.screens.products.productDetail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen

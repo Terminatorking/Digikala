@@ -53,6 +53,6 @@ fun WebView(
     )
 
     if (isLoading) {
-        Loading(getScreenHeight(), true)
+        Loading(getScreenHeight())
     }
 }

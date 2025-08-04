@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.productTechnicalFeatures
+package ghazimoradi.soheil.digikala.ui.screens.products.productTechnicalFeatures
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
