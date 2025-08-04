@@ -10,10 +10,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,13 +23,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.PERSIAN_LANG
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 
 @Composable
 fun AmazingOfferCard(
@@ -86,11 +83,10 @@ fun AmazingOfferCard(
                 color = White,
                 fontWeight = FontWeight.SemiBold
             )
-
-            IconWithRotate(
-                if (USER_LANGUAGE == PERSIAN_LANG)
-                    Icons.AutoMirrored.Filled.KeyboardArrowRight
-                else Icons.AutoMirrored.Filled.KeyboardArrowLeft
+            Icon(
+                tint = White,
+                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                contentDescription = ""
             )
         }
     }

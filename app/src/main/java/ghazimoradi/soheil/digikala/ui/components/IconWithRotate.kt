@@ -12,18 +12,22 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.ui.theme.mainBg
+import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 
 @Composable
-fun IconWithRotate(imageVector: ImageVector, onClick: () -> Unit = {}) {
+fun IconWithRotate(
+    imageVector: ImageVector,
+    tint: Color = MaterialTheme.colorScheme.icon,
+    onClick: () -> Unit = {}
+) {
 
     if (USER_LANGUAGE == ENGLISH_LANG) {
         Icon(
             imageVector = imageVector,
             contentDescription = "",
-            tint = MaterialTheme.colorScheme.mainBg,
+            tint = tint,
             modifier = Modifier
                 .graphicsLayer(rotationZ = 180f)
                 .clickable { onClick() }
@@ -33,7 +37,7 @@ fun IconWithRotate(imageVector: ImageVector, onClick: () -> Unit = {}) {
             modifier = Modifier.clickable { onClick() },
             imageVector = imageVector,
             contentDescription = "",
-            tint = MaterialTheme.colorScheme.mainBg
+            tint = tint,
         )
     }
 }
