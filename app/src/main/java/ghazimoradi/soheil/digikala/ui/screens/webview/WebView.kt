@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.home
+package ghazimoradi.soheil.digikala.ui.screens.webview
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -18,7 +18,7 @@ import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
-fun WebPageScreen(
+fun WebView(
     navController: NavController,
     url: String
 ) {

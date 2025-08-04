@@ -12,7 +12,7 @@ import ghazimoradi.soheil.digikala.ui.screens.subCategoryScreen.SubCategoryScree
 import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
-import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
+import ghazimoradi.soheil.digikala.ui.screens.webview.WebView
 import ghazimoradi.soheil.digikala.ui.screens.productTechnicalFeatures.ProductTechnicalFeaturesScreen
 import ghazimoradi.soheil.digikala.ui.screens.productDescription.ProductDescriptionScreen
 import ghazimoradi.soheil.digikala.ui.screens.productDetail.ProductDetailScreen
@@ -156,7 +156,7 @@ fun SetupNavGraph(navController: NavHostController) {
             )
         ) { navBackStackEntry ->
             navBackStackEntry.arguments?.getString("url")?.let {
-                WebPageScreen(navController = navController, url = it)
+                WebView(navController = navController, url = it)
             }
         }
     }
