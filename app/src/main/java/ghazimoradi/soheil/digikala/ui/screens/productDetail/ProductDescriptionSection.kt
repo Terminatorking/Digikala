@@ -120,7 +120,7 @@ fun ProductDescriptionSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    // navController.navigate(Screen.ProductDescription.withArgs(description))
+                    navController.navigate(Screen.ProductDescription.withArgs(description))
                 }
                 .padding(horizontal = MaterialTheme.spacing.medium),
             horizontalArrangement = Arrangement.SpaceBetween,
