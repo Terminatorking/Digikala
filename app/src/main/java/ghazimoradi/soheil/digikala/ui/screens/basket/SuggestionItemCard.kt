@@ -44,6 +44,7 @@ import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -71,8 +72,7 @@ fun SuggestionItemCard(
             )
             .clickable {
                 navController.navigate(Screen.ProductDetail.withArgs(item._id))
-            },
-        elevation = CardDefaults.cardElevation(1.dp),
+            }
     ) {
 
         Column(
@@ -198,7 +198,7 @@ fun SuggestionItemCard(
                     ) {
                         Text(
                             text = "${DigitHelper.digitByLocateAndSeparator(item.discountPercent.toString())}%",
-                            color = MaterialTheme.colorScheme.darkText,
+                            color = White,
                             style = MaterialTheme.typography.h6,
                             fontWeight = FontWeight.Bold,
                         )

@@ -5,24 +5,13 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val ImperialRed = Color(0xFFed1b34)
-val BrickRed = Color(0xFFCE3C4D)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
-val White = Color.White
-val Black = Color.Black
-private val LightGray = Color.LightGray
-private val DarkGray = Color.DarkGray
-val Transparent = Color.Transparent
-val Red = Color.Red
-
 val ColorScheme.cyan: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFF0fabc6) else Color(0xFF17BFD3)
+    get() = if (!isSystemInDarkTheme()) PacificBlue else BatteryChargedBlue
 
 val ColorScheme.gray: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) DarkGray else LightGray
+    get() = if (!isSystemInDarkTheme()) Color.DarkGray else Color.LightGray
 
 val ColorScheme.icon: Color
     @Composable
@@ -38,55 +27,51 @@ val ColorScheme.splashBg: Color
 
 val ColorScheme.CursorColor: Color
     @Composable
-    get() = Color(0xFF018577)
+    get() = TealGreen
 
 val ColorScheme.selectedBottomBar: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFF43474C) else Color(0xFFCFD4DA)
+    get() = if (!isSystemInDarkTheme()) OuterSpace else Color.LightGray
 
 val ColorScheme.unSelectedBottomBar: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFFA4A1A1) else Color(0xFF575A5E)
+    get() = if (!isSystemInDarkTheme()) QuickSilver else DavysGrey
 
 val ColorScheme.bottomBar: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) White else Color(0xFF303235)
+    get() = if (!isSystemInDarkTheme()) White else DarkCharcoal
 
 val ColorScheme.Gold: Color
     @Composable
-    get() = Color(0xFFf9bc01)
-
-val ColorScheme.grayAlpha: Color
-    @Composable
-    get() = Color(0xFFc1c2c6)
+    get() = SelectiveYellow
 
 val ColorScheme.searchBarBg: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFFF1F0EE) else Color(0xFF303235)
+    get() = if (!isSystemInDarkTheme()) Isabelline else DarkCharcoal
 
 val ColorScheme.darkText: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFF414244) else Color(0xFFD8D8D8)
+    get() = if (!isSystemInDarkTheme()) Arsenic else LightSilver
 
 val ColorScheme.amber: Color
     @Composable
-    get() = Color(0xffFFBF00)
+    get() = Amber
 
 val ColorScheme.grayCategory: Color
     @Composable
-    get() = Color(0xFFF1F0EE)
+    get() = Isabelline
 
 val ColorScheme.DigiKalaLightRed: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xffef4056) else Color(0xFF8D2633)
+    get() = if (!isSystemInDarkTheme()) Desire else RedViolet
 
 val ColorScheme.DigiKalaLightRedText: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xffef4056) else White
+    get() = if (!isSystemInDarkTheme()) Desire else White
 
 val ColorScheme.DigiKalaDarkRed: Color
     @Composable
-    get() = Color(0xFFe6123d)
+    get() = Crimson
 
 val ColorScheme.DigiKalaRed: Color
     @Composable
@@ -94,20 +79,20 @@ val ColorScheme.DigiKalaRed: Color
 
 val ColorScheme.semiDarkText: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFF5C5E61) else Color(0xFFD8D8D8)
+    get() = if (!isSystemInDarkTheme()) GraniteGray else LightSilver
 
 val ColorScheme.settingArrow: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xFF9E9FB1) else Color(0xFFD8D8D8)
+    get() = if (!isSystemInDarkTheme()) Manatee else LightSilver
 
 val ColorScheme.Oranges: Color
     @Composable
-    get() = Color(0xFFFF5722)
+    get() = GiantsOrange
 
-val ColorScheme.DigikalaLightGreen: Color
+val ColorScheme.DigiKalaLightGreen: Color
     @Composable
-    get() = if (!isSystemInDarkTheme()) Color(0xff86bf3c) else Color(0xFF3A531A)
+    get() = if (!isSystemInDarkTheme()) YellowGreen else ArmyGreen
 
 val ColorScheme.Green: Color
     @Composable
-    get() = Color(0xFF00A049)
+    get() = Color.Green

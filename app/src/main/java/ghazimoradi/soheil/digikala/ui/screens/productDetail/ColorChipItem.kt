@@ -18,6 +18,7 @@ import ghazimoradi.soheil.digikala.data.model.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
@@ -56,7 +57,7 @@ fun ColorChipItem(
             Canvas(
                 modifier = Modifier
                     .size(20.dp)
-                    .border(1.dp, Color.Gray, CircleShape),
+                    .border(1.dp, MaterialTheme.colorScheme.gray, CircleShape),
                 onDraw = {
                     drawCircle(Color(("ff" + item.code.removePrefix("#").lowercase()).toLong(16)))
                 }

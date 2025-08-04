@@ -68,7 +68,7 @@ fun CartItemCard(
             .fillMaxWidth()
             .padding(MaterialTheme.spacing.biggerSmall)
             .clickable {
-                 navController.navigate(Screen.ProductDetail.withArgs(item.itemId))
+                navController.navigate(Screen.ProductDetail.withArgs(item.itemId))
             },
     ) {
         Column(
@@ -233,7 +233,7 @@ fun CartItemCard(
                     modifier = Modifier
                         .clip(MaterialTheme.roundedShape.semiSmall)
                         .border(
-                            1.dp, Color.LightGray.copy(0.6f),
+                            1.dp, MaterialTheme.colorScheme.gray.copy(0.6f),
                             MaterialTheme.roundedShape.semiSmall,
                         )
                 ) {

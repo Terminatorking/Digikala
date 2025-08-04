@@ -3,7 +3,6 @@ package ghazimoradi.soheil.digikala.ui.screens.settings
 import android.content.Intent
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.HelpCenter
 import androidx.compose.material.icons.automirrored.outlined.Logout
@@ -14,6 +13,7 @@ import androidx.compose.material.icons.outlined.PestControl
 import androidx.compose.material.icons.outlined.PrivacyTip
 import androidx.compose.material.icons.outlined.StarRate
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -33,10 +33,11 @@ import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.MenuItem
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.GiantsOrange
+import ghazimoradi.soheil.digikala.ui.theme.Manatee
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
-import ghazimoradi.soheil.digikala.ui.theme.cyan
+import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.DIGI_BUG
@@ -226,10 +227,10 @@ fun ChangeLanguage(dataStore: DataStoreViewModel = hiltViewModel()) {
             colors = SwitchDefaults.colors(
                 checkedBorderColor = Transparent,
                 uncheckedBorderColor = Transparent,
-                uncheckedThumbColor = MaterialTheme.colorScheme.cyan,
-                checkedThumbColor = MaterialTheme.colorScheme.cyan,
-                uncheckedTrackColor = MaterialTheme.colorScheme.gray,
-                checkedTrackColor = MaterialTheme.colorScheme.DigiKalaRed
+                uncheckedThumbColor = MaterialTheme.colorScheme.darkText,
+                checkedThumbColor = White,
+                uncheckedTrackColor = Manatee,
+                checkedTrackColor = GiantsOrange
             ),
             modifier = Modifier.padding(
                 start = MaterialTheme.spacing.small,

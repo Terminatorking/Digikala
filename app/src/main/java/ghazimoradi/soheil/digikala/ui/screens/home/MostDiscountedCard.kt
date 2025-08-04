@@ -68,7 +68,6 @@ fun MostDiscountedCard(
                 horizontal = MaterialTheme.spacing.biggerSmall,
                 vertical = MaterialTheme.spacing.semiSmall
             ),
-        elevation = CardDefaults.cardElevation(1.dp),
     ) {
 
         Column(

@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
 
@@ -23,7 +23,7 @@ fun IconWithRotate(imageVector: ImageVector, onClick: () -> Unit = {}) {
         Icon(
             imageVector = imageVector,
             contentDescription = "",
-            tint = MaterialTheme.colorScheme.icon,
+            tint = MaterialTheme.colorScheme.mainBg,
             modifier = Modifier
                 .graphicsLayer(rotationZ = 180f)
                 .clickable { onClick() }
@@ -33,7 +33,7 @@ fun IconWithRotate(imageVector: ImageVector, onClick: () -> Unit = {}) {
             modifier = Modifier.clickable { onClick() },
             imageVector = imageVector,
             contentDescription = "",
-            tint = MaterialTheme.colorScheme.icon
+            tint = MaterialTheme.colorScheme.mainBg
         )
     }
 }

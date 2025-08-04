@@ -16,7 +16,7 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
 import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
 
 @Composable
 fun AmazingOfferSection(
@@ -67,7 +67,7 @@ fun AmazingOfferSection(
         LazyRow(
             modifier = if (isSuperMarketAmazing)
                 Modifier
-                    .background(MaterialTheme.colorScheme.DigikalaLightGreen)
+                    .background(MaterialTheme.colorScheme.DigiKalaLightGreen)
                     .fillMaxWidth()
             else Modifier
                 .background(MaterialTheme.colorScheme.DigiKalaLightRed)

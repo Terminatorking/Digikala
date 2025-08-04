@@ -16,7 +16,7 @@ import ghazimoradi.soheil.digikala.navigation.BottomNavigationBar
 import ghazimoradi.soheil.digikala.navigation.SetupNavGraph
 import ghazimoradi.soheil.digikala.ui.components.AppConfig
 import ghazimoradi.soheil.digikala.ui.components.ChangeStatusBarColor
-import ghazimoradi.soheil.digikala.ui.theme.DigikalaTheme
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaTheme
 import ghazimoradi.soheil.digikala.util.LocaleUtils
 import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         App.currentActivity = this
         setContent {
-            DigikalaTheme {
+            DigiKalaTheme {
                 navController = rememberNavController()
                 ChangeStatusBarColor(navController = navController)
                 AppConfig()

@@ -23,7 +23,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
@@ -35,10 +34,12 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.amber
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
@@ -161,10 +162,10 @@ fun HorizontalProductCard(
                         ) {
                         Text(
                             text = "${digitByLocate(item.discountPercent.toString())}%",
-                            color = Color.White,
+                            color = White,
                             style = MaterialTheme.typography.h6,
                             fontWeight = FontWeight.Bold,
-                            )
+                        )
                     }
 
                     Column() {
@@ -172,7 +173,10 @@ fun HorizontalProductCard(
                             Text(
                                 text = digitBySeparator(
                                     digitByLocate(
-                                        applyDiscount(item.price, item.discountPercent).toString()
+                                        applyDiscount(
+                                            item.price,
+                                            item.discountPercent
+                                        ).toString()
                                     )
                                 ),
                                 style = MaterialTheme.typography.body2,
@@ -192,7 +196,7 @@ fun HorizontalProductCard(
                                     item.price.toString()
                                 )
                             ),
-                            color = Color.LightGray,
+                            color = MaterialTheme.colorScheme.gray,
                             style = MaterialTheme.typography.body2,
                             textDecoration = TextDecoration.LineThrough,
                         )

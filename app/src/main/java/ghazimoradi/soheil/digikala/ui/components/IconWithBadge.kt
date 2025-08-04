@@ -55,7 +55,7 @@ fun IconWithBadge(
         ) {
             Card(
                 shape = MaterialTheme.roundedShape.extraSmall,
-                border = BorderStroke(1.dp, Color.White)
+                border = BorderStroke(1.dp, White)
             ) {
                 Text(
                     text = digitByLocateAndSeparator(cartCounter.toString()),

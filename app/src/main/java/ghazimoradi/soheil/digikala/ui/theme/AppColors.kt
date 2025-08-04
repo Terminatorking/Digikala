@@ -1,0 +1,29 @@
+package ghazimoradi.soheil.digikala.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+val ImperialRed = Color(0xFFed1b34)
+val PacificBlue = Color(0xFF0FABC6)
+val BatteryChargedBlue = Color(0xFF17BFD3)
+val TealGreen = Color(0xFF018577)
+val OuterSpace = Color(0xFF43474C)
+val QuickSilver = Color(0xFFA4A1A1)
+val DavysGrey = Color(0xFF575A5E)
+val DarkCharcoal = Color(0xFF303235)
+val SelectiveYellow = Color(0xFFf9bc01)
+val Isabelline = Color(0xFFF1F0EE)
+val Arsenic = Color(0xFF414244)
+val LightSilver = Color(0xFFD8D8D8)
+val Amber = Color(0xffFFBF00)
+val Desire = Color(0xffef4056)
+val RedViolet = Color(0xff8D2633)
+val Crimson = Color(0xFFe6123d)
+val GraniteGray = Color(0xFF5C5E61)
+val Manatee = Color(0xFF9E9FB1)
+val GiantsOrange = Color(0xFFFF5722)
+val YellowGreen = Color(0xFF86BF3C)
+val ArmyGreen = Color(0xFF3A531A)
+val White = Color.White
+val Black = Color.Black
+val Transparent = Color.Transparent
+val Red = Color.Red

@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.screens.basket.DetailRow
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
-import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
@@ -219,7 +219,7 @@ fun SellerInfoSection(productPrice: Long) {
                 DetailRow(
                     painterResource(id = R.drawable.k2),
                     stringResource(id = R.string.fast_send),
-                    color = MaterialTheme.colorScheme.DigikalaLightGreen,
+                    color = MaterialTheme.colorScheme.DigiKalaLightGreen,
                     fontStyle = MaterialTheme.typography.extraSmall
                 )
             }

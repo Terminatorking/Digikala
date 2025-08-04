@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
-import ghazimoradi.soheil.digikala.ui.theme.DigikalaLightGreen
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
 import ghazimoradi.soheil.digikala.ui.theme.Gold
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -124,7 +124,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
                 painter = painterResource(id = R.drawable.like),
                 contentDescription = "",
                 modifier = Modifier.size(20.dp),
-                tint = MaterialTheme.colorScheme.DigikalaLightGreen
+                tint = MaterialTheme.colorScheme.DigiKalaLightGreen
             )
 
 

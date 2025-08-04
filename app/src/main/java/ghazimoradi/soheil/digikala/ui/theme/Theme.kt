@@ -6,21 +6,25 @@ import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColorScheme(
-    primary = ImperialRed,
-    onPrimary = Purple700,
-    secondary = Teal200
+    primary = Color(0xFFed1b34),
+    onPrimary = Color(0xFF3700B3),
+    secondary = Color(0xFF03DAC5)
 )
 
 private val LightColorPalette = lightColorScheme(
-    primary = BrickRed,
-    onPrimary = Purple700,
-    secondary = Teal200
+    primary = Color(0xFFCE3C4D),
+    onPrimary = Color(0xFF3700B3),
+    secondary = Color(0xFF03DAC5)
 )
 
 @Composable
-fun DigikalaTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun DigiKalaTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
