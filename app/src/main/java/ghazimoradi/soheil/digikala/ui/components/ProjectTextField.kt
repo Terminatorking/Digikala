@@ -1,8 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -10,7 +8,6 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.CursorColor
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
@@ -20,29 +17,25 @@ import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
-import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun LoginAndRegisterEditText(
-    value: String,
-    placeholder: String,
+fun ProjectTextField(
+    modifier: Modifier = Modifier,
+    value: String = "",
+    placeholder: String = "",
+    singleLine: Boolean = false,
+    maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE,
     onValueChange: (textFieldText: String) -> Unit
 ) {
 
     TextField(
+        maxLines = maxLines,
+        singleLine = singleLine,
         value = value,
         onValueChange = { textFieldText ->
             onValueChange(textFieldText)
         },
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(92.dp)
-            .padding(
-                start = MaterialTheme.spacing.semiLarge,
-                end = MaterialTheme.spacing.semiLarge,
-                top = MaterialTheme.spacing.medium,
-                bottom = MaterialTheme.spacing.semiLarge
-            ),
+        modifier = modifier,
         shape = MaterialTheme.roundedShape.small,
         colors = TextFieldDefaults.colors(
             unfocusedTextColor = MaterialTheme.colorScheme.darkText,

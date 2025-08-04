@@ -29,7 +29,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterButton
-import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterEditText
+import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -90,7 +90,16 @@ fun LoginScreen(
         }
 
         item {
-            LoginAndRegisterEditText(
+            ProjectTextField(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(92.dp)
+                    .padding(
+                        start = MaterialTheme.spacing.semiLarge,
+                        end = MaterialTheme.spacing.semiLarge,
+                        top = MaterialTheme.spacing.medium,
+                        bottom = MaterialTheme.spacing.semiLarge
+                    ),
                 value = profileViewModel.inputPhoneState,
                 placeholder = stringResource(id = R.string.phone_and_email),
                 onValueChange = {

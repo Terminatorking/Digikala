@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -17,13 +18,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterButton
-import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterEditText
+import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
@@ -104,13 +106,31 @@ fun RegisterScreen(
             fontWeight = FontWeight.Bold
         )
 
-        LoginAndRegisterEditText(
+        ProjectTextField(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(92.dp)
+                .padding(
+                    start = MaterialTheme.spacing.semiLarge,
+                    end = MaterialTheme.spacing.semiLarge,
+                    top = MaterialTheme.spacing.medium,
+                    bottom = MaterialTheme.spacing.semiLarge
+                ),
             value = profileViewModel.inputPhoneState,
             placeholder = stringResource(id = R.string.phone_and_email),
             onValueChange = {},
         )
 
-        LoginAndRegisterEditText(
+        ProjectTextField(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(92.dp)
+                .padding(
+                    start = MaterialTheme.spacing.semiLarge,
+                    end = MaterialTheme.spacing.semiLarge,
+                    top = MaterialTheme.spacing.medium,
+                    bottom = MaterialTheme.spacing.semiLarge
+                ),
             value = profileViewModel.inputPasswordState,
             placeholder = stringResource(id = R.string.set_password),
             onValueChange = {
