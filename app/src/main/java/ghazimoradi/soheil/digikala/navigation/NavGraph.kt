@@ -8,7 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
 import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
-import ghazimoradi.soheil.digikala.ui.screens.subCategoryScreen.SubCategoryScreen
+import ghazimoradi.soheil.digikala.ui.screens.subCategory.SubCategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen

@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.screens.subCategoryScreen
+package ghazimoradi.soheil.digikala.ui.screens.subCategory
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
