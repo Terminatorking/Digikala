@@ -38,7 +38,7 @@ fun ProductCommentsSection(
 ) {
 
     HorizontalDivider(
-        color = MaterialTheme.colorScheme.gray,
+        color = MaterialTheme.colorScheme.gray.copy(0.6f),
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )

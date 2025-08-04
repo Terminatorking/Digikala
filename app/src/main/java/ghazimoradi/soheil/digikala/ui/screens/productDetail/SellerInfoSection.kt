@@ -45,7 +45,7 @@ import ghazimoradi.soheil.digikala.util.DigitHelper
 @Composable
 fun SellerInfoSection(productPrice: Long) {
     HorizontalDivider(
-        color = MaterialTheme.colorScheme.gray,
+        color = MaterialTheme.colorScheme.gray.copy(0.6f),
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
@@ -102,7 +102,7 @@ fun SellerInfoSection(productPrice: Long) {
                     )
                 }
                 HorizontalDivider(
-                    color = MaterialTheme.colorScheme.gray,
+                    color = MaterialTheme.colorScheme.gray.copy(0.6f),
                     thickness = 1.dp,
                     modifier = Modifier.padding(top = MaterialTheme.spacing.small)
                 )
@@ -137,18 +137,14 @@ fun SellerInfoSection(productPrice: Long) {
                     color = MaterialTheme.colorScheme.darkText,
                 )
                 HorizontalDivider(
-                    color = MaterialTheme.colorScheme.gray,
+                    color = MaterialTheme.colorScheme.gray.copy(0.6f),
                     thickness = 1.dp,
                     modifier = Modifier.padding(top = MaterialTheme.spacing.small)
                 )
             }
         }
 
-        Row(
-            modifier = Modifier
-                .padding(horizontal = MaterialTheme.spacing.biggerSmall)
-        )
-        {
+        Row(modifier = Modifier.padding(horizontal = MaterialTheme.spacing.biggerSmall)) {
             Column(
                 modifier = Modifier
                     .width(16.dp)
@@ -225,7 +221,7 @@ fun SellerInfoSection(productPrice: Long) {
             }
         }
         HorizontalDivider(
-            color = MaterialTheme.colorScheme.gray,
+            color = MaterialTheme.colorScheme.gray.copy(0.6f),
             thickness = 1.dp,
             modifier = Modifier.padding(top = MaterialTheme.spacing.small)
         )
@@ -256,7 +252,7 @@ fun SellerInfoSection(productPrice: Long) {
             }
         }
         HorizontalDivider(
-            color = MaterialTheme.colorScheme.gray,
+            color = MaterialTheme.colorScheme.gray.copy(0.6f),
             thickness = 1.dp,
             modifier = Modifier.padding(top = MaterialTheme.spacing.small)
         )

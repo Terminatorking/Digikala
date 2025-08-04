@@ -45,10 +45,10 @@ fun SimilarProductSection(
     var similarList by remember {
         mutableStateOf<List<StoreProduct>>(emptyList())
     }
+
     viewModel.getSimilarProducts(categoryId)
 
     LaunchedEffect(true) {
-
         viewModel.similarProducts.collectLatest { similarListResult ->
             when (similarListResult) {
                 is NetworkResult.Success -> {
@@ -65,7 +65,7 @@ fun SimilarProductSection(
     }
 
     HorizontalDivider(
-        color = MaterialTheme.colorScheme.gray,
+        color = MaterialTheme.colorScheme.gray.copy(0.6f),
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )

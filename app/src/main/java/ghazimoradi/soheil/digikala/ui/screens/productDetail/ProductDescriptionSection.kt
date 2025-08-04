@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
@@ -39,18 +40,20 @@ fun ProductDescriptionSection(
     description: String,
     technicalFeatures: String,
 ) {
-    var isDescription by remember { mutableStateOf(true) }
+    var hasDescription by remember { mutableStateOf(true) }
+
     if (description.isBlank()) {
-        isDescription = false
+        hasDescription = false
     }
 
     var isTechnicalFeatures by remember { mutableStateOf(true) }
+
     if (technicalFeatures == "null") {
         isTechnicalFeatures = false
     }
 
     HorizontalDivider(
-        color = MaterialTheme.colorScheme.gray,
+        color = MaterialTheme.colorScheme.gray.copy(0.6f),
         thickness = 1.dp,
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     )
@@ -66,7 +69,7 @@ fun ProductDescriptionSection(
 
     if (isTechnicalFeatures) {
         HorizontalDivider(
-            color = MaterialTheme.colorScheme.gray,
+            color = MaterialTheme.colorScheme.gray.copy(0.6f),
             thickness = 1.dp,
             modifier = Modifier.padding(
                 horizontal = MaterialTheme.spacing.medium,
@@ -102,10 +105,10 @@ fun ProductDescriptionSection(
         }
     }
 
-    if (isDescription) {
+    if (hasDescription) {
 
         HorizontalDivider(
-            color = MaterialTheme.colorScheme.gray,
+            color = MaterialTheme.colorScheme.gray.copy(0.6f),
             thickness = 1.dp,
             modifier = Modifier.padding(
                 horizontal = MaterialTheme.spacing.medium,
@@ -117,7 +120,7 @@ fun ProductDescriptionSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    //   navController.navigate(Screen.ProductDescription.withArgs(description))
+                    // navController.navigate(Screen.ProductDescription.withArgs(description))
                 }
                 .padding(horizontal = MaterialTheme.spacing.medium),
             horizontalArrangement = Arrangement.SpaceBetween,

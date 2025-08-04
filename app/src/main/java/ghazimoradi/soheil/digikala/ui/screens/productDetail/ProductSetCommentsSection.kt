@@ -56,8 +56,7 @@ fun ProductSetCommentsSection(
     ) {
 
         Row(
-            modifier = Modifier
-                .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
@@ -97,7 +96,7 @@ fun ProductSetCommentsSection(
         )
 
         HorizontalDivider(
-            color = MaterialTheme.colorScheme.gray,
+            color = MaterialTheme.colorScheme.gray.copy(0.6f),
             thickness = 1.dp,
             modifier = Modifier.padding(
                 horizontal = MaterialTheme.spacing.medium,
