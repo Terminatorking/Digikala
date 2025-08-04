@@ -30,7 +30,6 @@ import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.ui.theme.settingArrow
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants
 
@@ -39,7 +38,6 @@ fun ProductSetCommentsSection(
     navController: NavHostController,
     item: ProductDetail,
 ) {
-
     Column(
         modifier = Modifier
             .padding(
@@ -56,7 +54,6 @@ fun ProductSetCommentsSection(
                 }
             }
     ) {
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
@@ -86,7 +83,7 @@ fun ProductSetCommentsSection(
                 Icons.AutoMirrored.Outlined.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.size(24.dp),
-                tint = MaterialTheme.colorScheme.settingArrow
+                tint = MaterialTheme.colorScheme.icon
             )
         }
 

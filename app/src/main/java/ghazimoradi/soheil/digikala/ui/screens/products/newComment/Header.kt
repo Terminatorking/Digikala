@@ -29,7 +29,6 @@ import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
-import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
@@ -82,7 +81,7 @@ fun Header(
             Text(
                 text = productName,
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colorScheme.semiDarkText
+                color = MaterialTheme.colorScheme.darkText
             )
         }
     }

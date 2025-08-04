@@ -70,7 +70,6 @@ fun CommentForm(
         6 -> stringResource(id = R.string.very_good)
         else -> ""
     }
-
     Text(
         text = score,
         modifier = Modifier
@@ -114,7 +113,6 @@ fun CommentForm(
 
     val context = LocalContext.current
 
-
     var loading by remember {
         mutableStateOf(false)
     }
@@ -139,7 +137,6 @@ fun CommentForm(
         }
     }
 
-
     Column(
         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
     ) {
@@ -151,7 +148,6 @@ fun CommentForm(
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.darkText,
         )
-
 
         Text(
             modifier = Modifier
@@ -220,7 +216,7 @@ fun CommentForm(
         )
 
         if (loading) {
-            Loading(height = 60.dp, isDark = true)
+            Loading(height = 60.dp)
         } else {
             OutlinedButton(
                 modifier = Modifier
