@@ -13,6 +13,7 @@ import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.WebPageScreen
+import ghazimoradi.soheil.digikala.ui.screens.productTechnicalFeatures.ProductTechnicalFeaturesScreen
 import ghazimoradi.soheil.digikala.ui.screens.productDescription.ProductDescriptionScreen
 import ghazimoradi.soheil.digikala.ui.screens.productDetail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
@@ -124,6 +125,22 @@ fun SetupNavGraph(navController: NavHostController) {
                 ProductDescriptionScreen(
                     navController = navController,
                     description = description
+                )
+            }
+        }
+        composable(route = Screen.ProductTechnicalFeatures.route + "/{jsonString}",
+            arguments = listOf(
+                navArgument("jsonString") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("jsonString")?.let { jsonString ->
+                ProductTechnicalFeaturesScreen(
+                    navController = navController,
+                    jsonString = jsonString
                 )
             }
         }

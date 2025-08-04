@@ -46,10 +46,10 @@ fun ProductDescriptionSection(
         hasDescription = false
     }
 
-    var isTechnicalFeatures by remember { mutableStateOf(true) }
+    var hasTechnicalFeatures by remember { mutableStateOf(true) }
 
     if (technicalFeatures == "null") {
-        isTechnicalFeatures = false
+        hasTechnicalFeatures = false
     }
 
     HorizontalDivider(
@@ -67,7 +67,7 @@ fun ProductDescriptionSection(
         color = MaterialTheme.colorScheme.darkText,
     )
 
-    if (isTechnicalFeatures) {
+    if (hasTechnicalFeatures) {
         HorizontalDivider(
             color = MaterialTheme.colorScheme.gray.copy(0.6f),
             thickness = 1.dp,
@@ -80,11 +80,11 @@ fun ProductDescriptionSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-//                    navController.navigate(
-//                        Screen.ProductTechnicalFeatures.withArgs(
-//                            technicalFeatures
-//                        )
-//                    )
+                    navController.navigate(
+                        Screen.ProductTechnicalFeatures.withArgs(
+                            technicalFeatures
+                        )
+                    )
                 }
                 .padding(horizontal = MaterialTheme.spacing.medium),
             horizontalArrangement = Arrangement.SpaceBetween,

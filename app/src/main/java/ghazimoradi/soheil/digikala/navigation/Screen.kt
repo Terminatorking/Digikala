@@ -13,6 +13,7 @@ sealed class Screen(val route: String) {
     data object ProductDetail : Screen("product_detail_screen")
     data object SubCategoryScreen : Screen("sub_category_screen")
     data object ProductDescription : Screen("product_description_screen")
+    data object ProductTechnicalFeatures : Screen("product_technical_features_screen")
 
     fun withArgs(vararg args: Any): String {
         return buildString {
