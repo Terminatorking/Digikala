@@ -10,7 +10,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -26,7 +25,6 @@ import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.Loading
-import ghazimoradi.soheil.digikala.ui.components.Loading3Dots
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.util.Constants.PRODUCT_COMMENTS
@@ -47,16 +45,18 @@ fun AllProductCommentsScreen(
         "${DigitHelper.digitByLocate(commentsCount)} ${stringResource(id = R.string.comment)}"
     else context.getString(R.string.all_comments)
 
-    LaunchedEffect(true) {
-        if (pageName == PRODUCT_COMMENTS) viewModel.getCommentList(productId)
-        else viewModel.getUserComments()
-    }
+    if (pageName == PRODUCT_COMMENTS) viewModel.getCommentList(productId)
+    else viewModel.getUserComments()
 
     val commentsList =
         if (pageName == PRODUCT_COMMENTS) viewModel.productCommentsList.collectAsLazyPagingItems()
         else viewModel.UserCommentsList.collectAsLazyPagingItems()
 
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.mainBg)
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -77,8 +77,7 @@ fun AllProductCommentsScreen(
             )
 
             Text(
-                modifier = Modifier
-                    .fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 text = commentsCountText,
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.h3,
@@ -97,8 +96,6 @@ fun AllProductCommentsScreen(
         Box(modifier = Modifier.fillMaxSize()) {
 
             LazyColumn(Modifier.fillMaxSize()) {
-
-                //paging3
                 items(
                     count = commentsList.itemCount,
                     key = commentsList.itemKey { comment -> comment._id },
@@ -108,7 +105,6 @@ fun AllProductCommentsScreen(
                 }
 
                 commentsList.apply {
-
                     when {
                         loadState.refresh is LoadState.Loading -> {
                             item {
@@ -118,15 +114,7 @@ fun AllProductCommentsScreen(
 
                         loadState.append is LoadState.Loading -> {
                             item {
-                                Column(
-                                    modifier = Modifier
-                                        .fillMaxSize()
-                                        .padding(20.dp),
-                                    horizontalAlignment = Alignment.CenterHorizontally,
-                                    verticalArrangement = Arrangement.Center
-                                ) {
-                                    Loading3Dots(isDark = true)
-                                }
+                                Loading(30.dp)
                             }
                         }
 
