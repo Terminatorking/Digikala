@@ -232,7 +232,7 @@ fun SetupNavGraph(navController: NavHostController) {
             )
         ) { navBackStackEntry ->
             navBackStackEntry.arguments?.getString("url")?.let {
-                WebView(navController = navController, url = it)
+                WebView(url = it)
             }
         }
     }

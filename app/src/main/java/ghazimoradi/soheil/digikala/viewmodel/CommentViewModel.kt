@@ -8,8 +8,8 @@ import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
 import ghazimoradi.soheil.digikala.data.model.productDetail.NewComment
-import ghazimoradi.soheil.digikala.data.pagingSource.ProductCommentsDataSource
-import ghazimoradi.soheil.digikala.data.pagingSource.UserCommentsDataSource
+import ghazimoradi.soheil.digikala.data.pagingSource.ProductCommentsPagingSource
+import ghazimoradi.soheil.digikala.data.pagingSource.UserCommentsPagingSource
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.repository.CommentRepository
 import ghazimoradi.soheil.digikala.util.Constants
@@ -41,7 +41,7 @@ class CommentViewModel @Inject constructor(
         productCommentsList = Pager(
             PagingConfig(pageSize = 5)
         ) {
-            ProductCommentsDataSource(repository, productId)
+            ProductCommentsPagingSource(repository, productId)
         }.flow.cachedIn(viewModelScope)
     }
 
@@ -49,7 +49,7 @@ class CommentViewModel @Inject constructor(
         UserCommentsList = Pager(
             PagingConfig(pageSize = 5)
         ) {
-            UserCommentsDataSource(repository, Constants.USER_TOKEN)
+            UserCommentsPagingSource(repository, Constants.USER_TOKEN)
         }.flow.cachedIn(viewModelScope)
     }
 }

@@ -12,16 +12,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
-fun WebView(
-    navController: NavController,
-    url: String
-) {
+fun WebView(url: String) {
     var isLoading by remember { mutableStateOf(true) }
 
     AndroidView(
@@ -30,7 +26,6 @@ fun WebView(
                 layoutParams = ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)
 
                 webViewClient = object : WebViewClient() {
-
                     override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                         super.onPageStarted(view, url, favicon)
                         isLoading = true

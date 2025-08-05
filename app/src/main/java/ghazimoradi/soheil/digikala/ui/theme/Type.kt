@@ -113,7 +113,3 @@ val Typography.h6: TextStyle
         fontSize = 12.sp,
         lineHeight = 25.sp
     )
-
-val Typography = Typography(
-
-)

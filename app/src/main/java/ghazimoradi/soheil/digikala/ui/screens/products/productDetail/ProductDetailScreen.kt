@@ -139,10 +139,10 @@ fun ProductDetailScreen(
 
                 item {
                     ProductCommentsSection(
-                        navController,
-                        productId,
-                        productComments,
-                        commentCount.toString()
+                        navController = navController,
+                        productId = productId,
+                        comments = productComments,
+                        commentCount = commentCount.toString()
                     )
                 }
 

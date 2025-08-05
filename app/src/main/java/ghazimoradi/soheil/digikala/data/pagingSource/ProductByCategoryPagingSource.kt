@@ -6,7 +6,7 @@ import androidx.paging.PagingState
 import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
 import ghazimoradi.soheil.digikala.repository.CategoryRepository
 
-class ProductByCategoryDataSource(
+class ProductByCategoryPagingSource(
     private val repository: CategoryRepository,
     val categoryId: String
 ) : PagingSource<Int, StoreProduct>() {

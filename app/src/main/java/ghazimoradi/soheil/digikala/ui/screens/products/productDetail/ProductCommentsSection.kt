@@ -34,8 +34,8 @@ import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
 @Composable
 fun ProductCommentsSection(
     navController: NavHostController,
-    productId: String,
     comments: List<Comment>,
+    productId: String,
     commentCount: String
 ) {
 
