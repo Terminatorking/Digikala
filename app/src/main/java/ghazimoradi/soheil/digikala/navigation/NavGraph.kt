@@ -18,6 +18,7 @@ import ghazimoradi.soheil.digikala.ui.screens.products.newComment.NewCommentScre
 import ghazimoradi.soheil.digikala.ui.screens.products.productDescription.ProductDescriptionScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.productDetail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.allProductComments.AllProductCommentsScreen
+import ghazimoradi.soheil.digikala.ui.screens.products.productPriceChart.ProductPriceChartScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
@@ -219,6 +220,24 @@ fun SetupNavGraph(navController: NavHostController) {
                     }
                 }
             }
+        }
+
+        composable(route = Screen.ProductPriceChart.route + "?jsonString={jsonString}",
+            arguments = listOf(
+                navArgument("jsonString") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("jsonString")?.let { jsonString ->
+                ProductPriceChartScreen(
+                    navController = navController,
+                    jsonString = jsonString
+                )
+            }
+
         }
 
         composable(

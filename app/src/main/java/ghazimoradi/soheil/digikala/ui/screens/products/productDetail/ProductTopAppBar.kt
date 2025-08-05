@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.google.gson.Gson
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
 import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
@@ -134,10 +135,10 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                     },
                     onClick = {
                         expanded = false
-//                        val priceListString = Gson().toJson(product.priceList)
-//                        navController.navigate(
-//                            Screen.ProductPriceChart.route + "?jsonString=${priceListString}"
-//                        )
+                        val priceListString = Gson().toJson(product.priceList)
+                        navController.navigate(
+                            Screen.ProductPriceChart.route + "?jsonString=${priceListString}"
+                        )
                     }
                 )
 
