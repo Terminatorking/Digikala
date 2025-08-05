@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.DropdownMenuItem
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.Icon
@@ -87,8 +87,8 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                 )
             )
 
-
             var expanded by remember { mutableStateOf(false) }
+
             IconButton(
                 onClick = {
                     expanded = true
@@ -108,6 +108,30 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                 modifier = Modifier.background(MaterialTheme.colorScheme.surface)
             ) {
                 DropdownMenuItem(
+                    text = {
+                        Row(
+                            modifier = Modifier
+                                .padding(vertical = MaterialTheme.spacing.extraSmall),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.chart),
+                                contentDescription = "",
+                                modifier = Modifier
+                                    .size(16.dp),
+                                tint = MaterialTheme.colorScheme.icon
+                            )
+
+                            Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
+
+                            Text(
+                                text = stringResource(R.string.price_chart),
+                                style = MaterialTheme.typography.h4,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.darkText,
+                            )
+                        }
+                    },
                     onClick = {
                         expanded = false
 //                        val priceListString = Gson().toJson(product.priceList)
@@ -115,32 +139,33 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
 //                            Screen.ProductPriceChart.route + "?jsonString=${priceListString}"
 //                        )
                     }
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .padding(vertical = MaterialTheme.spacing.extraSmall),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.chart),
-                            contentDescription = "",
-                            modifier = Modifier
-                                .size(16.dp),
-                            tint = MaterialTheme.colorScheme.icon
-                        )
-
-                        Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
-
-                        Text(
-                            text = stringResource(R.string.price_chart),
-                            style = MaterialTheme.typography.h4,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.darkText,
-                        )
-                    }
-                }
+                )
 
                 DropdownMenuItem(
+                    text = {
+                        Row(
+                            modifier = Modifier
+                                .padding(vertical = MaterialTheme.spacing.extraSmall),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.share),
+                                contentDescription = "",
+                                modifier = Modifier
+                                    .size(16.dp),
+                                tint = MaterialTheme.colorScheme.icon
+                            )
+
+                            Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
+
+                            Text(
+                                text = stringResource(R.string.share_product),
+                                style = MaterialTheme.typography.h4,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.darkText,
+                            )
+                        }
+                    },
                     onClick = {
                         expanded = false
                         shareToSocialMedia(
@@ -150,30 +175,7 @@ fun ProductTopAppBar(navController: NavHostController, product: ProductDetail) {
                             "https://truelearn.ir/"
                         )
                     }
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .padding(vertical = MaterialTheme.spacing.extraSmall),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.share),
-                            contentDescription = "",
-                            modifier = Modifier
-                                .size(16.dp),
-                            tint = MaterialTheme.colorScheme.icon
-                        )
-
-                        Spacer(modifier = Modifier.width(MaterialTheme.spacing.small))
-
-                        Text(
-                            text = stringResource(R.string.share_product),
-                            style = MaterialTheme.typography.h4,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.darkText,
-                        )
-                    }
-                }
+                )
             }
         }
     }
