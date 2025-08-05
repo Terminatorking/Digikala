@@ -32,14 +32,14 @@ fun TextCommentCard(item: Comment) {
     val context = LocalContext.current
 
     var iconSuggestion = R.drawable.like
-    var colorSuggestion = MaterialTheme.colorScheme.Green
+    var colorSuggestion = MaterialTheme.colorScheme.green
     var textSuggestion = context.getString(R.string.good_comment)
     var iconRotation = 0f
 
     when (item.star) {
         in Int.MIN_VALUE..2 -> {
             iconSuggestion = R.drawable.like
-            colorSuggestion = MaterialTheme.colorScheme.Oranges
+            colorSuggestion = MaterialTheme.colorScheme.orange
             textSuggestion = context.getString(R.string.bad_comment)
             iconRotation = 180f
         }
@@ -53,7 +53,7 @@ fun TextCommentCard(item: Comment) {
 
         in 3..Int.MAX_VALUE -> {
             iconSuggestion = R.drawable.like
-            colorSuggestion = MaterialTheme.colorScheme.Green
+            colorSuggestion = MaterialTheme.colorScheme.green
             textSuggestion = context.getString(R.string.good_comment)
             iconRotation = 0f
         }

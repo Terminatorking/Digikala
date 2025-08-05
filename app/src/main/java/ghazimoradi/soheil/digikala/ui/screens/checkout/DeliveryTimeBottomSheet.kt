@@ -20,7 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.Oranges
+import ghazimoradi.soheil.digikala.ui.theme.orange
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
@@ -60,7 +60,7 @@ fun DeliveryTimeBottomSheet() {
                 )
                 Text(
                     text = digitByLocate(stringResource(id = R.string.delivery_delay)),
-                    color = MaterialTheme.colorScheme.Oranges,
+                    color = MaterialTheme.colorScheme.orange,
                     style = MaterialTheme.typography.h6,
                     modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium),
                 )

@@ -12,8 +12,10 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 
 @Composable
-fun Loading(height: Dp = 200.dp, isDark: Boolean = !isSystemInDarkTheme()) {
-
+fun Loading(
+    height: Dp = 200.dp,
+    isDark: Boolean = !isSystemInDarkTheme(),
+) {
     Column(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.mainBg)

@@ -10,18 +10,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -30,12 +27,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
-import ghazimoradi.soheil.digikala.ui.theme.Green
-import ghazimoradi.soheil.digikala.ui.theme.Oranges
+import ghazimoradi.soheil.digikala.ui.theme.green
+import ghazimoradi.soheil.digikala.ui.theme.orange
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.h6
+import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper
@@ -51,28 +49,28 @@ fun CommentsItem(item: Comment) {
     val context = LocalContext.current
 
     var iconSuggestion = R.drawable.like
-    var colorSuggestion = MaterialTheme.colorScheme.Green
+    var colorSuggestion = MaterialTheme.colorScheme.green
     var textSuggestion = context.getString(R.string.good_comment)
     var iconRotation = 0f
 
     when (item.star) {
         in Int.MIN_VALUE..2 -> {
             iconSuggestion = R.drawable.like
-            colorSuggestion = MaterialTheme.colorScheme.Oranges
+            colorSuggestion = MaterialTheme.colorScheme.orange
             textSuggestion = context.getString(R.string.bad_comment)
             iconRotation = 180f
         }
 
         in 2..3 -> {
             iconSuggestion = R.drawable.info
-            colorSuggestion = MaterialTheme.colorScheme.semiDarkText
+            colorSuggestion = MaterialTheme.colorScheme.darkText
             textSuggestion = context.getString(R.string.so_so_comment)
             iconRotation = 0f
         }
 
         in 3..Int.MAX_VALUE -> {
             iconSuggestion = R.drawable.like
-            colorSuggestion = MaterialTheme.colorScheme.Green
+            colorSuggestion = MaterialTheme.colorScheme.green
             textSuggestion = context.getString(R.string.good_comment)
             iconRotation = 0f
         }
@@ -100,7 +98,7 @@ fun CommentsItem(item: Comment) {
                 style = MaterialTheme.typography.h6,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
-                color = Color.White
+                color = MaterialTheme.colorScheme.mainBg
             )
             Text(
                 modifier = Modifier.padding(start = MaterialTheme.spacing.medium),
@@ -123,16 +121,13 @@ fun CommentsItem(item: Comment) {
             )
         }
 
-        Divider(
+        HorizontalDivider(
             modifier = Modifier
                 .padding(start = MaterialTheme.spacing.large)
                 .fillMaxWidth()
-                .height(1.dp)
-                .alpha(0.4f)
-                .shadow(2.dp),
-            color = Color.LightGray,
+                .height(1.dp),
+            color = MaterialTheme.colorScheme.gray.copy(0.4f)
         )
-
 
         Row(
             modifier = Modifier
@@ -160,7 +155,6 @@ fun CommentsItem(item: Comment) {
                 color = colorSuggestion
             )
         }
-
 
         Text(
             modifier = Modifier

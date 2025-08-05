@@ -8,7 +8,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
-import ghazimoradi.soheil.digikala.ui.theme.mainBg
+import ghazimoradi.soheil.digikala.ui.theme.statusBarColor
 
 @Composable
 @Suppress("Deprecation")
@@ -23,7 +23,7 @@ fun ChangeStatusBarColor(navController: NavHostController) {
         }
 
         else -> {
-            systemUiController.setStatusBarColor(color = MaterialTheme.colorScheme.mainBg)
+            systemUiController.setStatusBarColor(color = MaterialTheme.colorScheme.statusBarColor)
         }
     }
 }
