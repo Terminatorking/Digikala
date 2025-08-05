@@ -28,7 +28,11 @@ fun ProductTechnicalFeaturesScreen(
     jsonString: String
 ) {
 
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.mainBg)
+    ) {
 
         Row(
             modifier = Modifier
