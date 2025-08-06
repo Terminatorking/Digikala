@@ -7,8 +7,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import ghazimoradi.soheil.digikala.data.db.DigikalaDatabase
-import ghazimoradi.soheil.digikala.data.db.DigikalaDatabase.Companion.MIGRATION_1_2
+import ghazimoradi.soheil.digikala.data.db.DigiKalaDatabase
+import ghazimoradi.soheil.digikala.data.db.DigiKalaDatabase.Companion.MIGRATION_1_2
 import ghazimoradi.soheil.digikala.util.Constants.DATABASE_NAME
 import javax.inject.Singleton
 
@@ -22,7 +22,7 @@ object DatabaseModule {
         @ApplicationContext context: Context
     ) = Room.databaseBuilder(
         context,
-        DigikalaDatabase::class.java,
+        DigiKalaDatabase::class.java,
         DATABASE_NAME
     ).addMigrations(MIGRATION_1_2)
      .build()

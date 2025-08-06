@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ghazimoradi.soheil.digikala.data.db.CartDao
-import ghazimoradi.soheil.digikala.data.db.DigikalaDatabase
+import ghazimoradi.soheil.digikala.data.db.DigiKalaDatabase
 import javax.inject.Singleton
 
 @Module
@@ -15,6 +15,6 @@ object CartDaoModule {
     @Provides
     @Singleton
     fun provideCartDao(
-        database: DigikalaDatabase
+        database: DigiKalaDatabase
     ): CartDao = database.cartDao()
 }

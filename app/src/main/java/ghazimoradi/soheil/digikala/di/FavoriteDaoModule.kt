@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ghazimoradi.soheil.digikala.data.db.DigikalaDatabase
+import ghazimoradi.soheil.digikala.data.db.DigiKalaDatabase
 import ghazimoradi.soheil.digikala.data.db.FavoriteListDao
 import javax.inject.Singleton
 
@@ -15,6 +15,6 @@ object FavoriteDaoModule {
     @Provides
     @Singleton
     fun provideFavoriteListDao(
-        database: DigikalaDatabase
+        database: DigiKalaDatabase
     ): FavoriteListDao = database.FavoriteListDao()
 }

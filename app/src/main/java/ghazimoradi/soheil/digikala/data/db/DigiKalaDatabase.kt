@@ -9,7 +9,7 @@ import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
 import ghazimoradi.soheil.digikala.util.Constants.FAVORITE_LIST_TABLE
 
 @Database(entities = [CartItem::class, FavItem::class], version = 2, exportSchema = false)
-abstract class DigikalaDatabase : RoomDatabase() {
+abstract class DigiKalaDatabase : RoomDatabase() {
     abstract fun cartDao(): CartDao
 
     abstract fun FavoriteListDao(): FavoriteListDao

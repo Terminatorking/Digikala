@@ -6,7 +6,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -57,7 +56,7 @@ fun PriceLineChart(
             startAxis = rememberStartAxis(),
             bottomAxis = createHorizontalAxis {
                 guideline = LineComponent(
-                    color = Color.Red.toArgb(),
+                    color = MaterialTheme.colorScheme.DigiKalaRed.toArgb(),
                     thicknessDp = 1.dp.value,
                     shape = DashedShape(
                         shape = Shapes.rectShape,
@@ -72,7 +71,7 @@ fun PriceLineChart(
             )
         )
 
-        Row{
+        Row {
             Spacer(modifier = Modifier.weight(0.142f))
             val persianMonths = createPersianMonthArray(priceList)
 

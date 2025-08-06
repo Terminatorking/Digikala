@@ -54,7 +54,7 @@ fun ProductDetailBottomBar(
         discountPercent = it
     }
 
-    var isShowAddToBasket by remember {
+    var shouldShowAddToBasket by remember {
         mutableStateOf(true)
     }
     var isLaunchedEffectCompleted by remember {
@@ -63,7 +63,7 @@ fun ProductDetailBottomBar(
 
     LaunchedEffect(true) {
         viewModel.isItemExistInBasket(item._id ?: "").collectLatest {
-            isShowAddToBasket = !it
+            shouldShowAddToBasket = !it
             isLaunchedEffectCompleted = true
         }
     }
@@ -95,10 +95,10 @@ fun ProductDetailBottomBar(
         ) {
 
             Row {
-                if (isLaunchedEffectCompleted && isShowAddToBasket) {
+                if (isLaunchedEffectCompleted && shouldShowAddToBasket) {
                     Button(
                         onClick = {
-                            isShowAddToBasket = false
+                            shouldShowAddToBasket = false
                             viewModel.insertCartItem(
                                 CartItem(
                                     item._id ?: "",
@@ -125,7 +125,7 @@ fun ProductDetailBottomBar(
                                 )
                         )
                     }
-                } else if (isLaunchedEffectCompleted && !isShowAddToBasket) {
+                } else if (isLaunchedEffectCompleted && !shouldShowAddToBasket) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Column(
                             modifier = Modifier
@@ -172,10 +172,8 @@ fun ProductDetailBottomBar(
                             .background(
                                 color = MaterialTheme.colorScheme.DigiKalaDarkRed,
                                 shape = CircleShape
-                            )
-                            .wrapContentWidth(Alignment.CenterHorizontally)
+                            ).wrapContentWidth(Alignment.CenterHorizontally)
                             .wrapContentHeight(Alignment.CenterVertically),
-
                         ) {
                         Text(
                             text = "${DigitHelper.digitByLocate(discountPercent.toString())}%",
