@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import ghazimoradi.soheil.digikala.ui.screens.addAddress.AddAddressScreen
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
 import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.subCategory.SubCategoryScreen
@@ -56,6 +57,10 @@ fun SetupNavGraph(navController: NavHostController) {
 
         composable(route = Screen.Checkout.route) {
             CheckoutScreen(navController = navController)
+        }
+
+        composable(route = Screen.AddAddress.route) {
+            AddAddressScreen(navController = navController)
         }
 
         composable(

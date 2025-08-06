@@ -25,6 +25,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.model.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
@@ -75,7 +76,7 @@ fun ShowAddressScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    //  navController.navigate(Screen.AddAddressScreen.route)
+                    navController.navigate(Screen.AddAddress.route)
                 },
                 containerColor = MaterialTheme.colorScheme.DigiKalaRed
             ) {
