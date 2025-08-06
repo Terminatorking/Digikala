@@ -55,7 +55,7 @@ fun ProfileHeaderSection(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    // navController.navigate(Screen.UserAccount.route)
+                     navController.navigate(Screen.UserAccountInfo.route)
                 },
             text = stringResource(id = R.string.completion_of_user_information),
             textAlign = TextAlign.Center,

@@ -3,7 +3,7 @@ package ghazimoradi.soheil.digikala.ui.screens.showAddress
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -91,7 +91,7 @@ fun AddressCard(
         }
     }
 
-    Divider(
+    HorizontalDivider(
         modifier = Modifier
             .padding(MaterialTheme.spacing.small),
         color = MaterialTheme.colorScheme.gray.copy(0.2f)
