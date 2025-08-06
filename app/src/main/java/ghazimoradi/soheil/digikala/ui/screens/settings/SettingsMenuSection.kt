@@ -172,6 +172,7 @@ fun SettingsMenuSection(
         addCompose = { ChangeLanguage() },
         haveDivider = true
     )
+
     if (USER_TOKEN != "null") {
         MenuItem(
             icon = {

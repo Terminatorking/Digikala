@@ -21,6 +21,7 @@ import ghazimoradi.soheil.digikala.ui.screens.products.allProductComments.AllPro
 import ghazimoradi.soheil.digikala.ui.screens.products.productPriceChart.ProductPriceChartScreen
 import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
+import ghazimoradi.soheil.digikala.ui.screens.showAddress.ShowAddressScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
 
 @Composable
@@ -238,6 +239,23 @@ fun SetupNavGraph(navController: NavHostController) {
                 )
             }
 
+        }
+
+        composable(route = Screen.ShowAddress.route + "/{isFromBasket}",
+            arguments = listOf(
+                navArgument("isFromBasket") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("isFromBasket")?.let { isFromBasket ->
+                ShowAddressScreen(
+                    navController = navController,
+                    isFromBasket = isFromBasket.toInt()
+                )
+            }
         }
 
         composable(

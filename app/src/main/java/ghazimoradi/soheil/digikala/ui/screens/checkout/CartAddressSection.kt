@@ -32,6 +32,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.theme.body2
@@ -158,7 +159,7 @@ fun CartAddressSection(
                 modifier = Modifier
                     .padding(horizontal = MaterialTheme.spacing.extraSmall)
                     .clickable {
-                        // navController.navigate(Screen.ShowAddressScreen.withArgs(addressIndex))
+                        navController.navigate(Screen.ShowAddress.withArgs(addressIndex))
                     },
                 text = addressBtnText,
                 textAlign = TextAlign.End,

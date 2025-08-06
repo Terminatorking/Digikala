@@ -33,7 +33,6 @@ fun CartInfoSection() {
                 vertical = MaterialTheme.spacing.medium,
                 horizontal = MaterialTheme.spacing.small
             ),
-        elevation = CardDefaults.cardElevation(0.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),

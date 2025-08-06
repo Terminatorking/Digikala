@@ -44,7 +44,6 @@ fun MenuItem(
             .clickable {
                 action()
             }
-
     ) {
 
         Column(
@@ -64,7 +63,6 @@ fun MenuItem(
                 .padding(horizontal = MaterialTheme.spacing.small),
             verticalArrangement = Arrangement.Center,
         ) {
-
 
             Row(
                 modifier = Modifier

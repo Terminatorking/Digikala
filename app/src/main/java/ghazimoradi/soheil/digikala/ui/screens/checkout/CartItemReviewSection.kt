@@ -62,7 +62,6 @@ fun CartItemReviewSection(
                 .fillMaxWidth()
                 .padding(horizontal = MaterialTheme.spacing.small),
             shape = MaterialTheme.roundedShape.small,
-            elevation = CardDefaults.cardElevation(2.dp),
         ) {
             Column(
                 modifier = Modifier
