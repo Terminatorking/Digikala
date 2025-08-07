@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 
 @Composable
-fun EmptyFavoriteProductListContent() {
+fun EmptyUserFavoriteProductListContent() {
     Column(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.no_fav_item),

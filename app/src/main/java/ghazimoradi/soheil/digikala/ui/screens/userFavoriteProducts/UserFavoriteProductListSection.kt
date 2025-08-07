@@ -46,7 +46,7 @@ import ghazimoradi.soheil.digikala.viewmodel.FavoriteListViewModel
 import kotlinx.coroutines.launch
 
 @Composable
-fun FavoriteProductListSection(
+fun UserFavoriteProductListSection(
     navController: NavHostController,
     viewModel: FavoriteListViewModel = hiltViewModel()
 ) {
@@ -128,26 +128,26 @@ fun FavoriteProductListSection(
             }
         }
     ) {
-        Column {
-            CountFavoriteSection(allFavoriteItems.size)
+        LazyColumn(
+            modifier = Modifier
+                .padding(MaterialTheme.spacing.small)
+                .fillMaxSize()
+        ) {
+            if (allFavoriteItems.isEmpty()) {
+                item { EmptyUserFavoriteProductListContent() }
+            } else {
+                item {
+                    CountUserFavoriteProductsSection(allFavoriteItems.size)
+                }
 
-            LazyColumn(
-                modifier = Modifier
-                    .padding(MaterialTheme.spacing.small)
-                    .fillMaxSize()
-            ) {
-                if (allFavoriteItems.isEmpty()) {
-                    item { EmptyFavoriteProductListContent() }
-                } else {
-                    items(allFavoriteItems) { favItem ->
-                        FavoriteItemCard(
-                            navController,
-                            favItem,
-                            coroutineScope,
-                            modalSheetState
-                        ) {
-                            selectedItem = it
-                        }
+                items(allFavoriteItems) { favItem ->
+                    FavoriteItemCard(
+                        navController,
+                        favItem,
+                        coroutineScope,
+                        modalSheetState
+                    ) {
+                        selectedItem = it
                     }
                 }
             }

@@ -28,7 +28,7 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FavoriteProductTopAppBar(navController: NavHostController) {
+fun UserFavoriteProductTopAppBar(navController: NavHostController) {
     TopAppBar(
         navigationIcon = {
             Icon(

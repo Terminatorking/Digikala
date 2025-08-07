@@ -17,7 +17,7 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.DigitHelper
 
 @Composable
-fun CountFavoriteSection(itemCount: Int) {
+fun CountUserFavoriteProductsSection(itemCount: Int) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier

@@ -13,14 +13,14 @@ import ghazimoradi.soheil.digikala.ui.theme.mainBg
 @Composable
 fun UserFavoriteProductsScreen(navController: NavHostController) {
     Scaffold(
-        topBar = { FavoriteProductTopAppBar(navController) }
+        topBar = { UserFavoriteProductTopAppBar(navController) }
     ) {
         Column(
             modifier = Modifier
             .padding(it)
             .background(MaterialTheme.colorScheme.mainBg)
         ) {
-            FavoriteProductListSection(navController)
+            UserFavoriteProductListSection(navController)
         }
     }
 }
