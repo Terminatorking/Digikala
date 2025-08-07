@@ -47,7 +47,7 @@ fun ProfileMiddleSection(navController: NavHostController) {
     ) {
         Column(
             Modifier.clickable {
-                // navController.navigate(Screen.UserAccount.route)
+                 navController.navigate(Screen.UserAccountInfo.route)
             },
             horizontalAlignment = Alignment.CenterHorizontally
         )

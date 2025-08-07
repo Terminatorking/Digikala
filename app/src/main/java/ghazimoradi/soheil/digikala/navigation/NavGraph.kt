@@ -25,6 +25,7 @@ import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
 import ghazimoradi.soheil.digikala.ui.screens.showAddress.ShowAddressScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
 import ghazimoradi.soheil.digikala.ui.screens.userAccountInfo.UserAccountInfoScreen
+import ghazimoradi.soheil.digikala.ui.screens.userFavoriteProducts.UserFavoriteProductsScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -66,6 +67,10 @@ fun SetupNavGraph(navController: NavHostController) {
 
         composable(route = Screen.UserAccountInfo.route) {
             UserAccountInfoScreen(navController = navController)
+        }
+
+        composable(route = Screen.UserFavoriteProducts.route) {
+            UserFavoriteProductsScreen(navController = navController)
         }
 
         composable(

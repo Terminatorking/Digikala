@@ -16,6 +16,7 @@ import ghazimoradi.soheil.digikala.ui.components.MenuItem
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.util.Constants.DIGIPLUS_URL
+import ghazimoradi.soheil.digikala.util.Constants.USER_COMMENTS
 
 @Composable
 fun ProfileMenuSection(navController: NavHostController) {
@@ -53,7 +54,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         text = stringResource(id = R.string.fav_list),
         haveDivider = true
     ) {
-        //  navController.navigate(Screen.FavoriteList.route)
+        navController.navigate(Screen.UserFavoriteProducts.route)
     }
 
     MenuItem(
@@ -70,13 +71,13 @@ fun ProfileMenuSection(navController: NavHostController) {
         text = stringResource(id = R.string.my_comments),
         haveDivider = true
     ) {
-//        navController.navigate(
-//            Screen.AllComment.withArgs(
-//                "1",
-//               "1",
-//               USER_COMMENTS
-//           )
-//        )
+        navController.navigate(
+            Screen.AllComment.withArgs(
+                "1",
+               "1",
+               USER_COMMENTS
+           )
+        )
     }
 
     MenuItem(
@@ -93,7 +94,7 @@ fun ProfileMenuSection(navController: NavHostController) {
         text = stringResource(id = R.string.addresses),
         haveDivider = true
     ) {
-        // navController.navigate(Screen.ShowAddressScreen.withArgs(-1))
+        navController.navigate(Screen.ShowAddress.withArgs(-1))
     }
 
     MenuItem(
@@ -110,6 +111,6 @@ fun ProfileMenuSection(navController: NavHostController) {
         text = stringResource(id = R.string.profile_data),
         haveDivider = false
     ) {
-        // navController.navigate(Screen.UserAccount.route)
+         navController.navigate(Screen.UserAccountInfo.route)
     }
 }

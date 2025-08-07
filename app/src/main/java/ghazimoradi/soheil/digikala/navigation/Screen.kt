@@ -7,7 +7,7 @@ sealed class Screen(val route: String) {
     object Basket : Screen("basket_screen")
     object Profile : Screen("profile_screen")
     object WebView : Screen("webView_screen")
-    object Settings : Screen("setting_screen")
+    object Settings : Screen("settings_screen")
     object Checkout : Screen("checkout_screen")
     object ConfirmPurchase : Screen("confirm_purchase_screen")
     object ProductDetail : Screen("product_detail_screen")
@@ -20,6 +20,7 @@ sealed class Screen(val route: String) {
     object ShowAddress : Screen("show_address_screen")
     object AddAddress : Screen("add_address_screen")
     object UserAccountInfo : Screen("user_account_info_screen")
+    object UserFavoriteProducts : Screen("user_favorite_products_screen")
 
     fun withArgs(vararg args: Any): String {
         return buildString {
