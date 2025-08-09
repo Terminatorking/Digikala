@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.model.address.UserAddress
@@ -27,8 +28,8 @@ fun AddressCard(
     address: UserAddress,
     isFromBasket: Int,
     itemIndex: Int,
-    dataStore: DataStoreViewModel,
     navController: NavHostController,
+    dataStore: DataStoreViewModel = hiltViewModel(),
 ) {
     Column(
         modifier = Modifier.padding(
@@ -38,9 +39,7 @@ fun AddressCard(
 
         Row {
             if (isFromBasket >= 0) {
-                Column(
-                    modifier = Modifier.weight(0.1f)
-                ) {
+                Column(modifier = Modifier.weight(0.1f)) {
                     RadioButton(
                         selected = isFromBasket == itemIndex,
                         onClick = {
@@ -51,9 +50,7 @@ fun AddressCard(
                 }
             }
 
-            Column(
-                modifier = Modifier.weight(1f)
-            ) {
+            Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = address.address,
                     style = MaterialTheme.typography.h4,

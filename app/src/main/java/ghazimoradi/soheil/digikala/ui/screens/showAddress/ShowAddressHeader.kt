@@ -34,8 +34,7 @@ fun ShowAddressHeader(navController: NavController) {
                 .fillMaxWidth()
                 .padding(vertical = MaterialTheme.spacing.small)
         ) {
-            IconButton(onClick = { navController.popBackStack() }
-            ) {
+            IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     Icons.Default.Close,
                     contentDescription = "Back",

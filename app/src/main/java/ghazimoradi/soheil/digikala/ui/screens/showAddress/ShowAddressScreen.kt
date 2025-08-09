@@ -39,7 +39,6 @@ fun ShowAddressScreen(
     navController: NavHostController,
     isFromBasket: Int,
     viewModel: AddressViewModel = hiltViewModel(),
-    dataStore: DataStoreViewModel = hiltViewModel()
 ) {
 
     var addressList by remember {
@@ -101,7 +100,7 @@ fun ShowAddressScreen(
             } else {
                 LazyColumn(Modifier.fillMaxSize()) {
                     itemsIndexed(addressList) { index, item ->
-                        AddressCard(item, isFromBasket, index, dataStore, navController)
+                        AddressCard(item, isFromBasket, index, navController)
                     }
                 }
             }
