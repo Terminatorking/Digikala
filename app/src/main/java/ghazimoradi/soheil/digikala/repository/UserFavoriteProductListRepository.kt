@@ -5,7 +5,7 @@ import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class FavoriteListRepository @Inject constructor(
+class UserFavoriteProductListRepository @Inject constructor(
     private val favoriteListDao: FavoriteListDao
 ) {
 

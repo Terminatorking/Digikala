@@ -21,13 +21,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
 import ghazimoradi.soheil.digikala.ui.theme.Red
 import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.viewmodel.FavoriteListViewModel
+import ghazimoradi.soheil.digikala.viewmodel.UserFavoriteProductListViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun DisplayFavoriteToggleButton(
     item: FavItem,
-    viewModel: FavoriteListViewModel = hiltViewModel()
+    viewModel: UserFavoriteProductListViewModel = hiltViewModel()
 ) {
 
     var checkedState by remember { mutableStateOf(false) }

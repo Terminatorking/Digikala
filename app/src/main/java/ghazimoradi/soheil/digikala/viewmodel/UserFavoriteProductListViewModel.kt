@@ -4,15 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
-import ghazimoradi.soheil.digikala.repository.FavoriteListRepository
+import ghazimoradi.soheil.digikala.repository.UserFavoriteProductListRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FavoriteListViewModel @Inject constructor(
-    private val repository: FavoriteListRepository
+class UserFavoriteProductListViewModel @Inject constructor(
+    private val repository: UserFavoriteProductListRepository
 ) : ViewModel() {
 
     val allFavoriteItems: Flow<List<FavItem>> = repository.allFavoriteItems

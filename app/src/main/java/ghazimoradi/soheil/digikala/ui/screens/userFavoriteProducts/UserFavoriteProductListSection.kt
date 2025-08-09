@@ -42,13 +42,13 @@ import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.viewmodel.FavoriteListViewModel
+import ghazimoradi.soheil.digikala.viewmodel.UserFavoriteProductListViewModel
 import kotlinx.coroutines.launch
 
 @Composable
 fun UserFavoriteProductListSection(
     navController: NavHostController,
-    viewModel: FavoriteListViewModel = hiltViewModel()
+    viewModel: UserFavoriteProductListViewModel = hiltViewModel()
 ) {
 
     val allFavoriteItems by viewModel.allFavoriteItems.collectAsState(emptyList())
