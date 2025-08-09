@@ -38,7 +38,9 @@ fun UserFavoriteProductListSection(
 
     val modalSheetState = rememberModalBottomSheetState(
         initialValue = ModalBottomSheetValue.Hidden,
-        confirmValueChange = { it != ModalBottomSheetValue.HalfExpanded },
+        confirmValueChange = {
+            it != ModalBottomSheetValue.HalfExpanded
+        },
         skipHalfExpanded = false
     )
 
@@ -49,7 +51,7 @@ fun UserFavoriteProductListSection(
                 viewModel = viewModel,
                 selectedItem = selectedItem,
                 coroutineScope = coroutineScope,
-                modalSheetState=modalSheetState,
+                modalSheetState = modalSheetState,
             )
         }
     ) {
@@ -66,7 +68,7 @@ fun UserFavoriteProductListSection(
                 }
 
                 items(allFavoriteItems) { favItem ->
-                    FavoriteItemCard(
+                    UserFavoriteProductItemCard(
                         navController,
                         favItem,
                         coroutineScope,

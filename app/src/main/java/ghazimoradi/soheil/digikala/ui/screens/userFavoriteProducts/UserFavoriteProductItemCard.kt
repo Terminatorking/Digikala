@@ -59,9 +59,8 @@ import ghazimoradi.soheil.digikala.util.DigitHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-
 @Composable
-fun FavoriteItemCard(
+fun UserFavoriteProductItemCard(
     navController: NavHostController,
     favItem: FavItem,
     coroutineScope: CoroutineScope,
