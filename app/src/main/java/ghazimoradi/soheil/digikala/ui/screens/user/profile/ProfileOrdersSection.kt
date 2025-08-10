@@ -11,8 +11,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavHostController
+import com.google.gson.Gson
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.spacing
@@ -53,10 +55,10 @@ fun ProfileOrdersSection(
 
     LazyRow(
         modifier = Modifier.clickable {
-//            val ordersString = Gson().toJson(orders)
-//            navController.navigate(
-//                  Screen.TabLayoutScreen.route + "?orders=${ordersString}"
-//            )
+            val ordersString = Gson().toJson(orders)
+            navController.navigate(
+                  Screen.TabLayoutScreen.route + "?orders=${ordersString}"
+            )
         },
     ) {
         item {

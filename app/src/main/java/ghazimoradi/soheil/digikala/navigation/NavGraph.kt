@@ -26,6 +26,7 @@ import ghazimoradi.soheil.digikala.ui.screens.address.showAddress.ShowAddressScr
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
 import ghazimoradi.soheil.digikala.ui.screens.user.setUserAccountName.SetUserAccountNameScreen
 import ghazimoradi.soheil.digikala.ui.screens.user.userFavoriteProducts.UserFavoriteProductsScreen
+import ghazimoradi.soheil.digikala.ui.screens.user.userOrders.TabLayoutScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -269,6 +270,23 @@ fun SetupNavGraph(navController: NavHostController) {
                 ShowAddressScreen(
                     navController = navController,
                     isFromBasket = isFromBasket.toInt()
+                )
+            }
+        }
+
+        composable(route = Screen.TabLayoutScreen.route + "?orders={orders}",
+            arguments = listOf(
+                navArgument("orders") {
+                    type = NavType.StringType
+                    defaultValue = " "
+                    nullable = true
+                }
+            )
+        ) {
+            it.arguments!!.getString("orders")?.let { orders ->
+                TabLayoutScreen(
+                    navController = navController,
+                    orders = orders
                 )
             }
         }
