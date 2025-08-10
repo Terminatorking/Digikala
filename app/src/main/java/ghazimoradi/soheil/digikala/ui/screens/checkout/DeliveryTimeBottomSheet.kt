@@ -25,7 +25,7 @@ import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocate
 
 @Composable
 fun DeliveryTimeBottomSheet() {

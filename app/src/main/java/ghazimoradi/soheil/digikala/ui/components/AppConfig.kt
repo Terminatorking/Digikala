@@ -5,14 +5,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.util.Constants.USER_ID
-import ghazimoradi.soheil.digikala.viewmodel.DataStoreViewModel
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
-import ghazimoradi.soheil.digikala.util.Constants.USER_NAME
-import ghazimoradi.soheil.digikala.util.Constants.USER_PASSWORD
-import ghazimoradi.soheil.digikala.util.Constants.USER_PHONE
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
-import ghazimoradi.soheil.digikala.viewmodel.ProfileViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_ID
+import ghazimoradi.soheil.digikala.viewModels.DataStoreViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.utils.Constants.USER_NAME
+import ghazimoradi.soheil.digikala.utils.Constants.USER_PASSWORD
+import ghazimoradi.soheil.digikala.utils.Constants.USER_PHONE
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.viewModels.ProfileViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 

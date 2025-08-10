@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocateAndSeparator
 
 @Composable
 fun SetBadgeToTab(

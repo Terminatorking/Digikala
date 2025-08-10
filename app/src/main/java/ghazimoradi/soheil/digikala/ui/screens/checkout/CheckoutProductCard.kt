@@ -17,12 +17,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper
+import ghazimoradi.soheil.digikala.utils.DigitHelper
 
 @Composable
 fun CheckoutProductCard(item: CartItem) {

@@ -27,9 +27,9 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.util.Constants.PRODUCT_COMMENTS
-import ghazimoradi.soheil.digikala.util.DigitHelper
-import ghazimoradi.soheil.digikala.viewmodel.CommentViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.PRODUCT_COMMENTS
+import ghazimoradi.soheil.digikala.utils.DigitHelper
+import ghazimoradi.soheil.digikala.viewModels.CommentViewModel
 
 @Composable
 fun AllProductCommentsScreen(

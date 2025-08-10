@@ -22,14 +22,14 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
-import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
 
 @Composable
 fun NextShoppingList(

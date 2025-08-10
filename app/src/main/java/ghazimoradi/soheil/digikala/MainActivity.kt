@@ -17,9 +17,9 @@ import ghazimoradi.soheil.digikala.navigation.SetupNavGraph
 import ghazimoradi.soheil.digikala.ui.components.AppConfig
 import ghazimoradi.soheil.digikala.ui.components.ChangeStatusBarColor
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaTheme
-import ghazimoradi.soheil.digikala.util.LocaleUtils
-import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.utils.LocaleUtils
+import ghazimoradi.soheil.digikala.utils.Constants.ENGLISH_LANG
+import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

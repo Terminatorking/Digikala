@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
-import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan

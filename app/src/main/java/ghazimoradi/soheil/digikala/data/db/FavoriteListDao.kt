@@ -1,9 +1,9 @@
 package ghazimoradi.soheil.digikala.data.db
 
 import androidx.room.*
-import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
+import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
 import kotlinx.coroutines.flow.Flow
-import ghazimoradi.soheil.digikala.util.Constants.FAVORITE_LIST_TABLE
+import ghazimoradi.soheil.digikala.utils.Constants.FAVORITE_LIST_TABLE
 
 @Dao
 interface FavoriteListDao {

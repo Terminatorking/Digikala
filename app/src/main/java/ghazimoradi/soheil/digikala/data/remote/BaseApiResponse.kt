@@ -1,6 +1,6 @@
 package ghazimoradi.soheil.digikala.data.remote
 
-import ghazimoradi.soheil.digikala.data.model.ResponseResult
+import ghazimoradi.soheil.digikala.data.models.ResponseResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

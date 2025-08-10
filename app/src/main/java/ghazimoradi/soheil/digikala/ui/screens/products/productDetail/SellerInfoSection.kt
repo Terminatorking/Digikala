@@ -40,7 +40,7 @@ import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper
+import ghazimoradi.soheil.digikala.utils.DigitHelper
 
 @Composable
 fun SellerInfoSection(productPrice: Long) {

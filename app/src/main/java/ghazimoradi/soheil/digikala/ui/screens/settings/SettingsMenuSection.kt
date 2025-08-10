@@ -31,7 +31,7 @@ import ghazimoradi.soheil.digikala.MainActivity
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.MenuItem
-import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreenState
+import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.GiantsOrange
 import ghazimoradi.soheil.digikala.ui.theme.Manatee
@@ -40,16 +40,16 @@ import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_BUG
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_FAQ
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_PRIVACY
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_SCORE
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_TERMS
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_TURLEARN
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
-import ghazimoradi.soheil.digikala.viewmodel.DataStoreViewModel
-import ghazimoradi.soheil.digikala.viewmodel.ProfileViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_BUG
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_FAQ
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_PRIVACY
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_SCORE
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_TERMS
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_TURLEARN
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
+import ghazimoradi.soheil.digikala.viewModels.DataStoreViewModel
+import ghazimoradi.soheil.digikala.viewModels.ProfileViewModel
 
 @Composable
 fun SettingsMenuSection(

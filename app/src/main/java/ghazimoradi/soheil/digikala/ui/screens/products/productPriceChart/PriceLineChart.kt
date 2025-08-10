@@ -23,7 +23,7 @@ import com.patrykandpatrick.vico.core.component.shape.Shapes
 import com.patrykandpatrick.vico.core.entry.ChartEntryModel
 import com.patrykandpatrick.vico.core.scroll.InitialScroll
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.productDetail.Price
+import ghazimoradi.soheil.digikala.data.models.productDetail.Price
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.veryExtraSmall
 

@@ -27,7 +27,7 @@ import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.PRODUCT_COMMENTS
+import ghazimoradi.soheil.digikala.utils.Constants.PRODUCT_COMMENTS
 
 @Composable
 fun CommentShowMoreItem(

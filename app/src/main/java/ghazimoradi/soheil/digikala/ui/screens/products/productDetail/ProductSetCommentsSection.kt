@@ -23,7 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
+import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
@@ -31,7 +31,7 @@ import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants
+import ghazimoradi.soheil.digikala.utils.Constants
 
 @Composable
 fun ProductSetCommentsSection(

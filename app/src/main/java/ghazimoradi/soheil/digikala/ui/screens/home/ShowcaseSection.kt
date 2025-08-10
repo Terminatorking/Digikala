@@ -17,14 +17,14 @@ import ghazimoradi.soheil.digikala.ui.components.RoundedIconBox
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import ghazimoradi.soheil.digikala.ui.theme.amber
 import ghazimoradi.soheil.digikala.ui.theme.grayCategory
-import ghazimoradi.soheil.digikala.util.Constants.AUCTION_URL
-import ghazimoradi.soheil.digikala.util.Constants.DIGIJET_URL
-import ghazimoradi.soheil.digikala.util.Constants.DIGIPAY_URL
-import ghazimoradi.soheil.digikala.util.Constants.DIGIPLUS_URL
-import ghazimoradi.soheil.digikala.util.Constants.GIFT_CARD_URL
-import ghazimoradi.soheil.digikala.util.Constants.MORE_URL
-import ghazimoradi.soheil.digikala.util.Constants.PINDO_URL
-import ghazimoradi.soheil.digikala.util.Constants.SHOPPING_URL
+import ghazimoradi.soheil.digikala.utils.Constants.AUCTION_URL
+import ghazimoradi.soheil.digikala.utils.Constants.DIGIJET_URL
+import ghazimoradi.soheil.digikala.utils.Constants.DIGIPAY_URL
+import ghazimoradi.soheil.digikala.utils.Constants.DIGIPLUS_URL
+import ghazimoradi.soheil.digikala.utils.Constants.GIFT_CARD_URL
+import ghazimoradi.soheil.digikala.utils.Constants.MORE_URL
+import ghazimoradi.soheil.digikala.utils.Constants.PINDO_URL
+import ghazimoradi.soheil.digikala.utils.Constants.SHOPPING_URL
 
 @Composable
 fun ShowcaseSection(navController: NavController) {

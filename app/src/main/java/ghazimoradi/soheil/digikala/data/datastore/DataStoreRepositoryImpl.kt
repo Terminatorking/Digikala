@@ -8,10 +8,10 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import ghazimoradi.soheil.digikala.util.AES
-import ghazimoradi.soheil.digikala.util.Constants.DATASTORE_NAME
-import ghazimoradi.soheil.digikala.util.Constants.IV
-import ghazimoradi.soheil.digikala.util.Constants.KEY
+import ghazimoradi.soheil.digikala.utils.AES
+import ghazimoradi.soheil.digikala.utils.Constants.DATASTORE_NAME
+import ghazimoradi.soheil.digikala.utils.Constants.IV
+import ghazimoradi.soheil.digikala.utils.Constants.KEY
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 

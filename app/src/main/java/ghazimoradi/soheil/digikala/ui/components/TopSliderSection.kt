@@ -32,8 +32,8 @@ import coil.size.Scale
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
-import ghazimoradi.soheil.digikala.data.model.home.Slider
-import ghazimoradi.soheil.digikala.data.model.productDetail.SliderImage
+import ghazimoradi.soheil.digikala.data.models.home.Slider
+import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.ui.theme.*
 import kotlinx.coroutines.delay
 

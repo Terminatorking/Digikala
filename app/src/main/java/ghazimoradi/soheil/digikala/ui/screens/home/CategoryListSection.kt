@@ -15,10 +15,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
-import ghazimoradi.soheil.digikala.data.model.home.MainCategory
+import ghazimoradi.soheil.digikala.data.models.home.MainCategory
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
+import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h2

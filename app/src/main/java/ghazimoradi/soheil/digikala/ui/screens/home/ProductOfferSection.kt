@@ -26,13 +26,13 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.home.StoreProduct
+import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
-import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocate
+import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 
 /**
  * if `isMostVisited = false` shows bestSeller products

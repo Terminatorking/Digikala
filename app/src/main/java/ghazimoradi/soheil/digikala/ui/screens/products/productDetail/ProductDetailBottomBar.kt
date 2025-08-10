@@ -27,15 +27,15 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
-import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
-import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
+import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.util.DigitHelper
-import ghazimoradi.soheil.digikala.util.DigitHelper.applyDiscount
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
+import ghazimoradi.soheil.digikala.utils.DigitHelper
+import ghazimoradi.soheil.digikala.utils.DigitHelper.applyDiscount
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable

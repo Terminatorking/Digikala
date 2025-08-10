@@ -1,10 +1,10 @@
 package ghazimoradi.soheil.digikala.data.db
 
 import androidx.room.*
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
-import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import kotlinx.coroutines.flow.Flow
-import ghazimoradi.soheil.digikala.util.Constants.SHOPPING_CART_TABLE
+import ghazimoradi.soheil.digikala.utils.Constants.SHOPPING_CART_TABLE
 
 @Dao
 interface CartDao {

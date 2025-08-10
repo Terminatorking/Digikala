@@ -26,7 +26,7 @@ import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
 
 @Composable
 fun EmptyNextShoppingList() {

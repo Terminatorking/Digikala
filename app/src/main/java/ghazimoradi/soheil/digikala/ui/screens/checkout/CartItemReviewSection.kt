@@ -25,8 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.basket.CartDetails
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.basket.CartDetails
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -36,7 +36,7 @@ import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocate
 
 @Composable
 fun CartItemReviewSection(

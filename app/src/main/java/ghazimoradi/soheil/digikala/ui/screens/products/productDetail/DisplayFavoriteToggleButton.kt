@@ -18,10 +18,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
+import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
 import ghazimoradi.soheil.digikala.ui.theme.Red
 import ghazimoradi.soheil.digikala.ui.theme.darkText
-import ghazimoradi.soheil.digikala.viewmodel.UserFavoriteProductListViewModel
+import ghazimoradi.soheil.digikala.viewModels.UserFavoriteProductListViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable

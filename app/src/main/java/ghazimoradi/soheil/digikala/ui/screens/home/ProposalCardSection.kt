@@ -11,11 +11,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
-import ghazimoradi.soheil.digikala.data.model.home.Slider
+import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
+import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 
 @Composable
 fun ProposalCardSection(

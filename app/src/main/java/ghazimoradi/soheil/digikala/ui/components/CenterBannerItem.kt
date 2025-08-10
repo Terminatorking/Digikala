@@ -18,7 +18,7 @@ import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.DIGI_CLUB
+import ghazimoradi.soheil.digikala.utils.Constants.DIGI_CLUB
 
 @Composable
 fun CenterBannerItem(imageUrl: String) {

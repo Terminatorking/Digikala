@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.productDetail.NewComment
+import ghazimoradi.soheil.digikala.data.models.productDetail.NewComment
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
@@ -47,8 +47,8 @@ import ghazimoradi.soheil.digikala.ui.theme.h2
 import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants
-import ghazimoradi.soheil.digikala.viewmodel.CommentViewModel
+import ghazimoradi.soheil.digikala.utils.Constants
+import ghazimoradi.soheil.digikala.viewModels.CommentViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable

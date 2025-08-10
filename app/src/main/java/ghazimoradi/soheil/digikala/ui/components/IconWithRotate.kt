@@ -13,8 +13,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.theme.icon
-import ghazimoradi.soheil.digikala.util.Constants.ENGLISH_LANG
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.utils.Constants.ENGLISH_LANG
+import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
 
 @Composable
 fun IconWithRotate(

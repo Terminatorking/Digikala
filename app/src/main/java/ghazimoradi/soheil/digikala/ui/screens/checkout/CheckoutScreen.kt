@@ -27,7 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.data.model.checkout.OrderDetail
+import ghazimoradi.soheil.digikala.data.models.checkout.OrderDetail
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
@@ -35,9 +35,9 @@ import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
-import ghazimoradi.soheil.digikala.viewmodel.CheckoutViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
+import ghazimoradi.soheil.digikala.viewModels.CheckoutViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

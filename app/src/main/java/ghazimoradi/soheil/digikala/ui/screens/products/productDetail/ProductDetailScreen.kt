@@ -19,16 +19,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
-import ghazimoradi.soheil.digikala.data.model.productDetail.ProductColor
-import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
-import ghazimoradi.soheil.digikala.data.model.productDetail.SliderImage
+import ghazimoradi.soheil.digikala.data.models.productDetail.Comment
+import ghazimoradi.soheil.digikala.data.models.productDetail.ProductColor
+import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
+import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.Loading
 import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.TopSliderSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
-import ghazimoradi.soheil.digikala.viewmodel.ProductDetailViewModel
+import ghazimoradi.soheil.digikala.viewModels.ProductDetailViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable

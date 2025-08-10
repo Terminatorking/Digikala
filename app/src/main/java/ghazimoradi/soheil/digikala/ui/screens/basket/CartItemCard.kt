@@ -39,14 +39,14 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
-import ghazimoradi.soheil.digikala.data.model.basket.CartStatus
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.DetailRow
 import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocateAndSeparator
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
 
 @Composable
 fun CartItemCard(

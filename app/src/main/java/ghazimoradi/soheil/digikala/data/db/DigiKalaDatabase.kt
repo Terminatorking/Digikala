@@ -4,9 +4,9 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import ghazimoradi.soheil.digikala.data.model.basket.CartItem
-import ghazimoradi.soheil.digikala.data.model.prfile.FavItem
-import ghazimoradi.soheil.digikala.util.Constants.FAVORITE_LIST_TABLE
+import ghazimoradi.soheil.digikala.data.models.basket.CartItem
+import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
+import ghazimoradi.soheil.digikala.utils.Constants.FAVORITE_LIST_TABLE
 
 @Database(entities = [CartItem::class, FavItem::class], version = 2, exportSchema = false)
 abstract class DigiKalaDatabase : RoomDatabase() {

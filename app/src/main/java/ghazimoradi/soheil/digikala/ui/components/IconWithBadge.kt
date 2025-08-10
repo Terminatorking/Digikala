@@ -23,7 +23,7 @@ import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocateAndSeparator
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocateAndSeparator
 
 @Composable
 fun IconWithBadge(

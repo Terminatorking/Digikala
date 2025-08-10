@@ -11,10 +11,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import ghazimoradi.soheil.digikala.data.model.home.AmazingItem
+import ghazimoradi.soheil.digikala.data.models.home.AmazingItem
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
-import ghazimoradi.soheil.digikala.viewmodel.HomeViewModel
+import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
 

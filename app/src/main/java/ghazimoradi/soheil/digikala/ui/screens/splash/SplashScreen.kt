@@ -9,9 +9,9 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.CheckConnection.isNetworkAvailable
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.util.Constants.isFromPurchase
-import ghazimoradi.soheil.digikala.util.Constants.purchaseOrderId
-import ghazimoradi.soheil.digikala.util.Constants.purchasePrice
+import ghazimoradi.soheil.digikala.utils.Constants.isFromPurchase
+import ghazimoradi.soheil.digikala.utils.Constants.purchaseOrderId
+import ghazimoradi.soheil.digikala.utils.Constants.purchasePrice
 import kotlinx.coroutines.delay
 
 @Composable

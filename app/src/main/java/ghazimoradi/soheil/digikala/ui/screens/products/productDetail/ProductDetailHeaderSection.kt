@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.productDetail.ProductDetail
+import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
 import ghazimoradi.soheil.digikala.ui.theme.Gold
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -28,7 +28,7 @@ import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocate
 import java.util.Locale
 
 @Composable

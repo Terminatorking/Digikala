@@ -32,9 +32,9 @@ import androidx.core.net.toUri
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.checkout.ConfirmPurchase
-import ghazimoradi.soheil.digikala.data.model.purchase.PaymentRequest
-import ghazimoradi.soheil.digikala.data.model.purchase.PaymentVerificationRequest
+import ghazimoradi.soheil.digikala.data.models.checkout.ConfirmPurchase
+import ghazimoradi.soheil.digikala.data.models.purchase.PaymentRequest
+import ghazimoradi.soheil.digikala.data.models.purchase.PaymentVerificationRequest
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
@@ -43,17 +43,17 @@ import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
-import ghazimoradi.soheil.digikala.util.Constants.ZARINPAL_MERCHANT_ID
-import ghazimoradi.soheil.digikala.util.Constants.ZARINPAL_PAYMENT_URL
-import ghazimoradi.soheil.digikala.util.Constants.afterPurchaseUrl
-import ghazimoradi.soheil.digikala.util.Constants.isFromPurchase
-import ghazimoradi.soheil.digikala.util.Constants.purchaseOrderId
-import ghazimoradi.soheil.digikala.util.Constants.purchasePrice
-import ghazimoradi.soheil.digikala.util.DigitHelper
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
-import ghazimoradi.soheil.digikala.viewmodel.CheckoutViewModel
-import ghazimoradi.soheil.digikala.viewmodel.PurchaseViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.utils.Constants.ZARINPAL_MERCHANT_ID
+import ghazimoradi.soheil.digikala.utils.Constants.ZARINPAL_PAYMENT_URL
+import ghazimoradi.soheil.digikala.utils.Constants.afterPurchaseUrl
+import ghazimoradi.soheil.digikala.utils.Constants.isFromPurchase
+import ghazimoradi.soheil.digikala.utils.Constants.purchaseOrderId
+import ghazimoradi.soheil.digikala.utils.Constants.purchasePrice
+import ghazimoradi.soheil.digikala.utils.DigitHelper
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
+import ghazimoradi.soheil.digikala.viewModels.CheckoutViewModel
+import ghazimoradi.soheil.digikala.viewModels.PurchaseViewModel
 
 @Composable
 fun ConfirmPurchaseScreen(

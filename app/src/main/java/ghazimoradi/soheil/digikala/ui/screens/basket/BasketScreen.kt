@@ -35,7 +35,7 @@ import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
 
 @Composable
 fun BasketScreen(navController: NavHostController) = Basket(navController = navController)

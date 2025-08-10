@@ -28,9 +28,9 @@ import ghazimoradi.soheil.digikala.ui.theme.bottomBar
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
 import ghazimoradi.soheil.digikala.ui.theme.unSelectedBottomBar
-import ghazimoradi.soheil.digikala.util.Constants.USER_LANGUAGE
-import ghazimoradi.soheil.digikala.util.LocaleUtils
-import ghazimoradi.soheil.digikala.viewmodel.BasketViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.utils.LocaleUtils
+import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
 
 @Composable
 fun BottomNavigationBar(

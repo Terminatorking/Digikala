@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.address.UserAddress
+import ghazimoradi.soheil.digikala.data.models.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
@@ -44,9 +44,9 @@ import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.Constants.USER_TOKEN
-import ghazimoradi.soheil.digikala.viewmodel.AddressViewModel
-import ghazimoradi.soheil.digikala.viewmodel.DataStoreViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
+import ghazimoradi.soheil.digikala.viewModels.AddressViewModel
+import ghazimoradi.soheil.digikala.viewModels.DataStoreViewModel
 
 @Composable
 fun CartAddressSection(

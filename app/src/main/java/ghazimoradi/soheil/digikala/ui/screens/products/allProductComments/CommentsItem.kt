@@ -26,7 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
+import ghazimoradi.soheil.digikala.data.models.productDetail.Comment
 import ghazimoradi.soheil.digikala.ui.theme.green
 import ghazimoradi.soheil.digikala.ui.theme.orange
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -36,7 +36,7 @@ import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.util.DigitHelper
+import ghazimoradi.soheil.digikala.utils.DigitHelper
 
 @Composable
 fun CommentsItem(item: Comment) {

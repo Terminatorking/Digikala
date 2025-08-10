@@ -21,7 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 # Keep all classes that represent data models
--keep class ghazimoradi.soheil.digikala.data.model.** { *; }
+-keep class ghazimoradi.soheil.digikala.data.models.** { *; }
 
 # Retrofit rules
 -dontwarn retrofit2.**

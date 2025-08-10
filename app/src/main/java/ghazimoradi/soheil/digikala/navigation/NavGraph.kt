@@ -6,10 +6,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import ghazimoradi.soheil.digikala.ui.screens.addAddress.AddAddressScreen
+import ghazimoradi.soheil.digikala.ui.screens.address.addAddress.AddAddressScreen
 import ghazimoradi.soheil.digikala.ui.screens.basket.BasketScreen
-import ghazimoradi.soheil.digikala.ui.screens.category.CategoryScreen
-import ghazimoradi.soheil.digikala.ui.screens.subCategory.SubCategoryScreen
+import ghazimoradi.soheil.digikala.ui.screens.category.categoryScreen.CategoryScreen
+import ghazimoradi.soheil.digikala.ui.screens.category.subCategory.SubCategoryScreen
 import ghazimoradi.soheil.digikala.ui.screens.checkout.CheckoutScreen
 import ghazimoradi.soheil.digikala.ui.screens.confirmPurchase.ConfirmPurchaseScreen
 import ghazimoradi.soheil.digikala.ui.screens.home.HomeScreen
@@ -20,12 +20,12 @@ import ghazimoradi.soheil.digikala.ui.screens.products.productDescription.Produc
 import ghazimoradi.soheil.digikala.ui.screens.products.productDetail.ProductDetailScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.allProductComments.AllProductCommentsScreen
 import ghazimoradi.soheil.digikala.ui.screens.products.productPriceChart.ProductPriceChartScreen
-import ghazimoradi.soheil.digikala.ui.screens.profile.ProfileScreen
+import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreen
 import ghazimoradi.soheil.digikala.ui.screens.settings.SettingsScreen
-import ghazimoradi.soheil.digikala.ui.screens.showAddress.ShowAddressScreen
+import ghazimoradi.soheil.digikala.ui.screens.address.showAddress.ShowAddressScreen
 import ghazimoradi.soheil.digikala.ui.screens.splash.SplashScreen
-import ghazimoradi.soheil.digikala.ui.screens.userAccountInfo.UserAccountInfoScreen
-import ghazimoradi.soheil.digikala.ui.screens.userFavoriteProducts.UserFavoriteProductsScreen
+import ghazimoradi.soheil.digikala.ui.screens.user.setUserAccountName.SetUserAccountNameScreen
+import ghazimoradi.soheil.digikala.ui.screens.user.userFavoriteProducts.UserFavoriteProductsScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -65,8 +65,8 @@ fun SetupNavGraph(navController: NavHostController) {
             AddAddressScreen(navController = navController)
         }
 
-        composable(route = Screen.UserAccountInfo.route) {
-            UserAccountInfoScreen(navController = navController)
+        composable(route = Screen.SetUserAccountName.route) {
+            SetUserAccountNameScreen(navController = navController)
         }
 
         composable(route = Screen.UserFavoriteProducts.route) {

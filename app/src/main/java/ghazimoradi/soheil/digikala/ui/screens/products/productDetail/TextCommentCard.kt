@@ -15,11 +15,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.data.model.productDetail.Comment
+import ghazimoradi.soheil.digikala.data.models.productDetail.Comment
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.theme.*
-import ghazimoradi.soheil.digikala.util.DigitHelper.digitByLocate
-import ghazimoradi.soheil.digikala.util.DigitHelper.gregorianToJalali
+import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocate
+import ghazimoradi.soheil.digikala.utils.DigitHelper.gregorianToJalali
 
 @Composable
 fun TextCommentCard(item: Comment) {
