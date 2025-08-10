@@ -114,7 +114,10 @@ fun ProductDetailScreen(
                     .background(MaterialTheme.colorScheme.mainBg)
             ) {
                 item {
-                    TopSliderSection(productDetailSliders = imageSlider)
+                    TopSliderSection(
+                        navController = navController,
+                        productDetailSliders = imageSlider
+                    )
                 }
 
                 item {

@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -13,7 +12,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -40,7 +38,6 @@ fun HomeScreen(navController: NavHostController) {
     Home(navController = navController)
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Home(
     navController: NavHostController, viewModel: HomeViewModel = hiltViewModel()
@@ -57,7 +54,7 @@ fun Home(
 @Composable
 @Suppress("Deprecation")
 fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) {
-    val refreshScope = rememberCoroutineScope()
+
     val swipeRefreshState = rememberSwipeRefreshState(isRefreshing = false)
 
     var sliderList by remember {
@@ -105,7 +102,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     SearchBarSection()
                 }
                 item {
-                    TopSliderSection(homeSliders = sliderList)
+                    TopSliderSection(navController=navController,homeSliders = sliderList)
                 }
                 item {
                     ShowcaseSection(navController = navController)

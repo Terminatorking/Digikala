@@ -1,6 +1,7 @@
 package ghazimoradi.soheil.digikala.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -26,6 +27,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Scale
@@ -34,32 +36,34 @@ import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
+import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.*
 import kotlinx.coroutines.delay
 
 @Composable
 @Suppress("Deprecation")
 fun TopSliderSection(
+    navController: NavController,
     homeSliders: List<Slider> = emptyList(),
     productDetailSliders: List<SliderImage> = emptyList(),
 ) {
-    var isFromProductDetail = false
+    var isFromProductDetail = true
 
     if (homeSliders.isEmpty()) {
-        isFromProductDetail = true
+        isFromProductDetail = false
     }
 
     if (productDetailSliders.isEmpty()) {
-        isFromProductDetail = false
+        isFromProductDetail = true
     }
 
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(if (isFromProductDetail) 300.dp else 200.dp)
+            .height(if (!isFromProductDetail) 300.dp else 200.dp)
     ) {
         Column(
-            modifier = if (!isFromProductDetail) Modifier
+            modifier = if (isFromProductDetail) Modifier
                 .fillMaxWidth()
                 .fillMaxHeight()
                 .padding(
@@ -74,15 +78,22 @@ fun TopSliderSection(
 
             Box {
                 HorizontalPager(
-                    count = if (isFromProductDetail) productDetailSliders.size else homeSliders.size,
+                    count = if (!isFromProductDetail) productDetailSliders.size else homeSliders.size,
                     state = pagerState,
                     contentPadding = PaddingValues(horizontal = LocalSpacing.current.medium),
                     modifier = Modifier.fillMaxWidth()
                 ) { index ->
                     imageUrl =
-                        if (isFromProductDetail) productDetailSliders[index].image else homeSliders[index].image
+                        if (!isFromProductDetail) productDetailSliders[index].image else homeSliders[index].image
                     Box(
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = if (!isFromProductDetail)
+                            Modifier.fillMaxSize()
+                        else Modifier.clickable {
+                            navController.navigate(
+                                Screen.WebView.route + "?url=${homeSliders[index].url}"
+                            )
+                        },
+
                         contentAlignment = Alignment.BottomCenter
                     ) {
                         val painter = rememberAsyncImagePainter(
@@ -135,7 +146,7 @@ fun TopSliderSection(
             LaunchedEffect(key1 = pagerState.currentPage) {
                 delay(6000)
                 var newPosition = pagerState.currentPage + 1
-                if (isFromProductDetail) {
+                if (!isFromProductDetail) {
                     if (newPosition > productDetailSliders.size - 1)
                         newPosition = 0
                 } else {
