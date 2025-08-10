@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -57,7 +58,9 @@ fun ProfileScreen(
 
 @Composable
 private fun getUserOrders(profileViewModel: ProfileViewModel): List<OrderFullDetail> {
-    profileViewModel.getAllDataFromServer()
+    LaunchedEffect(true) {
+        profileViewModel.getAllDataFromServer()
+    }
 
     var orderItemsList by remember {
         mutableStateOf<List<OrderFullDetail>>(emptyList())
