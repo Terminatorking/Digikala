@@ -27,23 +27,23 @@ fun ProfileOrdersSection(
 
     val waitForPurchaseOrders = orders.filter { orderFullDetail ->
         orderFullDetail.orderStatus == "0"
-    }
+    }.size
 
     val purchasedOrders = orders.filter { orderFullDetail ->
         orderFullDetail.orderStatus == "1"
-    }
+    }.size
 
     val deliveredOrders = orders.filter { orderFullDetail ->
         orderFullDetail.orderStatus == "2"
-    }
+    }.size
 
     val canceledOrders = orders.filter { orderFullDetail ->
         orderFullDetail.orderStatus == "3"
-    }
+    }.size
 
     val returnedOrders = orders.filter { orderFullDetail ->
         orderFullDetail.orderStatus == "4"
-    }
+    }.size
 
     Text(
         color = MaterialTheme.colorScheme.darkText,
@@ -57,42 +57,42 @@ fun ProfileOrdersSection(
         modifier = Modifier.clickable {
             val ordersString = Gson().toJson(orders)
             navController.navigate(
-                  Screen.TabLayoutScreen.route + "?orders=${ordersString}"
+                Screen.TabLayoutScreen.route + "?orders=${ordersString}"
             )
         },
     ) {
         item {
             ProfileOrdersItem(
                 text = stringResource(id = R.string.unpaid),
-                count = waitForPurchaseOrders.size,
+                count = waitForPurchaseOrders,
                 painter = painterResource(id = R.drawable.digi_unpaid)
             )
         }
         item {
             ProfileOrdersItem(
                 text = stringResource(id = R.string.processing),
-                count = purchasedOrders.size,
+                count = purchasedOrders,
                 painter = painterResource(id = R.drawable.digi_processing)
             )
         }
         item {
             ProfileOrdersItem(
                 text = stringResource(id = R.string.my_orders),
-                count = deliveredOrders.size,
+                count = deliveredOrders,
                 painter = painterResource(id = R.drawable.digi_delivered)
             )
         }
         item {
             ProfileOrdersItem(
                 text = stringResource(id = R.string.canceled),
-                count = canceledOrders.size,
+                count = canceledOrders,
                 painter = painterResource(id = R.drawable.digi_cancel)
             )
         }
         item {
             ProfileOrdersItem(
                 text = stringResource(id = R.string.returned),
-                count = returnedOrders.size,
+                count = returnedOrders,
                 painter = painterResource(id = R.drawable.digi_returned)
             )
         }

@@ -23,7 +23,7 @@ class DataStoreRepositoryImpl @Inject constructor(
 
     override suspend fun putString(key: String, value: String) {
         val encrypted = AES.encryptAES(value , KEY , IV)
-        Log.e("3636" , encrypted)
+        Log.i("3636" , encrypted)
         val preferencesKey = stringPreferencesKey(key)
         context.datastore.edit { preferences ->
             preferences[preferencesKey] = encrypted

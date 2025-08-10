@@ -96,7 +96,7 @@ fun CheckoutScreen(
                             cartDetail.payablePrice + shippingCost
                         )
                     )
-                    Log.e("3636", orderId)
+                    Log.i("3636", orderId)
                 }
 
                 is NetworkResult.Error -> {

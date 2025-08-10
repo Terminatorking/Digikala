@@ -41,7 +41,7 @@ fun AppConfig(
 
                             getDataStoreVariables(dataStore)
 
-                            Log.e("3636" , "refresh token")
+                            Log.i("3636" , "refresh token")
                         }
                     }
                 }

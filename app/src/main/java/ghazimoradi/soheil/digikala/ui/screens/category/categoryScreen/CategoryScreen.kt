@@ -52,7 +52,7 @@ private fun SwipeRefreshSection(
         onRefresh = {
             refreshScope.launch {
                 viewModel. refreshDataFromServer()
-                Log.e("3636", "swipeRefresh")
+                Log.i("3636", "swipeRefresh")
             }
         },
     ) {

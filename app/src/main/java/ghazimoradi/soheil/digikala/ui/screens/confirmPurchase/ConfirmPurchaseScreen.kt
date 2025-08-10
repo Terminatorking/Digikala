@@ -115,7 +115,7 @@ fun ConfirmPurchaseScreen(
                     orderId = orderId
                 )
             )
-            Log.e("3636", "Transaction ID : ${verifyPurchaseResult!!.data.ref_id}")
+            Log.i("3636", "Transaction ID : ${verifyPurchaseResult!!.data.ref_id}")
         }
     }
 

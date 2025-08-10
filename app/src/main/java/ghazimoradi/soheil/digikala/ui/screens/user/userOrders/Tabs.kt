@@ -1,42 +1,43 @@
-@file:Suppress("Deprecation")
-
 package ghazimoradi.soheil.digikala.ui.screens.user.userOrders
 
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material.ScrollableTabRow
-import androidx.compose.material.Tab
-import androidx.compose.material.TabRowDefaults
+import androidx.compose.material3.ScrollableTabRow
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.PagerState
-import com.google.accompanist.pager.pagerTabIndicatorOffset
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
 import ghazimoradi.soheil.digikala.data.models.prfile.TabItem
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.font_standard
+import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
 import ghazimoradi.soheil.digikala.utils.DigitHelper
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalPagerApi::class)
 @Composable
-fun Tabs(pagerState: PagerState, orders: List<OrderFullDetail>) {
+fun Tabs(
+    pagerState: PagerState,
+    orders: List<OrderFullDetail>
+) {
     val coroutineScope = rememberCoroutineScope()
-    val list = listOf(
+    val tabs = listOf(
         TabItem(
             "${stringResource(id = R.string.waiting_for_purchase)} (${
                 DigitHelper.digitByLocate(
-                    orders.filter { it.orderStatus == "0" }.size.toString()
+                    orders.filter {
+                        it.orderStatus == "0"
+                    }.size.toString()
                 )
             })"
         ) {
@@ -97,24 +98,27 @@ fun Tabs(pagerState: PagerState, orders: List<OrderFullDetail>) {
 
     ScrollableTabRow(
         selectedTabIndex = pagerState.currentPage,
-        backgroundColor = Color.White,
-        contentColor = MaterialTheme.colorScheme.darkText,
+        containerColor = MaterialTheme.colorScheme.searchBarBg,
         edgePadding = 0.dp,
         indicator = { tabPositions ->
-            TabRowDefaults.Indicator(
-                modifier = Modifier.pagerTabIndicatorOffset(pagerState, tabPositions),
+            TabRowDefaults.SecondaryIndicator(
+                modifier = Modifier.tabIndicatorOffset(
+                    currentTabPosition = tabPositions[pagerState.currentPage]
+                ),
                 height = 2.dp,
                 color = MaterialTheme.colorScheme.DigiKalaRed
             )
         }
     ) {
-
-        list.forEachIndexed { index, tabItem ->
+        tabs.forEachIndexed { index, tabItem ->
             Tab(
                 text = {
                     Text(
-                        text = list[index].title,
-                        color = if (pagerState.currentPage == index) Color.DarkGray else Color.LightGray,
+                        text = tabs[index].title,
+                        color = if (pagerState.currentPage == index)
+                            MaterialTheme.colorScheme.DigiKalaRed
+                        else MaterialTheme.colorScheme.darkText,
+
                         fontFamily = font_standard,
                         fontWeight = FontWeight.Medium,
                         fontSize = 14.sp,
