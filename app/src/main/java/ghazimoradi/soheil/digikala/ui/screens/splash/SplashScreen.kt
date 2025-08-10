@@ -1,73 +1,61 @@
 package ghazimoradi.soheil.digikala.ui.screens.splash
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.ui.theme.splashBg
 import ghazimoradi.soheil.digikala.R
+import ghazimoradi.soheil.digikala.data.remote.CheckConnection.isNetworkAvailable
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.Loading3Dots
+import ghazimoradi.soheil.digikala.util.Constants.isFromPurchase
+import ghazimoradi.soheil.digikala.util.Constants.purchaseOrderId
+import ghazimoradi.soheil.digikala.util.Constants.purchasePrice
 import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavHostController) {
-    Splash()
-    LaunchedEffect(true) {
-        delay(2500)
-        navController.navigate(Screen.Home.route) {
-            popUpTo(Screen.Splash.route) {
-                inclusive = true
+
+    val context = LocalContext.current
+    val isNetworkAvailable = remember {
+        isNetworkAvailable(context)
+    }
+
+    Splash(isNetworkAvailable) {
+        if (isNetworkAvailable(context)) {
+            navController.navigate(Screen.Home.route) {
+                popUpTo(Screen.Splash.route) {
+                    inclusive = true
+                }
             }
+        } else {
+            Toast.makeText(
+                context,
+                context.getString(R.string.check_net),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
-}
 
-@Composable
-fun Splash() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.splashBg),
-        contentAlignment = Alignment.Center,
-    ) {
-        Image(
-            modifier = Modifier.size(250.dp),
-            painter = painterResource(R.drawable.digi_logo),
-            contentDescription = null
-        )
-
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(100.dp),
-            contentAlignment = Alignment.BottomCenter,
-        ) {
-            Image(
-                modifier = Modifier.height(30.dp),
-                painter = painterResource(R.drawable.digi_txt_white),
-                contentDescription = null
-            )
-        }
-
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(20.dp),
-            contentAlignment = Alignment.BottomCenter,
-        ) {
-            Loading3Dots(false)
+    LaunchedEffect(true) {
+        delay(2500)
+        if (isNetworkAvailable) {
+            if (isFromPurchase) {
+                navController.navigate(
+                    Screen.ConfirmPurchase.withArgs(
+                        purchaseOrderId, purchasePrice
+                    )
+                ) {
+                    popUpTo(Screen.Splash.route) { inclusive = true }
+                }
+            } else {
+                navController.navigate(Screen.Home.route) {
+                    popUpTo(Screen.Splash.route) {
+                        inclusive = true
+                    }
+                }
+            }
         }
     }
 }
