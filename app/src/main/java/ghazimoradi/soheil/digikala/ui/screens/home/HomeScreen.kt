@@ -102,7 +102,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     SearchBarSection()
                 }
                 item {
-                    TopSliderSection(navController=navController,homeSliders = sliderList)
+                    TopSliderSection(navController = navController, homeSliders = sliderList)
                 }
                 item {
                     ShowcaseSection(navController = navController)
@@ -111,7 +111,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     AmazingOfferSection(navController = navController)
                 }
                 item {
-                    ProposalCardSection()
+                    ProposalCardSection(navController = navController)
                 }
                 item {
                     AmazingOfferSection(navController = navController, isSuperMarketAmazing = true)

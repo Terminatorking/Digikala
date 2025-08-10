@@ -1,24 +1,27 @@
 package ghazimoradi.soheil.digikala.ui.screens.home
 
 import android.util.Log
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Card
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import coil.compose.rememberAsyncImagePainter
+import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 
 @Composable
 fun ProposalCardSection(
+    navController: NavController,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
 
@@ -47,28 +50,7 @@ fun ProposalCardSection(
             .padding(MaterialTheme.spacing.small)
     ) {
         for (item in bannersList) {
-            ProposalCardItem(item.image)
+            ProposalCardItem(slider = item, navController = navController)
         }
-    }
-}
-
-@Composable
-fun ProposalCardItem(imgLink: String) {
-    Card(
-        shape = MaterialTheme.roundedShape.semiMedium,
-        modifier = Modifier
-            .fillMaxWidth(0.5f)
-            .height(140.dp)
-            .padding(
-                horizontal = MaterialTheme.spacing.small,
-                vertical = MaterialTheme.spacing.small
-            ),
-    ) {
-        Image(
-            painter = rememberAsyncImagePainter(imgLink),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillBounds
-        )
     }
 }
