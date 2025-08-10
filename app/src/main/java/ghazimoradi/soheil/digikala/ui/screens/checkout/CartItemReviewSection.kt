@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.basket.CartDetails
 import ghazimoradi.soheil.digikala.data.models.basket.CartItem
-import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
+import ghazimoradi.soheil.digikala.ui.components.icon.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText

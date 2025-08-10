@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.extentions
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

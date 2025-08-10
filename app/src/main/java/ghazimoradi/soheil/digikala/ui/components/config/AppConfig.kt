@@ -1,12 +1,12 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.config
 
 import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.utils.Constants.USER_ID
 import ghazimoradi.soheil.digikala.viewModels.DataStoreViewModel
+import ghazimoradi.soheil.digikala.utils.Constants.USER_ID
 import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.utils.Constants.USER_NAME
 import ghazimoradi.soheil.digikala.utils.Constants.USER_PASSWORD
@@ -54,7 +54,6 @@ fun AppConfig(
 private fun getDataStoreVariables(dataStore: DataStoreViewModel) {
     USER_LANGUAGE = dataStore.getUserLanguage()
     dataStore.saveUserLanguage(USER_LANGUAGE)
-
     USER_PHONE = dataStore.getUserPhoneNumber().toString()
     USER_PASSWORD = dataStore.getUserPassword().toString()
     USER_TOKEN = dataStore.getUserToken().toString()

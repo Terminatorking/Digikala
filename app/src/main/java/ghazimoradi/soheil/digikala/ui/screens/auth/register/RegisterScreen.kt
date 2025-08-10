@@ -24,7 +24,7 @@ import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
-import ghazimoradi.soheil.digikala.ui.components.LoginAndRegisterButton
+import ghazimoradi.soheil.digikala.ui.components.AuthButton
 import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
 import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -143,7 +143,7 @@ fun RegisterScreen(
         if (profileViewModel.loadingState) {
             LoadingButton()
         } else {
-            LoginAndRegisterButton(text = stringResource(id = R.string.digikala_login)) {
+            AuthButton(text = stringResource(id = R.string.digikala_login)) {
                 if (isValidPassword(profileViewModel.inputPasswordState)) {
                     profileViewModel.login()
                 } else {

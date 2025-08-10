@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.config
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable

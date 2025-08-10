@@ -29,7 +29,7 @@ import ghazimoradi.soheil.digikala.data.models.basket.CartItem
 import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.Loading
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg

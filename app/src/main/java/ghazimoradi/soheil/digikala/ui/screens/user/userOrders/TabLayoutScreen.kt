@@ -10,7 +10,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavHostController
 
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
-import ghazimoradi.soheil.digikala.ui.components.getListTypeFromGson
+import ghazimoradi.soheil.digikala.ui.components.extentions.getListTypeFromGson
 
 @Composable
 fun TabLayoutScreen(

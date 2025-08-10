@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.Loading3Dots
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading3Dots
 import ghazimoradi.soheil.digikala.ui.theme.splashBg
 
 @Composable

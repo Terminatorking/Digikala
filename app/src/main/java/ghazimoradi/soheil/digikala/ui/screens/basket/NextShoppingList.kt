@@ -24,7 +24,7 @@ import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.basket.CartItem
 import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
-import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.spacing

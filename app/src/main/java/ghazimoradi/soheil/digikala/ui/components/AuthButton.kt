@@ -17,16 +17,13 @@ import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
 @Composable
-fun LoginAndRegisterButton(
+fun AuthButton(
     text: String,
     onClick: () -> Unit,
 ) {
     Button(
         onClick = onClick,
-        colors = ButtonDefaults
-            .buttonColors(
-                MaterialTheme.colorScheme.DigiKalaRed
-            ),
+        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
         modifier = Modifier
             .fillMaxWidth()
             .height(65.dp)

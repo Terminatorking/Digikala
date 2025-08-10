@@ -31,8 +31,8 @@ import ghazimoradi.soheil.digikala.data.models.checkout.OrderDetail
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
-import ghazimoradi.soheil.digikala.ui.components.CartPriceDetailSection
-import ghazimoradi.soheil.digikala.ui.components.Loading
+import ghazimoradi.soheil.digikala.ui.components.cartPriceDetail.CartPriceDetailSection
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN

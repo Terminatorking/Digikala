@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.extentions
 
 import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable

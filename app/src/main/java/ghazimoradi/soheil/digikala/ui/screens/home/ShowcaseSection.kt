@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.RoundedIconBox
+import ghazimoradi.soheil.digikala.ui.components.icon.RoundedIcon
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import ghazimoradi.soheil.digikala.ui.theme.amber
 import ghazimoradi.soheil.digikala.ui.theme.grayCategory
@@ -45,7 +45,7 @@ fun ShowcaseSection(navController: NavController) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.digijet),
                 title = stringResource(id = R.string.digikala_jet),
                 onClick = onBoxClick(
@@ -53,7 +53,7 @@ fun ShowcaseSection(navController: NavController) {
                     url = DIGIJET_URL
                 ),
             )
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.auction),
                 title = stringResource(id = R.string.digi_style),
                 onClick = onBoxClick(
@@ -61,7 +61,7 @@ fun ShowcaseSection(navController: NavController) {
                     url = AUCTION_URL
                 ),
             )
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.digipay),
                 title = stringResource(id = R.string.digi_pay),
                 onClick = onBoxClick(
@@ -69,7 +69,7 @@ fun ShowcaseSection(navController: NavController) {
                     url = DIGIPAY_URL
                 ),
             )
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.pindo),
                 title = stringResource(id = R.string.pindo),
                 bgColor = MaterialTheme.colorScheme.amber,
@@ -87,7 +87,7 @@ fun ShowcaseSection(navController: NavController) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.shopping),
                 title = stringResource(id = R.string.digi_shopping),
                 onClick = onBoxClick(
@@ -95,7 +95,7 @@ fun ShowcaseSection(navController: NavController) {
                     url = SHOPPING_URL
                 ),
             )
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.giftcard),
                 title = stringResource(id = R.string.gift_card),
                 onClick = onBoxClick(
@@ -103,7 +103,7 @@ fun ShowcaseSection(navController: NavController) {
                     url = GIFT_CARD_URL
                 ),
             )
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.digiplus),
                 title = stringResource(id = R.string.digi_plus),
                 onClick = onBoxClick(
@@ -111,7 +111,7 @@ fun ShowcaseSection(navController: NavController) {
                     url = DIGIPLUS_URL
                 ),
             )
-            RoundedIconBox(
+            RoundedIcon(
                 image = painterResource(id = R.drawable.more),
                 title = stringResource(id = R.string.more),
                 bgColor = MaterialTheme.colorScheme.grayCategory,

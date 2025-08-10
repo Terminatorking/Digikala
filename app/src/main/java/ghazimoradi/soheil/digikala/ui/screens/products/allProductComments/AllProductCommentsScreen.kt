@@ -24,8 +24,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.Loading
-import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.utils.Constants.PRODUCT_COMMENTS
 import ghazimoradi.soheil.digikala.utils.DigitHelper

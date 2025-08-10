@@ -22,7 +22,6 @@ import ghazimoradi.soheil.digikala.utils.Constants.DIGI_CLUB
 
 @Composable
 fun CenterBannerItem(imageUrl: String) {
-
     Card(
         shape = MaterialTheme.roundedShape.semiMedium,
         modifier = Modifier

@@ -26,8 +26,8 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.models.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.Loading
-import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.utils.Constants

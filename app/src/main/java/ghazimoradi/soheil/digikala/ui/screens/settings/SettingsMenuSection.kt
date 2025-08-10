@@ -30,7 +30,7 @@ import ghazimoradi.soheil.digikala.App
 import ghazimoradi.soheil.digikala.MainActivity
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.MenuItem
+import ghazimoradi.soheil.digikala.ui.components.menu.MenuItem
 import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.GiantsOrange

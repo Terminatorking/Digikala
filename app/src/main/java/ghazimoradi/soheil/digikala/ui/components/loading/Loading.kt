@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.loading
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme

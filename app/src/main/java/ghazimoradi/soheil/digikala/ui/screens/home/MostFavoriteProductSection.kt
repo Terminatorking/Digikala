@@ -19,8 +19,8 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsOffer
-import ghazimoradi.soheil.digikala.ui.components.MostFavoriteProductsShowMore
+import ghazimoradi.soheil.digikala.ui.components.product.MostFavoriteProductsOffer
+import ghazimoradi.soheil.digikala.ui.components.product.MostFavoriteProductsShowMore
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3

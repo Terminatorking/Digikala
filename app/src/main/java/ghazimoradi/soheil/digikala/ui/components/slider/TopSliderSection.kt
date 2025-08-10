@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.slider
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -31,17 +33,18 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Scale
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.HorizontalPagerIndicator
-import com.google.accompanist.pager.rememberPagerState
 import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.theme.*
+import ghazimoradi.soheil.digikala.ui.theme.Black
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.LocalShape
+import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
+import ghazimoradi.soheil.digikala.ui.theme.White
 import kotlinx.coroutines.delay
 
 @Composable
-@Suppress("Deprecation")
 fun TopSliderSection(
     navController: NavController,
     homeSliders: List<Slider> = emptyList(),
@@ -71,14 +74,14 @@ fun TopSliderSection(
                     vertical = LocalSpacing.current.small
                 ) else Modifier.fillMaxSize()
         ) {
-            val pagerState = rememberPagerState()
+            val pagerState =
+                rememberPagerState(pageCount = { if (!isFromProductDetail) productDetailSliders.size else homeSliders.size })
             var imageUrl by remember {
                 mutableStateOf("")
             }
 
             Box {
                 HorizontalPager(
-                    count = if (!isFromProductDetail) productDetailSliders.size else homeSliders.size,
                     state = pagerState,
                     contentPadding = PaddingValues(horizontal = LocalSpacing.current.medium),
                     modifier = Modifier.fillMaxWidth()
@@ -112,7 +115,7 @@ fun TopSliderSection(
                                 Black.copy(0.6f)
                             ),
                             startY = 0f,
-                            endY = Float.POSITIVE_INFINITY // Or a specific endY based on image height
+                            endY = Float.POSITIVE_INFINITY
                         )
                         Image(
                             painter = painter,
@@ -130,7 +133,7 @@ fun TopSliderSection(
                     }
                 }
 
-                HorizontalPagerIndicator(
+                PagerIndicator(
                     pagerState = pagerState,
                     modifier = Modifier
                         .align(Alignment.BottomCenter)

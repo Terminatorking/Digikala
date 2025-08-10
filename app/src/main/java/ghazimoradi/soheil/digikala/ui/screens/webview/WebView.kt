@@ -12,8 +12,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.viewinterop.AndroidView
-import ghazimoradi.soheil.digikala.ui.components.Loading
-import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable

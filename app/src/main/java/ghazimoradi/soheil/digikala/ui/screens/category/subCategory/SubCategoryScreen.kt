@@ -12,7 +12,7 @@ import androidx.navigation.NavHostController
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.search.SearchBarSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewModels.CategoryViewModel
 

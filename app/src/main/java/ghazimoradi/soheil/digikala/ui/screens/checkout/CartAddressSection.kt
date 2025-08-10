@@ -33,8 +33,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
-import ghazimoradi.soheil.digikala.ui.components.Loading
+import ghazimoradi.soheil.digikala.ui.components.icon.IconWithRotate
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText

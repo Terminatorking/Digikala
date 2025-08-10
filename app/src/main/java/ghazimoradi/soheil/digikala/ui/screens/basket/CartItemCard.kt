@@ -43,7 +43,7 @@ import ghazimoradi.soheil.digikala.data.models.basket.CartItem
 import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.DetailRow
-import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
+import ghazimoradi.soheil.digikala.ui.components.icon.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocateAndSeparator
 import ghazimoradi.soheil.digikala.viewModels.BasketViewModel

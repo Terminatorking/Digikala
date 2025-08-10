@@ -34,7 +34,7 @@ import com.patrykandpatrick.vico.core.entry.ChartEntryModel
 import com.patrykandpatrick.vico.core.entry.entryModelOf
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.productDetail.Price
-import ghazimoradi.soheil.digikala.ui.components.getListTypeFromGson
+import ghazimoradi.soheil.digikala.ui.components.extentions.getListTypeFromGson
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.icon

@@ -24,9 +24,9 @@ import ghazimoradi.soheil.digikala.data.models.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.Loading
-import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
-import ghazimoradi.soheil.digikala.ui.components.TopSliderSection
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.slider.TopSliderSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewModels.ProductDetailViewModel
 import kotlinx.coroutines.flow.collectLatest

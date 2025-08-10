@@ -23,11 +23,11 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.Loading
-import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
-import ghazimoradi.soheil.digikala.ui.components.TopSliderSection
-import ghazimoradi.soheil.digikala.ui.components.getScreenHeight
-import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.ui.components.search.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.slider.TopSliderSection
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
+import ghazimoradi.soheil.digikala.ui.components.extentions.refreshDataFromServer
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.utils.LocaleUtils

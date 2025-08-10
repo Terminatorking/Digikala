@@ -24,7 +24,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.IconWithBadge
+import ghazimoradi.soheil.digikala.ui.components.icon.IconWithBadge
+import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.bottomBar
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.selectedBottomBar
@@ -84,6 +85,7 @@ fun BottomNavigationBar(
                     selected = selected,
                     onClick = { onItemClick(item) },
                     colors = NavigationBarItemDefaults.colors(
+                        indicatorColor = Transparent,
                         selectedIconColor = MaterialTheme.colorScheme.selectedBottomBar,
                         selectedTextColor = MaterialTheme.colorScheme.selectedBottomBar,
                         disabledIconColor = MaterialTheme.colorScheme.unSelectedBottomBar,

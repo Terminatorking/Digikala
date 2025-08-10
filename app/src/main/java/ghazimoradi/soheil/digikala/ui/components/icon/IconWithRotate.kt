@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.icon
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size

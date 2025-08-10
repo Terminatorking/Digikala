@@ -14,8 +14,8 @@ import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ghazimoradi.soheil.digikala.navigation.BottomNavigationBar
 import ghazimoradi.soheil.digikala.navigation.SetupNavGraph
-import ghazimoradi.soheil.digikala.ui.components.AppConfig
-import ghazimoradi.soheil.digikala.ui.components.ChangeStatusBarColor
+import ghazimoradi.soheil.digikala.ui.components.config.AppConfig
+import ghazimoradi.soheil.digikala.ui.components.config.ChangeStatusBarColor
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaTheme
 import ghazimoradi.soheil.digikala.utils.LocaleUtils
 import ghazimoradi.soheil.digikala.utils.Constants.ENGLISH_LANG

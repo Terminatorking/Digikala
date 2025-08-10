@@ -35,7 +35,7 @@ import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.productDetail.NewComment
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.Loading
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
 import ghazimoradi.soheil.digikala.ui.theme.Black
 import ghazimoradi.soheil.digikala.ui.theme.amber

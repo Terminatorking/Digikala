@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.components.IconWithRotate
+import ghazimoradi.soheil.digikala.ui.components.icon.IconWithRotate
 import ghazimoradi.soheil.digikala.ui.theme.*
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 

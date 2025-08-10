@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.loading
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue

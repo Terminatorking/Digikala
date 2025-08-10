@@ -15,8 +15,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
-import ghazimoradi.soheil.digikala.ui.components.SearchBarSection
-import ghazimoradi.soheil.digikala.ui.components.refreshDataFromServer
+import ghazimoradi.soheil.digikala.ui.components.search.SearchBarSection
+import ghazimoradi.soheil.digikala.ui.components.extentions.refreshDataFromServer
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewModels.CategoryViewModel
 import kotlinx.coroutines.launch
