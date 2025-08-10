@@ -119,7 +119,7 @@ fun SetupNavGraph(navController: NavHostController) {
         }
 
         composable(
-            route = Screen.SubCategoryScreen.route + "/{categoryId}",
+            route = Screen.SubCategory.route + "/{categoryId}",
             arguments = listOf(
                 navArgument("categoryId") {
                     type = NavType.StringType

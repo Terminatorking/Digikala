@@ -48,7 +48,7 @@ fun CategoryItem(
             modifier = Modifier
                 .padding(horizontal = MaterialTheme.spacing.small)
                 .clickable {
-                      navController.navigate(Screen.SubCategoryScreen.withArgs(categoryId))
+                      navController.navigate(Screen.SubCategory.withArgs(categoryId))
                 },
             text = stringResource(id = R.string.see_all),
             style = MaterialTheme.typography.h5,

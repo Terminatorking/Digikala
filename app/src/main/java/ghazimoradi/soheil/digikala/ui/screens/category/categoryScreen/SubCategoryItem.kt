@@ -45,7 +45,7 @@ fun SubCategoryItem(
                 horizontal = MaterialTheme.spacing.extraSmall
             )
             .clickable {
-                 navController.navigate(Screen.SubCategoryScreen.withArgs(item._id))
+                 navController.navigate(Screen.SubCategory.withArgs(item._id))
             },
         shape = MaterialTheme.roundedShape.small
     ) {

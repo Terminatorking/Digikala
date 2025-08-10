@@ -117,7 +117,7 @@ fun SwipeRefreshSection(viewModel: HomeViewModel, navController: NavController) 
                     AmazingOfferSection(navController = navController, isSuperMarketAmazing = true)
                 }
                 item {
-                    CategoryListSection()
+                    CategoryListSection(navController = navController)
                 }
                 item {
                     CenterBannerSection(1)
