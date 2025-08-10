@@ -8,9 +8,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.navigation.NavHostController
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
+import ghazimoradi.soheil.digikala.ui.components.getListTypeFromGson
 
 @Composable
 fun TabLayoutScreen(
@@ -21,8 +21,7 @@ fun TabLayoutScreen(
         mutableStateOf<List<OrderFullDetail>>(emptyList())
     }
 
-    val orderListType = object : TypeToken<List<OrderFullDetail>>() {}.type
-    orderList = Gson().fromJson(orders, orderListType)
+    orderList = getListTypeFromGson<OrderFullDetail>(jsonString = orders)
 
     val pagerState = rememberPagerState(pageCount = { 5 })
 

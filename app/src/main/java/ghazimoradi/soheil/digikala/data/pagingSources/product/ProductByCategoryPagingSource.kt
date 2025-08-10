@@ -45,7 +45,7 @@ class ProductByCategoryPagingSource(
             )
 
         } catch (e: Exception) {
-            Log.d("3636", "error:$e ")
+            Log.e("3636", "error:$e ", e)
             LoadResult.Error(e)
         }
     }

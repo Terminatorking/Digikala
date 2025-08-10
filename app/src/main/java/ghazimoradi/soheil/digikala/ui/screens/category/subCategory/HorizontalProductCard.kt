@@ -33,6 +33,7 @@ import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
+import ghazimoradi.soheil.digikala.ui.components.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.amber
@@ -42,6 +43,7 @@ import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.h6
+import ghazimoradi.soheil.digikala.ui.theme.icon
 import ghazimoradi.soheil.digikala.ui.theme.semiDarkText
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.utils.DigitHelper.applyDiscount
@@ -168,8 +170,8 @@ fun HorizontalProductCard(
                         )
                     }
 
-                    Column() {
-                        Row() {
+                    Column {
+                        Row {
                             Text(
                                 text = digitBySeparator(
                                     digitByLocate(
@@ -182,8 +184,12 @@ fun HorizontalProductCard(
                                 style = MaterialTheme.typography.body2,
                                 fontWeight = FontWeight.SemiBold,
                             )
-                            Image(
-                                painter = painterResource(id = R.drawable.toman),
+                            Icon(
+                                tint = MaterialTheme.colorScheme.icon,
+                                painter = logoChangeByLanguage(
+                                    enLogo = R.drawable.dollar,
+                                    faLogo = R.drawable.toman
+                                ),
                                 contentDescription = "",
                                 modifier = Modifier
                                     .size(MaterialTheme.spacing.semiLarge)

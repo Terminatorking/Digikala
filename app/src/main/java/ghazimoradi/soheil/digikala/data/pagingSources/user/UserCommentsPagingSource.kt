@@ -8,7 +8,7 @@ import ghazimoradi.soheil.digikala.repositories.CommentRepository
 
 class UserCommentsPagingSource(
     private val repository: CommentRepository,
-    val token : String
+    val token: String
 ) : PagingSource<Int, Comment>() {
 
     override fun getRefreshKey(state: PagingState<Int, Comment>): Int? {
@@ -34,7 +34,7 @@ class UserCommentsPagingSource(
             )
 
         } catch (e: Exception) {
-            Log.d("3636", "error:$e ")
+            Log.e("3636", "error:$e ", e)
             LoadResult.Error(e)
         }
     }

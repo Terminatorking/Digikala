@@ -30,12 +30,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.patrykandpatrick.vico.core.entry.ChartEntryModel
 import com.patrykandpatrick.vico.core.entry.entryModelOf
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.productDetail.Price
+import ghazimoradi.soheil.digikala.ui.components.getListTypeFromGson
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.icon
@@ -53,8 +52,7 @@ fun ProductPriceChartScreen(
         mutableStateOf<List<Price>>(emptyList())
     }
 
-    val priceListType = object : TypeToken<List<Price>>() {}.type
-    priceList = Gson().fromJson(jsonString, priceListType)
+    priceList = getListTypeFromGson(jsonString)
 
     val chartModel = createChartEntryModel(priceList)
 

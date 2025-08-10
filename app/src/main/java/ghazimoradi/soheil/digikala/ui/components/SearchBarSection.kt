@@ -66,8 +66,7 @@ private fun SearchContent() {
 
         Icon(
             tint = MaterialTheme.colorScheme.icon,
-            modifier = Modifier
-                .height(24.dp),
+            modifier = Modifier.height(24.dp),
             painter = painterResource(id = R.drawable.search),
             contentDescription = ""
         )

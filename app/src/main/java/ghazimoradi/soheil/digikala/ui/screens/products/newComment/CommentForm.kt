@@ -87,9 +87,7 @@ fun CommentForm(
         onValueChange = { _sliderValue ->
             sliderValue = _sliderValue
         },
-        onValueChangeFinished = {
-            Log.d("3636", "sliderValue = $sliderValue")
-        },
+        onValueChangeFinished = {},
         valueRange = 1f..6f,
         steps = 4,
         colors = SliderDefaults.colors(
