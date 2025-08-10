@@ -27,7 +27,6 @@ import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocateAndSeparator
 
 @Composable
 fun IconWithBadge(
-    tint: Color,
     cartCounter: Int,
     icon: Painter
 ) {
@@ -41,7 +40,6 @@ fun IconWithBadge(
             contentAlignment = Alignment.TopCenter
         ) {
             Icon(
-                tint = tint,
                 painter = icon,
                 contentDescription = "",
                 modifier = Modifier

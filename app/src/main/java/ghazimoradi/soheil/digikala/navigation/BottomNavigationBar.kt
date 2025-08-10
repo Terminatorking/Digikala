@@ -3,10 +3,11 @@ package ghazimoradi.soheil.digikala.navigation
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -72,67 +73,59 @@ fun BottomNavigationBar(
     val showBottomBar = route in items.map { bottomNavItem -> bottomNavItem.route }
 
     if (showBottomBar) {
-        BottomNavigation(
+        NavigationBar(
             modifier = Modifier.height(60.dp),
-            backgroundColor = MaterialTheme.colorScheme.bottomBar,
-            elevation = 5.dp
+            containerColor = MaterialTheme.colorScheme.bottomBar,
         ) {
             val cartCounter by viewModel.currentCartItemsCount.collectAsState(0)
-            items.forEachIndexed { index, bottomNavItem ->
-                val selected = bottomNavItem.route == route
-                BottomNavigationItem(
+            items.forEachIndexed { index, item ->
+                val selected = item.route == backStackEntry.value?.destination?.route
+                NavigationBarItem(
                     selected = selected,
-                    onClick = { onItemClick.invoke(bottomNavItem) },
+                    onClick = { onItemClick(item) },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = MaterialTheme.colorScheme.selectedBottomBar,
+                        selectedTextColor = MaterialTheme.colorScheme.selectedBottomBar,
+                        disabledIconColor = MaterialTheme.colorScheme.unSelectedBottomBar,
+                        disabledTextColor = MaterialTheme.colorScheme.unSelectedBottomBar
+                    ),
                     icon = {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             if (selected) {
                                 if (index == 2 && cartCounter > 0) {
                                     IconWithBadge(
-                                        tint = MaterialTheme.colorScheme.selectedBottomBar,
                                         cartCounter = cartCounter,
-                                        icon = bottomNavItem.selectedIcon
+                                        icon = item.selectedIcon
                                     )
                                 } else {
                                     Icon(
-                                        tint = MaterialTheme.colorScheme.selectedBottomBar,
                                         modifier = Modifier.height(24.dp),
-                                        painter = bottomNavItem.selectedIcon,
-                                        contentDescription = bottomNavItem.name
-                                    )
-                                }
-                                Text(
-                                    color = MaterialTheme.colorScheme.selectedBottomBar,
-                                    text = bottomNavItem.name,
-                                    textAlign = TextAlign.Center,
-                                    style = MaterialTheme.typography.h6,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier.padding(top = 5.dp)
-                                )
-                            } else {
-                                if (index == 2 && cartCounter > 0) {
-                                    IconWithBadge(
-                                        tint = MaterialTheme.colorScheme.unSelectedBottomBar,
-                                        cartCounter = cartCounter,
-                                        icon = bottomNavItem.deSelectedIcon
-                                    )
-                                } else {
-                                    Icon(
-                                        tint = MaterialTheme.colorScheme.unSelectedBottomBar,
-                                        modifier = Modifier.height(24.dp),
-                                        painter = bottomNavItem.deSelectedIcon,
-                                        contentDescription = bottomNavItem.name
+                                        painter = item.selectedIcon,
+                                        contentDescription = item.name
                                     )
                                 }
 
-                                Text(
-                                    color = MaterialTheme.colorScheme.unSelectedBottomBar,
-                                    text = bottomNavItem.name,
-                                    textAlign = TextAlign.Center,
-                                    style = MaterialTheme.typography.h6,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier.padding(top = 5.dp)
-                                )
+                            } else {
+                                if (index == 2 && cartCounter > 0) {
+                                    IconWithBadge(
+                                        cartCounter = cartCounter,
+                                        icon = item.deSelectedIcon
+                                    )
+                                } else {
+                                    Icon(
+                                        modifier = Modifier.height(24.dp),
+                                        painter = item.deSelectedIcon,
+                                        contentDescription = item.name
+                                    )
+                                }
                             }
+                            Text(
+                                text = item.name,
+                                textAlign = TextAlign.Center,
+                                style = MaterialTheme.typography.h6,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.padding(top = 5.dp)
+                            )
                         }
                     }
                 )
