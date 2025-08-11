@@ -20,6 +20,8 @@ import ghazimoradi.soheil.digikala.ui.theme.DigiKalaTheme
 import ghazimoradi.soheil.digikala.utils.LocaleUtils
 import ghazimoradi.soheil.digikala.utils.Constants.ENGLISH_LANG
 import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
+import ghazimoradi.soheil.digikala.utils.Constants.afterPurchaseUrl
+import ghazimoradi.soheil.digikala.utils.Constants.isFromPurchase
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -58,6 +60,21 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (
+            intent != null &&
+            intent.data != null &&
+            intent.data?.scheme == "truelearn" &&
+            intent.data?.host == "digikala"
+        ) {
+            val url = intent.data.toString()
+            Log.e("3636", "URL: $url")
+            isFromPurchase = true
+            afterPurchaseUrl = url
         }
     }
 }
