@@ -90,6 +90,7 @@ fun ConfirmPurchaseScreen(
                 PaymentRequest(
                     merchant_id = ZARINPAL_MERCHANT_ID,
                     amount = orderPrice + "0",
+                    //deep link
                     callback_url = "truelearn://digikala",
                     description = "خرید تستی از دیجی کالا",
                 )
