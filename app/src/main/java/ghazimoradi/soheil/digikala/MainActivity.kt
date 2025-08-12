@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DigiKalaTheme {
                 navController = rememberNavController()
-                ChangeStatusBarColor(navController = navController)
+                ChangeStatusBarColor(window = window, navController = navController)
                 AppConfig()
                 LocaleUtils.setLocale(LocalContext.current, USER_LANGUAGE)
 

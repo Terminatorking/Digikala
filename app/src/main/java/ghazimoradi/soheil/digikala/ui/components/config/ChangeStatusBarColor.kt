@@ -1,29 +1,39 @@
 package ghazimoradi.soheil.digikala.ui.components.config
 
+import android.os.Build
+import android.view.Window
+import android.view.WindowInsets
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.toArgb
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.statusBarColor
 
 @Composable
-@Suppress("Deprecation")
-fun ChangeStatusBarColor(navController: NavHostController) {
+fun ChangeStatusBarColor(window: Window, navController: NavHostController) {
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val systemUiController = rememberSystemUiController()
 
-    when (navBackStackEntry?.destination?.route) {
-        Screen.Splash.route -> {
-            systemUiController.setStatusBarColor(color = MaterialTheme.colorScheme.DigiKalaRed)
-        }
+    val statusBarColor = when (navBackStackEntry?.destination?.route) {
+        Screen.Splash.route -> MaterialTheme.colorScheme.DigiKalaRed.toArgb()
+        else -> MaterialTheme.colorScheme.statusBarColor.toArgb()
+    }
+    // For Android 14 and above
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+        window.decorView.setOnApplyWindowInsetsListener { view, insets ->
+            val statusBarInsets = insets.getInsets(WindowInsets.Type.statusBars())
+            view.setBackgroundColor(statusBarColor)
 
-        else -> {
-            systemUiController.setStatusBarColor(color = MaterialTheme.colorScheme.statusBarColor)
+            view.setPadding(0, statusBarInsets.top, 0, 0)
+            insets
         }
+    } else {
+        @Suppress("Deprecation")
+        // For Android 14 and below
+        window.statusBarColor = statusBarColor
     }
 }
