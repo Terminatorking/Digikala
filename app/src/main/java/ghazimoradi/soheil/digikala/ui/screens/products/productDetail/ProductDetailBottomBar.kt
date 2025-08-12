@@ -2,13 +2,23 @@ package ghazimoradi.soheil.digikala.ui.screens.products.productDetail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -32,7 +42,19 @@ import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.*
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.White
+import ghazimoradi.soheil.digikala.ui.theme.body1
+import ghazimoradi.soheil.digikala.ui.theme.body2
+import ghazimoradi.soheil.digikala.ui.theme.bottomBar
+import ghazimoradi.soheil.digikala.ui.theme.darkText
+import ghazimoradi.soheil.digikala.ui.theme.gray
+import ghazimoradi.soheil.digikala.ui.theme.h5
+import ghazimoradi.soheil.digikala.ui.theme.h6
+import ghazimoradi.soheil.digikala.ui.theme.icon
+import ghazimoradi.soheil.digikala.ui.theme.roundedShape
+import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.utils.DigitHelper
 import ghazimoradi.soheil.digikala.utils.DigitHelper.applyDiscount
 import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
@@ -78,8 +100,8 @@ fun ProductDetailBottomBar(
         }
     }
 
-    BottomNavigation(
-        backgroundColor = MaterialTheme.colorScheme.bottomBar,
+    NavigationBar(
+        containerColor = MaterialTheme.colorScheme.bottomBar,
         modifier = Modifier.height(70.dp)
     ) {
 

@@ -4,16 +4,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.ModalBottomSheetLayout
-import androidx.compose.material.ModalBottomSheetValue
-import androidx.compose.material.rememberModalBottomSheetState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -22,6 +21,7 @@ import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.viewModels.UserFavoriteProductListViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserFavoriteProductListSection(
     navController: NavHostController,
@@ -30,54 +30,52 @@ fun UserFavoriteProductListSection(
 
     val allFavoriteItems by viewModel.allFavoriteItems.collectAsState(emptyList())
 
-    val coroutineScope = rememberCoroutineScope()
-
     var selectedItem by remember {
         mutableStateOf(FavItem("", 1, "", "", 1, "", 1.0))
     }
 
     val modalSheetState = rememberModalBottomSheetState(
-        initialValue = ModalBottomSheetValue.Hidden,
-        confirmValueChange = {
-            it != ModalBottomSheetValue.HalfExpanded
-        },
-        skipHalfExpanded = false
+        skipPartiallyExpanded = false // Similar to M2's skipHalfExpanded
     )
 
-    ModalBottomSheetLayout(
-        sheetState = modalSheetState,
-        sheetContent = {
-            DeleteFavoriteProductBottomSheetContent(
-                viewModel = viewModel,
-                selectedItem = selectedItem,
-                coroutineScope = coroutineScope,
-                modalSheetState = modalSheetState,
-            )
-        }
-    ) {
-        LazyColumn(
-            modifier = Modifier
-                .padding(MaterialTheme.spacing.small)
-                .fillMaxSize()
-        ) {
-            if (allFavoriteItems.isEmpty()) {
-                item { EmptyUserFavoriteProductListContent() }
-            } else {
-                item {
-                    CountUserFavoriteProductsSection(allFavoriteItems.size)
-                }
+    var showBottomSheet by remember { mutableStateOf(false) }
 
-                items(allFavoriteItems) { favItem ->
-                    UserFavoriteProductItemCard(
-                        navController,
-                        favItem,
-                        coroutineScope,
-                        modalSheetState
-                    ) {
-                        selectedItem = it
-                    }
+    LazyColumn(
+        modifier = Modifier
+            .padding(MaterialTheme.spacing.small)
+            .fillMaxSize()
+    ) {
+        if (allFavoriteItems.isEmpty()) {
+            item { EmptyUserFavoriteProductListContent() }
+        } else {
+            item {
+                CountUserFavoriteProductsSection(allFavoriteItems.size)
+            }
+
+            items(allFavoriteItems) { favItem ->
+                UserFavoriteProductItemCard(
+                    navController,
+                    favItem,
+                ) {
+                    selectedItem = it
+                    showBottomSheet = true
                 }
             }
+        }
+    }
+
+    if (showBottomSheet) {
+        ModalBottomSheet(
+            onDismissRequest = { showBottomSheet = false },
+            sheetState = modalSheetState,
+        ) {
+            DeleteFavoriteProductBottomSheetContent(
+                onDelete = {
+                    viewModel.removeFavoriteItem(selectedItem)
+                    showBottomSheet = false
+                },
+                onCancel = { showBottomSheet = false }
+            )
         }
     }
 }

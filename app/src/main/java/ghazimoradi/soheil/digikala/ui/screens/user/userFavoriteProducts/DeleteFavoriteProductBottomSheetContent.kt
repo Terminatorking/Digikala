@@ -1,7 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.user.userFavoriteProducts
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.ModalBottomSheetState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -20,31 +18,23 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.h5
-import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
-import ghazimoradi.soheil.digikala.viewModels.UserFavoriteProductListViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Composable
 fun DeleteFavoriteProductBottomSheetContent(
-    viewModel: UserFavoriteProductListViewModel,
-    selectedItem: FavItem,
-    coroutineScope: CoroutineScope,
-    modalSheetState: ModalBottomSheetState,
+    onDelete: () -> Unit = {},
+    onCancel: () -> Unit = {}
 ) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .height(120.dp)
-            .background(MaterialTheme.colorScheme.mainBg)
     ) {
         Spacer(modifier = Modifier.height(MaterialTheme.spacing.biggerSmall))
         Text(
@@ -60,12 +50,8 @@ fun DeleteFavoriteProductBottomSheetContent(
         ) {
             OutlinedButton(
                 onClick = {
-                    viewModel.removeFavoriteItem(selectedItem)
-                    coroutineScope.launch {
-                        if (modalSheetState.isVisible) {
-                            modalSheetState.hide()
-                        }
-                    }
+
+                    onDelete()
                 },
                 border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.DigiKalaRed),
                 shape = MaterialTheme.roundedShape.semiSmall,
@@ -80,11 +66,7 @@ fun DeleteFavoriteProductBottomSheetContent(
 
             OutlinedButton(
                 onClick = {
-                    coroutineScope.launch {
-                        if (modalSheetState.isVisible) {
-                            modalSheetState.hide()
-                        }
-                    }
+                    onCancel()
                 },
                 border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.DigiKalaRed),
                 shape = MaterialTheme.roundedShape.semiSmall,

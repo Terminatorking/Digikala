@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ModalBottomSheetState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.HorizontalDivider
@@ -56,15 +55,11 @@ import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.utils.Constants.PERSIAN_LANG
 import ghazimoradi.soheil.digikala.utils.Constants.USER_LANGUAGE
 import ghazimoradi.soheil.digikala.utils.DigitHelper
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Composable
 fun UserFavoriteProductItemCard(
     navController: NavHostController,
     favItem: FavItem,
-    coroutineScope: CoroutineScope,
-    modalSheetState: ModalBottomSheetState,
     onItemSelected: (FavItem) -> Unit
 ) {
     Column(
@@ -223,14 +218,7 @@ fun UserFavoriteProductItemCard(
                         modifier = Modifier
                             .weight(0.5f)
                             .clickable {
-                                coroutineScope.launch {
-                                    onItemSelected(favItem)
-                                    if (modalSheetState.isVisible) {
-                                        modalSheetState.hide()
-                                    } else {
-                                        modalSheetState.show()
-                                    }
-                                }
+                                onItemSelected(favItem)
                             },
                     ) {
                         Icon(

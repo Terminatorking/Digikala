@@ -9,9 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,7 +34,6 @@ import ghazimoradi.soheil.digikala.data.models.address.UserAddress
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.icon.IconWithRotate
-import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
