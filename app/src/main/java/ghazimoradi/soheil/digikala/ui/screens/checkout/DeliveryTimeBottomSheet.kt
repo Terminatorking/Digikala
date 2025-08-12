@@ -1,7 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.checkout
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,10 +19,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.orange
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
-import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
+import ghazimoradi.soheil.digikala.ui.theme.orange
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.utils.DigitHelper.digitByLocate
 
@@ -33,7 +31,6 @@ fun DeliveryTimeBottomSheet() {
         modifier = Modifier
             .fillMaxWidth()
             .height(120.dp)
-            .background(MaterialTheme.colorScheme.searchBarBg)
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),
