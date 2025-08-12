@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,27 +32,33 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.buy.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.components.cartPriceDetail.CartPriceDetailSection
+import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.ui.components.project.ProjectPullToRefresh
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
 import ghazimoradi.soheil.digikala.viewModels.BasketViewModel
 import ghazimoradi.soheil.digikala.viewModels.CheckoutViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class) // Opt-in for M3 ModalBottomSheet
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CheckoutScreen(
     navController: NavHostController,
     basketViewModel: BasketViewModel = hiltViewModel(),
     checkoutViewModel: CheckoutViewModel = hiltViewModel()
 ) {
+    val coroutineScope = rememberCoroutineScope()
     val cartDetail by basketViewModel.cartDetail.collectAsState()
     val currentCartItems by basketViewModel.ourCartItems.collectAsState()
 
     var shippingCost by remember { mutableIntStateOf(0) }
     var loading by remember { mutableStateOf(false) }
+    var isRefreshing by remember { mutableStateOf(false) }
 
     var address by remember { mutableStateOf("") }
     var addressName by remember { mutableStateOf("") }
@@ -65,19 +72,22 @@ fun CheckoutScreen(
     }
 
     val shippingCostResult by checkoutViewModel.shippingCost.collectAsState()
-    when (shippingCostResult) {
-        is NetworkResult.Success -> {
-            shippingCost = shippingCostResult.data ?: 0
-            loading = false
-        }
 
-        is NetworkResult.Error -> {
-            loading = false
-            Log.e("3636", "CheckoutScreen error : ${shippingCostResult.message}")
-        }
+    LaunchedEffect(shippingCostResult) {
+        when (shippingCostResult) {
+            is NetworkResult.Success -> {
+                shippingCost = shippingCostResult.data ?: 0
+                loading = false
+            }
 
-        is NetworkResult.Loading -> {
-            loading = true
+            is NetworkResult.Error -> {
+                loading = false
+                Log.e("3636", "CheckoutScreen error : ${shippingCostResult.message}")
+            }
+
+            is NetworkResult.Loading -> {
+                loading = true
+            }
         }
     }
 
@@ -112,66 +122,84 @@ fun CheckoutScreen(
 
     var showBottomSheet by remember { mutableStateOf(false) }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.mainBg),
-        contentAlignment = Alignment.TopCenter
-    ) {
-        LazyColumn {
-            item {
-                CheckoutTopBarSection(navController)
+    ProjectPullToRefresh(
+        isRefreshing = isRefreshing,
+        onRefresh = {
+            loading = true
+            isRefreshing = true
+            if (address.isNotBlank())
+                checkoutViewModel.getShippingCost(address)
+            else
+                checkoutViewModel.getShippingCost("")
+
+            coroutineScope.launch {
+                delay(1500)
+                isRefreshing = false
             }
-            item {
-                CartAddressSection(navController) { addressList ->
-                    if (addressList.isNotEmpty()) {
-                        address = addressList[0].address
-                        addressName = addressList[0].name
-                        addressPhone = addressList[0].phone
-                    } else {
-                        address = ""
-                        addressName = ""
-                        addressPhone = ""
+        },
+    ) {
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.mainBg),
+            contentAlignment = Alignment.TopCenter
+        ) {
+            LazyColumn {
+                item {
+                    CheckoutTopBarSection(navController)
+                }
+                item {
+                    CartAddressSection(navController) { addressList ->
+                        if (addressList.isNotEmpty()) {
+                            address = addressList[0].address
+                            addressName = addressList[0].name
+                            addressPhone = addressList[0].phone
+                        } else {
+                            address = ""
+                            addressName = ""
+                            addressPhone = ""
+                        }
                     }
                 }
-            }
-            item {
-                CartItemReviewSection(cartDetail, currentCartItems) {
-                    showBottomSheet = !showBottomSheet
+                item {
+                    CartItemReviewSection(cartDetail, currentCartItems) {
+                        showBottomSheet = !showBottomSheet
+                    }
+                }
+                item {
+                    CartInfoSection()
+                }
+                item {
+                    CartPriceDetailSection(cartDetail, shippingCost)
                 }
             }
-            item {
-                CartInfoSection()
-            }
-            item {
-                CartPriceDetailSection(cartDetail, shippingCost)
-            }
-        }
 
-        if (loading) {
-            Loading(height = 65.dp)
-        } else {
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.BottomCenter)
-                    .padding(
-                        start = MaterialTheme.spacing.biggerSmall,
-                        end = MaterialTheme.spacing.biggerSmall,
-                    )
-            ) {
-                BuyProcessContinue(cartDetail.payablePrice, shippingCost) {
-                    checkoutViewModel.addNewOrder(
-                        OrderDetail(
-                            orderAddress = address,
-                            orderProducts = currentCartItems,
-                            orderTotalDiscount = cartDetail.totalDiscount,
-                            orderTotalPrice = cartDetail.payablePrice + shippingCost,
-                            orderUserPhone = addressPhone,
-                            orderUserName = addressName,
-                            token = USER_TOKEN
+            if (loading) {
+                Loading(height = getScreenHeight())
+            } else {
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.BottomCenter)
+                        .padding(
+                            start = MaterialTheme.spacing.biggerSmall,
+                            end = MaterialTheme.spacing.biggerSmall,
                         )
-                    )
+                ) {
+                    BuyProcessContinue(cartDetail.payablePrice, shippingCost) {
+                        checkoutViewModel.addNewOrder(
+                            OrderDetail(
+                                orderAddress = address,
+                                orderProducts = currentCartItems,
+                                orderTotalDiscount = cartDetail.totalDiscount,
+                                orderTotalPrice = cartDetail.payablePrice + shippingCost,
+                                orderUserPhone = addressPhone,
+                                orderUserName = addressName,
+                                token = USER_TOKEN
+                            )
+                        )
+                    }
                 }
             }
         }
