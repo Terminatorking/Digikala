@@ -9,6 +9,7 @@ import  ghazimoradi.soheil.digikala.repositories.AddressRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import ghazimoradi.soheil.digikala.utils.Constants.USER_TOKEN
 
 @HiltViewModel
 class AddressViewModel @Inject constructor(
@@ -31,4 +32,7 @@ class AddressViewModel @Inject constructor(
             addNewAddressResponse.emit(repository.setNewAddress(address))
         }
     }
+
+    override fun getAllDataFromServer() = getUserAddressList(USER_TOKEN)
+
 }

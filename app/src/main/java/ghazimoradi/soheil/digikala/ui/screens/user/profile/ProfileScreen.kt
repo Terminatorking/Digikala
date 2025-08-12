@@ -1,11 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.user.profile
 
 import android.util.Log
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -13,19 +8,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.CenterBannerItem
-import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.screens.auth.login.LoginScreen
 import ghazimoradi.soheil.digikala.ui.screens.auth.register.RegisterScreen
-import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewModels.DataStoreViewModel
 import ghazimoradi.soheil.digikala.viewModels.ProfileViewModel
 
@@ -35,10 +23,10 @@ fun ProfileScreen(
     dataStore: DataStoreViewModel = hiltViewModel(),
     profileViewModel: ProfileViewModel = hiltViewModel()
 ) {
-
     val userToken = dataStore.getUserToken()
+
     if (!userToken.isNullOrBlank() && userToken != "null") {
-        Profile(navController, getUserOrders(profileViewModel = profileViewModel))
+        ProfileScreenContent(navController, getUserOrders(profileViewModel = profileViewModel))
     } else {
         when (profileViewModel.screenState) {
             ProfileScreenState.LOGIN_STATE -> {
@@ -46,7 +34,10 @@ fun ProfileScreen(
             }
 
             ProfileScreenState.PROFILE_STATE -> {
-                Profile(navController, getUserOrders(profileViewModel = profileViewModel))
+                ProfileScreenContent(
+                    navController,
+                    getUserOrders(profileViewModel = profileViewModel)
+                )
             }
 
             ProfileScreenState.REGISTER_STATE -> {
@@ -80,45 +71,4 @@ private fun getUserOrders(profileViewModel: ProfileViewModel): List<OrderFullDet
         is NetworkResult.Loading -> {}
     }
     return orderItemsList
-}
-
-@Composable
-fun Profile(
-    navController: NavHostController,
-    orders: List<OrderFullDetail>,
-) {
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.mainBg)
-            .padding(bottom = 60.dp),
-    ) {
-        item {
-            TopBarSection(navController)
-        }
-        item {
-            ProfileHeaderSection(navController)
-        }
-        item {
-            ProfileMiddleSection(navController)
-        }
-        item {
-            ProfileOrdersSection(navController, orders)
-        }
-        item {
-            CenterBannerItem(
-                painter = painterResource(R.drawable.digiclub1),
-                navController
-            )
-        }
-        item {
-            ProfileMenuSection(navController)
-        }
-        item {
-            CenterBannerItem(
-                painter = painterResource(R.drawable.digiclub2),
-                navController
-            )
-        }
-    }
 }

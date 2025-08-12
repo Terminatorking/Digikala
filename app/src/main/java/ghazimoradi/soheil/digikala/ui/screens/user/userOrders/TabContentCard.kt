@@ -39,7 +39,7 @@ fun TabContentCard(item: OrderFullDetail) {
         shape = MaterialTheme.roundedShape.small,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(MaterialTheme.spacing.extraSmall)
+            .padding(MaterialTheme.spacing.small)
     ) {
         Column {
             Row(
