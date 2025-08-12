@@ -1,7 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.auth.register
 
 import android.util.Log
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -26,6 +25,7 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
 import ghazimoradi.soheil.digikala.ui.components.AuthButton
 import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
+import ghazimoradi.soheil.digikala.ui.components.extentions.showToast
 import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
@@ -68,11 +68,7 @@ fun RegisterScreen(
                             profileViewModel.screenState = ProfileScreenState.PROFILE_STATE
                         }
                     }
-                    Toast.makeText(
-                        context,
-                        loginResponse.message,
-                        Toast.LENGTH_LONG
-                    ).show()
+                    loginResponse.message.toString().showToast(context)
                     profileViewModel.loadingState = false
                 }
 
@@ -147,11 +143,7 @@ fun RegisterScreen(
                 if (isValidPassword(profileViewModel.inputPasswordState)) {
                     profileViewModel.login()
                 } else {
-                    Toast.makeText(
-                        context,
-                        context.resources.getText(R.string.password_format_error),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    context.resources.getText(R.string.password_format_error).showToast(context)
                 }
             }
         }

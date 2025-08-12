@@ -1,6 +1,5 @@
 package ghazimoradi.soheil.digikala.ui.screens.auth.login
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
@@ -31,6 +30,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.AuthButton
 import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
 import ghazimoradi.soheil.digikala.ui.components.TopBarSection
+import ghazimoradi.soheil.digikala.ui.components.extentions.removeAllSpaces
+import ghazimoradi.soheil.digikala.ui.components.extentions.showToast
 import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
@@ -110,16 +111,12 @@ fun LoginScreen(
 
         item {
             AuthButton(text = stringResource(id = R.string.digikala_entry)) {
-                if (isValidEmail(profileViewModel.inputPhoneState)
-                    || isValidPhoneNumber(profileViewModel.inputPhoneState)
+                if (isValidEmail(profileViewModel.inputPhoneState.removeAllSpaces())
+                    || isValidPhoneNumber(profileViewModel.inputPhoneState.removeAllSpaces())
                 ) {
                     profileViewModel.screenState = ProfileScreenState.REGISTER_STATE
                 } else {
-                    Toast.makeText(
-                        context,
-                        context.resources.getText(R.string.login_error),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    context.resources.getText(R.string.login_error).showToast(context)
                 }
             }
         }

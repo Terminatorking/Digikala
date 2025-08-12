@@ -1,7 +1,6 @@
 package ghazimoradi.soheil.digikala.ui.screens.products.newComment
 
 import android.util.Log
-import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,6 +36,7 @@ import ghazimoradi.soheil.digikala.data.models.productDetail.NewComment
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
+import ghazimoradi.soheil.digikala.ui.components.extentions.showToast
 import ghazimoradi.soheil.digikala.ui.theme.Black
 import ghazimoradi.soheil.digikala.ui.theme.amber
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -243,25 +243,13 @@ fun CommentForm(
                     )
                     if (newComment.title.isBlank()) {
                         loading = false
-                        Toast.makeText(
-                            context,
-                            context.getString(R.string.comment_title_null),
-                            Toast.LENGTH_LONG
-                        ).show()
+                        context.getString(R.string.comment_title_null).showToast(context)
                     } else if (newComment.star == 0) {
                         loading = false
-                        Toast.makeText(
-                            context,
-                            context.getString(R.string.comment_star_null),
-                            Toast.LENGTH_LONG
-                        ).show()
+                        context.getString(R.string.comment_star_null).showToast(context)
                     } else if (newComment.description.isBlank()) {
                         loading = false
-                        Toast.makeText(
-                            context,
-                            context.getString(R.string.comment_body_null),
-                            Toast.LENGTH_LONG
-                        ).show()
+                        context.getString(R.string.comment_body_null).showToast(context)
                     } else {
                         viewModel.setNewComment(newComment)
                     }

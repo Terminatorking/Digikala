@@ -1,6 +1,5 @@
 package ghazimoradi.soheil.digikala.ui.screens.splash
 
-import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -9,6 +8,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.CheckConnection.isNetworkAvailable
 import ghazimoradi.soheil.digikala.navigation.Screen
+import ghazimoradi.soheil.digikala.ui.components.extentions.showToast
 import ghazimoradi.soheil.digikala.utils.Constants.isFromPurchase
 import ghazimoradi.soheil.digikala.utils.Constants.purchaseOrderId
 import ghazimoradi.soheil.digikala.utils.Constants.purchasePrice
@@ -30,11 +30,7 @@ fun SplashScreen(navController: NavHostController) {
                 }
             }
         } else {
-            Toast.makeText(
-                context,
-                context.getString(R.string.check_net),
-                Toast.LENGTH_LONG
-            ).show()
+            context.getString(R.string.check_net).showToast(context)
         }
     }
 

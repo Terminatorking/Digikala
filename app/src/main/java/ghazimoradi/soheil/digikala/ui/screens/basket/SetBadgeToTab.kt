@@ -39,7 +39,6 @@ fun SetBadgeToTab(
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.mainBg,
             modifier = Modifier
-                // .background(color = color)
                 .padding(horizontal = MaterialTheme.spacing.semiSmall)
         )
     }

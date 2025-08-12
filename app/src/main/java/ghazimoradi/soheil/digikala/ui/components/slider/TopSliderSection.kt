@@ -75,7 +75,12 @@ fun TopSliderSection(
                 ) else Modifier.fillMaxSize()
         ) {
             val pagerState =
-                rememberPagerState(pageCount = { if (!isFromProductDetail) productDetailSliders.size else homeSliders.size })
+                rememberPagerState(
+                    pageCount = {
+                        if (!isFromProductDetail) productDetailSliders.size else homeSliders.size
+                    },
+                )
+
             var imageUrl by remember {
                 mutableStateOf("")
             }
@@ -87,7 +92,10 @@ fun TopSliderSection(
                     modifier = Modifier.fillMaxWidth()
                 ) { index ->
                     imageUrl =
-                        if (!isFromProductDetail) productDetailSliders[index].image else homeSliders[index].image
+                        if (!isFromProductDetail)
+                            productDetailSliders[index].image
+                        else homeSliders[index].image
+
                     Box(
                         modifier = if (!isFromProductDetail)
                             Modifier.fillMaxSize()
