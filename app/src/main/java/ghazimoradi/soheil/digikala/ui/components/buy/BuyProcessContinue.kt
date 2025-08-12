@@ -55,7 +55,7 @@ fun BuyProcessContinue(
         ) {
             Button(
                 onClick = onClick,
-                colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
+                colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.digiKalaRed),
                 shape = MaterialTheme.roundedShape.small
             ) {
                 Text(

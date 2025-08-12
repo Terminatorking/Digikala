@@ -1,7 +1,7 @@
 [versions]
-accompanistSwiperefresh = "0.36.0"
 agp = "8.12.0"
 coilCompose = "2.7.0"
+#noinspection NewerVersionAvailable
 chart = "1.13.0"
 converterGson = "3.0.0"
 datastorePreferences = "1.1.7"
@@ -16,7 +16,6 @@ activityCompose = "1.10.1"
 composeBom = "2025.07.00"
 loggingInterceptor = "5.1.0"
 lottieCompose = "6.6.7"
-material = "1.8.3"
 materialIconsExtended = "1.7.8"
 navigationCompose = "2.9.3"
 pagingCompose = "3.3.6"
@@ -25,17 +24,12 @@ roomRuntime = "2.7.2"
 ksp-version = "2.2.0-2.0.2"
 
 [libraries]
-accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanistSwiperefresh" }
-accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanistSwiperefresh" }
-accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanistSwiperefresh" }
-accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSwiperefresh" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-material = { module = "androidx.compose.material:material", version.ref = "material" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }

@@ -13,10 +13,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.data.models.home.AmazingItem
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaLightRed
 import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaLightGreen
 
 @Composable
 fun AmazingOfferSection(
@@ -67,10 +67,10 @@ fun AmazingOfferSection(
         LazyRow(
             modifier = if (isSuperMarketAmazing)
                 Modifier
-                    .background(MaterialTheme.colorScheme.DigiKalaLightGreen)
+                    .background(MaterialTheme.colorScheme.digiKalaLightGreen)
                     .fillMaxWidth()
             else Modifier
-                .background(MaterialTheme.colorScheme.DigiKalaLightRed)
+                .background(MaterialTheme.colorScheme.digiKalaLightRed)
                 .fillMaxWidth()
         ) {
             if (isSuperMarketAmazing) {

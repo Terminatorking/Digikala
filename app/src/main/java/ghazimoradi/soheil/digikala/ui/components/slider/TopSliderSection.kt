@@ -37,7 +37,7 @@ import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.theme.Black
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.LocalShape
 import ghazimoradi.soheil.digikala.ui.theme.LocalSpacing
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
@@ -146,7 +146,7 @@ fun TopSliderSection(
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
                         .padding(LocalSpacing.current.semiLarge),
-                    activeColor = MaterialTheme.colorScheme.DigiKalaRed,
+                    activeColor = MaterialTheme.colorScheme.digiKalaRed,
                     inactiveColor = White,
                     indicatorWidth = LocalSpacing.current.small,
                     indicatorHeight = LocalSpacing.current.small,

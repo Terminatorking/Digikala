@@ -24,7 +24,7 @@ import com.patrykandpatrick.vico.core.entry.ChartEntryModel
 import com.patrykandpatrick.vico.core.scroll.InitialScroll
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.productDetail.Price
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.veryExtraSmall
 
 @Composable
@@ -42,11 +42,11 @@ fun PriceLineChart(
             chart = lineChart(
                 lines = listOf(
                     lineSpec(
-                        lineColor = MaterialTheme.colorScheme.DigiKalaRed,
+                        lineColor = MaterialTheme.colorScheme.digiKalaRed,
                         lineBackgroundShader = verticalGradient(
                             arrayOf(
-                                MaterialTheme.colorScheme.DigiKalaRed.copy(0.5f),
-                                MaterialTheme.colorScheme.DigiKalaRed.copy(alpha = 0f)
+                                MaterialTheme.colorScheme.digiKalaRed.copy(0.5f),
+                                MaterialTheme.colorScheme.digiKalaRed.copy(alpha = 0f)
                             ),
                         )
                     )
@@ -56,7 +56,7 @@ fun PriceLineChart(
             startAxis = rememberStartAxis(),
             bottomAxis = createHorizontalAxis {
                 guideline = LineComponent(
-                    color = MaterialTheme.colorScheme.DigiKalaRed.toArgb(),
+                    color = MaterialTheme.colorScheme.digiKalaRed.toArgb(),
                     thicknessDp = 1.dp.value,
                     shape = DashedShape(
                         shape = Shapes.rectShape,

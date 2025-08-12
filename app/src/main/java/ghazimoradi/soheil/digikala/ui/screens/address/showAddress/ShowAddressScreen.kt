@@ -28,7 +28,7 @@ import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.utils.Constants
 import ghazimoradi.soheil.digikala.viewModels.AddressViewModel
@@ -76,7 +76,7 @@ fun ShowAddressScreen(
                 onClick = {
                     navController.navigate(Screen.AddAddress.route)
                 },
-                containerColor = MaterialTheme.colorScheme.DigiKalaRed
+                containerColor = MaterialTheme.colorScheme.digiKalaRed
             ) {
                 Icon(
                     Icons.Filled.Add,

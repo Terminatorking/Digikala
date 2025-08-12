@@ -18,8 +18,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.h5
@@ -53,13 +53,13 @@ fun DeleteFavoriteProductBottomSheetContent(
 
                     onDelete()
                 },
-                border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.DigiKalaRed),
+                border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.digiKalaRed),
                 shape = MaterialTheme.roundedShape.semiSmall,
                 modifier = Modifier.size(width = 150.dp, height = 50.dp)
             ) {
                 Text(
                     text = stringResource(id = R.string.remove_fav_item),
-                    color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                    color = MaterialTheme.colorScheme.digiKalaDarkRed,
                     style = MaterialTheme.typography.h5
                 )
             }
@@ -68,13 +68,13 @@ fun DeleteFavoriteProductBottomSheetContent(
                 onClick = {
                     onCancel()
                 },
-                border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.DigiKalaRed),
+                border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.digiKalaRed),
                 shape = MaterialTheme.roundedShape.semiSmall,
                 modifier = Modifier.size(width = 150.dp, height = 50.dp)
             ) {
                 Text(
                     text = stringResource(id = R.string.cancel),
-                    color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                    color = MaterialTheme.colorScheme.digiKalaDarkRed,
                     style = MaterialTheme.typography.h3
                 )
             }

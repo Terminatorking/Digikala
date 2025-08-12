@@ -2,26 +2,18 @@ package ghazimoradi.soheil.digikala.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
-import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import ghazimoradi.soheil.digikala.R
-
-//Elevation
-val LocalElevation = compositionLocalOf { Elevation() }
-
-val MaterialTheme.elevation: Elevation
-    @Composable
-    @ReadOnlyComposable
-    get() = LocalElevation.current
 
 //Shape
 val LocalShape = compositionLocalOf { RoundedShape() }
@@ -62,13 +54,13 @@ val ColorScheme.mainBg: Color
 
 val ColorScheme.statusBarColor: Color
     @Composable
-    get() = if (isLight) White else Black
+    get() = if (isLight) BrickRed else Black
 
 val ColorScheme.splashBg: Color
     @Composable
     get() = ImperialRed
 
-val ColorScheme.CursorColor: Color
+val ColorScheme.cursorColor: Color
     @Composable
     get() = TealGreen
 
@@ -84,7 +76,7 @@ val ColorScheme.bottomBar: Color
     @Composable
     get() = if (isLight) White else DarkCharcoal
 
-val ColorScheme.Gold: Color
+val ColorScheme.gold: Color
     @Composable
     get() = SelectiveYellow
 
@@ -104,19 +96,19 @@ val ColorScheme.grayCategory: Color
     @Composable
     get() = Isabelline
 
-val ColorScheme.DigiKalaLightRed: Color
+val ColorScheme.digiKalaLightRed: Color
     @Composable
     get() = if (isLight) Desire else RedViolet
 
-val ColorScheme.DigiKalaLightRedText: Color
+val ColorScheme.digiKalaLightRedText: Color
     @Composable
     get() = if (isLight) Desire else White
 
-val ColorScheme.DigiKalaDarkRed: Color
+val ColorScheme.digiKalaDarkRed: Color
     @Composable
     get() = Crimson
 
-val ColorScheme.DigiKalaRed: Color
+val ColorScheme.digiKalaRed: Color
     @Composable
     get() = ImperialRed
 
@@ -132,7 +124,7 @@ val ColorScheme.orange: Color
     @Composable
     get() = GiantsOrange
 
-val ColorScheme.DigiKalaLightGreen: Color
+val ColorScheme.digiKalaLightGreen: Color
     @Composable
     get() = if (isLight) YellowGreen else ArmyGreen
 
@@ -189,15 +181,6 @@ val Typography.body2: TextStyle
         fontFamily = font_standard,
         fontWeight = FontWeight.Light,
         fontSize = 14.sp,
-        lineHeight = 25.sp
-    )
-
-val Typography.h1: TextStyle
-    @Composable
-    get() = TextStyle(
-        fontFamily = font_standard,
-        fontWeight = FontWeight.Medium,
-        fontSize = 20.sp,
         lineHeight = 25.sp
     )
 

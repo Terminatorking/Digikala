@@ -36,7 +36,7 @@ import ghazimoradi.soheil.digikala.data.models.checkout.ConfirmPurchase
 import ghazimoradi.soheil.digikala.data.models.purchase.PaymentRequest
 import ghazimoradi.soheil.digikala.data.models.purchase.PaymentVerificationRequest
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h5
@@ -197,14 +197,14 @@ fun ConfirmPurchaseScreen(
                     }
                 }
             },
-            border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.DigiKalaRed),
+            border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.digiKalaRed),
             shape = MaterialTheme.roundedShape.small,
             colors = ButtonDefaults.buttonColors(White)
         ) {
             Text(
                 modifier = Modifier.padding(MaterialTheme.spacing.small),
                 text = stringResource(id = R.string.return_to_home_page),
-                color = MaterialTheme.colorScheme.DigiKalaRed,
+                color = MaterialTheme.colorScheme.digiKalaRed,
                 style = MaterialTheme.typography.h5,
                 fontWeight = FontWeight.Bold,
             )

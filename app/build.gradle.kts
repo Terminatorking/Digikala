@@ -68,8 +68,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    //Material2
-    implementation(libs.androidx.material)
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -91,13 +89,6 @@ dependencies {
     implementation(libs.lottie.compose)
     //Coil Load Image From Url
     implementation(libs.coil.compose)
-    //Swipe refresh
-    implementation(libs.accompanist.swiperefresh)
-    //System Ui Controller
-    implementation(libs.accompanist.systemuicontroller)
-    //Accompanist-Pager
-    implementation(libs.accompanist.pager)
-    implementation(libs.accompanist.pager.indicators)
     //paging3
     implementation(libs.androidx.paging.compose)
     //chart

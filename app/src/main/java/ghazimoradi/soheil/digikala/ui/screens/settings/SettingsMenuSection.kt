@@ -32,7 +32,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.menu.MenuItem
 import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.GiantsOrange
 import ghazimoradi.soheil.digikala.ui.theme.Manatee
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
@@ -179,11 +179,11 @@ fun SettingsMenuSection(
                 Icon(
                     Icons.AutoMirrored.Outlined.Logout,
                     contentDescription = "",
-                    tint = MaterialTheme.colorScheme.DigiKalaRed
+                    tint = MaterialTheme.colorScheme.digiKalaRed
                 )
             },
             text = stringResource(id = R.string.sign_out),
-            color = MaterialTheme.colorScheme.DigiKalaRed,
+            color = MaterialTheme.colorScheme.digiKalaRed,
             addCompose = {},
             haveDivider = false
         ) {

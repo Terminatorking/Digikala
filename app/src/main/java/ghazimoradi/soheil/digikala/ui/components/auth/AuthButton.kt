@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
@@ -23,7 +23,7 @@ fun AuthButton(
 ) {
     Button(
         onClick = onClick,
-        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
+        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.digiKalaRed),
         modifier = Modifier
             .fillMaxWidth()
             .height(65.dp)

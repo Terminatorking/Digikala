@@ -18,8 +18,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightGreen
-import ghazimoradi.soheil.digikala.ui.theme.Gold
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaLightGreen
+import ghazimoradi.soheil.digikala.ui.theme.gold
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
@@ -63,7 +63,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
                 painter = painterResource(id = R.drawable.star),
                 contentDescription = "",
                 modifier = Modifier.size(15.dp),
-                tint = MaterialTheme.colorScheme.Gold
+                tint = MaterialTheme.colorScheme.gold
             )
             Text(
                 text = digitByLocate(item.star.toString()),
@@ -124,7 +124,7 @@ fun ProductDetailHeaderSection(item: ProductDetail) {
                 painter = painterResource(id = R.drawable.like),
                 contentDescription = "",
                 modifier = Modifier.size(20.dp),
-                tint = MaterialTheme.colorScheme.DigiKalaLightGreen
+                tint = MaterialTheme.colorScheme.digiKalaLightGreen
             )
 
 

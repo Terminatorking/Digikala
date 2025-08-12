@@ -246,7 +246,7 @@ fun CartItemCard(
                             Icon(
                                 painterResource(id = R.drawable.ic_increase_24),
                                 contentDescription = "increase icon",
-                                tint = MaterialTheme.colorScheme.DigiKalaRed,
+                                tint = MaterialTheme.colorScheme.digiKalaRed,
                                 modifier = Modifier.clickable {
                                     count.intValue++
                                     viewModel.changeCartItemCount(item.itemId, count.intValue)
@@ -257,7 +257,7 @@ fun CartItemCard(
                                 text = digitByLocateAndSeparator(count.intValue.toString()),
                                 style = MaterialTheme.typography.body2,
                                 fontWeight = FontWeight.SemiBold,
-                                color = MaterialTheme.colorScheme.DigiKalaRed,
+                                color = MaterialTheme.colorScheme.digiKalaRed,
                                 modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
                             )
 
@@ -265,7 +265,7 @@ fun CartItemCard(
                                 Icon(
                                     painterResource(id = R.drawable.digi_trash),
                                     contentDescription = "increase icon",
-                                    tint = MaterialTheme.colorScheme.DigiKalaRed,
+                                    tint = MaterialTheme.colorScheme.digiKalaRed,
                                     modifier = Modifier.clickable {
                                         viewModel.removeCartItem(item)
                                     },
@@ -274,7 +274,7 @@ fun CartItemCard(
                                 Icon(
                                     painterResource(id = R.drawable.ic_decrease_24),
                                     contentDescription = "increase icon",
-                                    tint = MaterialTheme.colorScheme.DigiKalaRed,
+                                    tint = MaterialTheme.colorScheme.digiKalaRed,
                                     modifier = Modifier.clickable {
                                         count.intValue--
                                         viewModel.changeCartItemCount(item.itemId, count.intValue)
@@ -291,7 +291,7 @@ fun CartItemCard(
                             Icon(
                                 painterResource(id = R.drawable.ic_baseline_shopping_cart_checkout),
                                 contentDescription = "increase icon",
-                                tint = MaterialTheme.colorScheme.DigiKalaRed,
+                                tint = MaterialTheme.colorScheme.digiKalaRed,
                                 modifier = Modifier
                                     .size(28.dp)
                                     .clickable {
@@ -317,7 +317,7 @@ fun CartItemCard(
 
                         style = MaterialTheme.typography.extraSmall,
                         fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.DigiKalaRed,
+                        color = MaterialTheme.colorScheme.digiKalaRed,
                     )
                     Row {
                         Text(
@@ -381,13 +381,13 @@ fun CartItemCard(
                         text = stringResource(R.string.delete_from_list),
                         fontWeight = FontWeight.Light,
                         style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colorScheme.DigiKalaRed
+                        color = MaterialTheme.colorScheme.digiKalaRed
                     )
 
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "",
-                        tint = MaterialTheme.colorScheme.DigiKalaRed
+                        tint = MaterialTheme.colorScheme.digiKalaRed
                     )
                 }
             }

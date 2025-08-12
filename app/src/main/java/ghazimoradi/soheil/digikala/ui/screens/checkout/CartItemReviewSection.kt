@@ -28,7 +28,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.basket.CartDetails
 import ghazimoradi.soheil.digikala.data.models.basket.CartItem
 import ghazimoradi.soheil.digikala.ui.components.icon.IconWithRotate
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
@@ -85,7 +85,7 @@ fun CartItemReviewSection(
                     Icon(
                         modifier = Modifier
                             .size(16.dp),
-                        tint = MaterialTheme.colorScheme.DigiKalaLightRedText,
+                        tint = MaterialTheme.colorScheme.digiKalaLightRedText,
                         painter = painterResource(id = R.drawable.k1),
                         contentDescription = ""
                     )
@@ -96,7 +96,7 @@ fun CartItemReviewSection(
                         text = stringResource(id = R.string.fast_send),
                         textAlign = TextAlign.Start,
                         style = MaterialTheme.typography.extraSmall,
-                        color = MaterialTheme.colorScheme.DigiKalaLightRedText,
+                        color = MaterialTheme.colorScheme.digiKalaLightRedText,
                     )
 
                     Spacer(modifier = Modifier.width(MaterialTheme.spacing.medium))

@@ -42,8 +42,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -112,7 +112,7 @@ fun SuggestionItemCard(
                                 .padding(MaterialTheme.spacing.extraSmall)
                                 .size(26.dp)
                                 .clip(CircleShape)
-                                .border(1.dp, MaterialTheme.colorScheme.DigiKalaRed, CircleShape)
+                                .border(1.dp, MaterialTheme.colorScheme.digiKalaRed, CircleShape)
                                 .clickable {
                                     onAddClick(item)
                                 }
@@ -120,7 +120,7 @@ fun SuggestionItemCard(
                             Icon(
                                 imageVector = Icons.Default.Add,
                                 contentDescription = "",
-                                tint = MaterialTheme.colorScheme.DigiKalaRed
+                                tint = MaterialTheme.colorScheme.digiKalaRed
                             )
                         }
                     }
@@ -190,7 +190,7 @@ fun SuggestionItemCard(
                             .width(40.dp)
                             .height(24.dp)
                             .background(
-                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.digiKalaDarkRed,
                                 shape = CircleShape
                             )
                             .wrapContentWidth(Alignment.CenterHorizontally)

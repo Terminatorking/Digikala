@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
@@ -55,7 +55,7 @@ fun IconWithBadge(
                 Text(
                     text = digitByLocateAndSeparator(cartCounter.toString()),
                     modifier = Modifier
-                        .background(color = MaterialTheme.colorScheme.DigiKalaRed)
+                        .background(color = MaterialTheme.colorScheme.digiKalaRed)
                         .height(16.dp)
                         .padding(horizontal = MaterialTheme.spacing.semiSmall),
                     textAlign = TextAlign.Center,

@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading3Dots
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
 import ghazimoradi.soheil.digikala.ui.theme.spacing
 
@@ -20,7 +20,7 @@ fun LoadingButton() {
         onClick = { },
         colors = ButtonDefaults
             .buttonColors(
-                MaterialTheme.colorScheme.DigiKalaRed
+                MaterialTheme.colorScheme.digiKalaRed
             ),
         modifier = Modifier
             .fillMaxWidth()

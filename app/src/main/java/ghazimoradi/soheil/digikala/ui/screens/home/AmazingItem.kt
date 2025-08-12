@@ -38,8 +38,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.home.AmazingItem
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRedText
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaLightRedText
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -92,7 +92,7 @@ fun AmazingItem(
                         .padding(start = MaterialTheme.spacing.small),
                     style = MaterialTheme.typography.extraSmall,
                     fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.DigiKalaLightRedText,
+                    color = MaterialTheme.colorScheme.digiKalaLightRedText,
                 )
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -171,7 +171,7 @@ fun AmazingItem(
                             .width(40.dp)
                             .height(24.dp)
                             .background(
-                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.digiKalaDarkRed,
                                 shape = CircleShape
                             )
                             .wrapContentWidth(Alignment.CenterHorizontally)

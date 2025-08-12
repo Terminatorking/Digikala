@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.statusBarColor
 
 @Composable
@@ -19,7 +19,7 @@ fun ChangeStatusBarColor(window: Window, navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
 
     val statusBarColor = when (navBackStackEntry?.destination?.route) {
-        Screen.Splash.route -> MaterialTheme.colorScheme.DigiKalaRed.toArgb()
+        Screen.Splash.route -> MaterialTheme.colorScheme.digiKalaRed.toArgb()
         else -> MaterialTheme.colorScheme.statusBarColor.toArgb()
     }
     // For Android 14 and above

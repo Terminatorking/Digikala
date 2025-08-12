@@ -23,7 +23,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.extraSmall
@@ -66,7 +66,7 @@ fun ProfileOrdersItem(
                     Text(
                         text = digitByLocateAndSeparator(count.toString()),
                         modifier = Modifier
-                            .background(color = MaterialTheme.colorScheme.DigiKalaRed)
+                            .background(color = MaterialTheme.colorScheme.digiKalaRed)
                             .height(20.dp)
                             .padding(horizontal = MaterialTheme.spacing.semiSmall),
                         textAlign = TextAlign.Center,

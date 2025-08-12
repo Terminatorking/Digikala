@@ -8,8 +8,8 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import ghazimoradi.soheil.digikala.ui.theme.CursorColor
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.cursorColor
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.cyan
 import ghazimoradi.soheil.digikala.ui.theme.darkText
@@ -40,13 +40,13 @@ fun ProjectTextField(
         colors = TextFieldDefaults.colors(
             unfocusedTextColor = MaterialTheme.colorScheme.darkText,
             focusedTextColor = MaterialTheme.colorScheme.darkText,
-            errorIndicatorColor = MaterialTheme.colorScheme.DigiKalaRed,
+            errorIndicatorColor = MaterialTheme.colorScheme.digiKalaRed,
             focusedIndicatorColor = MaterialTheme.colorScheme.cyan,
             unfocusedIndicatorColor = Transparent,
             disabledIndicatorColor = Transparent,
             focusedContainerColor = MaterialTheme.colorScheme.searchBarBg,
             unfocusedContainerColor = MaterialTheme.colorScheme.searchBarBg,
-            cursorColor = MaterialTheme.colorScheme.CursorColor,
+            cursorColor = MaterialTheme.colorScheme.cursorColor,
         ),
         placeholder = {
             Text(

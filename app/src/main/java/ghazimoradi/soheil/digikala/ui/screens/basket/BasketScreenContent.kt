@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.Red
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h6
@@ -78,7 +78,7 @@ fun BasketScreenContent(
                     onClick = {
                         selectedTabIndex = index
                     },
-                    selectedContentColor = MaterialTheme.colorScheme.DigiKalaRed,
+                    selectedContentColor = MaterialTheme.colorScheme.digiKalaRed,
                     unselectedContentColor = MaterialTheme.colorScheme.gray,
                     text = {
                         Row {

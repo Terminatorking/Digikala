@@ -33,7 +33,6 @@ fun LoginOrRegisterSection(navController: NavController) {
             .padding(MaterialTheme.spacing.medium)
             .clickable { navController.navigate(Screen.Profile.route) },
         shape = MaterialTheme.roundedShape.small,
-        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.extraSmall),
     ) {
         Row(
             modifier = Modifier

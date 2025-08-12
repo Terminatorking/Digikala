@@ -23,7 +23,7 @@ fun SetBadgeToTab(
     var color = MaterialTheme.colorScheme.gray
 
     if (selectedTabIndex == index) {
-        color = MaterialTheme.colorScheme.DigiKalaRed
+        color = MaterialTheme.colorScheme.digiKalaRed
     }
 
     Card(

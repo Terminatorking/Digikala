@@ -16,7 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.h6
@@ -34,7 +34,7 @@ fun PriceRow(
     var ourPrice = price
 
     if (discount > 0) {
-        color = MaterialTheme.colorScheme.DigiKalaRed
+        color = MaterialTheme.colorScheme.digiKalaRed
         ourPrice = "(${digitByLocateAndSeparator(discount.toString())}%) $price"
     }
 

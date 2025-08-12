@@ -16,15 +16,15 @@ fun DigiKalaTheme(
 ) {
     val colors = if (darkTheme) {
         darkColorScheme(
-            primary = Color(0xFFed1b34),
-            onPrimary = Color(0xFF3700B3),
-            secondary = Color(0xFF03DAC5)
+            primary = ImperialRed,
+            onPrimary = InterdimensionalBlue,
+            secondary = RobinEggBlue
         )
     } else {
         lightColorScheme(
-            primary = Color(0xFFCE3C4D),
-            onPrimary = Color(0xFF3700B3),
-            secondary = Color(0xFF03DAC5)
+            primary = BrickRed,
+            onPrimary = InterdimensionalBlue,
+            secondary = RobinEggBlue
         )
     }
 

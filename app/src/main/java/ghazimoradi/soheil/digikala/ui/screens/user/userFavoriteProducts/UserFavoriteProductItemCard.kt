@@ -39,8 +39,8 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.amber
 import ghazimoradi.soheil.digikala.ui.theme.body2
@@ -157,7 +157,7 @@ fun UserFavoriteProductItemCard(
                             .width(40.dp)
                             .height(24.dp)
                             .background(
-                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.digiKalaDarkRed,
                                 shape = CircleShape
                             )
                             .wrapContentWidth(Alignment.CenterHorizontally)
@@ -224,11 +224,11 @@ fun UserFavoriteProductItemCard(
                         Icon(
                             painter = painterResource(id = R.drawable.digi_trash),
                             contentDescription = "digi trash",
-                            tint = MaterialTheme.colorScheme.DigiKalaRed
+                            tint = MaterialTheme.colorScheme.digiKalaRed
                         )
                         Text(
                             text = stringResource(id = R.string.remove_from_list),
-                            color = MaterialTheme.colorScheme.DigiKalaRed,
+                            color = MaterialTheme.colorScheme.digiKalaRed,
                             fontWeight = FontWeight.SemiBold,
                             style = MaterialTheme.typography.h6
                         )

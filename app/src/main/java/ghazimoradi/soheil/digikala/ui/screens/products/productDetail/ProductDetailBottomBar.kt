@@ -42,8 +42,8 @@ import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.body1
 import ghazimoradi.soheil.digikala.ui.theme.body2
@@ -134,7 +134,7 @@ fun ProductDetailBottomBar(
                                 )
                             )
                         },
-                        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
+                        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.digiKalaRed),
                         shape = MaterialTheme.roundedShape.small,
                     ) {
                         Text(
@@ -153,7 +153,7 @@ fun ProductDetailBottomBar(
                             modifier = Modifier
                                 .size(40.dp)
                                 .clip(shape = CircleShape)
-                                .background(MaterialTheme.colorScheme.DigiKalaDarkRed),
+                                .background(MaterialTheme.colorScheme.digiKalaDarkRed),
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
@@ -179,7 +179,7 @@ fun ProductDetailBottomBar(
                                     .clickable {
                                         navController.navigate(Screen.Basket.route)
                                     },
-                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.digiKalaDarkRed,
                                 style = MaterialTheme.typography.h5,
                             )
                         }
@@ -192,7 +192,7 @@ fun ProductDetailBottomBar(
                     Box(
                         modifier = Modifier
                             .background(
-                                color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                                color = MaterialTheme.colorScheme.digiKalaDarkRed,
                                 shape = CircleShape
                             ).wrapContentWidth(Alignment.CenterHorizontally)
                             .wrapContentHeight(Alignment.CenterVertically),

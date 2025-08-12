@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductColor
-import ghazimoradi.soheil.digikala.ui.theme.CursorColor
+import ghazimoradi.soheil.digikala.ui.theme.cursorColor
 import ghazimoradi.soheil.digikala.ui.theme.Transparent
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
@@ -35,7 +35,7 @@ fun ColorChipItem(
             if (isSelected)
                 Modifier
                     .padding(MaterialTheme.spacing.extraSmall)
-                    .border(width = 1.dp, MaterialTheme.colorScheme.CursorColor, CircleShape)
+                    .border(width = 1.dp, MaterialTheme.colorScheme.cursorColor, CircleShape)
             else Modifier
                 .padding(MaterialTheme.spacing.extraSmall)
                 .border(width = 1.dp, Transparent, CircleShape),

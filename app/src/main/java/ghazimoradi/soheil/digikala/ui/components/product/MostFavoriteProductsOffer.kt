@@ -37,7 +37,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.navigation.Screen
 import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.White
 import ghazimoradi.soheil.digikala.ui.theme.body2
 import ghazimoradi.soheil.digikala.ui.theme.cyan
@@ -157,7 +157,7 @@ fun MostFavoriteProductsOffer(
                                 .width(40.dp)
                                 .height(24.dp)
                                 .background(
-                                    color = MaterialTheme.colorScheme.DigiKalaDarkRed,
+                                    color = MaterialTheme.colorScheme.digiKalaDarkRed,
                                     shape = CircleShape
                                 )
                                 .wrapContentWidth(Alignment.CenterHorizontally)

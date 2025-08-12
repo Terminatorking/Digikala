@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
 import ghazimoradi.soheil.digikala.data.models.prfile.TabItem
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.font_standard
 import ghazimoradi.soheil.digikala.ui.theme.searchBarBg
@@ -106,7 +106,7 @@ fun Tabs(
                     currentTabPosition = tabPositions[pagerState.currentPage]
                 ),
                 height = 2.dp,
-                color = MaterialTheme.colorScheme.DigiKalaRed
+                color = MaterialTheme.colorScheme.digiKalaRed
             )
         }
     ) {
@@ -116,7 +116,7 @@ fun Tabs(
                     Text(
                         text = tabs[index].title,
                         color = if (pagerState.currentPage == index)
-                            MaterialTheme.colorScheme.DigiKalaRed
+                            MaterialTheme.colorScheme.digiKalaRed
                         else MaterialTheme.colorScheme.darkText,
 
                         fontFamily = font_standard,

@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.ui.components.icon.IconWithRotate
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaLightRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaLightRed
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h6
 import ghazimoradi.soheil.digikala.ui.theme.roundedShape
@@ -50,7 +50,7 @@ fun AmazingShowMoreItem() {
 
             IconWithRotate(
                 painterResource(id = R.drawable.show_more),
-                MaterialTheme.colorScheme.DigiKalaLightRed
+                MaterialTheme.colorScheme.digiKalaLightRed
             )
 
             Spacer(modifier = Modifier.height(20.dp))

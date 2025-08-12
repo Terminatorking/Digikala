@@ -33,7 +33,7 @@ import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.address.AddAddressRequest
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.ui.components.project.ProjectTextField
-import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
+import ghazimoradi.soheil.digikala.ui.theme.digiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.h3
 import ghazimoradi.soheil.digikala.ui.theme.h4
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
@@ -200,7 +200,7 @@ fun AddAddressScreen(
                         .fillMaxWidth()
                         .height(50.dp),
                     shape = MaterialTheme.roundedShape.small,
-                    colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.DigiKalaRed),
+                    colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.digiKalaRed),
                 ) {
                     Text(
                         modifier = Modifier,
