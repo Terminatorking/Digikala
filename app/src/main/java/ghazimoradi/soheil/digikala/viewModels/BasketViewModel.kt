@@ -78,7 +78,7 @@ class BasketViewModel @Inject constructor(
         cartDetail.value = CartDetails(totalCount, totalPrice, totalDiscount, payablePrice)
     }
 
-    private fun getSuggestedItems() {
+    fun getSuggestedItems() {
         viewModelScope.launch {
             suggestedList.emit(repository.getSuggestedItems())
         }
