@@ -1,101 +1,37 @@
 package ghazimoradi.soheil.digikala.ui.screens.category.categoryScreen
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import ghazimoradi.soheil.digikala.data.models.category.Sub
 import ghazimoradi.soheil.digikala.R
-import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.loading.Loading
+import ghazimoradi.soheil.digikala.data.models.category.Sub
 import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
-import ghazimoradi.soheil.digikala.viewModels.CategoryViewModel
+import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 
 @Composable
 fun SubCategorySection(
     navController: NavHostController,
-    viewModel: CategoryViewModel = hiltViewModel()
+    toolList: List<Sub>,
+    digitalList: List<Sub>,
+    mobileList: List<Sub>,
+    supermarketList: List<Sub>,
+    fashionList: List<Sub>,
+    nativeList: List<Sub>,
+    toyList: List<Sub>,
+    beautyList: List<Sub>,
+    homeList: List<Sub>,
+    bookList: List<Sub>,
+    sportList: List<Sub>,
+    loading: Boolean
 ) {
-
-    var toolList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var digitalList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var mobileList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var supermarketList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var fashionList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var nativeList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var toyList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var beautyList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var homeList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var bookList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-    var sportList by remember {
-        mutableStateOf<List<Sub>>(emptyList())
-    }
-
-    var loading by remember {
-        mutableStateOf(false)
-    }
-
-    val subCategoryResult by viewModel.subCategory.collectAsState()
-    when (subCategoryResult) {
-        is NetworkResult.Success -> {
-
-            subCategoryResult.data?.let { subCategory ->
-                toolList = subCategory.tool
-                digitalList = subCategory.digital
-                mobileList = subCategory.mobile
-                supermarketList = subCategory.supermarket
-                fashionList = subCategory.fashion
-                nativeList = subCategory.native
-                toyList = subCategory.toy
-                beautyList = subCategory.beauty
-                homeList = subCategory.home
-                bookList = subCategory.book
-                sportList = subCategory.sport
-            }
-            loading = false
-        }
-
-        is NetworkResult.Error -> {
-            loading = false
-            Log.e("3636", "AmazingOfferSection error : ${subCategoryResult.message}")
-        }
-
-        is NetworkResult.Loading -> {
-            loading = true
-        }
-    }
 
     if (loading) {
         Loading(getScreenHeight())
     } else {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
+        Column(modifier = Modifier.fillMaxSize()) {
             CategoryItem(
                 navController = navController,
                 categoryId = "tool",
