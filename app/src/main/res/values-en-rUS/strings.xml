@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="not_selected">not selected</string>
+    <string name="no_product_found_category">no product found for this category</string>
     <string name="color">color:</string>
     <string name="app_name">Digikala</string>
     <string name="home">home</string>
