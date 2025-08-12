@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -13,6 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -24,19 +26,25 @@ import ghazimoradi.soheil.digikala.data.models.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
+import ghazimoradi.soheil.digikala.ui.components.PullToRefresh
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.slider.TopSliderSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 import ghazimoradi.soheil.digikala.viewModels.ProductDetailViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductDetailScreen(
     navController: NavHostController,
     productId: String,
     viewModel: ProductDetailViewModel = hiltViewModel(),
 ) {
+
+    val coroutineScope = rememberCoroutineScope()
 
     var productDetail by remember {
         mutableStateOf(ProductDetail())
@@ -66,7 +74,11 @@ fun ProductDetailScreen(
         mutableStateOf(false)
     }
 
-    LaunchedEffect(true) {
+    var isRefreshing by remember {
+        mutableStateOf(false)
+    }
+
+    LaunchedEffect(productDetail) {
         viewModel.getProductById(productId)
         viewModel.productDetail.collectLatest { netWorkProductDetail ->
             when (netWorkProductDetail) {
@@ -94,63 +106,77 @@ fun ProductDetailScreen(
         }
     }
 
-    if (loading) {
-        Loading(getScreenHeight())
-    } else {
-        Scaffold(
-            bottomBar = {
-                ProductDetailBottomBar(productDetail, navController)
-            },
-
-            topBar = {
-                ProductTopAppBar(navController = navController, product = productDetail)
+    PullToRefresh(
+        isRefreshing = isRefreshing,
+        onRefresh = {
+            loading = true
+            isRefreshing = true
+            viewModel.getProductById(productId)
+            viewModel.getSimilarProducts(categoryId)
+            coroutineScope.launch {
+                delay(1500)
+                isRefreshing = false
             }
-        ) { padding ->
-            Log.i("padding", padding.toString())
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(bottom = 70.dp)
-                    .background(MaterialTheme.colorScheme.mainBg)
-            ) {
-                item {
-                    TopSliderSection(
-                        navController = navController,
-                        productDetailSliders = imageSlider
-                    )
-                }
+        }
+    ) {
+        if (loading) {
+            Loading(getScreenHeight())
+        } else {
+            Scaffold(
+                bottomBar = {
+                    ProductDetailBottomBar(productDetail, navController)
+                },
 
-                item {
-                    ProductDetailHeaderSection(productDetail)
+                topBar = {
+                    ProductTopAppBar(navController = navController, product = productDetail)
                 }
+            ) { padding ->
+                Log.i("padding", padding.toString())
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(bottom = 70.dp)
+                        .background(MaterialTheme.colorScheme.mainBg)
+                ) {
+                    item {
+                        TopSliderSection(
+                            navController = navController,
+                            productDetailSliders = imageSlider
+                        )
+                    }
 
-                item {
-                    ProductSelectColorSection(productColors)
-                }
+                    item {
+                        ProductDetailHeaderSection(productDetail)
+                    }
 
-                item {
-                    SellerInfoSection(productDetail.price ?: 0)
-                }
+                    item {
+                        ProductSelectColorSection(productColors)
+                    }
 
-                item {
-                    SimilarProductSection(navController, categoryId)
-                }
+                    item {
+                        SellerInfoSection(productDetail.price ?: 0)
+                    }
 
-                item {
-                    ProductDescriptionSection(navController, description, technicalFeatures)
-                }
+                    item {
+                        SimilarProductSection(navController, categoryId)
+                    }
 
-                item {
-                    ProductCommentsSection(
-                        navController = navController,
-                        productId = productId,
-                        comments = productComments,
-                        commentCount = commentCount.toString()
-                    )
-                }
+                    item {
+                        ProductDescriptionSection(navController, description, technicalFeatures)
+                    }
 
-                item {
-                    ProductSetCommentsSection(navController, productDetail)
+                    item {
+                        ProductCommentsSection(
+                            navController = navController,
+                            productId = productId,
+                            comments = productComments,
+                            commentCount = commentCount.toString()
+                        )
+                    }
+
+                    item {
+                        ProductSetCommentsSection(navController, productDetail)
+                    }
                 }
             }
         }

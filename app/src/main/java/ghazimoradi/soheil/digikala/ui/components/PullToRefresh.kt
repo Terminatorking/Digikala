@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 @Composable
 fun PullToRefresh(
     pullToRefreshState: PullToRefreshState = rememberPullToRefreshState(),
-    isRefreshing: Boolean,
-    onRefresh: () -> Unit,
-    content: @Composable () -> Unit,
+    isRefreshing: Boolean = false,
+    onRefresh: () -> Unit = {},
+    content: @Composable () -> Unit = {},
 ) {
     PullToRefreshBox(
         isRefreshing = isRefreshing,
