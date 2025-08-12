@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.topbar
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

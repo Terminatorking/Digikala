@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.detailRow
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer

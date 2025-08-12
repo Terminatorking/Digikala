@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.models.category.Sub
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.PullToRefresh
+import ghazimoradi.soheil.digikala.ui.components.project.ProjectPullToRefresh
 import ghazimoradi.soheil.digikala.ui.components.extentions.refreshDataFromServer
 import ghazimoradi.soheil.digikala.ui.components.search.SearchBarSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
@@ -84,7 +84,7 @@ fun PullToRefreshSection(
 
     val coroutineScope = rememberCoroutineScope()
 
-    PullToRefresh(
+    ProjectPullToRefresh(
         isRefreshing = isRefreshing,
         onRefresh = {
             loading = true

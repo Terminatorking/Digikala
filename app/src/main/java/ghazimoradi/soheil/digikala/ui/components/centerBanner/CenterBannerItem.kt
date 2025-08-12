@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.centerBanner
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

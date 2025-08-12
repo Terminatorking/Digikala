@@ -15,7 +15,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.address.UserAddress
-import ghazimoradi.soheil.digikala.ui.components.DetailRow
+import ghazimoradi.soheil.digikala.ui.components.detailRow.DetailRow
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.gray
 import ghazimoradi.soheil.digikala.ui.theme.h4

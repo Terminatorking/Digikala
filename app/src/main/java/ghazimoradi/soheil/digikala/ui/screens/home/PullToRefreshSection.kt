@@ -13,7 +13,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.PullToRefresh
+import ghazimoradi.soheil.digikala.ui.components.project.ProjectPullToRefresh
 import ghazimoradi.soheil.digikala.ui.components.extentions.refreshDataFromServer
 import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 import kotlinx.coroutines.delay
@@ -57,7 +57,7 @@ fun PullToRefreshSection(viewModel: HomeViewModel, navController: NavController)
         }
     }
 
-    PullToRefresh(
+    ProjectPullToRefresh(
         onRefresh = {
             loading = true
             isRefreshing = true

@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.project
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PullToRefresh(
+fun ProjectPullToRefresh(
     pullToRefreshState: PullToRefreshState = rememberPullToRefreshState(),
     isRefreshing: Boolean = false,
     onRefresh: () -> Unit = {},

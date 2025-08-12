@@ -36,8 +36,8 @@ import ghazimoradi.soheil.digikala.data.models.basket.CartStatus
 import ghazimoradi.soheil.digikala.data.models.home.StoreProduct
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
-import ghazimoradi.soheil.digikala.ui.components.PullToRefresh
+import ghazimoradi.soheil.digikala.ui.components.buy.BuyProcessContinue
+import ghazimoradi.soheil.digikala.ui.components.project.ProjectPullToRefresh
 import ghazimoradi.soheil.digikala.ui.components.cartPriceDetail.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.extentions.refreshDataFromServer
@@ -103,7 +103,7 @@ fun ShoppingCart(
         }
     }
 
-    PullToRefresh(
+    ProjectPullToRefresh(
         isRefreshing = isRefreshing,
         onRefresh = {
             loading = true

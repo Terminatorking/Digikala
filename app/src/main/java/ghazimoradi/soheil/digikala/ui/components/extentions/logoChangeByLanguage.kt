@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components.icon
+package ghazimoradi.soheil.digikala.ui.components.extentions
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable

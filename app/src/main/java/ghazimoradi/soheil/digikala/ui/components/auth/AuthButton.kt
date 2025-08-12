@@ -1,4 +1,4 @@
-package ghazimoradi.soheil.digikala.ui.components
+package ghazimoradi.soheil.digikala.ui.components.auth
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height

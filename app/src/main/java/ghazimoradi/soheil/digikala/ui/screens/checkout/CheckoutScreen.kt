@@ -30,7 +30,7 @@ import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderDetail
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.BuyProcessContinue
+import ghazimoradi.soheil.digikala.ui.components.buy.BuyProcessContinue
 import ghazimoradi.soheil.digikala.ui.components.cartPriceDetail.CartPriceDetailSection
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.theme.mainBg

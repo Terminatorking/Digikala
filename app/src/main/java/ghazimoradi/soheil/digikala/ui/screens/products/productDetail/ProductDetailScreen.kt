@@ -26,7 +26,7 @@ import ghazimoradi.soheil.digikala.data.models.productDetail.ProductColor
 import ghazimoradi.soheil.digikala.data.models.productDetail.ProductDetail
 import ghazimoradi.soheil.digikala.data.models.productDetail.SliderImage
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.PullToRefresh
+import ghazimoradi.soheil.digikala.ui.components.project.ProjectPullToRefresh
 import ghazimoradi.soheil.digikala.ui.components.loading.Loading
 import ghazimoradi.soheil.digikala.ui.components.extentions.getScreenHeight
 import ghazimoradi.soheil.digikala.ui.components.slider.TopSliderSection
@@ -106,7 +106,7 @@ fun ProductDetailScreen(
         }
     }
 
-    PullToRefresh(
+    ProjectPullToRefresh(
         isRefreshing = isRefreshing,
         onRefresh = {
             loading = true

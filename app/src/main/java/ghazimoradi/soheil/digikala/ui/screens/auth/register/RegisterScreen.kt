@@ -22,9 +22,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.TopBarSection
-import ghazimoradi.soheil.digikala.ui.components.AuthButton
-import ghazimoradi.soheil.digikala.ui.components.ProjectTextField
+import ghazimoradi.soheil.digikala.ui.components.topbar.TopBarSection
+import ghazimoradi.soheil.digikala.ui.components.auth.AuthButton
+import ghazimoradi.soheil.digikala.ui.components.project.ProjectTextField
 import ghazimoradi.soheil.digikala.ui.components.extentions.showToast
 import ghazimoradi.soheil.digikala.ui.screens.user.profile.ProfileScreenState
 import ghazimoradi.soheil.digikala.ui.theme.darkText

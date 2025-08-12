@@ -5,7 +5,7 @@ import androidx.compose.runtime.*
 import androidx.hilt.navigation.compose.hiltViewModel
 import ghazimoradi.soheil.digikala.data.models.home.Slider
 import ghazimoradi.soheil.digikala.data.remote.NetworkResult
-import ghazimoradi.soheil.digikala.ui.components.CenterBannerItem
+import ghazimoradi.soheil.digikala.ui.components.centerBanner.CenterBannerItem
 import ghazimoradi.soheil.digikala.viewModels.HomeViewModel
 
 @Composable

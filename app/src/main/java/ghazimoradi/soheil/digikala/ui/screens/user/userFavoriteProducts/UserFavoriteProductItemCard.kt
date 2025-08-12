@@ -39,7 +39,7 @@ import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.prfile.FavItem
 import ghazimoradi.soheil.digikala.navigation.Screen
-import ghazimoradi.soheil.digikala.ui.components.icon.logoChangeByLanguage
+import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaDarkRed
 import ghazimoradi.soheil.digikala.ui.theme.DigiKalaRed
 import ghazimoradi.soheil.digikala.ui.theme.White

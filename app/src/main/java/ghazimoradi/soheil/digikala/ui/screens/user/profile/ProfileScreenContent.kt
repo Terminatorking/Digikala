@@ -12,8 +12,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
-import ghazimoradi.soheil.digikala.ui.components.CenterBannerItem
-import ghazimoradi.soheil.digikala.ui.components.TopBarSection
+import ghazimoradi.soheil.digikala.ui.components.centerBanner.CenterBannerItem
+import ghazimoradi.soheil.digikala.ui.components.topbar.TopBarSection
 import ghazimoradi.soheil.digikala.ui.theme.mainBg
 
 @Composable

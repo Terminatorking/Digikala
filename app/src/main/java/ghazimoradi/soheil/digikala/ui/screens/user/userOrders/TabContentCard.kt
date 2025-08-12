@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import ghazimoradi.soheil.digikala.R
 import ghazimoradi.soheil.digikala.data.models.checkout.OrderFullDetail
-import ghazimoradi.soheil.digikala.ui.components.icon.logoChangeByLanguage
+import ghazimoradi.soheil.digikala.ui.components.extentions.logoChangeByLanguage
 import ghazimoradi.soheil.digikala.ui.theme.darkText
 import ghazimoradi.soheil.digikala.ui.theme.h5
 import ghazimoradi.soheil.digikala.ui.theme.h6
